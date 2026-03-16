@@ -1,0 +1,71 @@
+aid: amazon-well-architected-tool
+name: Amazon Well-Architected Tool
+description: >-
+  The AWS Well-Architected Tool helps you review your workloads and compare them
+  to the latest AWS architectural best practices. It provides a consistent
+  process for evaluating architectures and implementing designs that scale over
+  time across five pillars: operational excellence, security, reliability,
+  performance efficiency, and cost optimization.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Architecture
+  - Best Practices
+  - Cloud Governance
+  - AWS
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: amazon-well-architected-tool:aws-well-architected-tool-api
+    name: AWS Well-Architected Tool API
+    description: >-
+      The AWS Well-Architected Tool API provides programmatic access to create
+      and manage workloads, lenses, milestones, and review reports. It enables
+      integration of the Well-Architected review process into DevOps workflows
+      and automation pipelines for continuous architecture assessment.
+    humanURL: https://aws.amazon.com/well-architected-tool/
+    baseURL: https://wellarchitected.amazonaws.com
+    tags:
+      - Architecture
+      - Best Practices
+      - AWS
+    properties:
+      - type: Documentation
+        url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+      - type: Reference
+        url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+      - type: Getting Started
+        url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+      - type: Pricing
+        url: https://aws.amazon.com/well-architected-tool/pricing/
+      - type: FAQ
+        url: https://aws.amazon.com/well-architected-tool/faqs/
+common:
+  - type: Portal
+    url: https://aws.amazon.com/
+  - type: Website
+    url: https://aws.amazon.com/well-architected-tool/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: Console
+    url: https://console.aws.amazon.com/wellarchitected/
+  - type: Terms of Service
+    url: https://aws.amazon.com/service-terms/
+  - type: Privacy Policy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: Sign Up
+    url: https://signin.aws.amazon.com/signup?request_type=register
+  - type: Login
+    url: https://aws.amazon.com/console/
+  - type: Status
+    url: https://health.aws.amazon.com/health/status
+  - type: GitHub Organization
+    url: https://github.com/aws
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
