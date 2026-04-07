@@ -10,9 +10,9 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Architecture
+  - AWS
   - Best Practices
   - Cloud Governance
-  - AWS
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -30,8 +30,8 @@ apis:
     baseURL: https://wellarchitected.amazonaws.com
     tags:
       - Architecture
-      - Best Practices
       - AWS
+      - Best Practices
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
