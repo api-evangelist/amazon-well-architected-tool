@@ -1,0 +1,11 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ProfileArn"
+  },
+  "maxItems": 1,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadProfileArns",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-profile-arns-schema.json",
+  "description": "WorkloadProfileArns schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "title": "ListWorkloadsInput",
+  "properties": {
+    "WorkloadNamePrefix": {
+      "$ref": "#/components/schemas/WorkloadNamePrefix"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListWorkloadsMaxResults"
+        },
+        {
+          "description": "The maximum number of results to return for this request."
+        }
+      ]
+    }
+  },
+  "description": "Input to list all workloads.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-workloads-input-schema.json"
+}

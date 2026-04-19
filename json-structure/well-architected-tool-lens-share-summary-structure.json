@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "ShareId": {
+      "$ref": "#/components/schemas/ShareId"
+    },
+    "SharedWith": {
+      "$ref": "#/components/schemas/SharedWith"
+    },
+    "Status": {
+      "$ref": "#/components/schemas/ShareStatus"
+    },
+    "StatusMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusMessage"
+        },
+        {
+          "description": "Optional message to compliment the Status field."
+        }
+      ]
+    }
+  },
+  "description": "A lens share summary return object.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "LensShareSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-lens-share-summary-structure.json"
+}

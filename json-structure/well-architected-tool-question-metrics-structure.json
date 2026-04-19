@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/QuestionMetric"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "QuestionMetrics",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-question-metrics-structure.json",
+  "description": "QuestionMetrics schema from AWS Well-Architected Tool API"
+}

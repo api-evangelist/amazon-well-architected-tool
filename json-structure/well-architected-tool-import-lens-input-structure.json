@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "required": [
+    "JSONString",
+    "ClientRequestToken"
+  ],
+  "name": "ImportLensInput",
+  "properties": {
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "JSONString": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensJSON"
+        },
+        {
+          "description": "The JSON representation of a lens."
+        }
+      ]
+    },
+    "ClientRequestToken": {
+      "$ref": "#/components/schemas/ClientRequestToken"
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "Tags to associate to a lens."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-import-lens-input-structure.json",
+  "description": "ImportLensInput schema from AWS Well-Architected Tool API"
+}

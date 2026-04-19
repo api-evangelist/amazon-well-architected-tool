@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "enum": [
+    "NOT_APPLICABLE",
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETE",
+    "RISK_ACKNOWLEDGED"
+  ],
+  "description": "The improvement status for a workload.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadImprovementStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-improvement-status-schema.json"
+}

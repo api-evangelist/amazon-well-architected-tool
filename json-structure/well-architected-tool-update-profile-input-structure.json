@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "name": "UpdateProfileInput",
+  "properties": {
+    "ProfileDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileDescription"
+        },
+        {
+          "description": "The profile description."
+        }
+      ]
+    },
+    "ProfileQuestions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileQuestionUpdates"
+        },
+        {
+          "description": "Profile questions."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-update-profile-input-structure.json",
+  "description": "UpdateProfileInput schema from AWS Well-Architected Tool API"
+}

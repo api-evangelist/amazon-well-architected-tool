@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "<p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>",
+  "minLength": 3,
+  "maxLength": 100,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MilestoneName",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-milestone-name-schema.json"
+}

@@ -1,0 +1,9 @@
+{
+  "CurrentProfileVersion": "example-value",
+  "LatestProfileVersion": "example-value",
+  "Type": "WORKLOAD",
+  "ProfileArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "ProfileName": "Production Workload",
+  "WorkloadId": "500123",
+  "WorkloadName": "Production Workload"
+}

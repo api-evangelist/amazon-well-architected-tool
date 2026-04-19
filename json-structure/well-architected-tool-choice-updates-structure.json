@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/ChoiceUpdate"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ChoiceUpdates",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-choice-updates-structure.json",
+  "description": "ChoiceUpdates schema from AWS Well-Architected Tool API"
+}

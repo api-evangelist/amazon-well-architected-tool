@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "name": "GetConsolidatedReportInput",
+  "properties": {},
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-get-consolidated-report-input-structure.json",
+  "description": "GetConsolidatedReportInput schema from AWS Well-Architected Tool API"
+}

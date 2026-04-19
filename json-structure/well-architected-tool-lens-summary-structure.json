@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN of the lens."
+        }
+      ]
+    },
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "LensName": {
+      "$ref": "#/components/schemas/LensName"
+    },
+    "LensType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensType"
+        },
+        {
+          "description": "The type of the lens."
+        }
+      ]
+    },
+    "Description": {
+      "$ref": "#/components/schemas/LensDescription"
+    },
+    "CreatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "UpdatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "LensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The version of the lens."
+        }
+      ]
+    },
+    "Owner": {
+      "$ref": "#/components/schemas/AwsAccountId"
+    },
+    "LensStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensStatus"
+        },
+        {
+          "description": "The status of the lens."
+        }
+      ]
+    }
+  },
+  "description": "A lens summary of a lens.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "LensSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-lens-summary-structure.json"
+}

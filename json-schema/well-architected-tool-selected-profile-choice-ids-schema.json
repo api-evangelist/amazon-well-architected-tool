@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ChoiceId"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SelectedProfileChoiceIds",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-selected-profile-choice-ids-schema.json",
+  "description": "SelectedProfileChoiceIds schema from AWS Well-Architected Tool API"
+}

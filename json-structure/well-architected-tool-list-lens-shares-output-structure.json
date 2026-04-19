@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "LensShareSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensShareSummaries"
+        },
+        {
+          "description": "A list of lens share summaries."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ListLensSharesOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-list-lens-shares-output-structure.json",
+  "description": "ListLensSharesOutput schema from AWS Well-Architected Tool API"
+}

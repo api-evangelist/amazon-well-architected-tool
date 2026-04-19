@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens."
+        }
+      ]
+    },
+    "Base64String": {
+      "$ref": "#/components/schemas/Base64String"
+    }
+  },
+  "description": "A report of a lens review.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensReviewReport",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-review-report-schema.json"
+}

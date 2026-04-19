@@ -1,0 +1,13 @@
+{
+  "type": "string",
+  "enum": [
+    "ASSUME_ROLE_ERROR",
+    "ACCESS_DENIED",
+    "UNKNOWN_ERROR",
+    "PREMIUM_SUPPORT_REQUIRED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "CheckFailureReason",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-check-failure-reason-structure.json",
+  "description": "CheckFailureReason schema from AWS Well-Architected Tool API"
+}

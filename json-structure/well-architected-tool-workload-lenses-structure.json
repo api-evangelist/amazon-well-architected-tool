@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.",
+  "items": {
+    "$ref": "#/components/schemas/LensAlias"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadLenses",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-lenses-structure.json"
+}

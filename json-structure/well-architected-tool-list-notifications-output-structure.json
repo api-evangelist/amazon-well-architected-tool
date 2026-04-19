@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "NotificationSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NotificationSummaries"
+        },
+        {
+          "description": "List of lens notification summaries in a workload."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ListNotificationsOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-list-notifications-output-structure.json",
+  "description": "ListNotificationsOutput schema from AWS Well-Architected Tool API"
+}

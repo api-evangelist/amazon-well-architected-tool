@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": [
+    "ProfileArns"
+  ],
+  "name": "DisassociateProfilesInput",
+  "properties": {
+    "ProfileArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileArns"
+        },
+        {
+          "description": "The list of profile ARNs to disassociate from the workload."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-disassociate-profiles-input-structure.json",
+  "description": "DisassociateProfilesInput schema from AWS Well-Architected Tool API"
+}

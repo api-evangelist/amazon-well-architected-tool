@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "pattern": "[0-9a-f]{32}",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ShareInvitationId",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-share-invitation-id-structure.json",
+  "description": "ShareInvitationId schema from AWS Well-Architected Tool API"
+}

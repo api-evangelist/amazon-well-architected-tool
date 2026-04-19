@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "name": "ListNotificationsInput",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListNotificationsMaxResults"
+        },
+        {
+          "description": "The maximum number of results to return for this request."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-list-notifications-input-structure.json",
+  "description": "ListNotificationsInput schema from AWS Well-Architected Tool API"
+}

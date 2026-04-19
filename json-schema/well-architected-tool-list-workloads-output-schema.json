@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadSummaries": {
+      "$ref": "#/components/schemas/WorkloadSummaries"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "description": "Output of a list workloads call.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ListWorkloadsOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-workloads-output-schema.json"
+}

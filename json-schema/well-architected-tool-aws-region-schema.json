@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "description": "An Amazon Web Services Region, for example, <code>us-west-2</code> or <code>ap-northeast-1</code>.",
+  "maxLength": 100,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AwsRegion",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-aws-region-schema.json"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "ChoiceId": {
+      "$ref": "#/components/schemas/ChoiceId"
+    },
+    "ChoiceTitle": {
+      "$ref": "#/components/schemas/ChoiceTitle"
+    }
+  },
+  "description": "A best practice, or question choice, that has been identified as a risk in this question.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "BestPractice",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-best-practice-structure.json"
+}

@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "ShareId": {
+      "$ref": "#/components/schemas/ShareId"
+    },
+    "SharedBy": {
+      "$ref": "#/components/schemas/AwsAccountId"
+    },
+    "SharedWith": {
+      "$ref": "#/components/schemas/SharedWith"
+    },
+    "PermissionType": {
+      "$ref": "#/components/schemas/PermissionType"
+    },
+    "Status": {
+      "$ref": "#/components/schemas/ShareStatus"
+    },
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    },
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    }
+  },
+  "description": "A workload share return object.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadShare",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-share-schema.json"
+}

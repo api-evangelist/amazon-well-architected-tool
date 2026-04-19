@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ResourceNotFoundException",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-resource-not-found-exception-structure.json",
+  "description": "ResourceNotFoundException schema from AWS Well-Architected Tool API"
+}

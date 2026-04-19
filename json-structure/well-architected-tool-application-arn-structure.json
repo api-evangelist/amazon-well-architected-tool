@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "pattern": "arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:/applications/[a-z0-9]+",
+  "maxLength": 2084,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ApplicationArn",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-application-arn-structure.json",
+  "description": "ApplicationArn schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "READONLY",
+    "CONTRIBUTOR"
+  ],
+  "description": "Permission granted on a share request.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PermissionType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-permission-type-schema.json"
+}

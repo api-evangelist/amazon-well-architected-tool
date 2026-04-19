@@ -1,0 +1,9 @@
+{
+  "ProfileArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "ProfileVersion": "example-value",
+  "ProfileName": "Production Workload",
+  "ProfileDescription": "A sample workload for architecture review.",
+  "Owner": "example-value",
+  "CreatedAt": "example-value",
+  "UpdatedAt": "example-value"
+}

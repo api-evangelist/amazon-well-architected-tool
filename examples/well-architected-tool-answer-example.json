@@ -1,0 +1,16 @@
+{
+  "QuestionId": "500123",
+  "PillarId": "500123",
+  "QuestionTitle": "example-value",
+  "QuestionDescription": "A sample workload for architecture review.",
+  "ImprovementPlanUrl": "https://example.com",
+  "HelpfulResourceUrl": "https://example.com",
+  "HelpfulResourceDisplayText": "example-value",
+  "Choices": "example-value",
+  "SelectedChoices": "example-value",
+  "ChoiceAnswers": "example-value",
+  "IsApplicable": "example-value",
+  "Risk": "example-value",
+  "Notes": "example-value",
+  "Reason": "example-value"
+}

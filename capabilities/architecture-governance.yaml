@@ -1,0 +1,243 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Amazon Well-Architected Tool Architecture Governance"
+  description: >-
+    Unified workflow for architecture governance using the AWS Well-Architected Tool.
+    Enables cloud architects and governance teams to manage workloads, run lens reviews,
+    track answers, create milestones, and generate consolidated reports across the
+    organization's cloud portfolio.
+  tags:
+    - Architecture
+    - AWS
+    - Cloud Governance
+    - Well-Architected
+    - Compliance
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+
+capability:
+  consumes:
+    - import: well-architected-tool
+      location: ./shared/well-architected-tool.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: architecture-governance-api
+      description: "Unified REST API for AWS Well-Architected Tool architecture governance workflows."
+      resources:
+        - path: /v1/workloads
+          name: workloads
+          description: "Manage workloads under architectural review."
+          operations:
+            - method: GET
+              name: list-workloads
+              description: "List all workloads in the account."
+              call: "well-architected-tool.list-workloads"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-workload
+              description: "Create a new workload for architectural review."
+              call: "well-architected-tool.create-workload"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/workloads/{id}
+          name: workload-detail
+          description: "Single workload management."
+          operations:
+            - method: GET
+              name: get-workload
+              description: "Get workload details."
+              call: "well-architected-tool.get-workload"
+              with:
+                WorkloadId: "rest.id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/lenses
+          name: lenses
+          description: "Lens catalog for architectural reviews."
+          operations:
+            - method: GET
+              name: list-lenses
+              description: "List available lenses."
+              call: "well-architected-tool.list-lenses"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/reviews
+          name: reviews
+          description: "Lens reviews for workloads."
+          operations:
+            - method: GET
+              name: list-lens-reviews
+              description: "List lens reviews for a workload."
+              call: "well-architected-tool.list-lens-reviews"
+              with:
+                WorkloadId: "rest.workload_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/answers
+          name: answers
+          description: "Architectural review answers."
+          operations:
+            - method: GET
+              name: list-answers
+              description: "List answers for a workload lens review."
+              call: "well-architected-tool.list-answers"
+              with:
+                WorkloadId: "rest.workload_id"
+                LensAlias: "rest.lens_alias"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/milestones
+          name: milestones
+          description: "Workload review milestones."
+          operations:
+            - method: POST
+              name: create-milestone
+              description: "Create a milestone to capture review state."
+              call: "well-architected-tool.create-milestone"
+              with:
+                WorkloadId: "rest.workload_id"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/profiles
+          name: profiles
+          description: "Workload profiles."
+          operations:
+            - method: GET
+              name: list-profiles
+              description: "List profiles."
+              call: "well-architected-tool.list-profiles"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/reports
+          name: reports
+          description: "Consolidated governance reports."
+          operations:
+            - method: GET
+              name: get-consolidated-report
+              description: "Get consolidated architectural review report."
+              call: "well-architected-tool.get-consolidated-report"
+              with:
+                Format: "rest.format"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: architecture-governance-mcp
+      transport: http
+      description: "MCP server for AI-assisted AWS Well-Architected Tool architecture governance."
+      tools:
+        - name: list-workloads
+          description: "List all workloads under architectural review in the AWS account."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "well-architected-tool.list-workloads"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-workload
+          description: "Get details and metadata for a specific workload."
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "well-architected-tool.get-workload"
+          with:
+            WorkloadId: "tools.workload_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-workload
+          description: "Create a new workload to begin an architectural review."
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "well-architected-tool.create-workload"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-lenses
+          description: "List available AWS and custom lenses for architectural reviews."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "well-architected-tool.list-lenses"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-lens-reviews
+          description: "List lens reviews for a specific workload."
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "well-architected-tool.list-lens-reviews"
+          with:
+            WorkloadId: "tools.workload_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-answers
+          description: "List architectural review answers for a workload and lens."
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "well-architected-tool.list-answers"
+          with:
+            WorkloadId: "tools.workload_id"
+            LensAlias: "tools.lens_alias"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-milestone
+          description: "Save a milestone snapshot of the current workload review state."
+          hints:
+            readOnly: false
+            destructive: false
+            idempotent: false
+          call: "well-architected-tool.create-milestone"
+          with:
+            WorkloadId: "tools.workload_id"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-profiles
+          description: "List workload profiles used to customize reviews."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "well-architected-tool.list-profiles"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-consolidated-report
+          description: "Generate a consolidated architectural review report across workloads."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "well-architected-tool.get-consolidated-report"
+          with:
+            Format: "tools.format"
+          outputParameters:
+            - type: object
+              mapping: "$."

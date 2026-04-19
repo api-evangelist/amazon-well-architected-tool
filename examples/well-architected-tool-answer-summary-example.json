@@ -1,0 +1,12 @@
+{
+  "QuestionId": "500123",
+  "PillarId": "500123",
+  "QuestionTitle": "example-value",
+  "Choices": "example-value",
+  "SelectedChoices": "example-value",
+  "ChoiceAnswerSummaries": "example-value",
+  "IsApplicable": "example-value",
+  "Risk": "example-value",
+  "Reason": "example-value",
+  "QuestionType": "WORKLOAD"
+}

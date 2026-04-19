@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "ShareInvitation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShareInvitation"
+        },
+        {
+          "description": "The updated workload or custom lens share invitation."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "UpdateShareInvitationOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-update-share-invitation-output-structure.json",
+  "description": "UpdateShareInvitationOutput schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "List of lens summaries of available lenses.",
+  "items": {
+    "$ref": "#/components/schemas/LensSummary"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "LensSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-lens-summaries-structure.json"
+}

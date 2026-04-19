@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "QuestionId": {
+      "$ref": "#/components/schemas/QuestionId"
+    },
+    "Risk": {
+      "$ref": "#/components/schemas/Risk"
+    },
+    "BestPractices": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BestPractices"
+        },
+        {
+          "description": "The best practices, or choices, that have been identified as contributing to risk in a question."
+        }
+      ]
+    }
+  },
+  "description": "A metric for a particular question in the pillar. ",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "QuestionMetric",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-question-metric-structure.json"
+}

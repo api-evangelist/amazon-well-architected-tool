@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "name": "ListMilestonesInput",
+  "properties": {
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    },
+    "MaxResults": {
+      "$ref": "#/components/schemas/MaxResults"
+    }
+  },
+  "description": "Input to list all milestones for a workload.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-list-milestones-input-structure.json"
+}

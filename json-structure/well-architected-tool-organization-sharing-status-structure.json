@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "ENABLED",
+    "DISABLED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "OrganizationSharingStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-organization-sharing-status-structure.json",
+  "description": "OrganizationSharingStatus schema from AWS Well-Architected Tool API"
+}

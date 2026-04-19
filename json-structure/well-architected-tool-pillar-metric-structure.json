@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "PillarId": {
+      "$ref": "#/components/schemas/PillarId"
+    },
+    "RiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    },
+    "Questions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/QuestionMetrics"
+        },
+        {
+          "description": "The questions that have been identified as risks in the pillar."
+        }
+      ]
+    }
+  },
+  "description": "A metric for a particular pillar in a lens.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "PillarMetric",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-pillar-metric-structure.json"
+}

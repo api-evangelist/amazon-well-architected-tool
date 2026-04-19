@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "MetricType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricType"
+        },
+        {
+          "description": "The metric type of a metric in the consolidated report. Currently only WORKLOAD metric types are supported."
+        }
+      ]
+    },
+    "RiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    },
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    },
+    "WorkloadArn": {
+      "$ref": "#/components/schemas/WorkloadArn"
+    },
+    "UpdatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "Lenses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensMetrics"
+        },
+        {
+          "description": "The metrics for the lenses in the workload."
+        }
+      ]
+    },
+    "LensesAppliedCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensesAppliedCount"
+        },
+        {
+          "description": "The total number of lenses applied to the workload."
+        }
+      ]
+    }
+  },
+  "description": "A metric that contributes to the consolidated report.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ConsolidatedReportMetric",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-consolidated-report-metric-structure.json"
+}

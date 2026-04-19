@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "ENABLED",
+    "DISABLED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "TrustedAdvisorIntegrationStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-trusted-advisor-integration-status-structure.json",
+  "description": "TrustedAdvisorIntegrationStatus schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,98 @@
+{
+  "type": "object",
+  "required": [
+    "WorkloadName",
+    "Description",
+    "Environment",
+    "Lenses",
+    "ClientRequestToken"
+  ],
+  "title": "CreateWorkloadInput",
+  "properties": {
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/WorkloadDescription"
+    },
+    "Environment": {
+      "$ref": "#/components/schemas/WorkloadEnvironment"
+    },
+    "AccountIds": {
+      "$ref": "#/components/schemas/WorkloadAccountIds"
+    },
+    "AwsRegions": {
+      "$ref": "#/components/schemas/WorkloadAwsRegions"
+    },
+    "NonAwsRegions": {
+      "$ref": "#/components/schemas/WorkloadNonAwsRegions"
+    },
+    "PillarPriorities": {
+      "$ref": "#/components/schemas/WorkloadPillarPriorities"
+    },
+    "ArchitecturalDesign": {
+      "$ref": "#/components/schemas/WorkloadArchitecturalDesign"
+    },
+    "ReviewOwner": {
+      "$ref": "#/components/schemas/WorkloadReviewOwner"
+    },
+    "IndustryType": {
+      "$ref": "#/components/schemas/WorkloadIndustryType"
+    },
+    "Industry": {
+      "$ref": "#/components/schemas/WorkloadIndustry"
+    },
+    "Lenses": {
+      "$ref": "#/components/schemas/WorkloadLenses"
+    },
+    "Notes": {
+      "$ref": "#/components/schemas/Notes"
+    },
+    "ClientRequestToken": {
+      "$ref": "#/components/schemas/ClientRequestToken"
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags to be associated with the workload."
+        }
+      ]
+    },
+    "DiscoveryConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadDiscoveryConfig"
+        },
+        {
+          "description": "Well-Architected discovery configuration settings associated to the workload."
+        }
+      ]
+    },
+    "Applications": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadApplications"
+        },
+        {
+          "description": "List of AppRegistry application ARNs associated to the workload."
+        }
+      ]
+    },
+    "ProfileArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadProfileArns"
+        },
+        {
+          "description": "The list of profile ARNs associated with the workload."
+        }
+      ]
+    }
+  },
+  "description": "Input for workload creation.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-create-workload-input-schema.json"
+}

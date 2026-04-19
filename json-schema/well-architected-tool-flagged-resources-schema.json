@@ -1,0 +1,9 @@
+{
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 9999,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FlaggedResources",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-flagged-resources-schema.json",
+  "description": "FlaggedResources schema from AWS Well-Architected Tool API"
+}

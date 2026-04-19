@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "name": "UpdateGlobalSettingsInput",
+  "properties": {
+    "OrganizationSharingStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OrganizationSharingStatus"
+        },
+        {
+          "description": "The status of organization sharing settings."
+        }
+      ]
+    },
+    "DiscoveryIntegrationStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DiscoveryIntegrationStatus"
+        },
+        {
+          "description": "The status of discovery support settings."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-update-global-settings-input-structure.json",
+  "description": "UpdateGlobalSettingsInput schema from AWS Well-Architected Tool API"
+}

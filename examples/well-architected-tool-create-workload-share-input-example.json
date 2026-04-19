@@ -1,0 +1,5 @@
+{
+  "SharedWith": "example-value",
+  "PermissionType": "WORKLOAD",
+  "ClientRequestToken": "abc123def456ghi789"
+}

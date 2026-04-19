@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    },
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens."
+        }
+      ]
+    },
+    "CurrentLensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The current version of the lens."
+        }
+      ]
+    },
+    "LatestLensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The latest version of the lens."
+        }
+      ]
+    }
+  },
+  "description": "Lens upgrade summary return object.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensUpgradeSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-upgrade-summary-schema.json"
+}

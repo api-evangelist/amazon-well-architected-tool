@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "enum": [
+    "UNANSWERED",
+    "HIGH",
+    "MEDIUM",
+    "NONE",
+    "NOT_APPLICABLE"
+  ],
+  "description": "The risk for a given workload, lens review, pillar, or question.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "Risk",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-risk-structure.json"
+}

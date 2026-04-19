@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ChoiceAnswerSummary"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ChoiceAnswerSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-choice-answer-summaries-structure.json",
+  "description": "ChoiceAnswerSummaries schema from AWS Well-Architected Tool API"
+}

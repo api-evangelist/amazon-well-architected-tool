@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "enum": [
+    "OKAY",
+    "WARNING",
+    "ERROR",
+    "NOT_AVAILABLE",
+    "FETCH_FAILED"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CheckStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-check-status-schema.json",
+  "description": "CheckStatus schema from AWS Well-Architected Tool API"
+}

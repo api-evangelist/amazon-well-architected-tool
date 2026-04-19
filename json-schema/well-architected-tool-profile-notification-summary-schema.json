@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "CurrentProfileVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileVersion"
+        },
+        {
+          "description": "The current profile version."
+        }
+      ]
+    },
+    "LatestProfileVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileVersion"
+        },
+        {
+          "description": "The latest profile version."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileNotificationType"
+        },
+        {
+          "description": "Type of notification."
+        }
+      ]
+    },
+    "ProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileArn"
+        },
+        {
+          "description": "The profile ARN."
+        }
+      ]
+    },
+    "ProfileName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileName"
+        },
+        {
+          "description": "The profile name."
+        }
+      ]
+    },
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    }
+  },
+  "description": "The profile notification summary.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProfileNotificationSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-profile-notification-summary-schema.json"
+}

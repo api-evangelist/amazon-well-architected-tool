@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": [
+    "MilestoneName"
+  ],
+  "title": "UpgradeLensReviewInput",
+  "properties": {
+    "MilestoneName": {
+      "$ref": "#/components/schemas/MilestoneName"
+    },
+    "ClientRequestToken": {
+      "$ref": "#/components/schemas/ClientRequestToken"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-upgrade-lens-review-input-schema.json",
+  "description": "UpgradeLensReviewInput schema from AWS Well-Architected Tool API"
+}

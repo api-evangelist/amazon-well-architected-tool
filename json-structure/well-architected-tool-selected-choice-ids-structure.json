@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ChoiceId"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "SelectedChoiceIds",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-selected-choice-ids-structure.json",
+  "description": "SelectedChoiceIds schema from AWS Well-Architected Tool API"
+}

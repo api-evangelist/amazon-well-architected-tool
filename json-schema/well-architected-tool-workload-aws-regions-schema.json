@@ -1,0 +1,11 @@
+{
+  "type": "array",
+  "description": "The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.",
+  "items": {
+    "$ref": "#/components/schemas/AwsRegion"
+  },
+  "maxItems": 50,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadAwsRegions",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-aws-regions-schema.json"
+}

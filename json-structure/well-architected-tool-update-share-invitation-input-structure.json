@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": [
+    "ShareInvitationAction"
+  ],
+  "name": "UpdateShareInvitationInput",
+  "properties": {
+    "ShareInvitationAction": {
+      "$ref": "#/components/schemas/ShareInvitationAction"
+    }
+  },
+  "description": "Input for Update Share Invitation",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-update-share-invitation-input-structure.json"
+}

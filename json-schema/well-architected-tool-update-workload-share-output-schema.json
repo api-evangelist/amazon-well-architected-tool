@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "WorkloadShare": {
+      "$ref": "#/components/schemas/WorkloadShare"
+    }
+  },
+  "description": "Input for Update Workload Share",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UpdateWorkloadShareOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-update-workload-share-output-schema.json"
+}

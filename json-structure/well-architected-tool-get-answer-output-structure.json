@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "MilestoneNumber": {
+      "$ref": "#/components/schemas/MilestoneNumber"
+    },
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens."
+        }
+      ]
+    },
+    "Answer": {
+      "$ref": "#/components/schemas/Answer"
+    }
+  },
+  "description": "Output of a get answer call.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "GetAnswerOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-get-answer-output-structure.json"
+}

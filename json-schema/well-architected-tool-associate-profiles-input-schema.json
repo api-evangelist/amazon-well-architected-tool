@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": [
+    "ProfileArns"
+  ],
+  "title": "AssociateProfilesInput",
+  "properties": {
+    "ProfileArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileArns"
+        },
+        {
+          "description": "The list of profile ARNs to associate with the workload."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-associate-profiles-input-schema.json",
+  "description": "AssociateProfilesInput schema from AWS Well-Architected Tool API"
+}

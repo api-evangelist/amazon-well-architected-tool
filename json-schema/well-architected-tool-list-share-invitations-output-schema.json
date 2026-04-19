@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "ShareInvitationSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShareInvitationSummaries"
+        },
+        {
+          "description": "List of share invitation summaries in a workload."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "description": "Input for List Share Invitations",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ListShareInvitationsOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-share-invitations-output-schema.json"
+}

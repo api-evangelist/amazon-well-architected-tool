@@ -1,0 +1,78 @@
+{
+  "type": "object",
+  "name": "UpdateWorkloadInput",
+  "properties": {
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/WorkloadDescription"
+    },
+    "Environment": {
+      "$ref": "#/components/schemas/WorkloadEnvironment"
+    },
+    "AccountIds": {
+      "$ref": "#/components/schemas/WorkloadAccountIds"
+    },
+    "AwsRegions": {
+      "$ref": "#/components/schemas/WorkloadAwsRegions"
+    },
+    "NonAwsRegions": {
+      "$ref": "#/components/schemas/WorkloadNonAwsRegions"
+    },
+    "PillarPriorities": {
+      "$ref": "#/components/schemas/WorkloadPillarPriorities"
+    },
+    "ArchitecturalDesign": {
+      "$ref": "#/components/schemas/WorkloadArchitecturalDesign"
+    },
+    "ReviewOwner": {
+      "$ref": "#/components/schemas/WorkloadReviewOwner"
+    },
+    "IsReviewOwnerUpdateAcknowledged": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IsReviewOwnerUpdateAcknowledged"
+        },
+        {
+          "description": "<p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p> <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>"
+        }
+      ]
+    },
+    "IndustryType": {
+      "$ref": "#/components/schemas/WorkloadIndustryType"
+    },
+    "Industry": {
+      "$ref": "#/components/schemas/WorkloadIndustry"
+    },
+    "Notes": {
+      "$ref": "#/components/schemas/Notes"
+    },
+    "ImprovementStatus": {
+      "$ref": "#/components/schemas/WorkloadImprovementStatus"
+    },
+    "DiscoveryConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadDiscoveryConfig"
+        },
+        {
+          "description": "Well-Architected discovery configuration settings to associate to the workload."
+        }
+      ]
+    },
+    "Applications": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadApplications"
+        },
+        {
+          "description": "List of AppRegistry application ARNs to associate to the workload."
+        }
+      ]
+    }
+  },
+  "description": "Input to update a workload.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-update-workload-input-structure.json"
+}

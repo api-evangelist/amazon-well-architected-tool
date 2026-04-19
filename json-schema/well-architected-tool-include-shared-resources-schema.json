@@ -1,0 +1,7 @@
+{
+  "type": "boolean",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IncludeSharedResources",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-include-shared-resources-schema.json",
+  "description": "IncludeSharedResources schema from AWS Well-Architected Tool API"
+}

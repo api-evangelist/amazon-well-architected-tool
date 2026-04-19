@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "Metrics": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConsolidatedReportMetrics"
+        },
+        {
+          "description": "<p>The metrics that make up the consolidated report.</p> <p>Only returned when <code>JSON</code> format is requested.</p>"
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    },
+    "Base64String": {
+      "$ref": "#/components/schemas/Base64String"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GetConsolidatedReportOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-get-consolidated-report-output-schema.json",
+  "description": "GetConsolidatedReportOutput schema from AWS Well-Architected Tool API"
+}

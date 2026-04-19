@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 128,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "TagKey",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-tag-key-structure.json",
+  "description": "TagKey schema from AWS Well-Architected Tool API"
+}

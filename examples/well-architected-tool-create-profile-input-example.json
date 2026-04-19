@@ -1,0 +1,7 @@
+{
+  "ProfileName": "Production Workload",
+  "ProfileDescription": "A sample workload for architecture review.",
+  "ProfileQuestions": "example-value",
+  "ClientRequestToken": "abc123def456ghi789",
+  "Tags": "example-value"
+}

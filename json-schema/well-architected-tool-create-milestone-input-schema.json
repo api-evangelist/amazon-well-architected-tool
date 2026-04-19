@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": [
+    "MilestoneName",
+    "ClientRequestToken"
+  ],
+  "title": "CreateMilestoneInput",
+  "properties": {
+    "MilestoneName": {
+      "$ref": "#/components/schemas/MilestoneName"
+    },
+    "ClientRequestToken": {
+      "$ref": "#/components/schemas/ClientRequestToken"
+    }
+  },
+  "description": "Input for milestone creation.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-create-milestone-input-schema.json"
+}

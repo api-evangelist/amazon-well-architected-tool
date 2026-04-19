@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "properties": {
+    "QuestionId": {
+      "$ref": "#/components/schemas/QuestionId"
+    },
+    "PillarId": {
+      "$ref": "#/components/schemas/PillarId"
+    },
+    "QuestionTitle": {
+      "$ref": "#/components/schemas/QuestionTitle"
+    },
+    "QuestionDescription": {
+      "$ref": "#/components/schemas/QuestionDescription"
+    },
+    "ImprovementPlanUrl": {
+      "$ref": "#/components/schemas/ImprovementPlanUrl"
+    },
+    "HelpfulResourceUrl": {
+      "$ref": "#/components/schemas/HelpfulResourceUrl"
+    },
+    "HelpfulResourceDisplayText": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DisplayText"
+        },
+        {
+          "description": "<p>The helpful resource text to be displayed for a custom lens.</p> <p>This field does not apply to Amazon Web Services official lenses.</p>"
+        }
+      ]
+    },
+    "Choices": {
+      "$ref": "#/components/schemas/Choices"
+    },
+    "SelectedChoices": {
+      "$ref": "#/components/schemas/SelectedChoices"
+    },
+    "ChoiceAnswers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceAnswers"
+        },
+        {
+          "description": "A list of selected choices to a question in your workload."
+        }
+      ]
+    },
+    "IsApplicable": {
+      "$ref": "#/components/schemas/IsApplicable"
+    },
+    "Risk": {
+      "$ref": "#/components/schemas/Risk"
+    },
+    "Notes": {
+      "$ref": "#/components/schemas/Notes"
+    },
+    "Reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnswerReason"
+        },
+        {
+          "description": "The reason why the question is not applicable to your workload."
+        }
+      ]
+    }
+  },
+  "description": "An answer of the question.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "Answer",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-answer-structure.json"
+}

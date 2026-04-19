@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AdditionalResourceType"
+        },
+        {
+          "description": "Type of additional resource for a custom lens."
+        }
+      ]
+    },
+    "Content": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Urls"
+        },
+        {
+          "description": "The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified."
+        }
+      ]
+    }
+  },
+  "description": "<p>The choice level additional resources for a custom lens.</p> <p>This field does not apply to Amazon Web Services official lenses.</p>",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AdditionalResources",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-additional-resources-schema.json"
+}

@@ -1,0 +1,9 @@
+{
+  "LensArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "LensVersion": "example-value",
+  "Name": "Production Workload",
+  "Description": "A sample workload for architecture review.",
+  "Owner": "example-value",
+  "ShareInvitationId": "500123",
+  "Tags": "example-value"
+}

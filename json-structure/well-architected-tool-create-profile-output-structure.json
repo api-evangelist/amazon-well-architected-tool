@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "ProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileArn"
+        },
+        {
+          "description": "The profile ARN."
+        }
+      ]
+    },
+    "ProfileVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileVersion"
+        },
+        {
+          "description": "Version of the profile."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "CreateProfileOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-create-profile-output-structure.json",
+  "description": "CreateProfileOutput schema from AWS Well-Architected Tool API"
+}

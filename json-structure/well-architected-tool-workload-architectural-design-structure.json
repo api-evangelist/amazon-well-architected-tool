@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "pattern": "^(|(https?|ftp):\\/\\/[^\\s/$.?#].[^\\s]*)$",
+  "description": "The URL of the architectural design for the workload.",
+  "maxLength": 2048,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadArchitecturalDesign",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-architectural-design-structure.json"
+}

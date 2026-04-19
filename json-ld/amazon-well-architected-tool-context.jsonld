@@ -1,0 +1,711 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amz": "https://amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ChoiceAnswerSummary": "amz:ChoiceAnswerSummary",
+    "ChoiceId": {
+      "@id": "amz:ChoiceId",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "amz:Status",
+      "@type": "xsd:string"
+    },
+    "Reason": {
+      "@id": "amz:Reason",
+      "@type": "xsd:string"
+    },
+    "ProfileSummary": "amz:ProfileSummary",
+    "ProfileArn": {
+      "@id": "amz:ProfileArn",
+      "@type": "xsd:string"
+    },
+    "ProfileVersion": {
+      "@id": "amz:ProfileVersion",
+      "@type": "xsd:string"
+    },
+    "ProfileName": {
+      "@id": "amz:ProfileName",
+      "@type": "xsd:string"
+    },
+    "ProfileDescription": {
+      "@id": "amz:ProfileDescription",
+      "@type": "xsd:string"
+    },
+    "Owner": {
+      "@id": "amz:Owner",
+      "@type": "xsd:string"
+    },
+    "CreatedAt": {
+      "@id": "amz:CreatedAt",
+      "@type": "xsd:string"
+    },
+    "UpdatedAt": {
+      "@id": "amz:UpdatedAt",
+      "@type": "xsd:string"
+    },
+    "ChoiceImprovementPlan": "amz:ChoiceImprovementPlan",
+    "DisplayText": {
+      "@id": "amz:DisplayText",
+      "@type": "xsd:string"
+    },
+    "ImprovementPlanUrl": {
+      "@id": "amz:ImprovementPlanUrl",
+      "@type": "xsd:string"
+    },
+    "BestPractice": "amz:BestPractice",
+    "ChoiceTitle": {
+      "@id": "amz:ChoiceTitle",
+      "@type": "xsd:string"
+    },
+    "WorkloadSummary": {
+      "@id": "amz:WorkloadSummary",
+      "@type": "xsd:string"
+    },
+    "WorkloadId": {
+      "@id": "amz:WorkloadId",
+      "@type": "xsd:string"
+    },
+    "WorkloadArn": {
+      "@id": "amz:WorkloadArn",
+      "@type": "xsd:string"
+    },
+    "WorkloadName": {
+      "@id": "amz:WorkloadName",
+      "@type": "xsd:string"
+    },
+    "Lenses": {
+      "@id": "amz:Lenses",
+      "@type": "xsd:string"
+    },
+    "RiskCounts": "amz:RiskCounts",
+    "ImprovementStatus": {
+      "@id": "amz:ImprovementStatus",
+      "@type": "xsd:string"
+    },
+    "Profiles": {
+      "@id": "amz:Profiles",
+      "@type": "xsd:string"
+    },
+    "PrioritizedRiskCounts": {
+      "@id": "amz:PrioritizedRiskCounts",
+      "@type": "xsd:string"
+    },
+    "CheckDetail": "amz:CheckDetail",
+    "Id": {
+      "@id": "amz:Id",
+      "@type": "xsd:string"
+    },
+    "Name": {
+      "@id": "amz:Name",
+      "@type": "xsd:string"
+    },
+    "Description": {
+      "@id": "amz:Description",
+      "@type": "xsd:string"
+    },
+    "Provider": {
+      "@id": "amz:Provider",
+      "@type": "xsd:string"
+    },
+    "LensArn": {
+      "@id": "amz:LensArn",
+      "@type": "xsd:string"
+    },
+    "PillarId": {
+      "@id": "amz:PillarId",
+      "@type": "xsd:string"
+    },
+    "QuestionId": {
+      "@id": "amz:QuestionId",
+      "@type": "xsd:string"
+    },
+    "AccountId": {
+      "@id": "amz:AccountId",
+      "@type": "xsd:string"
+    },
+    "FlaggedResources": {
+      "@id": "amz:FlaggedResources",
+      "@type": "xsd:string"
+    },
+    "DisassociateProfilesInput": "amz:DisassociateProfilesInput",
+    "ProfileArns": {
+      "@id": "amz:ProfileArns",
+      "@type": "xsd:string"
+    },
+    "DeleteLensShareInput": "amz:DeleteLensShareInput",
+    "ProfileTemplate": {
+      "@id": "amz:ProfileTemplate",
+      "@type": "xsd:string"
+    },
+    "TemplateName": {
+      "@id": "amz:TemplateName",
+      "@type": "xsd:string"
+    },
+    "TemplateQuestions": {
+      "@id": "amz:TemplateQuestions",
+      "@type": "xsd:string"
+    },
+    "GetProfileOutput": "amz:GetProfileOutput",
+    "Profile": "amz:Profile",
+    "ProfileTemplateQuestion": "amz:ProfileTemplateQuestion",
+    "QuestionTitle": {
+      "@id": "amz:QuestionTitle",
+      "@type": "xsd:string"
+    },
+    "QuestionDescription": {
+      "@id": "amz:QuestionDescription",
+      "@type": "xsd:string"
+    },
+    "QuestionChoices": {
+      "@id": "amz:QuestionChoices",
+      "@type": "xsd:string"
+    },
+    "MinSelectedChoices": {
+      "@id": "amz:MinSelectedChoices",
+      "@type": "xsd:string"
+    },
+    "MaxSelectedChoices": {
+      "@id": "amz:MaxSelectedChoices",
+      "@type": "xsd:string"
+    },
+    "ListProfilesOutput": "amz:ListProfilesOutput",
+    "ProfileSummaries": {
+      "@id": "amz:ProfileSummaries",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "amz:NextToken",
+      "@type": "xsd:string"
+    },
+    "AssociateLensesInput": "amz:AssociateLensesInput",
+    "LensAliases": {
+      "@id": "amz:LensAliases",
+      "@type": "xsd:string"
+    },
+    "ListLensesInput": "amz:ListLensesInput",
+    "ImprovementSummary": "amz:ImprovementSummary",
+    "Risk": {
+      "@id": "amz:Risk",
+      "@type": "xsd:string"
+    },
+    "ImprovementPlans": {
+      "@id": "amz:ImprovementPlans",
+      "@type": "xsd:string"
+    },
+    "WorkloadDiscoveryConfig": "amz:WorkloadDiscoveryConfig",
+    "TrustedAdvisorIntegrationStatus": {
+      "@id": "amz:TrustedAdvisorIntegrationStatus",
+      "@type": "xsd:string"
+    },
+    "WorkloadResourceDefinition": {
+      "@id": "amz:WorkloadResourceDefinition",
+      "@type": "xsd:string"
+    },
+    "ListProfileSharesInput": "amz:ListProfileSharesInput",
+    "AccountSummary": {
+      "@id": "amz:AccountSummary",
+      "@type": "xsd:string"
+    },
+    "CreateProfileShareOutput": "amz:CreateProfileShareOutput",
+    "ShareId": {
+      "@id": "amz:ShareId",
+      "@type": "xsd:string"
+    },
+    "LensUpgradeSummary": {
+      "@id": "amz:LensUpgradeSummary",
+      "@type": "xsd:string"
+    },
+    "LensAlias": {
+      "@id": "amz:LensAlias",
+      "@type": "xsd:string"
+    },
+    "CurrentLensVersion": {
+      "@id": "amz:CurrentLensVersion",
+      "@type": "xsd:string"
+    },
+    "LatestLensVersion": {
+      "@id": "amz:LatestLensVersion",
+      "@type": "xsd:string"
+    },
+    "VersionDifferences": {
+      "@id": "amz:VersionDifferences",
+      "@type": "xsd:string"
+    },
+    "PillarDifferences": {
+      "@id": "amz:PillarDifferences",
+      "@type": "xsd:string"
+    },
+    "AnswerSummary": "amz:AnswerSummary",
+    "Choices": {
+      "@id": "amz:Choices",
+      "@type": "xsd:string"
+    },
+    "SelectedChoices": {
+      "@id": "amz:SelectedChoices",
+      "@type": "xsd:string"
+    },
+    "ChoiceAnswerSummaries": {
+      "@id": "amz:ChoiceAnswerSummaries",
+      "@type": "xsd:string"
+    },
+    "IsApplicable": {
+      "@id": "amz:IsApplicable",
+      "@type": "xsd:string"
+    },
+    "QuestionType": {
+      "@id": "amz:QuestionType",
+      "@type": "xsd:string"
+    },
+    "GetLensReviewInput": "amz:GetLensReviewInput",
+    "GetProfileTemplateOutput": "amz:GetProfileTemplateOutput",
+    "GetLensOutput": "amz:GetLensOutput",
+    "Lens": "amz:Lens",
+    "GetLensVersionDifferenceOutput": "amz:GetLensVersionDifferenceOutput",
+    "BaseLensVersion": {
+      "@id": "amz:BaseLensVersion",
+      "@type": "xsd:string"
+    },
+    "TargetLensVersion": {
+      "@id": "amz:TargetLensVersion",
+      "@type": "xsd:string"
+    },
+    "LensMetric": "amz:LensMetric",
+    "Pillars": {
+      "@id": "amz:Pillars",
+      "@type": "xsd:string"
+    },
+    "GetWorkloadInput": "amz:GetWorkloadInput",
+    "UpdateLensReviewInput": "amz:UpdateLensReviewInput",
+    "LensNotes": {
+      "@id": "amz:LensNotes",
+      "@type": "xsd:string"
+    },
+    "PillarNotes": "amz:PillarNotes",
+    "QuestionMetric": "amz:QuestionMetric",
+    "BestPractices": {
+      "@id": "amz:BestPractices",
+      "@type": "xsd:string"
+    },
+    "ListTagsForResourceInput": "amz:ListTagsForResourceInput",
+    "ListProfileSharesOutput": "amz:ListProfileSharesOutput",
+    "ProfileShareSummaries": {
+      "@id": "amz:ProfileShareSummaries",
+      "@type": "xsd:string"
+    },
+    "ChoiceUpdates": {
+      "@id": "amz:ChoiceUpdates",
+      "@type": "xsd:string"
+    },
+    "TagResourceOutput": "amz:TagResourceOutput",
+    "NotificationSummary": "amz:NotificationSummary",
+    "Type": {
+      "@id": "amz:Type",
+      "@type": "xsd:string"
+    },
+    "GetLensReviewOutput": "amz:GetLensReviewOutput",
+    "MilestoneNumber": {
+      "@id": "amz:MilestoneNumber",
+      "@type": "xsd:string"
+    },
+    "LensReview": "amz:LensReview",
+    "UntagResourceOutput": "amz:UntagResourceOutput",
+    "GetConsolidatedReportInput": "amz:GetConsolidatedReportInput",
+    "ChoiceUpdate": "amz:ChoiceUpdate",
+    "Notes": {
+      "@id": "amz:Notes",
+      "@type": "xsd:string"
+    },
+    "CheckSummary": "amz:CheckSummary",
+    "ProfileQuestionUpdate": "amz:ProfileQuestionUpdate",
+    "SelectedChoiceIds": {
+      "@id": "amz:SelectedChoiceIds",
+      "@type": "xsd:string"
+    },
+    "GetMilestoneOutput": "amz:GetMilestoneOutput",
+    "Milestone": "amz:Milestone",
+    "CreateLensVersionOutput": "amz:CreateLensVersionOutput",
+    "LensVersion": {
+      "@id": "amz:LensVersion",
+      "@type": "xsd:string"
+    },
+    "UpdateAnswerOutput": "amz:UpdateAnswerOutput",
+    "Answer": "amz:Answer",
+    "ListAnswersOutput": "amz:ListAnswersOutput",
+    "AnswerSummaries": {
+      "@id": "amz:AnswerSummaries",
+      "@type": "xsd:string"
+    },
+    "ProfileTemplateChoice": "amz:ProfileTemplateChoice",
+    "ChoiceDescription": {
+      "@id": "amz:ChoiceDescription",
+      "@type": "xsd:string"
+    },
+    "UpdateWorkloadInput": "amz:UpdateWorkloadInput",
+    "Environment": {
+      "@id": "amz:Environment",
+      "@type": "xsd:string"
+    },
+    "AccountIds": {
+      "@id": "amz:AccountIds",
+      "@type": "xsd:string"
+    },
+    "AwsRegions": {
+      "@id": "amz:AwsRegions",
+      "@type": "xsd:string"
+    },
+    "NonAwsRegions": {
+      "@id": "amz:NonAwsRegions",
+      "@type": "xsd:string"
+    },
+    "PillarPriorities": {
+      "@id": "amz:PillarPriorities",
+      "@type": "xsd:string"
+    },
+    "ArchitecturalDesign": {
+      "@id": "amz:ArchitecturalDesign",
+      "@type": "xsd:string"
+    },
+    "ReviewOwner": {
+      "@id": "amz:ReviewOwner",
+      "@type": "xsd:string"
+    },
+    "IsReviewOwnerUpdateAcknowledged": {
+      "@id": "amz:IsReviewOwnerUpdateAcknowledged",
+      "@type": "xsd:string"
+    },
+    "IndustryType": {
+      "@id": "amz:IndustryType",
+      "@type": "xsd:string"
+    },
+    "Industry": {
+      "@id": "amz:Industry",
+      "@type": "xsd:string"
+    },
+    "DiscoveryConfig": {
+      "@id": "amz:DiscoveryConfig",
+      "@type": "xsd:string"
+    },
+    "Applications": {
+      "@id": "amz:Applications",
+      "@type": "xsd:string"
+    },
+    "TagMap": "amz:TagMap",
+    "ListLensReviewImprovementsOutput": "amz:ListLensReviewImprovementsOutput",
+    "ImprovementSummaries": {
+      "@id": "amz:ImprovementSummaries",
+      "@type": "xsd:string"
+    },
+    "ChoiceAnswer": "amz:ChoiceAnswer",
+    "ListShareInvitationsOutput": "amz:ListShareInvitationsOutput",
+    "ShareInvitationSummaries": {
+      "@id": "amz:ShareInvitationSummaries",
+      "@type": "xsd:string"
+    },
+    "ListLensReviewsInput": "amz:ListLensReviewsInput",
+    "DeleteWorkloadShareInput": "amz:DeleteWorkloadShareInput",
+    "CreateLensShareOutput": "amz:CreateLensShareOutput",
+    "ListCheckSummariesOutput": "amz:ListCheckSummariesOutput",
+    "CheckSummaries": {
+      "@id": "amz:CheckSummaries",
+      "@type": "xsd:string"
+    },
+    "PillarReviewSummary": "amz:PillarReviewSummary",
+    "PillarName": {
+      "@id": "amz:PillarName",
+      "@type": "xsd:string"
+    },
+    "GetLensReviewReportOutput": "amz:GetLensReviewReportOutput",
+    "LensReviewReport": "amz:LensReviewReport",
+    "ChoiceContent": "amz:ChoiceContent",
+    "Url": {
+      "@id": "amz:Url",
+      "@type": "xsd:string"
+    },
+    "ListProfileNotificationsOutput": "amz:ListProfileNotificationsOutput",
+    "NotificationSummaries": {
+      "@id": "amz:NotificationSummaries",
+      "@type": "xsd:string"
+    },
+    "UpdateGlobalSettingsInput": "amz:UpdateGlobalSettingsInput",
+    "OrganizationSharingStatus": {
+      "@id": "amz:OrganizationSharingStatus",
+      "@type": "xsd:string"
+    },
+    "DiscoveryIntegrationStatus": {
+      "@id": "amz:DiscoveryIntegrationStatus",
+      "@type": "xsd:string"
+    },
+    "CreateMilestoneInput": "amz:CreateMilestoneInput",
+    "MilestoneName": {
+      "@id": "amz:MilestoneName",
+      "@type": "xsd:string"
+    },
+    "ClientRequestToken": {
+      "@id": "amz:ClientRequestToken",
+      "@type": "xsd:string"
+    },
+    "ListLensReviewsOutput": "amz:ListLensReviewsOutput",
+    "LensReviewSummaries": {
+      "@id": "amz:LensReviewSummaries",
+      "@type": "xsd:string"
+    },
+    "ListNotificationsOutput": "amz:ListNotificationsOutput",
+    "ShareInvitationSummary": "amz:ShareInvitationSummary",
+    "ShareInvitationId": {
+      "@id": "amz:ShareInvitationId",
+      "@type": "xsd:string"
+    },
+    "SharedBy": {
+      "@id": "amz:SharedBy",
+      "@type": "xsd:string"
+    },
+    "SharedWith": {
+      "@id": "amz:SharedWith",
+      "@type": "xsd:string"
+    },
+    "PermissionType": {
+      "@id": "amz:PermissionType",
+      "@type": "xsd:string"
+    },
+    "ShareResourceType": {
+      "@id": "amz:ShareResourceType",
+      "@type": "xsd:string"
+    },
+    "LensName": {
+      "@id": "amz:LensName",
+      "@type": "xsd:string"
+    },
+    "PillarMetric": "amz:PillarMetric",
+    "Questions": {
+      "@id": "amz:Questions",
+      "@type": "xsd:string"
+    },
+    "ListLensesOutput": "amz:ListLensesOutput",
+    "LensSummaries": {
+      "@id": "amz:LensSummaries",
+      "@type": "xsd:string"
+    },
+    "UpdateShareInvitationOutput": "amz:UpdateShareInvitationOutput",
+    "ShareInvitation": "amz:ShareInvitation",
+    "AssociateProfilesInput": "amz:AssociateProfilesInput",
+    "DeleteLensInput": "amz:DeleteLensInput",
+    "GetAnswerOutput": "amz:GetAnswerOutput",
+    "ListNotificationsInput": "amz:ListNotificationsInput",
+    "MaxResults": {
+      "@id": "amz:MaxResults",
+      "@type": "xsd:string"
+    },
+    "GetMilestoneInput": "amz:GetMilestoneInput",
+    "ListLensSharesInput": "amz:ListLensSharesInput",
+    "WorkloadShareSummary": "amz:WorkloadShareSummary",
+    "StatusMessage": {
+      "@id": "amz:StatusMessage",
+      "@type": "xsd:string"
+    },
+    "CreateWorkloadShareOutput": "amz:CreateWorkloadShareOutput",
+    "ListProfileNotificationsInput": "amz:ListProfileNotificationsInput",
+    "UpdateWorkloadShareInput": "amz:UpdateWorkloadShareInput",
+    "ListWorkloadSharesOutput": "amz:ListWorkloadSharesOutput",
+    "WorkloadShareSummaries": {
+      "@id": "amz:WorkloadShareSummaries",
+      "@type": "xsd:string"
+    },
+    "UpdateProfileOutput": "amz:UpdateProfileOutput",
+    "Tags": {
+      "@id": "amz:Tags",
+      "@type": "xsd:string"
+    },
+    "Workload": {
+      "@id": "amz:Workload",
+      "@type": "xsd:string"
+    },
+    "ReviewRestrictionDate": {
+      "@id": "amz:ReviewRestrictionDate",
+      "@type": "xsd:string"
+    },
+    "ImportLensInput": "amz:ImportLensInput",
+    "JSONString": {
+      "@id": "amz:JSONString",
+      "@type": "xsd:string"
+    },
+    "DeleteWorkloadInput": "amz:DeleteWorkloadInput",
+    "GetProfileTemplateInput": "amz:GetProfileTemplateInput",
+    "ListMilestonesOutput": "amz:ListMilestonesOutput",
+    "MilestoneSummaries": {
+      "@id": "amz:MilestoneSummaries",
+      "@type": "xsd:string"
+    },
+    "CreateWorkloadShareInput": "amz:CreateWorkloadShareInput",
+    "CreateProfileOutput": "amz:CreateProfileOutput",
+    "ProfileQuestion": "amz:ProfileQuestion",
+    "DeleteProfileInput": "amz:DeleteProfileInput",
+    "ProfileShareSummary": "amz:ProfileShareSummary",
+    "ExportLensOutput": "amz:ExportLensOutput",
+    "LensJSON": {
+      "@id": "amz:LensJSON",
+      "@type": "xsd:string"
+    },
+    "Choice": "amz:Choice",
+    "Title": {
+      "@id": "amz:Title",
+      "@type": "xsd:string"
+    },
+    "HelpfulResource": {
+      "@id": "amz:HelpfulResource",
+      "@type": "xsd:string"
+    },
+    "ImprovementPlan": {
+      "@id": "amz:ImprovementPlan",
+      "@type": "xsd:string"
+    },
+    "AdditionalResources": "amz:AdditionalResources",
+    "GetLensReviewReportInput": "amz:GetLensReviewReportInput",
+    "GetProfileInput": "amz:GetProfileInput",
+    "ProfileChoice": "amz:ProfileChoice",
+    "RecordedAt": {
+      "@id": "amz:RecordedAt",
+      "@type": "xsd:string"
+    },
+    "UpdateShareInvitationInput": "amz:UpdateShareInvitationInput",
+    "ShareInvitationAction": {
+      "@id": "amz:ShareInvitationAction",
+      "@type": "xsd:string"
+    },
+    "ExportLensInput": "amz:ExportLensInput",
+    "ListCheckDetailsInput": "amz:ListCheckDetailsInput",
+    "CreateProfileShareInput": "amz:CreateProfileShareInput",
+    "GetAnswerInput": "amz:GetAnswerInput",
+    "UntagResourceInput": "amz:UntagResourceInput",
+    "ListCheckDetailsOutput": "amz:ListCheckDetailsOutput",
+    "CheckDetails": {
+      "@id": "amz:CheckDetails",
+      "@type": "xsd:string"
+    },
+    "CreateWorkloadInput": "amz:CreateWorkloadInput",
+    "ListMilestonesInput": "amz:ListMilestonesInput",
+    "ListShareInvitationsInput": "amz:ListShareInvitationsInput",
+    "ListProfilesInput": "amz:ListProfilesInput",
+    "UpdateProfileInput": "amz:UpdateProfileInput",
+    "ProfileQuestions": {
+      "@id": "amz:ProfileQuestions",
+      "@type": "xsd:string"
+    },
+    "UpdateWorkloadShareOutput": "amz:UpdateWorkloadShareOutput",
+    "WorkloadShare": "amz:WorkloadShare",
+    "ListCheckSummariesInput": "amz:ListCheckSummariesInput",
+    "UpgradeProfileVersionInput": "amz:UpgradeProfileVersionInput",
+    "HelpfulResourceUrl": {
+      "@id": "amz:HelpfulResourceUrl",
+      "@type": "xsd:string"
+    },
+    "HelpfulResourceDisplayText": {
+      "@id": "amz:HelpfulResourceDisplayText",
+      "@type": "xsd:string"
+    },
+    "ChoiceAnswers": {
+      "@id": "amz:ChoiceAnswers",
+      "@type": "xsd:string"
+    },
+    "UpdateWorkloadOutput": "amz:UpdateWorkloadOutput",
+    "LensShareSummary": "amz:LensShareSummary",
+    "LensSummary": "amz:LensSummary",
+    "LensType": {
+      "@id": "amz:LensType",
+      "@type": "xsd:string"
+    },
+    "LensStatus": {
+      "@id": "amz:LensStatus",
+      "@type": "xsd:string"
+    },
+    "UpgradeLensReviewInput": "amz:UpgradeLensReviewInput",
+    "ConsolidatedReportMetric": "amz:ConsolidatedReportMetric",
+    "MetricType": {
+      "@id": "amz:MetricType",
+      "@type": "xsd:string"
+    },
+    "LensesAppliedCount": {
+      "@id": "amz:LensesAppliedCount",
+      "@type": "xsd:string"
+    },
+    "PillarReviewSummaries": {
+      "@id": "amz:PillarReviewSummaries",
+      "@type": "xsd:string"
+    },
+    "DeleteProfileShareInput": "amz:DeleteProfileShareInput",
+    "ListWorkloadsOutput": "amz:ListWorkloadsOutput",
+    "WorkloadSummaries": {
+      "@id": "amz:WorkloadSummaries",
+      "@type": "xsd:string"
+    },
+    "Base64String": {
+      "@id": "amz:Base64String",
+      "@type": "xsd:string"
+    },
+    "ListAnswersInput": "amz:ListAnswersInput",
+    "ProfileNotificationSummary": "amz:ProfileNotificationSummary",
+    "CurrentProfileVersion": {
+      "@id": "amz:CurrentProfileVersion",
+      "@type": "xsd:string"
+    },
+    "LatestProfileVersion": {
+      "@id": "amz:LatestProfileVersion",
+      "@type": "xsd:string"
+    },
+    "GetLensInput": "amz:GetLensInput",
+    "ListTagsForResourceOutput": "amz:ListTagsForResourceOutput",
+    "GetLensVersionDifferenceInput": "amz:GetLensVersionDifferenceInput",
+    "LensReviewSummary": "amz:LensReviewSummary",
+    "CreateLensShareInput": "amz:CreateLensShareInput",
+    "Content": {
+      "@id": "amz:Content",
+      "@type": "xsd:string"
+    },
+    "CreateMilestoneOutput": "amz:CreateMilestoneOutput",
+    "ListLensReviewImprovementsInput": "amz:ListLensReviewImprovementsInput",
+    "PillarDifference": "amz:PillarDifference",
+    "DifferenceStatus": {
+      "@id": "amz:DifferenceStatus",
+      "@type": "xsd:string"
+    },
+    "QuestionDifferences": {
+      "@id": "amz:QuestionDifferences",
+      "@type": "xsd:string"
+    },
+    "DisassociateLensesInput": "amz:DisassociateLensesInput",
+    "TagResourceInput": "amz:TagResourceInput",
+    "ListWorkloadSharesInput": "amz:ListWorkloadSharesInput",
+    "CreateLensVersionInput": "amz:CreateLensVersionInput",
+    "IsMajorVersion": {
+      "@id": "amz:IsMajorVersion",
+      "@type": "xsd:string"
+    },
+    "WorkloadProfile": "amz:WorkloadProfile",
+    "GetWorkloadOutput": "amz:GetWorkloadOutput",
+    "ImportLensOutput": "amz:ImportLensOutput",
+    "GetConsolidatedReportOutput": "amz:GetConsolidatedReportOutput",
+    "Metrics": {
+      "@id": "amz:Metrics",
+      "@type": "xsd:string"
+    },
+    "MilestoneSummary": "amz:MilestoneSummary",
+    "ListLensSharesOutput": "amz:ListLensSharesOutput",
+    "LensShareSummaries": {
+      "@id": "amz:LensShareSummaries",
+      "@type": "xsd:string"
+    },
+    "UpdateAnswerInput": "amz:UpdateAnswerInput",
+    "ListWorkloadsInput": "amz:ListWorkloadsInput",
+    "WorkloadNamePrefix": {
+      "@id": "amz:WorkloadNamePrefix",
+      "@type": "xsd:string"
+    },
+    "CreateProfileInput": "amz:CreateProfileInput",
+    "QuestionDifference": "amz:QuestionDifference",
+    "CreateWorkloadOutput": "amz:CreateWorkloadOutput",
+    "UpdateLensReviewOutput": "amz:UpdateLensReviewOutput"
+  }
+}

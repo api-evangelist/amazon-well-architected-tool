@@ -1,0 +1,7 @@
+{
+  "type": "boolean",
+  "description": "Defines whether this question is applicable to a lens review.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "IsApplicable",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-is-applicable-structure.json"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "description": "The token to use to retrieve the next set of results.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NextToken",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-next-token-schema.json"
+}

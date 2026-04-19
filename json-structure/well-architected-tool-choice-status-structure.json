@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "SELECTED",
+    "NOT_APPLICABLE",
+    "UNSELECTED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ChoiceStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-choice-status-structure.json",
+  "description": "ChoiceStatus schema from AWS Well-Architected Tool API"
+}

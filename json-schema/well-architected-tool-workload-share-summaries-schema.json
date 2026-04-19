@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "A list of workload share summaries.",
+  "items": {
+    "$ref": "#/components/schemas/WorkloadShareSummary"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadShareSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-share-summaries-schema.json"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "ChoiceId": {
+      "$ref": "#/components/schemas/ChoiceId"
+    },
+    "ChoiceTitle": {
+      "$ref": "#/components/schemas/ChoiceTitle"
+    },
+    "ChoiceDescription": {
+      "$ref": "#/components/schemas/ChoiceDescription"
+    }
+  },
+  "description": "The profile choice.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProfileChoice",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-profile-choice-schema.json"
+}

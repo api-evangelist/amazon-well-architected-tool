@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "properties": {
+    "ShareInvitationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShareInvitationId"
+        },
+        {
+          "description": "The ID assigned to the share invitation."
+        }
+      ]
+    },
+    "SharedBy": {
+      "$ref": "#/components/schemas/AwsAccountId"
+    },
+    "SharedWith": {
+      "$ref": "#/components/schemas/SharedWith"
+    },
+    "PermissionType": {
+      "$ref": "#/components/schemas/PermissionType"
+    },
+    "ShareResourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShareResourceType"
+        },
+        {
+          "description": "The resource type of the share invitation."
+        }
+      ]
+    },
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    },
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "LensName": {
+      "$ref": "#/components/schemas/LensName"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens."
+        }
+      ]
+    },
+    "ProfileName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileName"
+        },
+        {
+          "description": "The profile name."
+        }
+      ]
+    },
+    "ProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileArn"
+        },
+        {
+          "description": "The profile ARN."
+        }
+      ]
+    }
+  },
+  "description": "A share invitation summary return object.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ShareInvitationSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-share-invitation-summary-schema.json"
+}

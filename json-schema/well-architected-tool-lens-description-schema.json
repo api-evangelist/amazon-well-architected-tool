@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "The description of the lens.",
+  "minLength": 1,
+  "maxLength": 1024,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensDescription",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-description-schema.json"
+}

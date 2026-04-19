@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CheckId",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-check-id-schema.json",
+  "description": "CheckId schema from AWS Well-Architected Tool API"
+}

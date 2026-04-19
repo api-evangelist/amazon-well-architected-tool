@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "ShareId": {
+      "$ref": "#/components/schemas/ShareId"
+    },
+    "SharedWith": {
+      "$ref": "#/components/schemas/SharedWith"
+    },
+    "PermissionType": {
+      "$ref": "#/components/schemas/PermissionType"
+    },
+    "Status": {
+      "$ref": "#/components/schemas/ShareStatus"
+    },
+    "StatusMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusMessage"
+        },
+        {
+          "description": "Optional message to compliment the Status field."
+        }
+      ]
+    }
+  },
+  "description": "A workload share summary return object.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadShareSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-share-summary-structure.json"
+}

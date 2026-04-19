@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.",
+  "items": {
+    "$ref": "#/components/schemas/PillarId"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadPillarPriorities",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-pillar-priorities-structure.json"
+}

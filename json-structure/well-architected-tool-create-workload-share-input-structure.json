@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "required": [
+    "SharedWith",
+    "PermissionType",
+    "ClientRequestToken"
+  ],
+  "name": "CreateWorkloadShareInput",
+  "properties": {
+    "SharedWith": {
+      "$ref": "#/components/schemas/SharedWith"
+    },
+    "PermissionType": {
+      "$ref": "#/components/schemas/PermissionType"
+    },
+    "ClientRequestToken": {
+      "$ref": "#/components/schemas/ClientRequestToken"
+    }
+  },
+  "description": "Input for Create Workload Share",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-create-workload-share-input-structure.json"
+}

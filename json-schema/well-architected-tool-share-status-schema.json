@@ -1,0 +1,17 @@
+{
+  "type": "string",
+  "enum": [
+    "ACCEPTED",
+    "REJECTED",
+    "PENDING",
+    "REVOKED",
+    "EXPIRED",
+    "ASSOCIATING",
+    "ASSOCIATED",
+    "FAILED"
+  ],
+  "description": "The status of the share request.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ShareStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-share-status-schema.json"
+}

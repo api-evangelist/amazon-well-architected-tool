@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ProfileQuestionUpdate"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProfileQuestionUpdates",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-profile-question-updates-schema.json",
+  "description": "ProfileQuestionUpdates schema from AWS Well-Architected Tool API"
+}

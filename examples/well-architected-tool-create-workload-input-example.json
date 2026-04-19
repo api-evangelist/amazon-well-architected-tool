@@ -1,0 +1,20 @@
+{
+  "WorkloadName": "Production Workload",
+  "Description": "A sample workload for architecture review.",
+  "Environment": "PRODUCTION",
+  "AccountIds": "500123",
+  "AwsRegions": "us-east-1",
+  "NonAwsRegions": "us-east-1",
+  "PillarPriorities": "example-value",
+  "ArchitecturalDesign": "example-value",
+  "ReviewOwner": "example-value",
+  "IndustryType": "WORKLOAD",
+  "Industry": "example-value",
+  "Lenses": "example-value",
+  "Notes": "example-value",
+  "ClientRequestToken": "abc123def456ghi789",
+  "Tags": "example-value",
+  "DiscoveryConfig": "example-value",
+  "Applications": "example-value",
+  "ProfileArns": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": [
+    "SharedWith",
+    "ClientRequestToken"
+  ],
+  "name": "CreateProfileShareInput",
+  "properties": {
+    "SharedWith": {
+      "$ref": "#/components/schemas/SharedWith"
+    },
+    "ClientRequestToken": {
+      "$ref": "#/components/schemas/ClientRequestToken"
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-create-profile-share-input-structure.json",
+  "description": "CreateProfileShareInput schema from AWS Well-Architected Tool API"
+}

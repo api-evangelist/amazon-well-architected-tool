@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "PROFILE_ANSWERS_UPDATED",
+    "PROFILE_DELETED"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProfileNotificationType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-profile-notification-type-schema.json",
+  "description": "ProfileNotificationType schema from AWS Well-Architected Tool API"
+}

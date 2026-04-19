@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "QuestionId": {
+      "$ref": "#/components/schemas/QuestionId"
+    },
+    "QuestionTitle": {
+      "$ref": "#/components/schemas/QuestionTitle"
+    },
+    "QuestionDescription": {
+      "$ref": "#/components/schemas/QuestionDescription"
+    },
+    "QuestionChoices": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileTemplateQuestionChoices"
+        },
+        {
+          "description": "The question choices."
+        }
+      ]
+    },
+    "MinSelectedChoices": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MinSelectedProfileChoices"
+        },
+        {
+          "description": "The minimum number of choices selected."
+        }
+      ]
+    },
+    "MaxSelectedChoices": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxSelectedProfileChoices"
+        },
+        {
+          "description": "The maximum number of choices selected."
+        }
+      ]
+    }
+  },
+  "description": "A profile template question.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProfileTemplateQuestion",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-profile-template-question-schema.json"
+}

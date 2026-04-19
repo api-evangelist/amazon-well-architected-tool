@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.",
+  "minLength": 12,
+  "maxLength": 2048,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SharedWith",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-shared-with-schema.json"
+}

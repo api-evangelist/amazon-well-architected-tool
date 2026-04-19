@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "MilestoneNumber": {
+      "$ref": "#/components/schemas/MilestoneNumber"
+    },
+    "LensReviewReport": {
+      "$ref": "#/components/schemas/LensReviewReport"
+    }
+  },
+  "description": "Output of a get lens review report call.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "GetLensReviewReportOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-get-lens-review-report-output-structure.json"
+}

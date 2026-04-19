@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {},
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TagResourceOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-tag-resource-output-schema.json",
+  "description": "TagResourceOutput schema from AWS Well-Architected Tool API"
+}

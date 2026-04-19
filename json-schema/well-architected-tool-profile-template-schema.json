@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "TemplateName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileName"
+        },
+        {
+          "description": "The name of the profile template."
+        }
+      ]
+    },
+    "TemplateQuestions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TemplateQuestions"
+        },
+        {
+          "description": "Profile template questions."
+        }
+      ]
+    },
+    "CreatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "UpdatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    }
+  },
+  "description": "The profile template.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProfileTemplate",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-profile-template-schema.json"
+}

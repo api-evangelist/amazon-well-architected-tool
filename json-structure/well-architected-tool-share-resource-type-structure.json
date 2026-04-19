@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "WORKLOAD",
+    "LENS",
+    "PROFILE"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ShareResourceType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-share-resource-type-structure.json",
+  "description": "ShareResourceType schema from AWS Well-Architected Tool API"
+}

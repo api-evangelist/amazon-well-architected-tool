@@ -1,0 +1,8 @@
+{
+  "type": "integer",
+  "minimum": 0,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensesAppliedCount",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lenses-applied-count-schema.json",
+  "description": "LensesAppliedCount schema from AWS Well-Architected Tool API"
+}

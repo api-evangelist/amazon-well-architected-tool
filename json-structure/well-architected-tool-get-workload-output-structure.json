@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "Workload": {
+      "$ref": "#/components/schemas/Workload"
+    }
+  },
+  "description": "Output of a get workload call.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "GetWorkloadOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-get-workload-output-structure.json"
+}

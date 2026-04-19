@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "LensArn",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-lens-arn-structure.json",
+  "description": "LensArn schema from AWS Well-Architected Tool API"
+}

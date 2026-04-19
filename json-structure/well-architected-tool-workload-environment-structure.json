@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "PRODUCTION",
+    "PREPRODUCTION"
+  ],
+  "description": "The environment for the workload.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadEnvironment",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-environment-structure.json"
+}

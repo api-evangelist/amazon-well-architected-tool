@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "ACCEPT",
+    "REJECT"
+  ],
+  "description": "Share invitation action taken by contributor.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ShareInvitationAction",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-share-invitation-action-schema.json"
+}

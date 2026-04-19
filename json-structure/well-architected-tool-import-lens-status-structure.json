@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "IN_PROGRESS",
+    "COMPLETE",
+    "ERROR"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ImportLensStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-import-lens-status-structure.json",
+  "description": "ImportLensStatus schema from AWS Well-Architected Tool API"
+}

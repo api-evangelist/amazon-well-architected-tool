@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "MilestoneNumber": {
+      "$ref": "#/components/schemas/MilestoneNumber"
+    },
+    "MilestoneName": {
+      "$ref": "#/components/schemas/MilestoneName"
+    },
+    "RecordedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "WorkloadSummary": {
+      "$ref": "#/components/schemas/WorkloadSummary"
+    }
+  },
+  "description": "A milestone summary return object.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "MilestoneSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-milestone-summary-structure.json"
+}

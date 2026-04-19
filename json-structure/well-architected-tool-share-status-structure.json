@@ -1,0 +1,17 @@
+{
+  "type": "string",
+  "enum": [
+    "ACCEPTED",
+    "REJECTED",
+    "PENDING",
+    "REVOKED",
+    "EXPIRED",
+    "ASSOCIATING",
+    "ASSOCIATED",
+    "FAILED"
+  ],
+  "description": "The status of the share request.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ShareStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-share-status-structure.json"
+}

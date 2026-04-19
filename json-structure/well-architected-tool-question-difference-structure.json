@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "QuestionId": {
+      "$ref": "#/components/schemas/QuestionId"
+    },
+    "QuestionTitle": {
+      "$ref": "#/components/schemas/QuestionTitle"
+    },
+    "DifferenceStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DifferenceStatus"
+        },
+        {
+          "description": "Indicates the type of change to the question."
+        }
+      ]
+    }
+  },
+  "description": "A question difference return object.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "QuestionDifference",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-question-difference-structure.json"
+}

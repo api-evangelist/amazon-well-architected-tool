@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ProfileTemplateQuestion"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "TemplateQuestions",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-template-questions-structure.json",
+  "description": "TemplateQuestions schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "array",
+  "description": "<p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p> <p>Identify a lens using its <a>LensSummary$LensAlias</a>.</p>",
+  "items": {
+    "$ref": "#/components/schemas/LensAlias"
+  },
+  "minItems": 1,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensAliases",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-aliases-schema.json"
+}

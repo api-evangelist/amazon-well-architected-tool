@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "name": "DeleteWorkloadInput",
+  "properties": {},
+  "description": "Input for workload deletion.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-delete-workload-input-structure.json"
+}

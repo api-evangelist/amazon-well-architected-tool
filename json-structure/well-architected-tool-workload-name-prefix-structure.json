@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "description": "An optional string added to the beginning of each workload name returned in the results.",
+  "maxLength": 100,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadNamePrefix",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-name-prefix-structure.json"
+}

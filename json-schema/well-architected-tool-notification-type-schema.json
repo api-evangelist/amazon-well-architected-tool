@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "LENS_VERSION_UPGRADED",
+    "LENS_VERSION_DEPRECATED"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NotificationType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-notification-type-schema.json",
+  "description": "NotificationType schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "Profile": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Profile"
+        },
+        {
+          "description": "The profile."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GetProfileOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-get-profile-output-schema.json",
+  "description": "GetProfileOutput schema from AWS Well-Architected Tool API"
+}

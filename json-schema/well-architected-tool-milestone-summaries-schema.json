@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "A list of milestone summaries.",
+  "items": {
+    "$ref": "#/components/schemas/MilestoneSummary"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MilestoneSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-milestone-summaries-schema.json"
+}

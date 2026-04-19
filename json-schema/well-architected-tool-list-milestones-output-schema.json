@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "MilestoneSummaries": {
+      "$ref": "#/components/schemas/MilestoneSummaries"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "description": "Output of a list milestones call.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ListMilestonesOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-milestones-output-schema.json"
+}

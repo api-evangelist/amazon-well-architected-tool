@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "name": "GetAnswerInput",
+  "properties": {},
+  "description": "Input to get answer.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-get-answer-input-structure.json"
+}

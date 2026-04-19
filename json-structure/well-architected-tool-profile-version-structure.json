@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "pattern": "^[A-Za-z0-9-]+$",
+  "minLength": 1,
+  "maxLength": 32,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ProfileVersion",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-version-structure.json",
+  "description": "ProfileVersion schema from AWS Well-Architected Tool API"
+}

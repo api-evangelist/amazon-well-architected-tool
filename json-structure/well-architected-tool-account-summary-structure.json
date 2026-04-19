@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "description": "Account summary for a Well-Architected best practice in relation to Trusted Advisor checks.",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/CheckStatusCount"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "AccountSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-account-summary-structure.json"
+}

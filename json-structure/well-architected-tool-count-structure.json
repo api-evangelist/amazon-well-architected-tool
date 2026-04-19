@@ -1,0 +1,8 @@
+{
+  "type": "integer",
+  "description": "A non-negative integer that denotes how many.",
+  "minimum": 0,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "Count",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-count-structure.json"
+}

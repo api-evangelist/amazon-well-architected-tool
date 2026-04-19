@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 2,
+  "maxLength": 500000,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensJSON",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-json-schema.json",
+  "description": "LensJSON schema from AWS Well-Architected Tool API"
+}

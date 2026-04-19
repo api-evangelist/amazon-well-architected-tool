@@ -1,0 +1,5 @@
+{
+  "LensArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "Pillars": "example-value",
+  "RiskCounts": "example-value"
+}

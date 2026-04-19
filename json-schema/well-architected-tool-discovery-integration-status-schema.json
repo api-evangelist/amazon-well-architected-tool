@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "ENABLED",
+    "DISABLED"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryIntegrationStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-discovery-integration-status-schema.json",
+  "description": "DiscoveryIntegrationStatus schema from AWS Well-Architected Tool API"
+}

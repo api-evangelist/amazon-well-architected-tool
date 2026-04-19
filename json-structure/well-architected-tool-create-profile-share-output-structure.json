@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "ShareId": {
+      "$ref": "#/components/schemas/ShareId"
+    },
+    "ProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileArn"
+        },
+        {
+          "description": "The profile ARN."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "CreateProfileShareOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-create-profile-share-output-structure.json",
+  "description": "CreateProfileShareOutput schema from AWS Well-Architected Tool API"
+}

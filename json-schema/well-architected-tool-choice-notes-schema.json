@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "maxLength": 250,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChoiceNotes",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-choice-notes-schema.json",
+  "description": "ChoiceNotes schema from AWS Well-Architected Tool API"
+}

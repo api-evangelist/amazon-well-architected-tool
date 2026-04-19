@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "description": "The industry for the workload.",
+  "maxLength": 100,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadIndustry",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-industry-schema.json"
+}

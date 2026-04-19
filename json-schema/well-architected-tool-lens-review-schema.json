@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens."
+        }
+      ]
+    },
+    "LensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The version of the lens."
+        }
+      ]
+    },
+    "LensName": {
+      "$ref": "#/components/schemas/LensName"
+    },
+    "LensStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensStatus"
+        },
+        {
+          "description": "The status of the lens."
+        }
+      ]
+    },
+    "PillarReviewSummaries": {
+      "$ref": "#/components/schemas/PillarReviewSummaries"
+    },
+    "UpdatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "Notes": {
+      "$ref": "#/components/schemas/Notes"
+    },
+    "RiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    },
+    "Profiles": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadProfiles"
+        },
+        {
+          "description": "The profiles associated with the workload."
+        }
+      ]
+    },
+    "PrioritizedRiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    }
+  },
+  "description": "A lens review of a question.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensReview",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-review-schema.json"
+}

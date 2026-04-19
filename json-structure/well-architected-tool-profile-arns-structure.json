@@ -1,0 +1,11 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ProfileArn"
+  },
+  "minItems": 1,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ProfileArns",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-arns-structure.json",
+  "description": "ProfileArns schema from AWS Well-Architected Tool API"
+}

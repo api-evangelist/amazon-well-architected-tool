@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "enum": [
+    "WORKLOAD"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "MetricType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-metric-type-structure.json",
+  "description": "MetricType schema from AWS Well-Architected Tool API"
+}

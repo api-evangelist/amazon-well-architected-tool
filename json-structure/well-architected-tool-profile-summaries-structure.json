@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ProfileSummary"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ProfileSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-summaries-structure.json",
+  "description": "ProfileSummaries schema from AWS Well-Architected Tool API"
+}

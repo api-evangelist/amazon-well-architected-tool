@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "enum": [
+    "CURRENT",
+    "NOT_CURRENT",
+    "DEPRECATED",
+    "DELETED",
+    "UNSHARED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "LensStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-lens-status-structure.json",
+  "description": "LensStatus schema from AWS Well-Architected Tool API"
+}

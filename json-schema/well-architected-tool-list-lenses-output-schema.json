@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "LensSummaries": {
+      "$ref": "#/components/schemas/LensSummaries"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "description": "Output of a list lenses call.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ListLensesOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-lenses-output-schema.json"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "LensJSON": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensJSON"
+        },
+        {
+          "description": "The JSON representation of a lens."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ExportLensOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-export-lens-output-structure.json",
+  "description": "ExportLensOutput schema from AWS Well-Architected Tool API"
+}

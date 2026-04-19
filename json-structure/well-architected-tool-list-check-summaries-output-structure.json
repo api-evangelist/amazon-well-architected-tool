@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "CheckSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CheckSummaries"
+        },
+        {
+          "description": "List of Trusted Advisor summaries related to the Well-Architected best practice."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ListCheckSummariesOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-list-check-summaries-output-structure.json",
+  "description": "ListCheckSummariesOutput schema from AWS Well-Architected Tool API"
+}

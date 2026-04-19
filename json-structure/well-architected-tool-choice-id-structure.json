@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "The ID of a choice.",
+  "minLength": 1,
+  "maxLength": 64,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ChoiceId",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-choice-id-structure.json"
+}

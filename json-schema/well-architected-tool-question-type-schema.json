@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "PRIORITIZED",
+    "NON_PRIORITIZED"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QuestionType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-question-type-schema.json",
+  "description": "QuestionType schema from AWS Well-Architected Tool API"
+}

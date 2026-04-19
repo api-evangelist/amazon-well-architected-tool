@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "ShareId": {
+      "$ref": "#/components/schemas/ShareId"
+    },
+    "SharedWith": {
+      "$ref": "#/components/schemas/SharedWith"
+    },
+    "Status": {
+      "$ref": "#/components/schemas/ShareStatus"
+    },
+    "StatusMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StatusMessage"
+        },
+        {
+          "description": "Profile share invitation status message."
+        }
+      ]
+    }
+  },
+  "description": "Summary of a profile share.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ProfileShareSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-share-summary-structure.json"
+}

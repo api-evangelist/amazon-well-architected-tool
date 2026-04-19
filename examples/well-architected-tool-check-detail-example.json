@@ -1,0 +1,15 @@
+{
+  "Id": "500123",
+  "Name": "Production Workload",
+  "Description": "A sample workload for architecture review.",
+  "Provider": "500123",
+  "LensArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "PillarId": "500123",
+  "QuestionId": "500123",
+  "ChoiceId": "500123",
+  "Status": "PUBLISHED",
+  "AccountId": "500123",
+  "FlaggedResources": "example-value",
+  "Reason": "example-value",
+  "UpdatedAt": "example-value"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "description": "List of pillar notes of a lens review in a workload.",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/Notes"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "PillarNotes",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-pillar-notes-structure.json"
+}

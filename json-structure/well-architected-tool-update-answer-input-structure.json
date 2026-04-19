@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "name": "UpdateAnswerInput",
+  "properties": {
+    "SelectedChoices": {
+      "$ref": "#/components/schemas/SelectedChoices"
+    },
+    "ChoiceUpdates": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceUpdates"
+        },
+        {
+          "description": "A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated."
+        }
+      ]
+    },
+    "Notes": {
+      "$ref": "#/components/schemas/Notes"
+    },
+    "IsApplicable": {
+      "$ref": "#/components/schemas/IsApplicable"
+    },
+    "Reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnswerReason"
+        },
+        {
+          "description": "The reason why a question is not applicable to your workload."
+        }
+      ]
+    }
+  },
+  "description": "Input to update answer.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-update-answer-input-structure.json"
+}

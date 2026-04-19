@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "WorkloadShareSummaries": {
+      "$ref": "#/components/schemas/WorkloadShareSummaries"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "description": "Input for List Workload Share",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ListWorkloadSharesOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-workload-shares-output-schema.json"
+}

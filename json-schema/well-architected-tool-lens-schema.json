@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN of a lens."
+        }
+      ]
+    },
+    "LensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The version of a lens."
+        }
+      ]
+    },
+    "Name": {
+      "$ref": "#/components/schemas/LensName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/LensDescription"
+    },
+    "Owner": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensOwner"
+        },
+        {
+          "description": "The Amazon Web Services account ID that owns the lens."
+        }
+      ]
+    },
+    "ShareInvitationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShareInvitationId"
+        },
+        {
+          "description": "The ID assigned to the share invitation."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags assigned to the lens."
+        }
+      ]
+    }
+  },
+  "description": "A lens return object.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lens",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-schema.json"
+}

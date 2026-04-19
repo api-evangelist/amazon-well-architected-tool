@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/BestPractice"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BestPractices",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-best-practices-schema.json",
+  "description": "BestPractices schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "description": "<p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "Base64String",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-base64-string-structure.json"
+}

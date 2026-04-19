@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "required": [
+    "ProfileName",
+    "ProfileDescription",
+    "ProfileQuestions",
+    "ClientRequestToken"
+  ],
+  "title": "CreateProfileInput",
+  "properties": {
+    "ProfileName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileName"
+        },
+        {
+          "description": "Name of the profile."
+        }
+      ]
+    },
+    "ProfileDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileDescription"
+        },
+        {
+          "description": "The profile description."
+        }
+      ]
+    },
+    "ProfileQuestions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileQuestionUpdates"
+        },
+        {
+          "description": "The profile questions."
+        }
+      ]
+    },
+    "ClientRequestToken": {
+      "$ref": "#/components/schemas/ClientRequestToken"
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags assigned to the profile."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-create-profile-input-schema.json",
+  "description": "CreateProfileInput schema from AWS Well-Architected Tool API"
+}

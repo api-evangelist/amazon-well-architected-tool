@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "ProfileSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileSummaries"
+        },
+        {
+          "description": "Profile summaries."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ListProfilesOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-profiles-output-schema.json",
+  "description": "ListProfilesOutput schema from AWS Well-Architected Tool API"
+}

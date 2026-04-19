@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {},
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "UntagResourceOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-untag-resource-output-structure.json",
+  "description": "UntagResourceOutput schema from AWS Well-Architected Tool API"
+}

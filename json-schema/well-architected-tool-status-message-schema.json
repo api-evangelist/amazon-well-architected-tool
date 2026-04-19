@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 512,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StatusMessage",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-status-message-schema.json",
+  "description": "StatusMessage schema from AWS Well-Architected Tool API"
+}

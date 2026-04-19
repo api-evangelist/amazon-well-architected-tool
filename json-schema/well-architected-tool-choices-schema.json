@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "List of choices available for a question.",
+  "items": {
+    "$ref": "#/components/schemas/Choice"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Choices",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-choices-schema.json"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "pattern": "[0-9a-f]{32}",
+  "description": "The ID associated with the share.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ShareId",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-share-id-structure.json"
+}

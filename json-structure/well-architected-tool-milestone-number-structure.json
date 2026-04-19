@@ -1,0 +1,9 @@
+{
+  "type": "integer",
+  "description": "<p>The milestone number.</p> <p>A workload can have a maximum of 100 milestones.</p>",
+  "minimum": 1,
+  "maximum": 100,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "MilestoneNumber",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-milestone-number-structure.json"
+}

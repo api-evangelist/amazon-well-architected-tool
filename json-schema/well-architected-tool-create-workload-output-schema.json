@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "WorkloadArn": {
+      "$ref": "#/components/schemas/WorkloadArn"
+    }
+  },
+  "description": "Output of a create workload call.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CreateWorkloadOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-create-workload-output-schema.json"
+}

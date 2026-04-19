@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/LensMetric"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensMetrics",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-metrics-schema.json",
+  "description": "LensMetrics schema from AWS Well-Architected Tool API"
+}

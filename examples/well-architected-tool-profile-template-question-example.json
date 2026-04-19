@@ -1,0 +1,8 @@
+{
+  "QuestionId": "500123",
+  "QuestionTitle": "example-value",
+  "QuestionDescription": "A sample workload for architecture review.",
+  "QuestionChoices": "example-value",
+  "MinSelectedChoices": "example-value",
+  "MaxSelectedChoices": "example-value"
+}

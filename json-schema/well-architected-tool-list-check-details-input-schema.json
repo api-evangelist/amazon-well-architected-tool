@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "required": [
+    "LensArn",
+    "PillarId",
+    "QuestionId",
+    "ChoiceId"
+  ],
+  "title": "ListCheckDetailsInput",
+  "properties": {
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    },
+    "MaxResults": {
+      "$ref": "#/components/schemas/MaxResults"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "Well-Architected Lens ARN."
+        }
+      ]
+    },
+    "PillarId": {
+      "$ref": "#/components/schemas/PillarId"
+    },
+    "QuestionId": {
+      "$ref": "#/components/schemas/QuestionId"
+    },
+    "ChoiceId": {
+      "$ref": "#/components/schemas/ChoiceId"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-check-details-input-schema.json",
+  "description": "ListCheckDetailsInput schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,104 @@
+{
+  "type": "object",
+  "properties": {
+    "Id": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CheckId"
+        },
+        {
+          "description": "Trusted Advisor check ID."
+        }
+      ]
+    },
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CheckName"
+        },
+        {
+          "description": "Trusted Advisor check name."
+        }
+      ]
+    },
+    "Description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CheckDescription"
+        },
+        {
+          "description": "Trusted Advisor check description."
+        }
+      ]
+    },
+    "Provider": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CheckProvider"
+        },
+        {
+          "description": "Provider of the check related to the best practice."
+        }
+      ]
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "Well-Architected Lens ARN associated to the check."
+        }
+      ]
+    },
+    "PillarId": {
+      "$ref": "#/components/schemas/PillarId"
+    },
+    "QuestionId": {
+      "$ref": "#/components/schemas/QuestionId"
+    },
+    "ChoiceId": {
+      "$ref": "#/components/schemas/ChoiceId"
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CheckStatus"
+        },
+        {
+          "description": "Status associated to the check."
+        }
+      ]
+    },
+    "AccountId": {
+      "$ref": "#/components/schemas/AwsAccountId"
+    },
+    "FlaggedResources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FlaggedResources"
+        },
+        {
+          "description": "Count of flagged resources associated to the check."
+        }
+      ]
+    },
+    "Reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CheckFailureReason"
+        },
+        {
+          "description": "Reason associated to the check."
+        }
+      ]
+    },
+    "UpdatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    }
+  },
+  "description": "Account details for a Well-Architected best practice in relation to Trusted Advisor checks.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CheckDetail",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-check-detail-schema.json"
+}

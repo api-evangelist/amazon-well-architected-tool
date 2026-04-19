@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "QuestionId": {
+      "$ref": "#/components/schemas/QuestionId"
+    },
+    "SelectedChoiceIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SelectedProfileChoiceIds"
+        },
+        {
+          "description": "The selected choices."
+        }
+      ]
+    }
+  },
+  "description": "An update to a profile question.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ProfileQuestionUpdate",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-question-update-structure.json"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "enum": [
+    "OUT_OF_SCOPE",
+    "BUSINESS_PRIORITIES",
+    "ARCHITECTURE_CONSTRAINTS",
+    "OTHER",
+    "NONE"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChoiceReason",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-choice-reason-schema.json",
+  "description": "ChoiceReason schema from AWS Well-Architected Tool API"
+}

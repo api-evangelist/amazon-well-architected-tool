@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "ProfileShareSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileShareSummaries"
+        },
+        {
+          "description": "Profile share summaries."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ListProfileSharesOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-list-profile-shares-output-structure.json",
+  "description": "ListProfileSharesOutput schema from AWS Well-Architected Tool API"
+}

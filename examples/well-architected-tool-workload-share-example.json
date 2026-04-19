@@ -1,0 +1,9 @@
+{
+  "ShareId": "500123",
+  "SharedBy": "example-value",
+  "SharedWith": "example-value",
+  "PermissionType": "WORKLOAD",
+  "Status": "PUBLISHED",
+  "WorkloadName": "Production Workload",
+  "WorkloadId": "500123"
+}

@@ -1,0 +1,12 @@
+{
+  "LensArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "LensAlias": "example-value",
+  "LensName": "Production Workload",
+  "LensType": "WORKLOAD",
+  "Description": "A sample workload for architecture review.",
+  "CreatedAt": "example-value",
+  "UpdatedAt": "example-value",
+  "LensVersion": "example-value",
+  "Owner": "example-value",
+  "LensStatus": "PUBLISHED"
+}

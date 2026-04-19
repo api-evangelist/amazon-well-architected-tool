@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "<p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>",
+  "minLength": 1,
+  "maxLength": 2048,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ImprovementPlanUrl",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-improvement-plan-url-structure.json"
+}

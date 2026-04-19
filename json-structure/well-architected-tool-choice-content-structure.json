@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "DisplayText": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceContentDisplayText"
+        },
+        {
+          "description": "The display text for the choice content."
+        }
+      ]
+    },
+    "Url": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceContentUrl"
+        },
+        {
+          "description": "The URL for the choice content."
+        }
+      ]
+    }
+  },
+  "description": "The choice content.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ChoiceContent",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-choice-content-structure.json"
+}

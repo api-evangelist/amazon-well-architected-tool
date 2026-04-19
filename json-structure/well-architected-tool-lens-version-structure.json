@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 32,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "LensVersion",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-lens-version-structure.json",
+  "description": "LensVersion schema from AWS Well-Architected Tool API"
+}

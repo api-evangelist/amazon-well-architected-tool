@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "Workload": {
+      "$ref": "#/components/schemas/Workload"
+    }
+  },
+  "description": "Output of an update workload call.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UpdateWorkloadOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-update-workload-output-schema.json"
+}

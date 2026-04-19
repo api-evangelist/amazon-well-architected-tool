@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "PillarId": {
+      "$ref": "#/components/schemas/PillarId"
+    },
+    "PillarName": {
+      "$ref": "#/components/schemas/PillarName"
+    },
+    "DifferenceStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DifferenceStatus"
+        },
+        {
+          "description": "Indicates the type of change to the pillar."
+        }
+      ]
+    },
+    "QuestionDifferences": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/QuestionDifferences"
+        },
+        {
+          "description": "List of question differences."
+        }
+      ]
+    }
+  },
+  "description": "A pillar difference return object.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PillarDifference",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-pillar-difference-schema.json"
+}

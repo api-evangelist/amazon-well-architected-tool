@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "<p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>",
+  "minLength": 3,
+  "maxLength": 100,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadName",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-name-structure.json"
+}

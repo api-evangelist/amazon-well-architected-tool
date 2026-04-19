@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "PillarDifferences": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PillarDifferences"
+        },
+        {
+          "description": "The differences between the base and latest versions of the lens."
+        }
+      ]
+    }
+  },
+  "description": "The differences between the base and latest versions of the lens.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "VersionDifferences",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-version-differences-structure.json"
+}

@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "TrustedAdvisorIntegrationStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TrustedAdvisorIntegrationStatus"
+        },
+        {
+          "description": "Discovery integration status in respect to Trusted Advisor for the workload."
+        }
+      ]
+    },
+    "WorkloadResourceDefinition": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadResourceDefinition"
+        },
+        {
+          "description": "<p>The mode to use for identifying resources associated with the workload.</p> <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>"
+        }
+      ]
+    }
+  },
+  "description": "Discovery configuration associated to the workload.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadDiscoveryConfig",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-discovery-config-structure.json"
+}

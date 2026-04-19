@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "InternalServerException",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-internal-server-exception-structure.json",
+  "description": "InternalServerException schema from AWS Well-Architected Tool API"
+}

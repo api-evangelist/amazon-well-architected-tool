@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "CheckDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CheckDetails"
+        },
+        {
+          "description": "The details about the Trusted Advisor checks related to the Well-Architected best practice."
+        }
+      ]
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ListCheckDetailsOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-check-details-output-schema.json",
+  "description": "ListCheckDetailsOutput schema from AWS Well-Architected Tool API"
+}

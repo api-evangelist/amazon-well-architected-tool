@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens."
+        }
+      ]
+    },
+    "BaseLensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The base version of the lens."
+        }
+      ]
+    },
+    "TargetLensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The target lens version for the lens."
+        }
+      ]
+    },
+    "LatestLensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The latest version of the lens."
+        }
+      ]
+    },
+    "VersionDifferences": {
+      "$ref": "#/components/schemas/VersionDifferences"
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "GetLensVersionDifferenceOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-get-lens-version-difference-output-structure.json",
+  "description": "GetLensVersionDifferenceOutput schema from AWS Well-Architected Tool API"
+}

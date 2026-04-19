@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "PillarId": {
+      "$ref": "#/components/schemas/PillarId"
+    },
+    "PillarName": {
+      "$ref": "#/components/schemas/PillarName"
+    },
+    "Notes": {
+      "$ref": "#/components/schemas/Notes"
+    },
+    "RiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    },
+    "PrioritizedRiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    }
+  },
+  "description": "A pillar review summary of a lens review.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "PillarReviewSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-pillar-review-summary-structure.json"
+}

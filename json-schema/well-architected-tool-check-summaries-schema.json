@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/CheckSummary"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CheckSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-check-summaries-schema.json",
+  "description": "CheckSummaries schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "MilestoneNumber": {
+      "$ref": "#/components/schemas/MilestoneNumber"
+    },
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens."
+        }
+      ]
+    },
+    "AnswerSummaries": {
+      "$ref": "#/components/schemas/AnswerSummaries"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "description": "Output of a list answers call.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ListAnswersOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-answers-output-schema.json"
+}

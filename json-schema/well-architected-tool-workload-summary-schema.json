@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "WorkloadArn": {
+      "$ref": "#/components/schemas/WorkloadArn"
+    },
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    },
+    "Owner": {
+      "$ref": "#/components/schemas/AwsAccountId"
+    },
+    "UpdatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "Lenses": {
+      "$ref": "#/components/schemas/WorkloadLenses"
+    },
+    "RiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    },
+    "ImprovementStatus": {
+      "$ref": "#/components/schemas/WorkloadImprovementStatus"
+    },
+    "Profiles": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadProfiles"
+        },
+        {
+          "description": "Profile associated with a workload."
+        }
+      ]
+    },
+    "PrioritizedRiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    }
+  },
+  "description": "A workload summary return object.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-summary-schema.json"
+}

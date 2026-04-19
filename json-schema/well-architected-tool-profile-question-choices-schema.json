@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ProfileChoice"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProfileQuestionChoices",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-profile-question-choices-schema.json",
+  "description": "ProfileQuestionChoices schema from AWS Well-Architected Tool API"
+}

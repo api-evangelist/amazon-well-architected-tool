@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "List of pillar review summaries of lens review in a workload.",
+  "items": {
+    "$ref": "#/components/schemas/PillarReviewSummary"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PillarReviewSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-pillar-review-summaries-schema.json"
+}

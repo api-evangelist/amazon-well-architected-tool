@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "title": "ListProfileSharesInput",
+  "properties": {},
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-list-profile-shares-input-schema.json",
+  "description": "ListProfileSharesInput schema from AWS Well-Architected Tool API"
+}

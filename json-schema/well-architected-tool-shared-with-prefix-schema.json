@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "maxLength": 100,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SharedWithPrefix",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-shared-with-prefix-schema.json",
+  "description": "SharedWithPrefix schema from AWS Well-Architected Tool API"
+}

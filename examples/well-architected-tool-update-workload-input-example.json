@@ -1,0 +1,18 @@
+{
+  "WorkloadName": "Production Workload",
+  "Description": "A sample workload for architecture review.",
+  "Environment": "PRODUCTION",
+  "AccountIds": "500123",
+  "AwsRegions": "us-east-1",
+  "NonAwsRegions": "us-east-1",
+  "PillarPriorities": "example-value",
+  "ArchitecturalDesign": "example-value",
+  "ReviewOwner": "example-value",
+  "IsReviewOwnerUpdateAcknowledged": "example-value",
+  "IndustryType": "WORKLOAD",
+  "Industry": "example-value",
+  "Notes": "example-value",
+  "ImprovementStatus": "PUBLISHED",
+  "DiscoveryConfig": "example-value",
+  "Applications": "example-value"
+}

@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "MilestoneNumber": {
+      "$ref": "#/components/schemas/MilestoneNumber"
+    },
+    "LensReviewSummaries": {
+      "$ref": "#/components/schemas/LensReviewSummaries"
+    },
+    "NextToken": {
+      "$ref": "#/components/schemas/NextToken"
+    }
+  },
+  "description": "Output of a list lens reviews call.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ListLensReviewsOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-list-lens-reviews-output-structure.json"
+}

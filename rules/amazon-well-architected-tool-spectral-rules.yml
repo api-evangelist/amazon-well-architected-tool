@@ -1,0 +1,233 @@
+# Amazon Well-Architected Tool API Spectral Ruleset
+# Enforces conventions observed across the Well-Architected Tool OpenAPI specification
+
+rules:
+
+  # INFO / METADATA
+  info-title-format:
+    description: API title should reference AWS Well-Architected Tool
+    severity: warn
+    given: $.info
+    then:
+      field: title
+      function: pattern
+      functionOptions:
+        match: "^AWS Well-Architected Tool"
+
+  info-description-required:
+    description: API info must have a description
+    severity: error
+    given: $.info
+    then:
+      field: description
+      function: truthy
+
+  info-version-required:
+    description: API info must have a version
+    severity: error
+    given: $.info
+    then:
+      field: version
+      function: truthy
+
+  # OPENAPI VERSION
+  openapi-version:
+    description: Must use OpenAPI 3.0.x
+    severity: error
+    given: $
+    then:
+      field: openapi
+      function: pattern
+      functionOptions:
+        match: "^3\\.0\\."
+
+  # SERVERS
+  servers-defined:
+    description: At least one server must be defined
+    severity: error
+    given: $
+    then:
+      field: servers
+      function: truthy
+
+  servers-https:
+    description: All server URLs must use HTTPS
+    severity: error
+    given: $.servers[*]
+    then:
+      field: url
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # PATHS — NAMING CONVENTIONS
+  paths-kebab-case:
+    description: Path segments should use kebab-case or camelCase (AWS uses mixed)
+    severity: info
+    given: $.paths
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        match: "^/[a-zA-Z0-9/_{}.-]+$"
+
+  paths-no-trailing-slash:
+    description: Paths must not have a trailing slash
+    severity: warn
+    given: $.paths
+    then:
+      field: "@key"
+      function: pattern
+      functionOptions:
+        notMatch: "/$"
+
+  # OPERATIONS
+  operation-operationid-required:
+    description: Every operation must have an operationId
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: operationId
+      function: truthy
+
+  operation-operationid-pascal-case:
+    description: operationId should use PascalCase (AWS convention)
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: operationId
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][a-zA-Z0-9]+$"
+
+  operation-summary-required:
+    description: Every operation must have a summary
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: summary
+      function: truthy
+
+  operation-summary-prefix:
+    description: Operation summary should start with Amazon Well-Architected Tool
+    severity: info
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: summary
+      function: pattern
+      functionOptions:
+        match: "^Amazon Well-Architected Tool"
+
+  operation-tags-required:
+    description: Every operation must have at least one tag
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: tags
+      function: truthy
+
+  # PARAMETERS
+  parameter-description-required:
+    description: All parameters must have a description
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[*]
+    then:
+      field: description
+      function: truthy
+
+  # REQUEST BODIES
+  request-body-description:
+    description: Request bodies should have a description
+    severity: info
+    given: $.paths[*][post,put,patch].requestBody
+    then:
+      field: description
+      function: truthy
+
+  request-body-json-content:
+    description: Request bodies should support application/json
+    severity: warn
+    given: $.paths[*][post,put,patch].requestBody.content
+    then:
+      field: application/json
+      function: truthy
+
+  # RESPONSES
+  response-success-required:
+    description: Operations must define at least one success (2xx) response
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete].responses
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          minProperties: 1
+
+  response-description-required:
+    description: All responses must have a description
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete].responses[*]
+    then:
+      field: description
+      function: truthy
+
+  # SCHEMAS — PROPERTY NAMING
+  schema-description-recommended:
+    description: Top-level schemas should have a description
+    severity: info
+    given: $.components.schemas[*]
+    then:
+      field: description
+      function: truthy
+
+  schema-type-defined:
+    description: Schema properties should define a type
+    severity: warn
+    given: $.components.schemas[*].properties[*]
+    then:
+      field: type
+      function: truthy
+
+  # SECURITY
+  security-schemes-defined:
+    description: Security schemes should be defined in components
+    severity: warn
+    given: $.components
+    then:
+      field: securitySchemes
+      function: truthy
+
+  # HTTP METHOD CONVENTIONS
+  get-no-request-body:
+    description: GET operations must not have a request body
+    severity: error
+    given: $.paths[*].get
+    then:
+      field: requestBody
+      function: falsy
+
+  delete-no-request-body:
+    description: DELETE operations should not have a request body
+    severity: warn
+    given: $.paths[*].delete
+    then:
+      field: requestBody
+      function: falsy
+
+  # GENERAL QUALITY
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings
+    severity: warn
+    given: $..description
+    then:
+      function: pattern
+      functionOptions:
+        match: ".+"
+
+  components-schemas-exist:
+    description: Components schemas should be defined for reuse
+    severity: info
+    given: $.components
+    then:
+      field: schemas
+      function: truthy

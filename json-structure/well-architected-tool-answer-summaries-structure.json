@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "List of answer summaries of lens review in a workload.",
+  "items": {
+    "$ref": "#/components/schemas/AnswerSummary"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "AnswerSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-answer-summaries-structure.json"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "HELPFUL_RESOURCE",
+    "IMPROVEMENT_PLAN"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "AdditionalResourceType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-additional-resource-type-structure.json",
+  "description": "AdditionalResourceType schema from AWS Well-Architected Tool API"
+}

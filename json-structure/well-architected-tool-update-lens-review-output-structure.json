@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "LensReview": {
+      "$ref": "#/components/schemas/LensReview"
+    }
+  },
+  "description": "Output of a update lens review call.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "UpdateLensReviewOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-update-lens-review-output-structure.json"
+}

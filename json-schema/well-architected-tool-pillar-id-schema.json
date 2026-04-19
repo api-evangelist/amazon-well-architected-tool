@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "<p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>",
+  "minLength": 1,
+  "maxLength": 64,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PillarId",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-pillar-id-schema.json"
+}

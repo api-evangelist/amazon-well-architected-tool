@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ConflictException",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-conflict-exception-structure.json",
+  "description": "ConflictException schema from AWS Well-Architected Tool API"
+}

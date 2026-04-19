@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/PillarDifference"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "PillarDifferences",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-pillar-differences-structure.json",
+  "description": "PillarDifferences schema from AWS Well-Architected Tool API"
+}

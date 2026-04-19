@@ -1,0 +1,8 @@
+{
+  "ShareInvitationId": "500123",
+  "ShareResourceType": "WORKLOAD",
+  "WorkloadId": "500123",
+  "LensAlias": "example-value",
+  "LensArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "ProfileArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123"
+}

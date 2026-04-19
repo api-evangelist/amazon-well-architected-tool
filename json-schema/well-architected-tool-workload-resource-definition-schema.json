@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/DefinitionType"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadResourceDefinition",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-resource-definition-schema.json",
+  "description": "WorkloadResourceDefinition schema from AWS Well-Architected Tool API"
+}

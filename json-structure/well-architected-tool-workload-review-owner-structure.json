@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.",
+  "minLength": 3,
+  "maxLength": 255,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "WorkloadReviewOwner",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-workload-review-owner-structure.json"
+}

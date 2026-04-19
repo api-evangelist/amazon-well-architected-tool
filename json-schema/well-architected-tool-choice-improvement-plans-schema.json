@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ChoiceImprovementPlan"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChoiceImprovementPlans",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-choice-improvement-plans-schema.json",
+  "description": "ChoiceImprovementPlans schema from AWS Well-Architected Tool API"
+}

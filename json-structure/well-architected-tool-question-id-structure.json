@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "The ID of the question.",
+  "minLength": 1,
+  "maxLength": 128,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "QuestionId",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-question-id-structure.json"
+}

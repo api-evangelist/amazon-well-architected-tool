@@ -1,0 +1,12 @@
+{
+  "WorkloadId": "500123",
+  "WorkloadArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "WorkloadName": "Production Workload",
+  "Owner": "example-value",
+  "UpdatedAt": "example-value",
+  "Lenses": "example-value",
+  "RiskCounts": "example-value",
+  "ImprovementStatus": "PUBLISHED",
+  "Profiles": "example-value",
+  "PrioritizedRiskCounts": "example-value"
+}

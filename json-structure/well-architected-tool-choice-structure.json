@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "ChoiceId": {
+      "$ref": "#/components/schemas/ChoiceId"
+    },
+    "Title": {
+      "$ref": "#/components/schemas/ChoiceTitle"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/ChoiceDescription"
+    },
+    "HelpfulResource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceContent"
+        },
+        {
+          "description": "<p>The helpful resource (both text and URL) for a particular choice.</p> <p>This field only applies to custom lenses. Each choice can have only one helpful resource.</p>"
+        }
+      ]
+    },
+    "ImprovementPlan": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceContent"
+        },
+        {
+          "description": "<p>The improvement plan (both text and URL) for a particular choice.</p> <p>This field only applies to custom lenses. Each choice can have only one improvement plan.</p>"
+        }
+      ]
+    },
+    "AdditionalResources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AdditionalResourcesList"
+        },
+        {
+          "description": "<p>The additional resources for a choice in a custom lens.</p> <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>"
+        }
+      ]
+    }
+  },
+  "description": "A choice available to answer question.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "Choice",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-choice-structure.json"
+}

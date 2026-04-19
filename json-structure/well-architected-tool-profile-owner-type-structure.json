@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "SELF",
+    "SHARED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ProfileOwnerType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-owner-type-structure.json",
+  "description": "ProfileOwnerType schema from AWS Well-Architected Tool API"
+}

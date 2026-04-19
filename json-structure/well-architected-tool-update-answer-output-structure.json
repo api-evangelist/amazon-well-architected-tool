@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "LensAlias": {
+      "$ref": "#/components/schemas/LensAlias"
+    },
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens."
+        }
+      ]
+    },
+    "Answer": {
+      "$ref": "#/components/schemas/Answer"
+    }
+  },
+  "description": "Output of a update answer call.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "UpdateAnswerOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-update-answer-output-structure.json"
+}

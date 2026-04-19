@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The lens ARN."
+        }
+      ]
+    },
+    "Pillars": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PillarMetrics"
+        },
+        {
+          "description": "The metrics for the pillars in a lens."
+        }
+      ]
+    },
+    "RiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    }
+  },
+  "description": "A metric for a particular lens in a workload.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensMetric",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-metric-schema.json"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "enum": [
+    "TRUSTED_ADVISOR"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CheckProvider",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-check-provider-schema.json",
+  "description": "CheckProvider schema from AWS Well-Architected Tool API"
+}

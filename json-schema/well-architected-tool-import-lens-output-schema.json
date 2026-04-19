@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "LensArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensArn"
+        },
+        {
+          "description": "The ARN for the lens that was created or updated."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ImportLensStatus"
+        },
+        {
+          "description": "The status of the imported lens."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ImportLensOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-import-lens-output-schema.json",
+  "description": "ImportLensOutput schema from AWS Well-Architected Tool API"
+}

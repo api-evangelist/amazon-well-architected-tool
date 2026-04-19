@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "The description for the workload.",
+  "minLength": 3,
+  "maxLength": 250,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkloadDescription",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-description-schema.json"
+}

@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "ChoiceId": {
+      "$ref": "#/components/schemas/ChoiceId"
+    },
+    "DisplayText": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DisplayText"
+        },
+        {
+          "description": "The display text for the improvement plan."
+        }
+      ]
+    },
+    "ImprovementPlanUrl": {
+      "$ref": "#/components/schemas/ImprovementPlanUrl"
+    }
+  },
+  "description": "The choice level improvement plan.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChoiceImprovementPlan",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-choice-improvement-plan-schema.json"
+}

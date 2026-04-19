@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "ALL",
+    "DRAFT",
+    "PUBLISHED"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensStatusType",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-status-type-schema.json",
+  "description": "LensStatusType schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "pattern": "^[A-Za-z0-9-_.,:/()@!&?#+'\u2019\\s]+$",
+  "minLength": 3,
+  "maxLength": 100,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ProfileDescription",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-description-structure.json",
+  "description": "ProfileDescription schema from AWS Well-Architected Tool API"
+}

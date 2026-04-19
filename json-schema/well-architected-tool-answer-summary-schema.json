@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "properties": {
+    "QuestionId": {
+      "$ref": "#/components/schemas/QuestionId"
+    },
+    "PillarId": {
+      "$ref": "#/components/schemas/PillarId"
+    },
+    "QuestionTitle": {
+      "$ref": "#/components/schemas/QuestionTitle"
+    },
+    "Choices": {
+      "$ref": "#/components/schemas/Choices"
+    },
+    "SelectedChoices": {
+      "$ref": "#/components/schemas/SelectedChoices"
+    },
+    "ChoiceAnswerSummaries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceAnswerSummaries"
+        },
+        {
+          "description": "A list of selected choices to a question in your workload."
+        }
+      ]
+    },
+    "IsApplicable": {
+      "$ref": "#/components/schemas/IsApplicable"
+    },
+    "Risk": {
+      "$ref": "#/components/schemas/Risk"
+    },
+    "Reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnswerReason"
+        },
+        {
+          "description": "The reason why a choice is non-applicable to a question in your workload."
+        }
+      ]
+    },
+    "QuestionType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/QuestionType"
+        },
+        {
+          "description": "The type of the question."
+        }
+      ]
+    }
+  },
+  "description": "An answer summary of a lens review in a workload.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnswerSummary",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-answer-summary-schema.json"
+}

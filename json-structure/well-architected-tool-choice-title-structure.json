@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "description": "The title of a choice.",
+  "minLength": 1,
+  "maxLength": 512,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ChoiceTitle",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-choice-title-structure.json"
+}

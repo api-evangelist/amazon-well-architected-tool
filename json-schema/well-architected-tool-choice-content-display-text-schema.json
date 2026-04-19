@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 1024,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChoiceContentDisplayText",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-choice-content-display-text-schema.json",
+  "description": "ChoiceContentDisplayText schema from AWS Well-Architected Tool API"
+}

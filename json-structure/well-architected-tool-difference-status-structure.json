@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "UPDATED",
+    "NEW",
+    "DELETED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "DifferenceStatus",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-difference-status-structure.json",
+  "description": "DifferenceStatus schema from AWS Well-Architected Tool API"
+}

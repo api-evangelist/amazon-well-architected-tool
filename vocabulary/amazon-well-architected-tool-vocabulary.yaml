@@ -1,0 +1,214 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Amazon Well-Architected Tool"
+  description: "Vocabulary mapping operational API dimensions and capability workflows for the AWS Well-Architected Tool."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: well-architected-tool
+      name: AWS Well-Architected Tool API
+      version: "2020-03-31"
+      baseUrl: https://wellarchitected.amazonaws.com
+      status: active
+
+  resources:
+    - name: workloads
+      api: well-architected-tool
+      actions: [list, create, get, update, delete]
+    - name: lenses
+      api: well-architected-tool
+      actions: [list, get, import, export, create-share, delete-share, create-version]
+    - name: lens-reviews
+      api: well-architected-tool
+      actions: [list, get, update, upgrade]
+    - name: answers
+      api: well-architected-tool
+      actions: [list, get, update]
+    - name: milestones
+      api: well-architected-tool
+      actions: [list, create, get]
+    - name: profiles
+      api: well-architected-tool
+      actions: [list, create, get, update, delete]
+    - name: review-templates
+      api: well-architected-tool
+      actions: [list, create, get, update, delete]
+    - name: share-invitations
+      api: well-architected-tool
+      actions: [list, update]
+    - name: consolidated-reports
+      api: well-architected-tool
+      actions: [get]
+    - name: tags
+      api: well-architected-tool
+      actions: [list, add, remove]
+
+  actions:
+    - name: list
+      httpMethods: [GET, POST]
+      pattern: read
+    - name: get
+      httpMethods: [GET]
+      pattern: read
+    - name: create
+      httpMethods: [POST]
+      pattern: write
+    - name: update
+      httpMethods: [PATCH]
+      pattern: write
+    - name: delete
+      httpMethods: [DELETE]
+      pattern: destructive
+    - name: upgrade
+      httpMethods: [PUT]
+      pattern: write
+    - name: import
+      httpMethods: [PUT]
+      pattern: write
+    - name: export
+      httpMethods: [GET]
+      pattern: read
+    - name: associate
+      httpMethods: [PATCH]
+      pattern: write
+    - name: disassociate
+      httpMethods: [PATCH]
+      pattern: write
+
+  schemas:
+    core:
+      - name: Workload
+        description: A cloud workload under architectural review
+        key_properties: [WorkloadId, WorkloadName, Description, Environment, ReviewOwner]
+      - name: LensReview
+        description: A lens applied to a workload review
+        key_properties: [LensAlias, LensVersion, RiskCounts]
+      - name: Answer
+        description: An answer to a review question
+        key_properties: [QuestionId, ChoiceAnswers, Reason, Notes, Risk]
+      - name: Milestone
+        description: A point-in-time snapshot of a workload review
+        key_properties: [MilestoneNumber, MilestoneName, RecordedAt]
+      - name: Profile
+        description: A workload profile that customizes review questions
+        key_properties: [ProfileArn, ProfileName, ProfileDescription]
+      - name: Lens
+        description: A collection of best practices for architectural review
+        key_properties: [LensAlias, LensVersion, LensType, LensStatus]
+
+  parameters:
+    pagination:
+      - name: NextToken
+        description: Token for paginated results
+      - name: MaxResults
+        description: Maximum number of results per page
+    identifiers:
+      - name: WorkloadId
+        description: Unique workload identifier
+      - name: LensAlias
+        description: Lens identifier alias
+      - name: ProfileArn
+        description: Profile ARN
+      - name: MilestoneNumber
+        description: Milestone number
+    filters:
+      - name: WorkloadNamePrefix
+        description: Filter workloads by name prefix
+      - name: LensStatus
+        description: Filter lenses by status
+
+  enums:
+    environments:
+      - PRODUCTION
+      - PREPRODUCTION
+    risk-levels:
+      - HIGH
+      - MEDIUM
+      - NONE
+      - NOT_APPLICABLE
+    lens-types:
+      - AWS_OFFICIAL
+      - CUSTOM_SHARED
+      - CUSTOM_SELF
+    workload-status:
+      - PUBLISHED
+      - DRAFT
+    report-format:
+      - PDF
+      - JSON
+
+  authentication:
+    schemes:
+      - name: HMAC
+        type: hmac
+        description: AWS Signature Version 4 signing for all API requests
+
+capability:
+  workflows:
+    - name: Architecture Governance
+      file: capabilities/architecture-governance.yaml
+      description: >-
+        Unified workflow for cloud architects and governance teams to manage workloads,
+        run lens reviews, track answers, create milestones, and generate reports.
+      apis: [well-architected-tool]
+      tool_count: 9
+      personas: [Cloud Architect, Governance Team]
+      domains: [Architecture, Governance, Compliance]
+
+  personas:
+    - id: cloud-architect
+      name: Cloud Architect
+      description: Designs and reviews cloud workload architectures against AWS best practices.
+      workflows: [architecture-governance]
+    - id: governance-team
+      name: Governance Team
+      description: Oversees architectural compliance and risk across the cloud portfolio.
+      workflows: [architecture-governance]
+
+  domains:
+    - name: Architecture
+      description: Cloud workload design and best practices
+    - name: Governance
+      description: Oversight and compliance of cloud architecture decisions
+    - name: Compliance
+      description: Regulatory and organizational policy adherence
+
+  namespaces:
+    consumed:
+      - well-architected-tool
+    rest:
+      - name: architecture-governance-api
+        port: 8080
+    mcp:
+      - name: architecture-governance-mcp
+        port: 9090
+
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - AWS_REGION
+
+crossReference:
+  - resource: workloads
+    operations: [list, create, get, update, delete]
+    workflows: [architecture-governance]
+    personas: [Cloud Architect, Governance Team]
+  - resource: lens-reviews
+    operations: [list, get, update]
+    workflows: [architecture-governance]
+    personas: [Cloud Architect]
+  - resource: answers
+    operations: [list, get, update]
+    workflows: [architecture-governance]
+    personas: [Cloud Architect]
+  - resource: milestones
+    operations: [create, list, get]
+    workflows: [architecture-governance]
+    personas: [Governance Team]
+  - resource: consolidated-reports
+    operations: [get]
+    workflows: [architecture-governance]
+    personas: [Governance Team]

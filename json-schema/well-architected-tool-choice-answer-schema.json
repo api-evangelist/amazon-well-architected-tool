@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "ChoiceId": {
+      "$ref": "#/components/schemas/ChoiceId"
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceStatus"
+        },
+        {
+          "description": "The status of a choice."
+        }
+      ]
+    },
+    "Reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceReason"
+        },
+        {
+          "description": "The reason why a choice is non-applicable to a question in your workload."
+        }
+      ]
+    },
+    "Notes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChoiceNotes"
+        },
+        {
+          "description": "The notes associated with a choice."
+        }
+      ]
+    }
+  },
+  "description": "A choice that has been answered on a question in your workload.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChoiceAnswer",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-choice-answer-schema.json"
+}

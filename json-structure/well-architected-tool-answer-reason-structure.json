@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "enum": [
+    "OUT_OF_SCOPE",
+    "BUSINESS_PRIORITIES",
+    "ARCHITECTURE_CONSTRAINTS",
+    "OTHER",
+    "NONE"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "AnswerReason",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-answer-reason-structure.json",
+  "description": "AnswerReason schema from AWS Well-Architected Tool API"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "PDF",
+    "JSON"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ReportFormat",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-report-format-structure.json",
+  "description": "ReportFormat schema from AWS Well-Architected Tool API"
+}

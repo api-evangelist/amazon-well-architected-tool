@@ -1,0 +1,10 @@
+{
+  "MetricType": "WORKLOAD",
+  "RiskCounts": "example-value",
+  "WorkloadId": "500123",
+  "WorkloadName": "Production Workload",
+  "WorkloadArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "UpdatedAt": "example-value",
+  "Lenses": "example-value",
+  "LensesAppliedCount": "example-value"
+}

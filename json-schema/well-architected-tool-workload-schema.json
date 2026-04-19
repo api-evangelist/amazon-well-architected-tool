@@ -1,0 +1,132 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "WorkloadArn": {
+      "$ref": "#/components/schemas/WorkloadArn"
+    },
+    "WorkloadName": {
+      "$ref": "#/components/schemas/WorkloadName"
+    },
+    "Description": {
+      "$ref": "#/components/schemas/WorkloadDescription"
+    },
+    "Environment": {
+      "$ref": "#/components/schemas/WorkloadEnvironment"
+    },
+    "UpdatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "AccountIds": {
+      "$ref": "#/components/schemas/WorkloadAccountIds"
+    },
+    "AwsRegions": {
+      "$ref": "#/components/schemas/WorkloadAwsRegions"
+    },
+    "NonAwsRegions": {
+      "$ref": "#/components/schemas/WorkloadNonAwsRegions"
+    },
+    "ArchitecturalDesign": {
+      "$ref": "#/components/schemas/WorkloadArchitecturalDesign"
+    },
+    "ReviewOwner": {
+      "$ref": "#/components/schemas/WorkloadReviewOwner"
+    },
+    "ReviewRestrictionDate": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "IsReviewOwnerUpdateAcknowledged": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IsReviewOwnerUpdateAcknowledged"
+        },
+        {
+          "description": "<p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p> <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>"
+        }
+      ]
+    },
+    "IndustryType": {
+      "$ref": "#/components/schemas/WorkloadIndustryType"
+    },
+    "Industry": {
+      "$ref": "#/components/schemas/WorkloadIndustry"
+    },
+    "Notes": {
+      "$ref": "#/components/schemas/Notes"
+    },
+    "ImprovementStatus": {
+      "$ref": "#/components/schemas/WorkloadImprovementStatus"
+    },
+    "RiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    },
+    "PillarPriorities": {
+      "$ref": "#/components/schemas/WorkloadPillarPriorities"
+    },
+    "Lenses": {
+      "$ref": "#/components/schemas/WorkloadLenses"
+    },
+    "Owner": {
+      "$ref": "#/components/schemas/AwsAccountId"
+    },
+    "ShareInvitationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShareInvitationId"
+        },
+        {
+          "description": "The ID assigned to the share invitation."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags associated with the workload."
+        }
+      ]
+    },
+    "DiscoveryConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadDiscoveryConfig"
+        },
+        {
+          "description": "Discovery configuration associated to the workload."
+        }
+      ]
+    },
+    "Applications": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadApplications"
+        },
+        {
+          "description": "List of AppRegistry application ARNs associated to the workload."
+        }
+      ]
+    },
+    "Profiles": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WorkloadProfiles"
+        },
+        {
+          "description": "Profile associated with a workload."
+        }
+      ]
+    },
+    "PrioritizedRiskCounts": {
+      "$ref": "#/components/schemas/RiskCounts"
+    }
+  },
+  "description": "A workload return object.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Workload",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-workload-schema.json"
+}

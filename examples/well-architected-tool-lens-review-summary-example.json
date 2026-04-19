@@ -1,0 +1,11 @@
+{
+  "LensAlias": "example-value",
+  "LensArn": "arn:aws:wellarchitected:us-east-1:123456789012:workload/abc123",
+  "LensVersion": "example-value",
+  "LensName": "Production Workload",
+  "LensStatus": "PUBLISHED",
+  "UpdatedAt": "example-value",
+  "RiskCounts": "example-value",
+  "Profiles": "example-value",
+  "PrioritizedRiskCounts": "example-value"
+}

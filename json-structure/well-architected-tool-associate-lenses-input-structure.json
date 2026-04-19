@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": [
+    "LensAliases"
+  ],
+  "name": "AssociateLensesInput",
+  "properties": {
+    "LensAliases": {
+      "$ref": "#/components/schemas/LensAliases"
+    }
+  },
+  "description": "Input to associate lens reviews.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-associate-lenses-input-structure.json"
+}

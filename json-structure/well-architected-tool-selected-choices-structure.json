@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "<p>List of selected choice IDs in a question answer.</p> <p>The values entered replace the previously selected choices.</p>",
+  "items": {
+    "$ref": "#/components/schemas/ChoiceId"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "SelectedChoices",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-selected-choices-structure.json"
+}

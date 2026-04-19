@@ -1,0 +1,8 @@
+{
+  "type": "string",
+  "description": "The notes associated with the workload.",
+  "maxLength": 2084,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "Notes",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-notes-structure.json"
+}

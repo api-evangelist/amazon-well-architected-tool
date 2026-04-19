@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "required": [
+    "LensVersion",
+    "ClientRequestToken"
+  ],
+  "title": "CreateLensVersionInput",
+  "properties": {
+    "LensVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LensVersion"
+        },
+        {
+          "description": "The version of the lens being created."
+        }
+      ]
+    },
+    "IsMajorVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IsMajorVersion"
+        },
+        {
+          "description": "Set to true if this new major lens version."
+        }
+      ]
+    },
+    "ClientRequestToken": {
+      "$ref": "#/components/schemas/ClientRequestToken"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-create-lens-version-input-schema.json",
+  "description": "CreateLensVersionInput schema from AWS Well-Architected Tool API"
+}

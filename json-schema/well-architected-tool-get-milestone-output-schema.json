@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "WorkloadId": {
+      "$ref": "#/components/schemas/WorkloadId"
+    },
+    "Milestone": {
+      "$ref": "#/components/schemas/Milestone"
+    }
+  },
+  "description": "Output of a get milestone call.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GetMilestoneOutput",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-get-milestone-output-schema.json"
+}

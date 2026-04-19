@@ -1,0 +1,88 @@
+{
+  "type": "object",
+  "properties": {
+    "ProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileArn"
+        },
+        {
+          "description": "The profile ARN."
+        }
+      ]
+    },
+    "ProfileVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileVersion"
+        },
+        {
+          "description": "The profile version."
+        }
+      ]
+    },
+    "ProfileName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileName"
+        },
+        {
+          "description": "The profile name."
+        }
+      ]
+    },
+    "ProfileDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileDescription"
+        },
+        {
+          "description": "The profile description."
+        }
+      ]
+    },
+    "ProfileQuestions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProfileQuestions"
+        },
+        {
+          "description": "Profile questions."
+        }
+      ]
+    },
+    "Owner": {
+      "$ref": "#/components/schemas/AwsAccountId"
+    },
+    "CreatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "UpdatedAt": {
+      "$ref": "#/components/schemas/Timestamp"
+    },
+    "ShareInvitationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShareInvitationId"
+        },
+        {
+          "description": "The ID assigned to the share invitation."
+        }
+      ]
+    },
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags assigned to the profile."
+        }
+      ]
+    }
+  },
+  "description": "A profile.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "Profile",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-structure.json"
+}

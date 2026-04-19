@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "description": "List of improvement summaries of lens review in a workload.",
+  "items": {
+    "$ref": "#/components/schemas/ImprovementSummary"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ImprovementSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-improvement-summaries-schema.json"
+}

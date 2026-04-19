@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "pattern": "arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\\d:\\d{12}:profile/[a-z0-9]+",
+  "maxLength": 2084,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "name": "ProfileArn",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-profile-arn-structure.json",
+  "description": "ProfileArn schema from AWS Well-Architected Tool API"
+}

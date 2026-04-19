@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": [
+    "Tags"
+  ],
+  "name": "TagResourceInput",
+  "properties": {
+    "Tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags for the resource."
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-structure/well-architected-tool-tag-resource-input-structure.json",
+  "description": "TagResourceInput schema from AWS Well-Architected Tool API"
+}

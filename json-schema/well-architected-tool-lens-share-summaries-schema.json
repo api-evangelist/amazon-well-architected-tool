@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/LensShareSummary"
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LensShareSummaries",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/json-schema/well-architected-tool-lens-share-summaries-schema.json",
+  "description": "LensShareSummaries schema from AWS Well-Architected Tool API"
+}
