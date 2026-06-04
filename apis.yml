@@ -55,6 +55,48 @@ apis:
   - type: NaftikoCapability
     url: capabilities/amazon-well-architected-tool.yaml
 common:
+- type: ArazzoWorkflows
+  url: arazzo/
+  workflows:
+  - url: arazzo/amazon-well-architected-tool-annotate-lens-review-workflow.yml
+    name: Amazon Well-Architected Tool Annotate Lens Review
+    summary: Read a lens review and record lens-level and pillar-level notes on it.
+  - url: arazzo/amazon-well-architected-tool-answer-then-milestone-workflow.yml
+    name: Amazon Well-Architected Tool Answer then Milestone
+    summary: Update a best-practice answer and snapshot the result as a milestone.
+  - url: arazzo/amazon-well-architected-tool-associate-lens-workflow.yml
+    name: Amazon Well-Architected Tool Associate Lens to Workload
+    summary: Create a workload, attach additional lenses, and list the lens reviews.
+  - url: arazzo/amazon-well-architected-tool-capture-milestone-workflow.yml
+    name: Amazon Well-Architected Tool Capture Milestone
+    summary: Record a milestone for a workload and read it back to confirm.
+  - url: arazzo/amazon-well-architected-tool-consolidated-report-workflow.yml
+    name: Amazon Well-Architected Tool Consolidated Report
+    summary: List your workloads and generate a consolidated report across them.
+  - url: arazzo/amazon-well-architected-tool-create-workload-workflow.yml
+    name: Amazon Well-Architected Tool Create Workload
+    summary: Create a workload, confirm it, and list the lens reviews it generated.
+  - url: arazzo/amazon-well-architected-tool-improvement-plan-workflow.yml
+    name: Amazon Well-Architected Tool Improvement Plan
+    summary: Open a lens review and list its prioritized improvement items.
+  - url: arazzo/amazon-well-architected-tool-lens-review-report-workflow.yml
+    name: Amazon Well-Architected Tool Lens Review Report
+    summary: Find a lens review on a workload and generate its review report.
+  - url: arazzo/amazon-well-architected-tool-list-milestone-snapshots-workflow.yml
+    name: Amazon Well-Architected Tool List Milestone Snapshots
+    summary: List a workload's milestones and read the most recent one in detail.
+  - url: arazzo/amazon-well-architected-tool-review-lens-answer-workflow.yml
+    name: Amazon Well-Architected Tool Review and Update a Lens Answer
+    summary: Open a lens review, list its answers, read one question, and update it.
+  - url: arazzo/amazon-well-architected-tool-share-lens-workflow.yml
+    name: Amazon Well-Architected Tool Share Custom Lens
+    summary: Share a custom lens with a principal and list its lens shares.
+  - url: arazzo/amazon-well-architected-tool-share-workload-workflow.yml
+    name: Amazon Well-Architected Tool Share Workload
+    summary: Create a workload, share it with an account, and list its shares.
+  - url: arazzo/amazon-well-architected-tool-update-workload-metadata-workflow.yml
+    name: Amazon Well-Architected Tool Update Workload Metadata
+    summary: Read a workload and update its descriptive metadata and pillar priorities.
 - type: Portal
   url: https://aws.amazon.com/
 - type: Website

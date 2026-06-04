@@ -1,0 +1,110 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Create Workload
+  summary: Create a workload, confirm it, and list the lens reviews it generated.
+  description: >-
+    Stand up a new Well-Architected workload and verify it is ready for review.
+    The workflow creates the workload with its required name, description,
+    environment, and lenses, reads the workload back to confirm its metadata,
+    and then lists the lens reviews that were created so the caller knows which
+    lenses are available to answer. Every step spells out its request inline so
+    the flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: create-workload
+  summary: Create a workload, fetch it, and enumerate its lens reviews.
+  description: >-
+    Creates a new workload from the supplied name, description, environment, and
+    lens aliases, retrieves the created workload to confirm it persisted, and
+    lists the lens reviews so downstream review work can begin.
+  inputs:
+    type: object
+    required:
+    - WorkloadName
+    - Description
+    - Environment
+    - Lenses
+    - ReviewOwner
+    - ClientRequestToken
+    properties:
+      WorkloadName:
+        type: string
+        description: The unique name of the workload (3-100 characters).
+      Description:
+        type: string
+        description: The description for the workload (3-250 characters).
+      Environment:
+        type: string
+        description: The environment for the workload (PRODUCTION or PREPRODUCTION).
+      Lenses:
+        type: array
+        description: The list of lens aliases to associate with the workload.
+        items:
+          type: string
+      ReviewOwner:
+        type: string
+        description: The review owner of the workload.
+      AwsRegions:
+        type: array
+        description: The list of AWS Regions associated with the workload.
+        items:
+          type: string
+      ClientRequestToken:
+        type: string
+        description: Idempotency token for the create request.
+  steps:
+  - stepId: createWorkload
+    description: >-
+      Create the workload with its required name, description, environment,
+      review owner, and lenses.
+    operationId: CreateWorkload
+    requestBody:
+      contentType: application/json
+      payload:
+        WorkloadName: $inputs.WorkloadName
+        Description: $inputs.Description
+        Environment: $inputs.Environment
+        Lenses: $inputs.Lenses
+        ReviewOwner: $inputs.ReviewOwner
+        AwsRegions: $inputs.AwsRegions
+        ClientRequestToken: $inputs.ClientRequestToken
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workloadId: $response.body#/WorkloadId
+      workloadArn: $response.body#/WorkloadArn
+  - stepId: getWorkload
+    description: >-
+      Read the workload back using the returned WorkloadId to confirm it was
+      created and persisted.
+    operationId: GetWorkload
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $steps.createWorkload.outputs.workloadId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workload: $response.body#/Workload
+  - stepId: listLensReviews
+    description: >-
+      List the lens reviews created for the workload so the caller knows which
+      lenses can be answered.
+    operationId: ListLensReviews
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $steps.createWorkload.outputs.workloadId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      lensReviewSummaries: $response.body#/LensReviewSummaries
+  outputs:
+    workloadId: $steps.createWorkload.outputs.workloadId
+    workloadArn: $steps.createWorkload.outputs.workloadArn
+    lensReviewSummaries: $steps.listLensReviews.outputs.lensReviewSummaries

@@ -1,0 +1,109 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Associate Lens to Workload
+  summary: Create a workload, attach additional lenses, and list the lens reviews.
+  description: >-
+    Extend a workload with extra lenses beyond those supplied at creation. The
+    workflow creates the workload, associates one or more additional lens
+    aliases with it, and then lists the lens reviews so the newly attached
+    lenses appear alongside the originals. Every step spells out its request
+    inline so the flow can be read and executed without opening the underlying
+    OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: associate-lens
+  summary: Create a workload, associate lenses, and list its lens reviews.
+  description: >-
+    Creates a new workload, associates the supplied additional lens aliases with
+    it, and lists the lens reviews to confirm the attached lenses are available
+    to answer.
+  inputs:
+    type: object
+    required:
+    - WorkloadName
+    - Description
+    - Environment
+    - Lenses
+    - ReviewOwner
+    - ClientRequestToken
+    - LensAliases
+    properties:
+      WorkloadName:
+        type: string
+        description: The unique name of the workload (3-100 characters).
+      Description:
+        type: string
+        description: The description for the workload (3-250 characters).
+      Environment:
+        type: string
+        description: The environment for the workload (PRODUCTION or PREPRODUCTION).
+      Lenses:
+        type: array
+        description: The list of lens aliases to associate at creation time.
+        items:
+          type: string
+      ReviewOwner:
+        type: string
+        description: The review owner of the workload.
+      ClientRequestToken:
+        type: string
+        description: Idempotency token for the create request.
+      LensAliases:
+        type: array
+        description: The list of additional lens aliases to associate after creation.
+        items:
+          type: string
+  steps:
+  - stepId: createWorkload
+    description: >-
+      Create the workload with its required name, description, environment,
+      review owner, and initial lenses.
+    operationId: CreateWorkload
+    requestBody:
+      contentType: application/json
+      payload:
+        WorkloadName: $inputs.WorkloadName
+        Description: $inputs.Description
+        Environment: $inputs.Environment
+        Lenses: $inputs.Lenses
+        ReviewOwner: $inputs.ReviewOwner
+        ClientRequestToken: $inputs.ClientRequestToken
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workloadId: $response.body#/WorkloadId
+  - stepId: associateLenses
+    description: >-
+      Associate the additional lens aliases with the workload so they can be
+      reviewed.
+    operationId: AssociateLenses
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $steps.createWorkload.outputs.workloadId
+    requestBody:
+      contentType: application/json
+      payload:
+        LensAliases: $inputs.LensAliases
+    successCriteria:
+    - condition: $statusCode == 200
+  - stepId: listLensReviews
+    description: >-
+      List the lens reviews on the workload to confirm the newly associated
+      lenses are present.
+    operationId: ListLensReviews
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $steps.createWorkload.outputs.workloadId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      lensReviewSummaries: $response.body#/LensReviewSummaries
+  outputs:
+    workloadId: $steps.createWorkload.outputs.workloadId
+    lensReviewSummaries: $steps.listLensReviews.outputs.lensReviewSummaries

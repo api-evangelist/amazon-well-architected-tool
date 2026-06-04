@@ -1,0 +1,75 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Update Workload Metadata
+  summary: Read a workload and update its descriptive metadata and pillar priorities.
+  description: >-
+    Refresh the descriptive metadata on an existing workload. The workflow reads
+    the current workload to confirm it exists and then patches its description,
+    notes, and pillar priorities, returning the updated workload. Every step
+    spells out its request inline so the flow can be read and executed without
+    opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: update-workload-metadata
+  summary: Fetch a workload and patch its metadata.
+  description: >-
+    Reads the current workload and updates its description, notes, and pillar
+    priorities, returning the updated workload object.
+  inputs:
+    type: object
+    required:
+    - WorkloadId
+    properties:
+      WorkloadId:
+        type: string
+        description: The 32-character workload ID.
+      Description:
+        type: string
+        description: The new description for the workload (3-250 characters).
+      Notes:
+        type: string
+        description: The notes to associate with the workload.
+      PillarPriorities:
+        type: array
+        description: The ordered list of pillar IDs used to prioritize the improvement plan.
+        items:
+          type: string
+  steps:
+  - stepId: getWorkload
+    description: >-
+      Read the current workload to confirm it exists before patching its
+      metadata.
+    operationId: GetWorkload
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workload: $response.body#/Workload
+  - stepId: updateWorkload
+    description: >-
+      Patch the workload description, notes, and pillar priorities, returning
+      the updated workload.
+    operationId: UpdateWorkload
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    requestBody:
+      contentType: application/json
+      payload:
+        Description: $inputs.Description
+        Notes: $inputs.Notes
+        PillarPriorities: $inputs.PillarPriorities
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workload: $response.body#/Workload
+  outputs:
+    workload: $steps.updateWorkload.outputs.workload

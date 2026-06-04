@@ -1,0 +1,127 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Review and Update a Lens Answer
+  summary: Open a lens review, list its answers, read one question, and update it.
+  description: >-
+    Walk a single best-practice question from listing through update inside a
+    lens review. The workflow opens the lens review for a workload, lists the
+    answer summaries, reads the full answer for a specific question, and then
+    records the selected choices and notes for that question. Every step spells
+    out its request inline so the flow can be read and executed without opening
+    the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: review-lens-answer
+  summary: List answers in a lens review, read one, and update its choices.
+  description: >-
+    Retrieves the lens review for a workload, lists its answer summaries, reads
+    the full answer for the supplied question, and updates that answer with the
+    selected choices and notes provided by the caller.
+  inputs:
+    type: object
+    required:
+    - WorkloadId
+    - LensAlias
+    - QuestionId
+    - SelectedChoices
+    properties:
+      WorkloadId:
+        type: string
+        description: The 32-character workload ID.
+      LensAlias:
+        type: string
+        description: The alias or ARN of the lens being reviewed.
+      QuestionId:
+        type: string
+        description: The ID of the question to read and update.
+      SelectedChoices:
+        type: array
+        description: The list of choice IDs selected for the question answer.
+        items:
+          type: string
+      Notes:
+        type: string
+        description: Notes to associate with the answer.
+  steps:
+  - stepId: getLensReview
+    description: >-
+      Open the lens review for the workload to confirm the lens is applied and
+      reviewable.
+    operationId: GetLensReview
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      lensReview: $response.body#/LensReview
+  - stepId: listAnswers
+    description: >-
+      List the answer summaries for the lens review so the target question can
+      be located.
+    operationId: ListAnswers
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      answerSummaries: $response.body#/AnswerSummaries
+  - stepId: getAnswer
+    description: >-
+      Read the full answer for the supplied question, including its available
+      choices and current selections.
+    operationId: GetAnswer
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    - name: QuestionId
+      in: path
+      value: $inputs.QuestionId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      answer: $response.body#/Answer
+  - stepId: updateAnswer
+    description: >-
+      Record the selected choices and notes for the question, replacing the
+      previously selected choices.
+    operationId: UpdateAnswer
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    - name: QuestionId
+      in: path
+      value: $inputs.QuestionId
+    requestBody:
+      contentType: application/json
+      payload:
+        SelectedChoices: $inputs.SelectedChoices
+        Notes: $inputs.Notes
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      updatedAnswer: $response.body#/Answer
+  outputs:
+    answer: $steps.getAnswer.outputs.answer
+    updatedAnswer: $steps.updateAnswer.outputs.updatedAnswer

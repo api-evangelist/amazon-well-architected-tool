@@ -1,0 +1,70 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Share Custom Lens
+  summary: Share a custom lens with a principal and list its lens shares.
+  description: >-
+    Grant another principal access to a custom lens. The workflow creates a lens
+    share with the supplied principal and then lists the lens shares to confirm
+    the new share was recorded. Every step spells out its request inline so the
+    flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: share-lens
+  summary: Create a lens share and list the lens shares.
+  description: >-
+    Shares a custom lens with the supplied account, IAM role, organization, or
+    OU and lists the resulting lens shares to confirm the share was recorded.
+  inputs:
+    type: object
+    required:
+    - LensAlias
+    - SharedWith
+    - ClientRequestToken
+    properties:
+      LensAlias:
+        type: string
+        description: The ARN of the custom lens to share.
+      SharedWith:
+        type: string
+        description: The account ID, IAM role, organization ID, or OU ID to share with.
+      ClientRequestToken:
+        type: string
+        description: Idempotency token for the share create request.
+  steps:
+  - stepId: createLensShare
+    description: >-
+      Share the custom lens with the supplied principal.
+    operationId: CreateLensShare
+    parameters:
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    requestBody:
+      contentType: application/json
+      payload:
+        SharedWith: $inputs.SharedWith
+        ClientRequestToken: $inputs.ClientRequestToken
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      shareId: $response.body#/ShareId
+  - stepId: listLensShares
+    description: >-
+      List the lens shares for the lens to confirm the new share was recorded.
+    operationId: ListLensShares
+    parameters:
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      lensShareSummaries: $response.body#/LensShareSummaries
+  outputs:
+    shareId: $steps.createLensShare.outputs.shareId
+    lensShareSummaries: $steps.listLensShares.outputs.lensShareSummaries

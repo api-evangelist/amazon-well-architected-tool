@@ -1,0 +1,83 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Improvement Plan
+  summary: Open a lens review and list its prioritized improvement items.
+  description: >-
+    Surface the improvement plan for a lens applied to a workload. The workflow
+    opens the lens review to confirm the lens is reviewable and then lists the
+    lens review improvements, optionally filtered to prioritized questions, so
+    the highest-risk items can be addressed first. Every step spells out its
+    request inline so the flow can be read and executed without opening the
+    underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: improvement-plan
+  summary: Read a lens review and list its improvement items.
+  description: >-
+    Retrieves the lens review for a workload and lists the improvement
+    summaries for that lens, optionally limited to prioritized questions, so
+    the improvement plan can be acted upon.
+  inputs:
+    type: object
+    required:
+    - WorkloadId
+    - LensAlias
+    properties:
+      WorkloadId:
+        type: string
+        description: The 32-character workload ID.
+      LensAlias:
+        type: string
+        description: The alias or ARN of the lens being reviewed.
+      PillarId:
+        type: string
+        description: Optional pillar ID to scope the improvement items.
+      QuestionPriority:
+        type: string
+        description: Optional priority filter (PRIORITIZED or NONE).
+  steps:
+  - stepId: getLensReview
+    description: >-
+      Open the lens review for the workload to confirm the lens is applied and
+      reviewable.
+    operationId: GetLensReview
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      lensReview: $response.body#/LensReview
+  - stepId: listImprovements
+    description: >-
+      List the improvement summaries for the lens, optionally scoped to a pillar
+      and limited to prioritized questions.
+    operationId: ListLensReviewImprovements
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    - name: PillarId
+      in: query
+      value: $inputs.PillarId
+    - name: QuestionPriority
+      in: query
+      value: $inputs.QuestionPriority
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      improvementSummaries: $response.body#/ImprovementSummaries
+  outputs:
+    lensReview: $steps.getLensReview.outputs.lensReview
+    improvementSummaries: $steps.listImprovements.outputs.improvementSummaries

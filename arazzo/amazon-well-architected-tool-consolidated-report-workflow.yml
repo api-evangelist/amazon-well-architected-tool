@@ -1,0 +1,76 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Consolidated Report
+  summary: List your workloads and generate a consolidated report across them.
+  description: >-
+    Produce a portfolio-level view of your Well-Architected posture. The
+    workflow lists the workloads visible to the caller and then generates a
+    consolidated report in the requested format, optionally including shared
+    resources. Every step spells out its request inline so the flow can be read
+    and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: consolidated-report
+  summary: List workloads and generate a consolidated report.
+  description: >-
+    Lists the caller's workloads and generates a consolidated report in the
+    requested format, optionally including resources shared with the caller.
+  inputs:
+    type: object
+    required:
+    - Format
+    properties:
+      Format:
+        type: string
+        description: The format of the consolidated report (PDF or JSON).
+      IncludeSharedResources:
+        type: boolean
+        description: Whether to include resources shared with the caller in the report.
+      WorkloadNamePrefix:
+        type: string
+        description: Optional prefix to filter the listed workloads by name.
+      MaxResults:
+        type: integer
+        description: The maximum number of results to return for the report request.
+  steps:
+  - stepId: listWorkloads
+    description: >-
+      List the workloads visible to the caller to establish the scope of the
+      report.
+    operationId: ListWorkloads
+    requestBody:
+      contentType: application/json
+      payload:
+        WorkloadNamePrefix: $inputs.WorkloadNamePrefix
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      workloadSummaries: $response.body#/WorkloadSummaries
+  - stepId: getConsolidatedReport
+    description: >-
+      Generate the consolidated report in the requested format, optionally
+      including shared resources.
+    operationId: GetConsolidatedReport
+    parameters:
+    - name: Format
+      in: query
+      value: $inputs.Format
+    - name: IncludeSharedResources
+      in: query
+      value: $inputs.IncludeSharedResources
+    - name: MaxResults
+      in: query
+      value: $inputs.MaxResults
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      metrics: $response.body#/Metrics
+      base64String: $response.body#/Base64String
+  outputs:
+    workloadSummaries: $steps.listWorkloads.outputs.workloadSummaries
+    metrics: $steps.getConsolidatedReport.outputs.metrics
+    base64String: $steps.getConsolidatedReport.outputs.base64String

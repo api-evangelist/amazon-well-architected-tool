@@ -1,0 +1,118 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Answer then Milestone
+  summary: Update a best-practice answer and snapshot the result as a milestone.
+  description: >-
+    Record a review decision and immediately checkpoint it. The workflow updates
+    the answer to a specific question in a lens review, creates a milestone to
+    snapshot the workload at that point, and reads the milestone back to confirm
+    the checkpoint. Every step spells out its request inline so the flow can be
+    read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: answer-then-milestone
+  summary: Update an answer, create a milestone, and fetch it.
+  description: >-
+    Updates the answer for a question in a workload lens review, creates a named
+    milestone to checkpoint the workload, and retrieves the milestone by its
+    returned number to confirm the snapshot.
+  inputs:
+    type: object
+    required:
+    - WorkloadId
+    - LensAlias
+    - QuestionId
+    - SelectedChoices
+    - MilestoneName
+    - ClientRequestToken
+    properties:
+      WorkloadId:
+        type: string
+        description: The 32-character workload ID.
+      LensAlias:
+        type: string
+        description: The alias or ARN of the lens being reviewed.
+      QuestionId:
+        type: string
+        description: The ID of the question to update.
+      SelectedChoices:
+        type: array
+        description: The list of choice IDs selected for the question answer.
+        items:
+          type: string
+      Notes:
+        type: string
+        description: Notes to associate with the answer.
+      MilestoneName:
+        type: string
+        description: The unique name of the milestone (3-100 characters).
+      ClientRequestToken:
+        type: string
+        description: Idempotency token for the milestone create request.
+  steps:
+  - stepId: updateAnswer
+    description: >-
+      Record the selected choices and notes for the question, replacing the
+      previously selected choices.
+    operationId: UpdateAnswer
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: LensAlias
+      in: path
+      value: $inputs.LensAlias
+    - name: QuestionId
+      in: path
+      value: $inputs.QuestionId
+    requestBody:
+      contentType: application/json
+      payload:
+        SelectedChoices: $inputs.SelectedChoices
+        Notes: $inputs.Notes
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      answer: $response.body#/Answer
+  - stepId: createMilestone
+    description: >-
+      Create a milestone to snapshot the workload immediately after the answer
+      was updated.
+    operationId: CreateMilestone
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    requestBody:
+      contentType: application/json
+      payload:
+        MilestoneName: $inputs.MilestoneName
+        ClientRequestToken: $inputs.ClientRequestToken
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      milestoneNumber: $response.body#/MilestoneNumber
+  - stepId: getMilestone
+    description: >-
+      Read the milestone back by its number to confirm the checkpoint was
+      recorded.
+    operationId: GetMilestone
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: MilestoneNumber
+      in: path
+      value: $steps.createMilestone.outputs.milestoneNumber
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      milestone: $response.body#/Milestone
+  outputs:
+    answer: $steps.updateAnswer.outputs.answer
+    milestoneNumber: $steps.createMilestone.outputs.milestoneNumber
+    milestone: $steps.getMilestone.outputs.milestone

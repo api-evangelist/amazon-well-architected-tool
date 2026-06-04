@@ -1,0 +1,78 @@
+arazzo: 1.0.1
+info:
+  title: Amazon Well-Architected Tool Capture Milestone
+  summary: Record a milestone for a workload and read it back to confirm.
+  description: >-
+    Snapshot the current state of a workload review by creating a named
+    milestone and then retrieving it. The workflow creates the milestone with
+    its required name, captures the milestone number returned, and reads the
+    milestone back to confirm it was recorded. Every step spells out its request
+    inline so the flow can be read and executed without opening the underlying
+    OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: wellArchitectedApi
+  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+  type: openapi
+workflows:
+- workflowId: capture-milestone
+  summary: Create a workload milestone and fetch it by number.
+  description: >-
+    Creates a milestone for an existing workload using the supplied milestone
+    name, then retrieves it by the returned milestone number to confirm the
+    snapshot was recorded.
+  inputs:
+    type: object
+    required:
+    - WorkloadId
+    - MilestoneName
+    - ClientRequestToken
+    properties:
+      WorkloadId:
+        type: string
+        description: The 32-character workload ID.
+      MilestoneName:
+        type: string
+        description: The unique name of the milestone (3-100 characters).
+      ClientRequestToken:
+        type: string
+        description: Idempotency token for the create request.
+  steps:
+  - stepId: createMilestone
+    description: >-
+      Create the milestone for the workload, snapshotting the current review
+      state under the supplied name.
+    operationId: CreateMilestone
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    requestBody:
+      contentType: application/json
+      payload:
+        MilestoneName: $inputs.MilestoneName
+        ClientRequestToken: $inputs.ClientRequestToken
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      milestoneNumber: $response.body#/MilestoneNumber
+      workloadId: $response.body#/WorkloadId
+  - stepId: getMilestone
+    description: >-
+      Read the milestone back by its number to confirm the snapshot was
+      recorded and to capture its details.
+    operationId: GetMilestone
+    parameters:
+    - name: WorkloadId
+      in: path
+      value: $inputs.WorkloadId
+    - name: MilestoneNumber
+      in: path
+      value: $steps.createMilestone.outputs.milestoneNumber
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      milestone: $response.body#/Milestone
+  outputs:
+    milestoneNumber: $steps.createMilestone.outputs.milestoneNumber
+    milestone: $steps.getMilestone.outputs.milestone
