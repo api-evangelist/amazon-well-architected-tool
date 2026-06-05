@@ -55,6 +55,8 @@ apis:
   - type: NaftikoCapability
     url: capabilities/amazon-well-architected-tool.yaml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-well-architected-tool/overview
 - type: ArazzoWorkflows
   url: arazzo/
   workflows:
