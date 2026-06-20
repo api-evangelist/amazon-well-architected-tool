@@ -6,7 +6,7 @@ description: 'The AWS Well-Architected Tool helps you review your workloads and 
   offers lens catalogs, custom lenses, profiles, review templates, and API-driven extensibility for integration into governance
   workflows.'
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Architecture
 - AWS
