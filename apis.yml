@@ -52,148 +52,145 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/amazon-well-architected-tool.yaml
 common:
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-well-architected-tool/overview
-- type: ArazzoWorkflows
-  url: arazzo/
-  workflows:
-  - url: arazzo/amazon-well-architected-tool-annotate-lens-review-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-annotate-lens-review-workflow.yml
     name: Amazon Well-Architected Tool Annotate Lens Review
-    summary: Read a lens review and record lens-level and pillar-level notes on it.
-  - url: arazzo/amazon-well-architected-tool-answer-then-milestone-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-answer-then-milestone-workflow.yml
     name: Amazon Well-Architected Tool Answer then Milestone
-    summary: Update a best-practice answer and snapshot the result as a milestone.
-  - url: arazzo/amazon-well-architected-tool-associate-lens-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-associate-lens-workflow.yml
     name: Amazon Well-Architected Tool Associate Lens to Workload
-    summary: Create a workload, attach additional lenses, and list the lens reviews.
-  - url: arazzo/amazon-well-architected-tool-capture-milestone-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-capture-milestone-workflow.yml
     name: Amazon Well-Architected Tool Capture Milestone
-    summary: Record a milestone for a workload and read it back to confirm.
-  - url: arazzo/amazon-well-architected-tool-consolidated-report-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-consolidated-report-workflow.yml
     name: Amazon Well-Architected Tool Consolidated Report
-    summary: List your workloads and generate a consolidated report across them.
-  - url: arazzo/amazon-well-architected-tool-create-workload-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-create-workload-workflow.yml
     name: Amazon Well-Architected Tool Create Workload
-    summary: Create a workload, confirm it, and list the lens reviews it generated.
-  - url: arazzo/amazon-well-architected-tool-improvement-plan-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-improvement-plan-workflow.yml
     name: Amazon Well-Architected Tool Improvement Plan
-    summary: Open a lens review and list its prioritized improvement items.
-  - url: arazzo/amazon-well-architected-tool-lens-review-report-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-lens-review-report-workflow.yml
     name: Amazon Well-Architected Tool Lens Review Report
-    summary: Find a lens review on a workload and generate its review report.
-  - url: arazzo/amazon-well-architected-tool-list-milestone-snapshots-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-list-milestone-snapshots-workflow.yml
     name: Amazon Well-Architected Tool List Milestone Snapshots
-    summary: List a workload's milestones and read the most recent one in detail.
-  - url: arazzo/amazon-well-architected-tool-review-lens-answer-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-review-lens-answer-workflow.yml
     name: Amazon Well-Architected Tool Review and Update a Lens Answer
-    summary: Open a lens review, list its answers, read one question, and update it.
-  - url: arazzo/amazon-well-architected-tool-share-lens-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-share-lens-workflow.yml
     name: Amazon Well-Architected Tool Share Custom Lens
-    summary: Share a custom lens with a principal and list its lens shares.
-  - url: arazzo/amazon-well-architected-tool-share-workload-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-share-workload-workflow.yml
     name: Amazon Well-Architected Tool Share Workload
-    summary: Create a workload, share it with an account, and list its shares.
-  - url: arazzo/amazon-well-architected-tool-update-workload-metadata-workflow.yml
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-update-workload-metadata-workflow.yml
     name: Amazon Well-Architected Tool Update Workload Metadata
-    summary: Read a workload and update its descriptive metadata and pillar priorities.
-- type: Portal
-  url: https://aws.amazon.com/
-- type: Website
-  url: https://aws.amazon.com/well-architected-tool/
-- type: Documentation
-  url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
-- type: Console
-  url: https://console.aws.amazon.com/wellarchitected/
-- type: TermsOfService
-  url: https://aws.amazon.com/service-terms/
-- type: PrivacyPolicy
-  url: https://aws.amazon.com/privacy/
-- type: Support
-  url: https://aws.amazon.com/premiumsupport/
-- type: SignUp
-  url: https://signin.aws.amazon.com/signup?request_type=register
-- type: Login
-  url: https://aws.amazon.com/console/
-- type: StatusPage
-  url: https://health.aws.amazon.com/health/status
-- type: GitHubOrganization
-  url: https://github.com/aws
-- type: GitHubRepository
-  url: https://github.com/aws-samples/custom-lens-wa-hub
-- type: Compliance
-  url: https://aws.amazon.com/compliance/
-- type: SpectralRules
-  url: rules/amazon-well-architected-tool-spectral-rules.yml
-- type: Vocabulary
-  url: vocabulary/amazon-well-architected-tool-vocabulary.yaml
-- type: Features
-  data:
-  - name: Lens Catalog
-    description: Expert-authored review lenses from AWS covering diverse technology and industry-specific pillars, continuously
-      refreshed with latest best practices.
-  - name: Custom Lenses
-    description: Create organization-specific lenses that combine internal best practices with AWS guidance, shareable with
-      up to 300 IAM users or across AWS Organizations.
-  - name: Profiles
-    description: Pre-define business goals to auto-generate prioritized review questions tailored to your workload context.
-  - name: Review Templates
-    description: Standardize answers across multiple workloads to ensure consistent architectural reviews at scale.
-  - name: Enhanced Collaboration
-    description: Share workloads and custom lenses with IAM users or integrate with AWS Organizations for organization-wide
-      access and visibility.
-  - name: Service Integration
-    description: Native integration with AWS Trusted Advisor and AWS Service Catalog AppRegistry to reduce manual review effort.
-  - name: API-Driven Extensibility
-    description: Robust APIs allow extending Well-Architected functionality into existing architecture governance processes,
-      applications, and workflows.
-  - name: Milestone Tracking
-    description: Save milestones, implement improvements, and measure progress over time with point-in-time snapshots of workload
-      review state.
-  - name: Compliance and Regulatory Support
-    description: Available in GovCloud (US) with FedRAMP compliance for organizations with stringent regulatory requirements.
-  - name: Consolidated Reporting
-    description: Generate consolidated reports across workloads for governance and executive visibility into architectural
-      risk posture.
-- type: UseCases
-  data:
-  - name: Architecture Reviews and Governance
-    description: Evaluate cloud workload architecture quality against AWS best practices across the five Well-Architected
-      pillars.
-  - name: Multi-Workload Standardization
-    description: Use review templates to standardize architectural answers and enforce consistent governance across multiple
-      workloads and teams.
-  - name: Industry-Specific Best Practice Implementation
-    description: Apply industry-specific and technology-specific lenses from the lens catalog to assess specialized workloads.
-  - name: Regulatory Compliance Assessment
-    description: Evaluate workloads for FedRAMP, GovCloud, and other regulatory compliance requirements through targeted lenses.
-  - name: DevOps Pipeline Integration
-    description: Integrate Well-Architected reviews into CI/CD workflows and automation pipelines for continuous architecture
-      assessment.
-  - name: Cross-Team Architectural Alignment
-    description: Share workloads with reviewers and stakeholders to facilitate collaborative architectural decision-making
-      across teams.
-  - name: Sustainability Goal Realization
-    description: Use the sustainability pillar to minimize environmental impact and meet organizational sustainability commitments.
-- type: Integrations
-  data:
-  - name: AWS Trusted Advisor
-    description: Integration with AWS Trusted Advisor provides automated checks that complement manual Well-Architected review
-      processes.
-  - name: AWS Service Catalog AppRegistry
-    description: AppRegistry integration enables linking Well-Architected workloads to application metadata for richer governance
-      context.
-  - name: AWS Organizations
-    description: Organization-level sharing of workloads and custom lenses for enterprise-wide architectural governance programs.
-  - name: AWS IAM
-    description: Fine-grained access control via AWS IAM for workload sharing and reviewer management within the tool.
-  - name: AWS CloudFormation
-    description: Workloads can be associated with CloudFormation stacks for automated resource discovery and architecture
-      documentation.
-- type: Integrations
-  url: https://aws.amazon.com/partners/
+  - type: Portal
+    url: https://aws.amazon.com/
+  - type: Website
+    url: https://aws.amazon.com/well-architected-tool/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: Console
+    url: https://console.aws.amazon.com/wellarchitected/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: Signup
+    url: https://signin.aws.amazon.com/signup?request_type=register
+  - type: Login
+    url: https://aws.amazon.com/console/
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: GitHubRepository
+    url: https://github.com/aws-samples/custom-lens-wa-hub
+  - type: Compliance
+    url: https://aws.amazon.com/compliance/
+  - type: SpectralRules
+    url: rules/amazon-well-architected-tool-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/amazon-well-architected-tool-vocabulary.yaml
+  - type: Features
+    data:
+    - name: Lens Catalog
+      description: Expert-authored review lenses from AWS covering diverse technology and industry-specific pillars, continuously
+        refreshed with latest best practices.
+    - name: Custom Lenses
+      description: Create organization-specific lenses that combine internal best practices with AWS guidance, shareable with
+        up to 300 IAM users or across AWS Organizations.
+    - name: Profiles
+      description: Pre-define business goals to auto-generate prioritized review questions tailored to your workload context.
+    - name: Review Templates
+      description: Standardize answers across multiple workloads to ensure consistent architectural reviews at scale.
+    - name: Enhanced Collaboration
+      description: Share workloads and custom lenses with IAM users or integrate with AWS Organizations for organization-wide
+        access and visibility.
+    - name: Service Integration
+      description: Native integration with AWS Trusted Advisor and AWS Service Catalog AppRegistry to reduce manual review effort.
+    - name: API-Driven Extensibility
+      description: Robust APIs allow extending Well-Architected functionality into existing architecture governance processes,
+        applications, and workflows.
+    - name: Milestone Tracking
+      description: Save milestones, implement improvements, and measure progress over time with point-in-time snapshots of workload
+        review state.
+    - name: Compliance and Regulatory Support
+      description: Available in GovCloud (US) with FedRAMP compliance for organizations with stringent regulatory requirements.
+    - name: Consolidated Reporting
+      description: Generate consolidated reports across workloads for governance and executive visibility into architectural
+        risk posture.
+  - type: UseCases
+    data:
+    - name: Architecture Reviews and Governance
+      description: Evaluate cloud workload architecture quality against AWS best practices across the five Well-Architected
+        pillars.
+    - name: Multi-Workload Standardization
+      description: Use review templates to standardize architectural answers and enforce consistent governance across multiple
+        workloads and teams.
+    - name: Industry-Specific Best Practice Implementation
+      description: Apply industry-specific and technology-specific lenses from the lens catalog to assess specialized workloads.
+    - name: Regulatory Compliance Assessment
+      description: Evaluate workloads for FedRAMP, GovCloud, and other regulatory compliance requirements through targeted lenses.
+    - name: DevOps Pipeline Integration
+      description: Integrate Well-Architected reviews into CI/CD workflows and automation pipelines for continuous architecture
+        assessment.
+    - name: Cross-Team Architectural Alignment
+      description: Share workloads with reviewers and stakeholders to facilitate collaborative architectural decision-making
+        across teams.
+    - name: Sustainability Goal Realization
+      description: Use the sustainability pillar to minimize environmental impact and meet organizational sustainability commitments.
+  - type: Integrations
+    data:
+    - name: AWS Trusted Advisor
+      description: Integration with AWS Trusted Advisor provides automated checks that complement manual Well-Architected review
+        processes.
+    - name: AWS Service Catalog AppRegistry
+      description: AppRegistry integration enables linking Well-Architected workloads to application metadata for richer governance
+        context.
+    - name: AWS Organizations
+      description: Organization-level sharing of workloads and custom lenses for enterprise-wide architectural governance programs.
+    - name: AWS IAM
+      description: Fine-grained access control via AWS IAM for workload sharing and reviewer management within the tool.
+    - name: AWS CloudFormation
+      description: Workloads can be associated with CloudFormation stacks for automated resource discovery and architecture
+        documentation.
+  - type: Integrations
+    url: https://aws.amazon.com/partners/
 integrations:
 - name: Partner Programs
 - name: Resources
