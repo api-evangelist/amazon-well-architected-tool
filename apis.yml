@@ -55,6 +55,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-well-architected-tool.yaml
 common:
+  - type: TrustCenter
+    url: security/amazon-well-architected-tool-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-well-architected-tool-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-well-architected-tool-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-well-architected-tool-authentication.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-well-architected-tool/overview
   - type: Arazzo
