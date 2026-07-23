@@ -1,0 +1,1251 @@
+openapi: 3.0.0
+info:
+  version: '2020-03-31'
+  x-release: v4
+  title: AWS Well-Architected Tool ConsolidatedReport#Format Lenses API
+  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: wellarchitected
+  x-aws-signingName: wellarchitected
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://wellarchitected.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Well-Architected multi-region endpoint
+- url: https://wellarchitected.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Well-Architected multi-region endpoint
+- url: http://wellarchitected.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Well-Architected endpoint for China (Beijing) and China (Ningxia)
+- url: https://wellarchitected.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Well-Architected endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Lenses
+paths:
+  /lenses/{LensAlias}/shares:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateLensShare
+      description: <p>Create a lens share.</p> <p>The owner of a lens can share it with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be shared.</p> <p> Shared access to a lens is not removed until the lens invitation is deleted.</p> <p>If you share a lens with an organization or OU, all accounts in the organization or OU are granted access to the lens.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-sharing.html">Sharing a custom lens</a> in the <i>Well-Architected Tool User Guide</i>.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateLensShareOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '483':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '484':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+        '485':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '486':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: LensAlias
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+          minLength: 1
+          maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - SharedWith
+              - ClientRequestToken
+              properties:
+                SharedWith:
+                  description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
+                  type: string
+                  minLength: 12
+                  maxLength: 2048
+                ClientRequestToken:
+                  description: <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
+                  type: string
+                  minLength: 1
+                  maxLength: 2048
+      summary: Amazon Well-Architected Tool Create Lens Share
+      tags:
+      - Lenses
+    get:
+      operationId: ListLensShares
+      description: List the lens shares associated with the lens.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListLensSharesOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: LensAlias
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+          minLength: 1
+          maxLength: 128
+      - name: SharedWithPrefix
+        in: query
+        required: false
+        description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.
+        schema:
+          type: string
+          maxLength: 100
+      - name: NextToken
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: string
+          description: The token to use to retrieve the next set of results.
+      - name: MaxResults
+        in: query
+        required: false
+        description: The maximum number of results to return for this request.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 50
+      - name: Status
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: string
+          enum:
+          - ACCEPTED
+          - REJECTED
+          - PENDING
+          - REVOKED
+          - EXPIRED
+          - ASSOCIATING
+          - ASSOCIATED
+          - FAILED
+          description: The status of the share request.
+      summary: Amazon Well-Architected Tool List Lens Shares
+      tags:
+      - Lenses
+  /lenses/{LensAlias}/versions:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateLensVersion
+      description: <p>Create a new lens version.</p> <p>A lens can have up to 100 versions.</p> <p>Use this operation to publish a new lens version after you have imported a lens. The <code>LensAlias</code> is used to identify the lens to be published. The owner of a lens can share the lens with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Only the owner of a lens can delete it. </p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateLensVersionOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+        '483':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '485':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '486':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: LensAlias
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+          minLength: 1
+          maxLength: 128
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - LensVersion
+              - ClientRequestToken
+              properties:
+                LensVersion:
+                  description: The version of the lens being created.
+                  type: string
+                  minLength: 1
+                  maxLength: 32
+                IsMajorVersion:
+                  description: Set to true if this new major lens version.
+                  type: boolean
+                ClientRequestToken:
+                  description: <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
+                  type: string
+                  minLength: 1
+                  maxLength: 2048
+      summary: Amazon Well-Architected Tool Create Lens Version
+      tags:
+      - Lenses
+  /lenses/{LensAlias}#ClientRequestToken&LensStatus:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteLens
+      description: <p>Delete an existing lens.</p> <p>Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services accounts and users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads. </p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
+      responses:
+        '200':
+          description: Success
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '484':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '485':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: LensAlias
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+          minLength: 1
+          maxLength: 128
+      - name: ClientRequestToken
+        in: query
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
+          minLength: 1
+          maxLength: 2048
+      - name: LensStatus
+        in: query
+        required: true
+        description: The status of the lens to be deleted.
+        schema:
+          type: string
+          enum:
+          - ALL
+          - DRAFT
+          - PUBLISHED
+      summary: Amazon Well-Architected Tool Delete Lens
+      tags:
+      - Lenses
+  /lenses/{LensAlias}/shares/{ShareId}#ClientRequestToken:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteLensShare
+      description: <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web Services accounts, users, organizations, and organizational units (OUs) that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
+      responses:
+        '200':
+          description: Success
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '484':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '485':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: ShareId
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          pattern: '[0-9a-f]{32}'
+          description: The ID associated with the share.
+      - name: LensAlias
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+          minLength: 1
+          maxLength: 128
+      - name: ClientRequestToken
+        in: query
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
+          minLength: 1
+          maxLength: 2048
+      summary: Amazon Well-Architected Tool Delete Lens Share
+      tags:
+      - Lenses
+  /lenses/{LensAlias}/export:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ExportLens
+      description: '<p>Export an existing lens.</p> <p>Only the owner of a lens can export it. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be exported.</p> <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p> <note> <p> <b>Disclaimer</b> </p> <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p> </note>'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExportLensOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: LensAlias
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+          minLength: 1
+          maxLength: 128
+      - name: LensVersion
+        in: query
+        required: false
+        description: The lens version to be exported.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 32
+      summary: Amazon Well-Architected Tool Export Lens
+      tags:
+      - Lenses
+  /lenses/{LensAlias}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetLens
+      description: Get an existing lens.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLensOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: LensAlias
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+          minLength: 1
+          maxLength: 128
+      - name: LensVersion
+        in: query
+        required: false
+        description: The lens version to be retrieved.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 32
+      summary: Amazon Well-Architected Tool Get Lens
+      tags:
+      - Lenses
+  /lenses/{LensAlias}/versionDifference:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetLensVersionDifference
+      description: Get lens version differences.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLensVersionDifferenceOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: LensAlias
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+          minLength: 1
+          maxLength: 128
+      - name: BaseLensVersion
+        in: query
+        required: false
+        description: The base version of the lens.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 32
+      - name: TargetLensVersion
+        in: query
+        required: false
+        description: The lens version to target a difference for.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 32
+      summary: Amazon Well-Architected Tool Get Lens Version Difference
+      tags:
+      - Lenses
+  /lenses:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListLenses
+      description: List the available lenses.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListLensesOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: NextToken
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: string
+          description: The token to use to retrieve the next set of results.
+      - name: MaxResults
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: integer
+          description: The maximum number of results to return for this request.
+          minimum: 1
+          maximum: 50
+      - name: LensType
+        in: query
+        required: false
+        description: The type of lenses to be returned.
+        schema:
+          type: string
+          enum:
+          - AWS_OFFICIAL
+          - CUSTOM_SHARED
+          - CUSTOM_SELF
+      - name: LensStatus
+        in: query
+        required: false
+        description: The status of lenses to be returned.
+        schema:
+          type: string
+          enum:
+          - ALL
+          - DRAFT
+          - PUBLISHED
+      - name: LensName
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: string
+          description: The full name of the lens.
+          minLength: 1
+          maxLength: 128
+      summary: Amazon Well-Architected Tool List Lenses
+      tags:
+      - Lenses
+components:
+  schemas:
+    PillarId:
+      type: string
+      description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+      minLength: 1
+      maxLength: 64
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    PillarDifferences:
+      type: array
+      items:
+        $ref: '#/components/schemas/PillarDifference'
+    ShareStatus:
+      type: string
+      enum:
+      - ACCEPTED
+      - REJECTED
+      - PENDING
+      - REVOKED
+      - EXPIRED
+      - ASSOCIATING
+      - ASSOCIATED
+      - FAILED
+      description: The status of the share request.
+    ServiceQuotaExceededException: {}
+    QuestionId:
+      type: string
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    LensShareSummary:
+      type: object
+      properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+        SharedWith:
+          $ref: '#/components/schemas/SharedWith'
+        Status:
+          $ref: '#/components/schemas/ShareStatus'
+        StatusMessage:
+          allOf:
+          - $ref: '#/components/schemas/StatusMessage'
+          - description: Optional message to compliment the Status field.
+      description: A lens share summary return object.
+    ListLensesOutput:
+      type: object
+      properties:
+        LensSummaries:
+          $ref: '#/components/schemas/LensSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Output of a list lenses call.
+    LensVersion:
+      type: string
+      minLength: 1
+      maxLength: 32
+    SharedWith:
+      type: string
+      description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
+      minLength: 12
+      maxLength: 2048
+    QuestionTitle:
+      type: string
+      description: The title of the question.
+      minLength: 1
+      maxLength: 512
+    CreateLensShareOutput:
+      type: object
+      properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+    LensSummaries:
+      type: array
+      description: List of lens summaries of available lenses.
+      items:
+        $ref: '#/components/schemas/LensSummary'
+    LensOwner:
+      type: string
+    ShareId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID associated with the share.
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    LensSummary:
+      type: object
+      properties:
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN of the lens.
+        LensAlias:
+          $ref: '#/components/schemas/LensAlias'
+        LensName:
+          $ref: '#/components/schemas/LensName'
+        LensType:
+          allOf:
+          - $ref: '#/components/schemas/LensType'
+          - description: The type of the lens.
+        Description:
+          $ref: '#/components/schemas/LensDescription'
+        CreatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        LensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The version of the lens.
+        Owner:
+          $ref: '#/components/schemas/AwsAccountId'
+        LensStatus:
+          allOf:
+          - $ref: '#/components/schemas/LensStatus'
+          - description: The status of the lens.
+      description: A lens summary of a lens.
+    LensAlias:
+      type: string
+      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+      minLength: 1
+      maxLength: 128
+    LensDescription:
+      type: string
+      description: The description of the lens.
+      minLength: 1
+      maxLength: 1024
+    ListLensSharesOutput:
+      type: object
+      properties:
+        LensShareSummaries:
+          allOf:
+          - $ref: '#/components/schemas/LensShareSummaries'
+          - description: A list of lens share summaries.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    GetLensVersionDifferenceOutput:
+      type: object
+      properties:
+        LensAlias:
+          $ref: '#/components/schemas/LensAlias'
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN for the lens.
+        BaseLensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The base version of the lens.
+        TargetLensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The target lens version for the lens.
+        LatestLensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The latest version of the lens.
+        VersionDifferences:
+          $ref: '#/components/schemas/VersionDifferences'
+    LensShareSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/LensShareSummary'
+    AwsAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+      description: An Amazon Web Services account ID.
+      minLength: 12
+      maxLength: 12
+    LensName:
+      type: string
+      description: The full name of the lens.
+      minLength: 1
+      maxLength: 128
+    PillarName:
+      type: string
+      description: The name of the pillar.
+      minLength: 1
+      maxLength: 128
+    QuestionDifferences:
+      type: array
+      items:
+        $ref: '#/components/schemas/QuestionDifference'
+    AccessDeniedException: {}
+    GetLensOutput:
+      type: object
+      properties:
+        Lens:
+          allOf:
+          - $ref: '#/components/schemas/Lens'
+          - description: A lens return object.
+    PillarDifference:
+      type: object
+      properties:
+        PillarId:
+          $ref: '#/components/schemas/PillarId'
+        PillarName:
+          $ref: '#/components/schemas/PillarName'
+        DifferenceStatus:
+          allOf:
+          - $ref: '#/components/schemas/DifferenceStatus'
+          - description: Indicates the type of change to the pillar.
+        QuestionDifferences:
+          allOf:
+          - $ref: '#/components/schemas/QuestionDifferences'
+          - description: List of question differences.
+      description: A pillar difference return object.
+    ShareInvitationId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+    VersionDifferences:
+      type: object
+      properties:
+        PillarDifferences:
+          allOf:
+          - $ref: '#/components/schemas/PillarDifferences'
+          - description: The differences between the base and latest versions of the lens.
+      description: The differences between the base and latest versions of the lens.
+    LensType:
+      type: string
+      enum:
+      - AWS_OFFICIAL
+      - CUSTOM_SHARED
+      - CUSTOM_SELF
+    Lens:
+      type: object
+      properties:
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN of a lens.
+        LensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The version of a lens.
+        Name:
+          $ref: '#/components/schemas/LensName'
+        Description:
+          $ref: '#/components/schemas/LensDescription'
+        Owner:
+          allOf:
+          - $ref: '#/components/schemas/LensOwner'
+          - description: The Amazon Web Services account ID that owns the lens.
+        ShareInvitationId:
+          allOf:
+          - $ref: '#/components/schemas/ShareInvitationId'
+          - description: The ID assigned to the share invitation.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags assigned to the lens.
+      description: A lens return object.
+    ConflictException: {}
+    InternalServerException: {}
+    LensJSON:
+      type: string
+      minLength: 2
+      maxLength: 500000
+    LensArn:
+      type: string
+    LensStatus:
+      type: string
+      enum:
+      - CURRENT
+      - NOT_CURRENT
+      - DEPRECATED
+      - DELETED
+      - UNSHARED
+    StatusMessage:
+      type: string
+      minLength: 1
+      maxLength: 512
+    QuestionDifference:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        QuestionTitle:
+          $ref: '#/components/schemas/QuestionTitle'
+        DifferenceStatus:
+          allOf:
+          - $ref: '#/components/schemas/DifferenceStatus'
+          - description: Indicates the type of change to the question.
+      description: A question difference return object.
+    ExportLensOutput:
+      type: object
+      properties:
+        LensJSON:
+          allOf:
+          - $ref: '#/components/schemas/LensJSON'
+          - description: The JSON representation of a lens.
+    CreateLensVersionOutput:
+      type: object
+      properties:
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN for the lens.
+        LensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The version of the lens.
+    DifferenceStatus:
+      type: string
+      enum:
+      - UPDATED
+      - NEW
+      - DELETED
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    ValidationException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/wellarchitected/
+x-hasEquivalentPaths: true

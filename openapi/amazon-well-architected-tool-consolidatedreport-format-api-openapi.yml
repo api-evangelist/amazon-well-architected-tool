@@ -1,0 +1,435 @@
+openapi: 3.0.0
+info:
+  version: '2020-03-31'
+  x-release: v4
+  title: AWS Well-Architected Tool ConsolidatedReport#Format API
+  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: wellarchitected
+  x-aws-signingName: wellarchitected
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://wellarchitected.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Well-Architected multi-region endpoint
+- url: https://wellarchitected.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Well-Architected multi-region endpoint
+- url: http://wellarchitected.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Well-Architected endpoint for China (Beijing) and China (Ningxia)
+- url: https://wellarchitected.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Well-Architected endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: ConsolidatedReport#Format
+paths:
+  /consolidatedReport#Format:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetConsolidatedReport
+      description: <p>Get a consolidated report of your workloads.</p> <p>You can optionally choose to include workloads that have been shared with you.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetConsolidatedReportOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+      parameters:
+      - name: Format
+        in: query
+        required: true
+        description: <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
+        schema:
+          type: string
+          enum:
+          - PDF
+          - JSON
+      - name: IncludeSharedResources
+        in: query
+        required: false
+        description: Set to <code>true</code> to have shared resources included in the report.
+        schema:
+          type: boolean
+      - name: NextToken
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: string
+          description: The token to use to retrieve the next set of results.
+      - name: MaxResults
+        in: query
+        required: false
+        description: The maximum number of results to return for this request.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 15
+      summary: Amazon Well-Architected Tool Get Consolidated Report
+      tags:
+      - ConsolidatedReport#Format
+components:
+  schemas:
+    WorkloadName:
+      type: string
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
+    PillarId:
+      type: string
+      description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+      minLength: 1
+      maxLength: 64
+    PillarMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/PillarMetric'
+    ChoiceId:
+      type: string
+      description: The ID of a choice.
+      minLength: 1
+      maxLength: 64
+    QuestionId:
+      type: string
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    LensMetric:
+      type: object
+      properties:
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The lens ARN.
+        Pillars:
+          allOf:
+          - $ref: '#/components/schemas/PillarMetrics'
+          - description: The metrics for the pillars in a lens.
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+      description: A metric for a particular lens in a workload.
+    PillarMetric:
+      type: object
+      properties:
+        PillarId:
+          $ref: '#/components/schemas/PillarId'
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+        Questions:
+          allOf:
+          - $ref: '#/components/schemas/QuestionMetrics'
+          - description: The questions that have been identified as risks in the pillar.
+      description: A metric for a particular pillar in a lens.
+    ChoiceTitle:
+      type: string
+      description: The title of a choice.
+      minLength: 1
+      maxLength: 512
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    Base64String:
+      type: string
+      description: <p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>
+    WorkloadId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
+    ConsolidatedReportMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConsolidatedReportMetric'
+    BestPractice:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        ChoiceTitle:
+          $ref: '#/components/schemas/ChoiceTitle'
+      description: A best practice, or question choice, that has been identified as a risk in this question.
+    QuestionMetric:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        Risk:
+          $ref: '#/components/schemas/Risk'
+        BestPractices:
+          allOf:
+          - $ref: '#/components/schemas/BestPractices'
+          - description: The best practices, or choices, that have been identified as contributing to risk in a question.
+      description: 'A metric for a particular question in the pillar. '
+    BestPractices:
+      type: array
+      items:
+        $ref: '#/components/schemas/BestPractice'
+    AccessDeniedException: {}
+    LensMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/LensMetric'
+    QuestionMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/QuestionMetric'
+    RiskCounts:
+      type: object
+      description: A map from risk names to the count of how many questions have that rating.
+      additionalProperties:
+        $ref: '#/components/schemas/Count'
+    WorkloadArn:
+      type: string
+      description: The ARN for the workload.
+    Count:
+      type: integer
+      description: A non-negative integer that denotes how many.
+      minimum: 0
+    LensesAppliedCount:
+      type: integer
+      minimum: 0
+    ConflictException: {}
+    InternalServerException: {}
+    ConsolidatedReportMetric:
+      type: object
+      properties:
+        MetricType:
+          allOf:
+          - $ref: '#/components/schemas/MetricType'
+          - description: The metric type of a metric in the consolidated report. Currently only WORKLOAD metric types are supported.
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        WorkloadName:
+          $ref: '#/components/schemas/WorkloadName'
+        WorkloadArn:
+          $ref: '#/components/schemas/WorkloadArn'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        Lenses:
+          allOf:
+          - $ref: '#/components/schemas/LensMetrics'
+          - description: The metrics for the lenses in the workload.
+        LensesAppliedCount:
+          allOf:
+          - $ref: '#/components/schemas/LensesAppliedCount'
+          - description: The total number of lenses applied to the workload.
+      description: A metric that contributes to the consolidated report.
+    LensArn:
+      type: string
+    MetricType:
+      type: string
+      enum:
+      - WORKLOAD
+    Risk:
+      type: string
+      enum:
+      - UNANSWERED
+      - HIGH
+      - MEDIUM
+      - NONE
+      - NOT_APPLICABLE
+      description: The risk for a given workload, lens review, pillar, or question.
+    GetConsolidatedReportOutput:
+      type: object
+      properties:
+        Metrics:
+          allOf:
+          - $ref: '#/components/schemas/ConsolidatedReportMetrics'
+          - description: <p>The metrics that make up the consolidated report.</p> <p>Only returned when <code>JSON</code> format is requested.</p>
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+        Base64String:
+          $ref: '#/components/schemas/Base64String'
+    ThrottlingException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    ValidationException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/wellarchitected/
+x-hasEquivalentPaths: true

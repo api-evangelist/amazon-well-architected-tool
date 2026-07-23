@@ -1,0 +1,375 @@
+openapi: 3.0.0
+info:
+  version: '2020-03-31'
+  x-release: v4
+  title: AWS Well-Architected Tool ConsolidatedReport#Format WorkloadsSummaries API
+  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: wellarchitected
+  x-aws-signingName: wellarchitected
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://wellarchitected.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Well-Architected multi-region endpoint
+- url: https://wellarchitected.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Well-Architected multi-region endpoint
+- url: http://wellarchitected.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Well-Architected endpoint for China (Beijing) and China (Ningxia)
+- url: https://wellarchitected.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Well-Architected endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: WorkloadsSummaries
+paths:
+  /workloadsSummaries:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListWorkloads
+      description: Paginated list of workloads.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListWorkloadsOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '482':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: MaxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                WorkloadNamePrefix:
+                  description: An optional string added to the beginning of each workload name returned in the results.
+                  type: string
+                  maxLength: 100
+                NextToken:
+                  description: The token to use to retrieve the next set of results.
+                  type: string
+                MaxResults:
+                  description: The maximum number of results to return for this request.
+                  type: integer
+                  minimum: 1
+                  maximum: 50
+      summary: Amazon Well-Architected Tool List Workloads
+      tags:
+      - WorkloadsSummaries
+components:
+  schemas:
+    WorkloadName:
+      type: string
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
+    WorkloadImprovementStatus:
+      type: string
+      enum:
+      - NOT_APPLICABLE
+      - NOT_STARTED
+      - IN_PROGRESS
+      - COMPLETE
+      - RISK_ACKNOWLEDGED
+      description: The improvement status for a workload.
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    WorkloadId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
+    LensAlias:
+      type: string
+      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+      minLength: 1
+      maxLength: 128
+    WorkloadProfiles:
+      type: array
+      items:
+        $ref: '#/components/schemas/WorkloadProfile'
+      maxItems: 1
+    WorkloadSummaries:
+      type: array
+      description: A list of workload summaries.
+      items:
+        $ref: '#/components/schemas/WorkloadSummary'
+    AwsAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+      description: An Amazon Web Services account ID.
+      minLength: 12
+      maxLength: 12
+    WorkloadLenses:
+      type: array
+      description: The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.
+      items:
+        $ref: '#/components/schemas/LensAlias'
+    AccessDeniedException: {}
+    WorkloadSummary:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        WorkloadArn:
+          $ref: '#/components/schemas/WorkloadArn'
+        WorkloadName:
+          $ref: '#/components/schemas/WorkloadName'
+        Owner:
+          $ref: '#/components/schemas/AwsAccountId'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        Lenses:
+          $ref: '#/components/schemas/WorkloadLenses'
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+        ImprovementStatus:
+          $ref: '#/components/schemas/WorkloadImprovementStatus'
+        Profiles:
+          allOf:
+          - $ref: '#/components/schemas/WorkloadProfiles'
+          - description: Profile associated with a workload.
+        PrioritizedRiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+      description: A workload summary return object.
+    ListWorkloadsOutput:
+      type: object
+      properties:
+        WorkloadSummaries:
+          $ref: '#/components/schemas/WorkloadSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Output of a list workloads call.
+    RiskCounts:
+      type: object
+      description: A map from risk names to the count of how many questions have that rating.
+      additionalProperties:
+        $ref: '#/components/schemas/Count'
+    WorkloadArn:
+      type: string
+      description: The ARN for the workload.
+    Count:
+      type: integer
+      description: A non-negative integer that denotes how many.
+      minimum: 0
+    InternalServerException: {}
+    ProfileArn:
+      type: string
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    WorkloadProfile:
+      type: object
+      properties:
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+        ProfileVersion:
+          allOf:
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: The profile version.
+      description: The profile associated with a workload.
+    ThrottlingException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    ValidationException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/wellarchitected/
+x-hasEquivalentPaths: true

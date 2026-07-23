@@ -1,0 +1,1028 @@
+openapi: 3.0.0
+info:
+  version: '2020-03-31'
+  x-release: v4
+  title: AWS Well-Architected Tool ConsolidatedReport#Format Profiles API
+  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: wellarchitected
+  x-aws-signingName: wellarchitected
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://wellarchitected.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Well-Architected multi-region endpoint
+- url: https://wellarchitected.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Well-Architected multi-region endpoint
+- url: http://wellarchitected.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Well-Architected endpoint for China (Beijing) and China (Ningxia)
+- url: https://wellarchitected.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Well-Architected endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Profiles
+paths:
+  /profiles:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateProfile
+      description: Create a profile.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateProfileOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '482':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '484':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '485':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - ProfileName
+              - ProfileDescription
+              - ProfileQuestions
+              - ClientRequestToken
+              properties:
+                ProfileName:
+                  description: Name of the profile.
+                  type: string
+                  pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+                  minLength: 3
+                  maxLength: 100
+                ProfileDescription:
+                  description: The profile description.
+                  type: string
+                  pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+                  minLength: 3
+                  maxLength: 100
+                ProfileQuestions:
+                  description: The profile questions.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/ProfileQuestionUpdate'
+                ClientRequestToken:
+                  description: <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
+                  type: string
+                  minLength: 1
+                  maxLength: 2048
+                Tags:
+                  description: The tags assigned to the profile.
+                  type: object
+                  minProperties: 1
+                  maxProperties: 50
+                  additionalProperties:
+                    $ref: '#/components/schemas/TagValue'
+      summary: Amazon Well-Architected Tool Create Profile
+      tags:
+      - Profiles
+  /profiles/{ProfileArn}/shares:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateProfileShare
+      description: Create a profile share.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateProfileShareOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '483':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '484':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+        '485':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '486':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: ProfileArn
+        in: path
+        required: true
+        description: The profile ARN.
+        schema:
+          type: string
+          pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+          maxLength: 2084
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - SharedWith
+              - ClientRequestToken
+              properties:
+                SharedWith:
+                  description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
+                  type: string
+                  minLength: 12
+                  maxLength: 2048
+                ClientRequestToken:
+                  description: <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
+                  type: string
+                  minLength: 1
+                  maxLength: 2048
+      summary: Amazon Well-Architected Tool Create Profile Share
+      tags:
+      - Profiles
+    get:
+      operationId: ListProfileShares
+      description: List profile shares.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListProfileSharesOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: ProfileArn
+        in: path
+        required: true
+        description: The profile ARN.
+        schema:
+          type: string
+          pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+          maxLength: 2084
+      - name: SharedWithPrefix
+        in: query
+        required: false
+        description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the profile is shared.
+        schema:
+          type: string
+          maxLength: 100
+      - name: NextToken
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: string
+          description: The token to use to retrieve the next set of results.
+      - name: MaxResults
+        in: query
+        required: false
+        description: The maximum number of results to return for this request.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 50
+      - name: Status
+        in: query
+        required: false
+        description: ''
+        schema:
+          type: string
+          enum:
+          - ACCEPTED
+          - REJECTED
+          - PENDING
+          - REVOKED
+          - EXPIRED
+          - ASSOCIATING
+          - ASSOCIATED
+          - FAILED
+          description: The status of the share request.
+      summary: Amazon Well-Architected Tool List Profile Shares
+      tags:
+      - Profiles
+  /profiles/{ProfileArn}#ClientRequestToken:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteProfile
+      description: <p>Delete a profile.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your profile with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your profile available to those other accounts. Those other accounts may continue to access and use your shared profile even if you delete the profile from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
+      responses:
+        '200':
+          description: Success
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '484':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '485':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: ProfileArn
+        in: path
+        required: true
+        description: The profile ARN.
+        schema:
+          type: string
+          pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+          maxLength: 2084
+      - name: ClientRequestToken
+        in: query
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
+          minLength: 1
+          maxLength: 2048
+      summary: Amazon Well-Architected Tool Delete Profile
+      tags:
+      - Profiles
+  /profiles/{ProfileArn}/shares/{ShareId}#ClientRequestToken:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    delete:
+      operationId: DeleteProfileShare
+      description: Delete a profile share.
+      responses:
+        '200':
+          description: Success
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '484':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '485':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: ShareId
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+          pattern: '[0-9a-f]{32}'
+          description: The ID associated with the share.
+      - name: ProfileArn
+        in: path
+        required: true
+        description: The profile ARN.
+        schema:
+          type: string
+          pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+          maxLength: 2084
+      - name: ClientRequestToken
+        in: query
+        required: true
+        description: ''
+        schema:
+          type: string
+          description: <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
+          minLength: 1
+          maxLength: 2048
+      summary: Amazon Well-Architected Tool Delete Profile Share
+      tags:
+      - Profiles
+  /profiles/{ProfileArn}:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: GetProfile
+      description: Get profile information.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProfileOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: ProfileArn
+        in: path
+        required: true
+        description: The profile ARN.
+        schema:
+          type: string
+          pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+          maxLength: 2084
+      - name: ProfileVersion
+        in: query
+        required: false
+        description: The profile version.
+        schema:
+          type: string
+          pattern: ^[A-Za-z0-9-]+$
+          minLength: 1
+          maxLength: 32
+      summary: Amazon Well-Architected Tool Get Profile
+      tags:
+      - Profiles
+    patch:
+      operationId: UpdateProfile
+      description: Update a profile.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateProfileOutput'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: ConflictException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConflictException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+        '484':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '485':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+      parameters:
+      - name: ProfileArn
+        in: path
+        required: true
+        description: The profile ARN.
+        schema:
+          type: string
+          pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+          maxLength: 2084
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ProfileDescription:
+                  description: The profile description.
+                  type: string
+                  pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+                  minLength: 3
+                  maxLength: 100
+                ProfileQuestions:
+                  description: Profile questions.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/ProfileQuestionUpdate'
+      summary: Amazon Well-Architected Tool Update Profile
+      tags:
+      - Profiles
+components:
+  schemas:
+    ProfileDescription:
+      type: string
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
+    ServiceQuotaExceededException: {}
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    ShareStatus:
+      type: string
+      enum:
+      - ACCEPTED
+      - REJECTED
+      - PENDING
+      - REVOKED
+      - EXPIRED
+      - ASSOCIATING
+      - ASSOCIATED
+      - FAILED
+      description: The status of the share request.
+    GetProfileOutput:
+      type: object
+      properties:
+        Profile:
+          allOf:
+          - $ref: '#/components/schemas/Profile'
+          - description: The profile.
+    ChoiceId:
+      type: string
+      description: The ID of a choice.
+      minLength: 1
+      maxLength: 64
+    QuestionId:
+      type: string
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    SharedWith:
+      type: string
+      description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
+      minLength: 12
+      maxLength: 2048
+    ChoiceTitle:
+      type: string
+      description: The title of a choice.
+      minLength: 1
+      maxLength: 512
+    Profile:
+      type: object
+      properties:
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+        ProfileVersion:
+          allOf:
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: The profile version.
+        ProfileName:
+          allOf:
+          - $ref: '#/components/schemas/ProfileName'
+          - description: The profile name.
+        ProfileDescription:
+          allOf:
+          - $ref: '#/components/schemas/ProfileDescription'
+          - description: The profile description.
+        ProfileQuestions:
+          allOf:
+          - $ref: '#/components/schemas/ProfileQuestions'
+          - description: Profile questions.
+        Owner:
+          $ref: '#/components/schemas/AwsAccountId'
+        CreatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        ShareInvitationId:
+          allOf:
+          - $ref: '#/components/schemas/ShareInvitationId'
+          - description: The ID assigned to the share invitation.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags assigned to the profile.
+      description: A profile.
+    QuestionTitle:
+      type: string
+      description: The title of the question.
+      minLength: 1
+      maxLength: 512
+    ShareId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID associated with the share.
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    ProfileShareSummary:
+      type: object
+      properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+        SharedWith:
+          $ref: '#/components/schemas/SharedWith'
+        Status:
+          $ref: '#/components/schemas/ShareStatus'
+        StatusMessage:
+          allOf:
+          - $ref: '#/components/schemas/StatusMessage'
+          - description: Profile share invitation status message.
+      description: Summary of a profile share.
+    ProfileQuestionUpdate:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        SelectedChoiceIds:
+          allOf:
+          - $ref: '#/components/schemas/SelectedProfileChoiceIds'
+          - description: The selected choices.
+      description: An update to a profile question.
+    CreateProfileOutput:
+      type: object
+      properties:
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+        ProfileVersion:
+          allOf:
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: Version of the profile.
+    UpdateProfileOutput:
+      type: object
+      properties:
+        Profile:
+          allOf:
+          - $ref: '#/components/schemas/Profile'
+          - description: The profile.
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    SelectedChoiceIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChoiceId'
+    AwsAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+      description: An Amazon Web Services account ID.
+      minLength: 12
+      maxLength: 12
+    ProfileShareSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileShareSummary'
+    AccessDeniedException: {}
+    ShareInvitationId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+    ProfileQuestions:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileQuestion'
+    MaxSelectedProfileChoices:
+      type: integer
+      minimum: 0
+    ConflictException: {}
+    InternalServerException: {}
+    ProfileName:
+      type: string
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
+    QuestionDescription:
+      type: string
+      description: The description of the question.
+      minLength: 1
+      maxLength: 1024
+    ProfileQuestionChoices:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileChoice'
+    SelectedProfileChoiceIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChoiceId'
+    ProfileArn:
+      type: string
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
+    StatusMessage:
+      type: string
+      minLength: 1
+      maxLength: 512
+    ChoiceDescription:
+      type: string
+      description: The description of a choice.
+      minLength: 1
+      maxLength: 1024
+    ProfileQuestion:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        QuestionTitle:
+          $ref: '#/components/schemas/QuestionTitle'
+        QuestionDescription:
+          $ref: '#/components/schemas/QuestionDescription'
+        QuestionChoices:
+          allOf:
+          - $ref: '#/components/schemas/ProfileQuestionChoices'
+          - description: The question choices.
+        SelectedChoiceIds:
+          allOf:
+          - $ref: '#/components/schemas/SelectedChoiceIds'
+          - description: The selected choices.
+        MinSelectedChoices:
+          allOf:
+          - $ref: '#/components/schemas/MinSelectedProfileChoices'
+          - description: The minimum number of selected choices.
+        MaxSelectedChoices:
+          allOf:
+          - $ref: '#/components/schemas/MaxSelectedProfileChoices'
+          - description: The maximum number of selected choices.
+      description: A profile question.
+    ProfileChoice:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        ChoiceTitle:
+          $ref: '#/components/schemas/ChoiceTitle'
+        ChoiceDescription:
+          $ref: '#/components/schemas/ChoiceDescription'
+      description: The profile choice.
+    MinSelectedProfileChoices:
+      type: integer
+      minimum: 0
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    CreateProfileShareOutput:
+      type: object
+      properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+    ThrottlingException: {}
+    ListProfileSharesOutput:
+      type: object
+      properties:
+        ProfileShareSummaries:
+          allOf:
+          - $ref: '#/components/schemas/ProfileShareSummaries'
+          - description: Profile share summaries.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+    ResourceNotFoundException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    ValidationException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/wellarchitected/
+x-hasEquivalentPaths: true
