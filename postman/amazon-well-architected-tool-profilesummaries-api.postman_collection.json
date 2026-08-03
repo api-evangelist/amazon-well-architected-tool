@@ -1,0 +1,574 @@
+{
+  "info": {
+    "_postman_id": "795e8a8b-5520-401e-9841-861093543f61",
+    "name": "AWS Well-Architected Tool ConsolidatedReport#Format ProfileSummaries API",
+    "description": "<fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href=\"http://aws.amazon.com/well-architected-tool\">Well-Architected Tool</a> in the <a href=\"https://console.aws.amazon.com/wellarchitected\">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href=\"https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html\">Well-Architected Tool User Guide</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:48:52.000Z",
+    "updatedAt": "2026-07-28T10:48:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-795e8a8b-5520-401e-9841-861093543f61"
+  },
+  "item": [
+    {
+      "name": "profileSummaries",
+      "item": [
+        {
+          "name": "Amazon Well-Architected Tool List Profiles",
+          "id": "b0ef7798-9247-4ea0-b3c8-2616264edf23",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/profileSummaries?ProfileNamePrefix=Q\u3000,\u3000G2+&ProfileOwnerType=SHARED&NextToken=<string>&MaxResults=<integer>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "profileSummaries"
+              ],
+              "query": [
+                {
+                  "description": "Prefix for profile name.",
+                  "key": "ProfileNamePrefix",
+                  "value": "Q\u3000,\u3000G2+"
+                },
+                {
+                  "description": "Profile owner type.",
+                  "key": "ProfileOwnerType",
+                  "value": "SHARED"
+                },
+                {
+                  "key": "NextToken",
+                  "value": "<string>"
+                },
+                {
+                  "key": "MaxResults",
+                  "value": "<integer>"
+                }
+              ]
+            },
+            "description": "List profiles."
+          },
+          "response": [
+            {
+              "id": "63c66acd-04d0-4d56-871c-81f16395a55e",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileSummaries?ProfileNamePrefix=Q\u3000,\u3000G2+&ProfileOwnerType=SHARED&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileSummaries"
+                  ],
+                  "query": [
+                    {
+                      "description": "Prefix for profile name.",
+                      "key": "ProfileNamePrefix",
+                      "value": "Q\u3000,\u3000G2+"
+                    },
+                    {
+                      "description": "Profile owner type.",
+                      "key": "ProfileOwnerType",
+                      "value": "SHARED"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ProfileSummaries\": [\n    {\n      \"ProfileArn\": \"arn:awsdmrzaqzzu:wellarchitected:ck-gov-dvmnyrseoca-1:191070756138:profile/kj\",\n      \"ProfileVersion\": \"Dc7UM66qt\",\n      \"ProfileName\": \".V.V\",\n      \"ProfileDescription\": \"\u3000\u2009\ufeffB\",\n      \"Owner\": \"193407925997\",\n      \"CreatedAt\": \"<dateTime>\",\n      \"UpdatedAt\": \"<dateTime>\"\n    },\n    {\n      \"ProfileArn\": \"arn:aws:wellarchitected:dv-rrfgetk-9:230983908229:profile/pd\",\n      \"ProfileVersion\": \"zHTw\",\n      \"ProfileName\": \"7777\",\n      \"ProfileDescription\": \"-(Ep\",\n      \"Owner\": \"354005066117\",\n      \"CreatedAt\": \"<dateTime>\",\n      \"UpdatedAt\": \"<dateTime>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:48:52.000Z",
+              "updatedAt": "2026-07-28T10:48:52.000Z",
+              "uid": "35240-63c66acd-04d0-4d56-871c-81f16395a55e"
+            },
+            {
+              "id": "86ac856e-1321-436f-b47f-cef7a7e82a01",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileSummaries?ProfileNamePrefix=Q\u3000,\u3000G2+&ProfileOwnerType=SHARED&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileSummaries"
+                  ],
+                  "query": [
+                    {
+                      "description": "Prefix for profile name.",
+                      "key": "ProfileNamePrefix",
+                      "value": "Q\u3000,\u3000G2+"
+                    },
+                    {
+                      "description": "Profile owner type.",
+                      "key": "ProfileOwnerType",
+                      "value": "SHARED"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:52.000Z",
+              "updatedAt": "2026-07-28T10:48:52.000Z",
+              "uid": "35240-86ac856e-1321-436f-b47f-cef7a7e82a01"
+            },
+            {
+              "id": "e41d8dbe-58ea-4441-8b79-c6db936f7ebe",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileSummaries?ProfileNamePrefix=Q\u3000,\u3000G2+&ProfileOwnerType=SHARED&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileSummaries"
+                  ],
+                  "query": [
+                    {
+                      "description": "Prefix for profile name.",
+                      "key": "ProfileNamePrefix",
+                      "value": "Q\u3000,\u3000G2+"
+                    },
+                    {
+                      "description": "Profile owner type.",
+                      "key": "ProfileOwnerType",
+                      "value": "SHARED"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:52.000Z",
+              "updatedAt": "2026-07-28T10:48:52.000Z",
+              "uid": "35240-e41d8dbe-58ea-4441-8b79-c6db936f7ebe"
+            },
+            {
+              "id": "6340a45d-1b58-46d0-96fc-1ecbb308b8ff",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileSummaries?ProfileNamePrefix=Q\u3000,\u3000G2+&ProfileOwnerType=SHARED&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileSummaries"
+                  ],
+                  "query": [
+                    {
+                      "description": "Prefix for profile name.",
+                      "key": "ProfileNamePrefix",
+                      "value": "Q\u3000,\u3000G2+"
+                    },
+                    {
+                      "description": "Profile owner type.",
+                      "key": "ProfileOwnerType",
+                      "value": "SHARED"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:52.000Z",
+              "updatedAt": "2026-07-28T10:48:52.000Z",
+              "uid": "35240-6340a45d-1b58-46d0-96fc-1ecbb308b8ff"
+            },
+            {
+              "id": "332fd200-7880-4e8d-ab24-21f6cd3f221d",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileSummaries?ProfileNamePrefix=Q\u3000,\u3000G2+&ProfileOwnerType=SHARED&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileSummaries"
+                  ],
+                  "query": [
+                    {
+                      "description": "Prefix for profile name.",
+                      "key": "ProfileNamePrefix",
+                      "value": "Q\u3000,\u3000G2+"
+                    },
+                    {
+                      "description": "Profile owner type.",
+                      "key": "ProfileOwnerType",
+                      "value": "SHARED"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:52.000Z",
+              "updatedAt": "2026-07-28T10:48:52.000Z",
+              "uid": "35240-332fd200-7880-4e8d-ab24-21f6cd3f221d"
+            }
+          ],
+          "createdAt": "2026-07-28T10:48:52.000Z",
+          "updatedAt": "2026-07-28T10:48:52.000Z",
+          "uid": "35240-b0ef7798-9247-4ea0-b3c8-2616264edf23"
+        }
+      ],
+      "id": "c70969f0-e107-40f8-9542-57d7798af631",
+      "createdAt": "2026-07-28T10:48:52.000Z",
+      "updatedAt": "2026-07-28T10:48:52.000Z",
+      "uid": "35240-c70969f0-e107-40f8-9542-57d7798af631"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://wellarchitected.{{region}}.amazonaws.com"
+    }
+  ]
+}

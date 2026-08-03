@@ -1,0 +1,544 @@
+{
+  "info": {
+    "_postman_id": "2f100ccb-4bfb-44e0-8fbc-9984ff0c8dff",
+    "name": "AWS Well-Architected Tool ConsolidatedReport#Format ProfileNotifications API",
+    "description": "<fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href=\"http://aws.amazon.com/well-architected-tool\">Well-Architected Tool</a> in the <a href=\"https://console.aws.amazon.com/wellarchitected\">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href=\"https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html\">Well-Architected Tool User Guide</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:48:50.000Z",
+    "updatedAt": "2026-07-28T10:48:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2f100ccb-4bfb-44e0-8fbc-9984ff0c8dff"
+  },
+  "item": [
+    {
+      "name": "profileNotifications",
+      "item": [
+        {
+          "name": "Amazon Well-Architected Tool List Profile Notifications",
+          "id": "d61066d5-c843-4777-a2ef-dacb49e4976d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/profileNotifications/?WorkloadId=eb3955824c3e706e8a96345b686a86d2&NextToken=<string>&MaxResults=<integer>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "profileNotifications",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "WorkloadId",
+                  "value": "eb3955824c3e706e8a96345b686a86d2"
+                },
+                {
+                  "key": "NextToken",
+                  "value": "<string>"
+                },
+                {
+                  "key": "MaxResults",
+                  "value": "<integer>"
+                }
+              ]
+            },
+            "description": "List profile notifications."
+          },
+          "response": [
+            {
+              "id": "dcb29af1-7ea4-4d06-bca1-81d93f116fc2",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileNotifications/?WorkloadId=eb3955824c3e706e8a96345b686a86d2&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileNotifications",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadId",
+                      "value": "eb3955824c3e706e8a96345b686a86d2"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"NotificationSummaries\": [\n    {\n      \"CurrentProfileVersion\": \"tCF\",\n      \"LatestProfileVersion\": \"so0mMwIE7Tm\",\n      \"Type\": \"PROFILE_ANSWERS_UPDATED\",\n      \"ProfileArn\": \"arn:awscffyynfpb:wellarchitected:uy-tgnerdvunfg-6:086253516618:profile/i7o44zulj3\",\n      \"ProfileName\": \"7\u2002\u2007\u2006-#\\n'\",\n      \"WorkloadId\": \"9206d09f828ec63f9a8c0ab03fe52287\",\n      \"WorkloadName\": \"<string>\"\n    },\n    {\n      \"CurrentProfileVersion\": \"0VJO\",\n      \"LatestProfileVersion\": \"xa\",\n      \"Type\": \"PROFILE_DELETED\",\n      \"ProfileArn\": \"arn:awspriop:wellarchitected:ty-jnpceepdw-4:654244822653:profile/kfsxh33ck\",\n      \"ProfileName\": \"\ufeff0Y)x\",\n      \"WorkloadId\": \"eac0ebb142399c47ed26d2822eb3a791\",\n      \"WorkloadName\": \"<string>\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:48:50.000Z",
+              "updatedAt": "2026-07-28T10:48:50.000Z",
+              "uid": "35240-dcb29af1-7ea4-4d06-bca1-81d93f116fc2"
+            },
+            {
+              "id": "efa10217-eb8d-46f7-829e-81d35ccc777c",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileNotifications/?WorkloadId=eb3955824c3e706e8a96345b686a86d2&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileNotifications",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadId",
+                      "value": "eb3955824c3e706e8a96345b686a86d2"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:50.000Z",
+              "updatedAt": "2026-07-28T10:48:50.000Z",
+              "uid": "35240-efa10217-eb8d-46f7-829e-81d35ccc777c"
+            },
+            {
+              "id": "637bcf61-6bd3-4129-83f9-e489f0c67ce3",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileNotifications/?WorkloadId=eb3955824c3e706e8a96345b686a86d2&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileNotifications",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadId",
+                      "value": "eb3955824c3e706e8a96345b686a86d2"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:50.000Z",
+              "updatedAt": "2026-07-28T10:48:50.000Z",
+              "uid": "35240-637bcf61-6bd3-4129-83f9-e489f0c67ce3"
+            },
+            {
+              "id": "5336bbf1-22a7-4a10-bbcf-892cb9e6fdbb",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileNotifications/?WorkloadId=eb3955824c3e706e8a96345b686a86d2&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileNotifications",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadId",
+                      "value": "eb3955824c3e706e8a96345b686a86d2"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:50.000Z",
+              "updatedAt": "2026-07-28T10:48:50.000Z",
+              "uid": "35240-5336bbf1-22a7-4a10-bbcf-892cb9e6fdbb"
+            },
+            {
+              "id": "aaab1015-4aa7-4cf1-89ca-f29fd6482754",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/profileNotifications/?WorkloadId=eb3955824c3e706e8a96345b686a86d2&NextToken=<string>&MaxResults=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "profileNotifications",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadId",
+                      "value": "eb3955824c3e706e8a96345b686a86d2"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:50.000Z",
+              "updatedAt": "2026-07-28T10:48:50.000Z",
+              "uid": "35240-aaab1015-4aa7-4cf1-89ca-f29fd6482754"
+            }
+          ],
+          "createdAt": "2026-07-28T10:48:50.000Z",
+          "updatedAt": "2026-07-28T10:48:50.000Z",
+          "uid": "35240-d61066d5-c843-4777-a2ef-dacb49e4976d"
+        }
+      ],
+      "id": "c7f1e564-d2a4-4538-8eeb-c130a589e2d4",
+      "createdAt": "2026-07-28T10:48:50.000Z",
+      "updatedAt": "2026-07-28T10:48:50.000Z",
+      "uid": "35240-c7f1e564-d2a4-4538-8eeb-c130a589e2d4"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://wellarchitected.{{region}}.amazonaws.com"
+    }
+  ]
+}

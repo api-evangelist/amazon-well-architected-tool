@@ -1,0 +1,38 @@
+{
+  "provider": "amazon-well-architected-tool",
+  "sources": [
+    "amazon-well-architected-tool-consolidatedreport-format-api-openapi.yml",
+    "amazon-well-architected-tool-global-settings-api-openapi.yml",
+    "amazon-well-architected-tool-importlens-api-openapi.yml",
+    "amazon-well-architected-tool-lenses-api-openapi.yml",
+    "amazon-well-architected-tool-notifications-api-openapi.yml",
+    "amazon-well-architected-tool-profilenotifications-api-openapi.yml",
+    "amazon-well-architected-tool-profiles-api-openapi.yml",
+    "amazon-well-architected-tool-profilesummaries-api-openapi.yml",
+    "amazon-well-architected-tool-profiletemplate-api-openapi.yml",
+    "amazon-well-architected-tool-shareinvitations-api-openapi.yml",
+    "amazon-well-architected-tool-tags-api-openapi.yml",
+    "amazon-well-architected-tool-workloads-api-openapi.yml",
+    "amazon-well-architected-tool-workloadssummaries-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-well-architected-tool-consolidatedreport-format-api-openapi.yml",
+    "amazon-well-architected-tool-global-settings-api-openapi.yml",
+    "amazon-well-architected-tool-importlens-api-openapi.yml",
+    "amazon-well-architected-tool-lenses-api-openapi.yml",
+    "amazon-well-architected-tool-notifications-api-openapi.yml",
+    "amazon-well-architected-tool-profilenotifications-api-openapi.yml",
+    "amazon-well-architected-tool-profiles-api-openapi.yml",
+    "amazon-well-architected-tool-profilesummaries-api-openapi.yml",
+    "amazon-well-architected-tool-profiletemplate-api-openapi.yml",
+    "amazon-well-architected-tool-shareinvitations-api-openapi.yml",
+    "amazon-well-architected-tool-tags-api-openapi.yml",
+    "amazon-well-architected-tool-workloads-api-openapi.yml",
+    "amazon-well-architected-tool-workloadssummaries-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

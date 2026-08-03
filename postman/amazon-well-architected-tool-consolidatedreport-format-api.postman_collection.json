@@ -1,0 +1,676 @@
+{
+  "info": {
+    "_postman_id": "036a818f-c529-4745-9a8d-141f62530490",
+    "name": "AWS Well-Architected Tool ConsolidatedReport#Format API",
+    "description": "<fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href=\"http://aws.amazon.com/well-architected-tool\">Well-Architected Tool</a> in the <a href=\"https://console.aws.amazon.com/wellarchitected\">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href=\"https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html\">Well-Architected Tool User Guide</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:47:56.000Z",
+    "updatedAt": "2026-07-28T10:47:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-036a818f-c529-4745-9a8d-141f62530490"
+  },
+  "item": [
+    {
+      "name": "consolidatedReport#Format",
+      "item": [
+        {
+          "name": "Amazon Well-Architected Tool Get Consolidated Report",
+          "id": "105f2d5b-40b9-4640-82ad-81313e7358d8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/consolidatedReport?Format=PDF&IncludeSharedResources=<boolean>&NextToken=<string>&MaxResults=<integer>#Format",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "consolidatedReport"
+              ],
+              "query": [
+                {
+                  "description": "(Required) <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>",
+                  "key": "Format",
+                  "value": "PDF"
+                },
+                {
+                  "description": "Set to <code>true</code> to have shared resources included in the report.",
+                  "key": "IncludeSharedResources",
+                  "value": "<boolean>"
+                },
+                {
+                  "key": "NextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of results to return for this request.",
+                  "key": "MaxResults",
+                  "value": "<integer>"
+                }
+              ],
+              "hash": "Format"
+            },
+            "description": "<p>Get a consolidated report of your workloads.</p> <p>You can optionally choose to include workloads that have been shared with you.</p>"
+          },
+          "response": [
+            {
+              "id": "27716974-01cc-4a0c-8364-97cf3738fc6f",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/consolidatedReport?Format=PDF&IncludeSharedResources=<boolean>&NextToken=<string>&MaxResults=<integer>#Format",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consolidatedReport"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>",
+                      "key": "Format",
+                      "value": "PDF"
+                    },
+                    {
+                      "description": "Set to <code>true</code> to have shared resources included in the report.",
+                      "key": "IncludeSharedResources",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "hash": "Format"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Metrics\": [\n    {\n      \"MetricType\": \"WORKLOAD\",\n      \"RiskCounts\": {\n        \"adipisicing_30\": \"<integer>\"\n      },\n      \"WorkloadId\": \"8496a4bc0d0fdef5bc03d885f91ea0e6\",\n      \"WorkloadName\": \"<string>\",\n      \"WorkloadArn\": \"<string>\",\n      \"UpdatedAt\": \"<dateTime>\",\n      \"Lenses\": [\n        {\n          \"LensArn\": \"<string>\",\n          \"Pillars\": [\n            {\n              \"PillarId\": \"<string>\",\n              \"RiskCounts\": {\n                \"cupidatat_107\": \"<integer>\"\n              },\n              \"Questions\": [\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"MEDIUM\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                },\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"NOT_APPLICABLE\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"PillarId\": \"<string>\",\n              \"RiskCounts\": {\n                \"exercitation_9f\": \"<integer>\",\n                \"laborum_b8\": \"<integer>\",\n                \"amet5\": \"<integer>\"\n              },\n              \"Questions\": [\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"HIGH\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                },\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"NONE\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ],\n          \"RiskCounts\": {\n            \"aute_0d9\": \"<integer>\",\n            \"commodo_d71\": \"<integer>\",\n            \"amet_4\": \"<integer>\"\n          }\n        },\n        {\n          \"LensArn\": \"<string>\",\n          \"Pillars\": [\n            {\n              \"PillarId\": \"<string>\",\n              \"RiskCounts\": {\n                \"aute0\": \"<integer>\",\n                \"Excepteur_0a\": \"<integer>\"\n              },\n              \"Questions\": [\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"MEDIUM\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                },\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"UNANSWERED\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"PillarId\": \"<string>\",\n              \"RiskCounts\": {\n                \"do__e8\": \"<integer>\",\n                \"mollit8c\": \"<integer>\",\n                \"eiusmodc8\": \"<integer>\"\n              },\n              \"Questions\": [\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"NOT_APPLICABLE\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                },\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"NOT_APPLICABLE\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ],\n          \"RiskCounts\": {\n            \"incididunt3\": \"<integer>\"\n          }\n        }\n      ],\n      \"LensesAppliedCount\": \"<integer>\"\n    },\n    {\n      \"MetricType\": \"WORKLOAD\",\n      \"RiskCounts\": {\n        \"exercitationc5c\": \"<integer>\"\n      },\n      \"WorkloadId\": \"5c4a2de257aa04e47f0b8c1e3ad59db2\",\n      \"WorkloadName\": \"<string>\",\n      \"WorkloadArn\": \"<string>\",\n      \"UpdatedAt\": \"<dateTime>\",\n      \"Lenses\": [\n        {\n          \"LensArn\": \"<string>\",\n          \"Pillars\": [\n            {\n              \"PillarId\": \"<string>\",\n              \"RiskCounts\": {\n                \"veniam_c9\": \"<integer>\"\n              },\n              \"Questions\": [\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"HIGH\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                },\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"NONE\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"PillarId\": \"<string>\",\n              \"RiskCounts\": {\n                \"consectetur_e\": \"<integer>\"\n              },\n              \"Questions\": [\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"MEDIUM\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                },\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"MEDIUM\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ],\n          \"RiskCounts\": {\n            \"eu_b\": \"<integer>\"\n          }\n        },\n        {\n          \"LensArn\": \"<string>\",\n          \"Pillars\": [\n            {\n              \"PillarId\": \"<string>\",\n              \"RiskCounts\": {\n                \"laborum2\": \"<integer>\",\n                \"tempor_f1\": \"<integer>\",\n                \"nostruddd0\": \"<integer>\"\n              },\n              \"Questions\": [\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"NOT_APPLICABLE\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                },\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"UNANSWERED\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"PillarId\": \"<string>\",\n              \"RiskCounts\": {\n                \"sint_4\": \"<integer>\",\n                \"laborise\": \"<integer>\"\n              },\n              \"Questions\": [\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"NONE\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                },\n                {\n                  \"QuestionId\": \"<string>\",\n                  \"Risk\": \"MEDIUM\",\n                  \"BestPractices\": [\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    },\n                    {\n                      \"ChoiceId\": \"<string>\",\n                      \"ChoiceTitle\": \"<string>\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ],\n          \"RiskCounts\": {\n            \"irure_3b\": \"<integer>\"\n          }\n        }\n      ],\n      \"LensesAppliedCount\": \"<integer>\"\n    }\n  ],\n  \"NextToken\": \"<string>\",\n  \"Base64String\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:47:57.000Z",
+              "updatedAt": "2026-07-28T10:47:57.000Z",
+              "uid": "35240-27716974-01cc-4a0c-8364-97cf3738fc6f"
+            },
+            {
+              "id": "af9ce7e3-7cc7-4362-9b40-97eac6eda56b",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/consolidatedReport?Format=PDF&IncludeSharedResources=<boolean>&NextToken=<string>&MaxResults=<integer>#Format",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consolidatedReport"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>",
+                      "key": "Format",
+                      "value": "PDF"
+                    },
+                    {
+                      "description": "Set to <code>true</code> to have shared resources included in the report.",
+                      "key": "IncludeSharedResources",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "hash": "Format"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:47:57.000Z",
+              "updatedAt": "2026-07-28T10:47:57.000Z",
+              "uid": "35240-af9ce7e3-7cc7-4362-9b40-97eac6eda56b"
+            },
+            {
+              "id": "b1a7f2d3-8d20-49eb-b814-68d8d692f77a",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/consolidatedReport?Format=PDF&IncludeSharedResources=<boolean>&NextToken=<string>&MaxResults=<integer>#Format",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consolidatedReport"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>",
+                      "key": "Format",
+                      "value": "PDF"
+                    },
+                    {
+                      "description": "Set to <code>true</code> to have shared resources included in the report.",
+                      "key": "IncludeSharedResources",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "hash": "Format"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:47:57.000Z",
+              "updatedAt": "2026-07-28T10:47:57.000Z",
+              "uid": "35240-b1a7f2d3-8d20-49eb-b814-68d8d692f77a"
+            },
+            {
+              "id": "c10e7db3-0d22-4320-b0b8-5f039ec7c3be",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/consolidatedReport?Format=PDF&IncludeSharedResources=<boolean>&NextToken=<string>&MaxResults=<integer>#Format",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consolidatedReport"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>",
+                      "key": "Format",
+                      "value": "PDF"
+                    },
+                    {
+                      "description": "Set to <code>true</code> to have shared resources included in the report.",
+                      "key": "IncludeSharedResources",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "hash": "Format"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:47:57.000Z",
+              "updatedAt": "2026-07-28T10:47:57.000Z",
+              "uid": "35240-c10e7db3-0d22-4320-b0b8-5f039ec7c3be"
+            },
+            {
+              "id": "ca293bcc-5987-47aa-897d-020aec1e9b19",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/consolidatedReport?Format=PDF&IncludeSharedResources=<boolean>&NextToken=<string>&MaxResults=<integer>#Format",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consolidatedReport"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>",
+                      "key": "Format",
+                      "value": "PDF"
+                    },
+                    {
+                      "description": "Set to <code>true</code> to have shared resources included in the report.",
+                      "key": "IncludeSharedResources",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "hash": "Format"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:47:57.000Z",
+              "updatedAt": "2026-07-28T10:47:57.000Z",
+              "uid": "35240-ca293bcc-5987-47aa-897d-020aec1e9b19"
+            },
+            {
+              "id": "98e1e367-ef27-439b-935a-b96e90f0fd24",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/consolidatedReport?Format=PDF&IncludeSharedResources=<boolean>&NextToken=<string>&MaxResults=<integer>#Format",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "consolidatedReport"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>",
+                      "key": "Format",
+                      "value": "PDF"
+                    },
+                    {
+                      "description": "Set to <code>true</code> to have shared resources included in the report.",
+                      "key": "IncludeSharedResources",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "hash": "Format"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:47:57.000Z",
+              "updatedAt": "2026-07-28T10:47:57.000Z",
+              "uid": "35240-98e1e367-ef27-439b-935a-b96e90f0fd24"
+            }
+          ],
+          "createdAt": "2026-07-28T10:47:57.000Z",
+          "updatedAt": "2026-07-28T10:47:57.000Z",
+          "uid": "35240-105f2d5b-40b9-4640-82ad-81313e7358d8"
+        }
+      ],
+      "id": "e8d0093c-ec2d-4283-831d-682eab2d5e3f",
+      "createdAt": "2026-07-28T10:47:57.000Z",
+      "updatedAt": "2026-07-28T10:47:57.000Z",
+      "uid": "35240-e8d0093c-ec2d-4283-831d-682eab2d5e3f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://wellarchitected.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,1343 @@
+{
+  "info": {
+    "_postman_id": "4212b294-c744-401a-8d8f-bd5a3a22a912",
+    "name": "AWS Well-Architected Tool ConsolidatedReport#Format ShareInvitations API",
+    "description": "<fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href=\"http://aws.amazon.com/well-architected-tool\">Well-Architected Tool</a> in the <a href=\"https://console.aws.amazon.com/wellarchitected\">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href=\"https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html\">Well-Architected Tool User Guide</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:48:53.000Z",
+    "updatedAt": "2026-07-28T10:48:54.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4212b294-c744-401a-8d8f-bd5a3a22a912"
+  },
+  "item": [
+    {
+      "name": "shareInvitations",
+      "item": [
+        {
+          "name": "{ShareInvitationId}",
+          "item": [
+            {
+              "name": "Amazon Well-Architected Tool Update Share Invitation",
+              "id": "4cb32411-8775-4179-acbe-22ea91609263",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ShareInvitationAction\": \"REJECT\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/shareInvitations/:ShareInvitationId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "shareInvitations",
+                    ":ShareInvitationId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "4be6b5d2-5c00-4d44-a6ea-0fa9cb9e3417",
+                      "key": "ShareInvitationId",
+                      "value": "d303f3caeb71f7335cda44c939be867b",
+                      "description": "(Required) The ID assigned to the share invitation."
+                    }
+                  ]
+                },
+                "description": "<p>Update a workload or custom lens share invitation.</p> <note> <p>This API operation can be called independently of any resource. Previous documentation implied that a workload ARN must be specified.</p> </note>"
+              },
+              "response": [
+                {
+                  "id": "7e759747-6484-4960-bdfa-8bb319e2e126",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"ShareInvitationAction\": \"REJECT\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/shareInvitations/:ShareInvitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "shareInvitations",
+                        ":ShareInvitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ShareInvitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"ShareInvitation\": {\n    \"ShareInvitationId\": \"4f1042955af7abadaad4e00f697c6582\",\n    \"ShareResourceType\": \"WORKLOAD\",\n    \"WorkloadId\": \"c4562b945889977a70f9eb894ff4eece\",\n    \"LensAlias\": \"<string>\",\n    \"LensArn\": \"<string>\",\n    \"ProfileArn\": \"arn:awssthfyb-:wellarchitected:ta-gov-wmzcjnyxbb-1:424945110907:profile/d6\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:48:54.000Z",
+                  "updatedAt": "2026-07-28T10:48:54.000Z",
+                  "uid": "35240-7e759747-6484-4960-bdfa-8bb319e2e126"
+                },
+                {
+                  "id": "f26fc32a-4fe3-4db2-8de2-f4433bc55a14",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"ShareInvitationAction\": \"REJECT\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/shareInvitations/:ShareInvitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "shareInvitations",
+                        ":ShareInvitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ShareInvitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:48:54.000Z",
+                  "updatedAt": "2026-07-28T10:48:54.000Z",
+                  "uid": "35240-f26fc32a-4fe3-4db2-8de2-f4433bc55a14"
+                },
+                {
+                  "id": "9bc0b301-cbb2-45b7-ba75-d0aa4f3c8119",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"ShareInvitationAction\": \"REJECT\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/shareInvitations/:ShareInvitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "shareInvitations",
+                        ":ShareInvitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ShareInvitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:48:54.000Z",
+                  "updatedAt": "2026-07-28T10:48:54.000Z",
+                  "uid": "35240-9bc0b301-cbb2-45b7-ba75-d0aa4f3c8119"
+                },
+                {
+                  "id": "3601e741-b7bb-4514-90b3-9d0b899c3122",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"ShareInvitationAction\": \"REJECT\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/shareInvitations/:ShareInvitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "shareInvitations",
+                        ":ShareInvitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ShareInvitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:48:54.000Z",
+                  "updatedAt": "2026-07-28T10:48:54.000Z",
+                  "uid": "35240-3601e741-b7bb-4514-90b3-9d0b899c3122"
+                },
+                {
+                  "id": "04b8b39c-27d1-4944-9841-111908e6aa47",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"ShareInvitationAction\": \"REJECT\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/shareInvitations/:ShareInvitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "shareInvitations",
+                        ":ShareInvitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ShareInvitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:48:54.000Z",
+                  "updatedAt": "2026-07-28T10:48:54.000Z",
+                  "uid": "35240-04b8b39c-27d1-4944-9841-111908e6aa47"
+                },
+                {
+                  "id": "f2fe2287-27df-4fa7-a8a8-88f08a4db1bb",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"ShareInvitationAction\": \"REJECT\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/shareInvitations/:ShareInvitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "shareInvitations",
+                        ":ShareInvitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ShareInvitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:48:54.000Z",
+                  "updatedAt": "2026-07-28T10:48:54.000Z",
+                  "uid": "35240-f2fe2287-27df-4fa7-a8a8-88f08a4db1bb"
+                },
+                {
+                  "id": "655c0605-9d96-4115-be6f-ce1e628d7570",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"ShareInvitationAction\": \"REJECT\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/shareInvitations/:ShareInvitationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "shareInvitations",
+                        ":ShareInvitationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "ShareInvitationId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:48:54.000Z",
+                  "updatedAt": "2026-07-28T10:48:54.000Z",
+                  "uid": "35240-655c0605-9d96-4115-be6f-ce1e628d7570"
+                }
+              ],
+              "createdAt": "2026-07-28T10:48:54.000Z",
+              "updatedAt": "2026-07-28T10:48:54.000Z",
+              "uid": "35240-4cb32411-8775-4179-acbe-22ea91609263"
+            }
+          ],
+          "id": "de704d64-9858-40b4-8c57-2ce1fa685356",
+          "createdAt": "2026-07-28T10:48:54.000Z",
+          "updatedAt": "2026-07-28T10:48:54.000Z",
+          "uid": "35240-de704d64-9858-40b4-8c57-2ce1fa685356"
+        },
+        {
+          "name": "Amazon Well-Architected Tool List Share Invitations",
+          "id": "97320c7b-b643-47a7-a725-f2b27595bede",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/shareInvitations?WorkloadNamePrefix=<string>&LensNamePrefix=<string>&ShareResourceType=PROFILE&NextToken=<string>&MaxResults=<integer>&ProfileNamePrefix=YZ\f\u1680(X",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "shareInvitations"
+              ],
+              "query": [
+                {
+                  "key": "WorkloadNamePrefix",
+                  "value": "<string>"
+                },
+                {
+                  "description": "An optional string added to the beginning of each lens name returned in the results.",
+                  "key": "LensNamePrefix",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The type of share invitations to be returned.",
+                  "key": "ShareResourceType",
+                  "value": "PROFILE"
+                },
+                {
+                  "key": "NextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of results to return for this request.",
+                  "key": "MaxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Profile name prefix.",
+                  "key": "ProfileNamePrefix",
+                  "value": "YZ\f\u1680(X"
+                }
+              ]
+            },
+            "description": "List the workload invitations."
+          },
+          "response": [
+            {
+              "id": "e05f4802-fb0d-4fb5-9f34-f40ef81d9e77",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/shareInvitations?WorkloadNamePrefix=<string>&LensNamePrefix=<string>&ShareResourceType=PROFILE&NextToken=<string>&MaxResults=<integer>&ProfileNamePrefix=YZ\f\u1680(X",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "shareInvitations"
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional string added to the beginning of each lens name returned in the results.",
+                      "key": "LensNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The type of share invitations to be returned.",
+                      "key": "ShareResourceType",
+                      "value": "PROFILE"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Profile name prefix.",
+                      "key": "ProfileNamePrefix",
+                      "value": "YZ\f\u1680(X"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ShareInvitationSummaries\": [\n    {\n      \"ShareInvitationId\": \"7f48ab066327b53ab2e94a6f32c45aba\",\n      \"SharedBy\": \"102768480525\",\n      \"SharedWith\": \"<string>\",\n      \"PermissionType\": \"READONLY\",\n      \"ShareResourceType\": \"LENS\",\n      \"WorkloadName\": \"<string>\",\n      \"WorkloadId\": \"b1d8f3df58844acb2b094470dd676fde\",\n      \"LensName\": \"<string>\",\n      \"LensArn\": \"<string>\",\n      \"ProfileName\": \"OyOy\",\n      \"ProfileArn\": \"arn:awsswq:wellarchitected:us-edien-8:958905334310:profile/xhjvuzmm5\"\n    },\n    {\n      \"ShareInvitationId\": \"438397718f4f6c13cf57a60ff0a41c55\",\n      \"SharedBy\": \"594383292622\",\n      \"SharedWith\": \"<string>\",\n      \"PermissionType\": \"READONLY\",\n      \"ShareResourceType\": \"PROFILE\",\n      \"WorkloadName\": \"<string>\",\n      \"WorkloadId\": \"103e1efb027a11fa61ac07ef787ef459\",\n      \"LensName\": \"<string>\",\n      \"LensArn\": \"<string>\",\n      \"ProfileName\": \"2x2x\",\n      \"ProfileArn\": \"arn:awsr:wellarchitected:ob-gov-nvvcf-2:063157213366:profile/9a494\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:48:54.000Z",
+              "updatedAt": "2026-07-28T10:48:54.000Z",
+              "uid": "35240-e05f4802-fb0d-4fb5-9f34-f40ef81d9e77"
+            },
+            {
+              "id": "689517ca-61ff-4f25-8837-febef404be1a",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/shareInvitations?WorkloadNamePrefix=<string>&LensNamePrefix=<string>&ShareResourceType=PROFILE&NextToken=<string>&MaxResults=<integer>&ProfileNamePrefix=YZ\f\u1680(X",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "shareInvitations"
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional string added to the beginning of each lens name returned in the results.",
+                      "key": "LensNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The type of share invitations to be returned.",
+                      "key": "ShareResourceType",
+                      "value": "PROFILE"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Profile name prefix.",
+                      "key": "ProfileNamePrefix",
+                      "value": "YZ\f\u1680(X"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:54.000Z",
+              "updatedAt": "2026-07-28T10:48:54.000Z",
+              "uid": "35240-689517ca-61ff-4f25-8837-febef404be1a"
+            },
+            {
+              "id": "7e5240e0-3cfd-4429-ba80-afacf8d90857",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/shareInvitations?WorkloadNamePrefix=<string>&LensNamePrefix=<string>&ShareResourceType=PROFILE&NextToken=<string>&MaxResults=<integer>&ProfileNamePrefix=YZ\f\u1680(X",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "shareInvitations"
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional string added to the beginning of each lens name returned in the results.",
+                      "key": "LensNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The type of share invitations to be returned.",
+                      "key": "ShareResourceType",
+                      "value": "PROFILE"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Profile name prefix.",
+                      "key": "ProfileNamePrefix",
+                      "value": "YZ\f\u1680(X"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:54.000Z",
+              "updatedAt": "2026-07-28T10:48:54.000Z",
+              "uid": "35240-7e5240e0-3cfd-4429-ba80-afacf8d90857"
+            },
+            {
+              "id": "43c88afc-a47f-4e1b-a241-9488572ccc5e",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/shareInvitations?WorkloadNamePrefix=<string>&LensNamePrefix=<string>&ShareResourceType=PROFILE&NextToken=<string>&MaxResults=<integer>&ProfileNamePrefix=YZ\f\u1680(X",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "shareInvitations"
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional string added to the beginning of each lens name returned in the results.",
+                      "key": "LensNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The type of share invitations to be returned.",
+                      "key": "ShareResourceType",
+                      "value": "PROFILE"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Profile name prefix.",
+                      "key": "ProfileNamePrefix",
+                      "value": "YZ\f\u1680(X"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:54.000Z",
+              "updatedAt": "2026-07-28T10:48:54.000Z",
+              "uid": "35240-43c88afc-a47f-4e1b-a241-9488572ccc5e"
+            },
+            {
+              "id": "a883d711-c947-4aa8-847d-469e6046ea9c",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/shareInvitations?WorkloadNamePrefix=<string>&LensNamePrefix=<string>&ShareResourceType=PROFILE&NextToken=<string>&MaxResults=<integer>&ProfileNamePrefix=YZ\f\u1680(X",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "shareInvitations"
+                  ],
+                  "query": [
+                    {
+                      "key": "WorkloadNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional string added to the beginning of each lens name returned in the results.",
+                      "key": "LensNamePrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The type of share invitations to be returned.",
+                      "key": "ShareResourceType",
+                      "value": "PROFILE"
+                    },
+                    {
+                      "key": "NextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return for this request.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Profile name prefix.",
+                      "key": "ProfileNamePrefix",
+                      "value": "YZ\f\u1680(X"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:48:54.000Z",
+              "updatedAt": "2026-07-28T10:48:54.000Z",
+              "uid": "35240-a883d711-c947-4aa8-847d-469e6046ea9c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:48:54.000Z",
+          "updatedAt": "2026-07-28T10:48:54.000Z",
+          "uid": "35240-97320c7b-b643-47a7-a725-f2b27595bede"
+        }
+      ],
+      "id": "c508f996-c003-4732-945d-1915aa46580f",
+      "createdAt": "2026-07-28T10:48:54.000Z",
+      "updatedAt": "2026-07-28T10:48:54.000Z",
+      "uid": "35240-c508f996-c003-4732-945d-1915aa46580f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://wellarchitected.{{region}}.amazonaws.com"
+    }
+  ]
+}
