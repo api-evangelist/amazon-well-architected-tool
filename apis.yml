@@ -57,8 +57,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-global-settings-api
   name: Amazon Well-Architected Tool Global Settings API
   description: >-
@@ -84,8 +82,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-importlens-api
   name: Amazon Well-Architected Tool ImportLens API
   description: The ImportLens API from Amazon Well-Architected Tool — 1 operation(s) for importlens.
@@ -110,8 +106,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-lenses-api
   name: Amazon Well-Architected Tool Lenses API
   description: The Lenses API from Amazon Well-Architected Tool — 8 operation(s) for lenses.
@@ -136,8 +130,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-notifications-api
   name: Amazon Well-Architected Tool Notifications API
   description: >-
@@ -163,8 +155,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-profilenotifications-api
   name: Amazon Well-Architected Tool ProfileNotifications API
   description: >-
@@ -190,8 +180,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-profiles-api
   name: Amazon Well-Architected Tool Profiles API
   description: The Profiles API from Amazon Well-Architected Tool — 5 operation(s) for profiles.
@@ -216,8 +204,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-profilesummaries-api
   name: Amazon Well-Architected Tool ProfileSummaries API
   description: >-
@@ -243,8 +229,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-profiletemplate-api
   name: Amazon Well-Architected Tool ProfileTemplate API
   description: >-
@@ -270,8 +254,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-shareinvitations-api
   name: Amazon Well-Architected Tool ShareInvitations API
   description: >-
@@ -297,8 +279,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-tags-api
   name: Amazon Well-Architected Tool Tags API
   description: The Tags API from Amazon Well-Architected Tool — 2 operation(s) for tags.
@@ -323,8 +303,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-workloads-api
   name: Amazon Well-Architected Tool Workloads API
   description: The Workloads API from Amazon Well-Architected Tool — 23 operation(s) for workloads.
@@ -349,8 +327,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-workloadssummaries-api
   name: Amazon Well-Architected Tool WorkloadsSummaries API
   description: >-
@@ -376,9 +352,16 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-well-architected-tool.yaml
 common:
+  - type: IssueTracker
+    url: https://github.com/aws-samples/custom-lens-wa-hub/issues
+  - type: CodeOfConduct
+    url: https://github.com/aws-samples/custom-lens-wa-hub/blob/main/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/aws-samples/custom-lens-wa-hub/blob/main/CONTRIBUTING.md
+  - type: License
+    name: MIT-0
+    url: https://github.com/aws-samples/custom-lens-wa-hub/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/amazon-well-architected-tool-agentic-access.yml
   - type: TrustCenter
