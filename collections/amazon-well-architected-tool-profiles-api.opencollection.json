@@ -1,0 +1,416 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Well-Architected Tool ConsolidatedReport#Format Profiles API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Profiles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Create Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://wellarchitected.{region}.amazonaws.com/profiles",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a profile."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Profile Shares",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/profiles/:ProfileArn/shares",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ProfileArn",
+                "value": "",
+                "type": "path",
+                "description": "The profile ARN."
+              },
+              {
+                "name": "SharedWithPrefix",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the profile is shared."
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return for this request."
+              },
+              {
+                "name": "Status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List profile shares."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Create Profile Share",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://wellarchitected.{region}.amazonaws.com/profiles/:ProfileArn/shares",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ProfileArn",
+                "value": "",
+                "type": "path",
+                "description": "The profile ARN."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a profile share."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Delete Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://wellarchitected.{region}.amazonaws.com/profiles/:ProfileArn#ClientRequestToken",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ProfileArn",
+                "value": "",
+                "type": "path",
+                "description": "The profile ARN."
+              },
+              {
+                "name": "ClientRequestToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "<p>Delete a profile.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your profile with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your profile available to those other accounts. Those other accounts may continue to access and use your shared profile even if you delete the profile from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>"
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Delete Profile Share",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://wellarchitected.{region}.amazonaws.com/profiles/:ProfileArn/shares/:ShareId#ClientRequestToken",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ShareId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ProfileArn",
+                "value": "",
+                "type": "path",
+                "description": "The profile ARN."
+              },
+              {
+                "name": "ClientRequestToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete a profile share."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Get Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/profiles/:ProfileArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ProfileArn",
+                "value": "",
+                "type": "path",
+                "description": "The profile ARN."
+              },
+              {
+                "name": "ProfileVersion",
+                "value": "",
+                "type": "query",
+                "description": "The profile version."
+              }
+            ]
+          },
+          "docs": "Get profile information."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Update Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/profiles/:ProfileArn",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ProfileArn",
+                "value": "",
+                "type": "path",
+                "description": "The profile ARN."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a profile."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

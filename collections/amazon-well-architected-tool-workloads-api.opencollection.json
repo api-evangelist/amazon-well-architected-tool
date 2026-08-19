@@ -1,0 +1,1602 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Well-Architected Tool ConsolidatedReport#Format Workloads API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Associate Lenses",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/associateLenses",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note> <p> <b>Disclaimer</b> </p> <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p> </note>"
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Associate Profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/associateProfiles",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Associate a profile with a workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Create Milestone",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/milestones",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a milestone for an existing workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Create Workload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Create a new workload.</p> <p>The owner of a workload can share the workload with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html\">Defining a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p> <important> <p>Either <code>AwsRegions<"
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Workload Shares",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/shares",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "SharedWithPrefix",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared."
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return for this request."
+              },
+              {
+                "name": "Status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List the workload shares associated with the workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Create Workload Share",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/shares",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Create a workload share.</p> <p>The owner of a workload can share it with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.</p> <p>If you share a workload with an organization or OU, all accounts in the organization or OU are granted access to the workload.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharin"
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Delete Workload",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId#ClientRequestToken",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ClientRequestToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete an existing workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Delete Workload Share",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/shares/:ShareId#ClientRequestToken",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ShareId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ClientRequestToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete a workload share."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Disassociate Lenses",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/disassociateLenses",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Disassociate a lens from a workload.</p> <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p> <note> <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p> </note>"
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Disassociate Profiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/disassociateProfiles",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Disassociate a profile from a workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Get Answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews/:LensAlias/answers/:QuestionId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "LensAlias",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "QuestionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "MilestoneNumber",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the answer to a specific question in a workload review."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Update Answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews/:LensAlias/answers/:QuestionId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "LensAlias",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "QuestionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the answer to a specific question in a workload review."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Get Lens Review",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews/:LensAlias",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "LensAlias",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "MilestoneNumber",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get lens review."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Update Lens Review",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews/:LensAlias",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "LensAlias",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update lens review for a particular workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Get Lens Review Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews/:LensAlias/report",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "LensAlias",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "MilestoneNumber",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get lens review report."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Get Milestone",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/milestones/:MilestoneNumber",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "MilestoneNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a milestone for an existing workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Get Workload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an existing workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Update Workload",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Answers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews/:LensAlias/answers",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "LensAlias",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "PillarId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MilestoneNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return for this request."
+              },
+              {
+                "name": "QuestionPriority",
+                "value": "",
+                "type": "query",
+                "description": "The priority of the question."
+              }
+            ]
+          },
+          "docs": "List of answers for a particular workload and lens."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Check Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/checks",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List of Trusted Advisor check details by account related to the workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Check Summaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/checkSummaries",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List of Trusted Advisor checks summarized for all accounts related to the workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Lens Review Improvements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews/:LensAlias/improvements",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "LensAlias",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "PillarId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MilestoneNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return for this request."
+              },
+              {
+                "name": "QuestionPriority",
+                "value": "",
+                "type": "query",
+                "description": "The priority of the question."
+              }
+            ]
+          },
+          "docs": "List lens review improvements."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Lens Reviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "MilestoneNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List lens reviews for a particular workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Milestones",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/milestonesSummaries",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "Pagination limit"
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query",
+                "description": "Pagination token"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List all milestones for an existing workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Update Workload Share",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/shares/:ShareId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ShareId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a workload share."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Upgrade Lens Review",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/lensReviews/:LensAlias/upgrade",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "LensAlias",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upgrade lens review for a particular workload."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Upgrade Profile Version",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://wellarchitected.{region}.amazonaws.com/workloads/:WorkloadId/profiles/:ProfileArn/upgrade",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "ProfileArn",
+                "value": "",
+                "type": "path",
+                "description": "The profile ARN."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upgrade a profile."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

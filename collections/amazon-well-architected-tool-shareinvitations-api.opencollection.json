@@ -1,0 +1,156 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Well-Architected Tool ConsolidatedReport#Format ShareInvitations API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ShareInvitations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool List Share Invitations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://wellarchitected.{region}.amazonaws.com/shareInvitations",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "WorkloadNamePrefix",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LensNamePrefix",
+                "value": "",
+                "type": "query",
+                "description": "An optional string added to the beginning of each lens name returned in the results."
+              },
+              {
+                "name": "ShareResourceType",
+                "value": "",
+                "type": "query",
+                "description": "The type of share invitations to be returned."
+              },
+              {
+                "name": "NextToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "MaxResults",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return for this request."
+              },
+              {
+                "name": "ProfileNamePrefix",
+                "value": "",
+                "type": "query",
+                "description": "Profile name prefix."
+              }
+            ]
+          },
+          "docs": "List the workload invitations."
+        },
+        {
+          "info": {
+            "name": "Amazon Well-Architected Tool Update Share Invitation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://wellarchitected.{region}.amazonaws.com/shareInvitations/:ShareInvitationId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ShareInvitationId",
+                "value": "",
+                "type": "path",
+                "description": "The ID assigned to the share invitation."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Update a workload or custom lens share invitation.</p> <note> <p>This API operation can be called independently of any resource. Previous documentation implied that a workload ARN must be specified.</p> </note>"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
