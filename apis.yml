@@ -137,6 +137,8 @@ apis:
   humanURL: https://aws.amazon.com/well-architected-tool/
   baseURL: https://wellarchitected.amazonaws.com
   tags:
+  - Notification
+  tags_raw:
   - Notifications
   properties:
   - type: OpenAPI
