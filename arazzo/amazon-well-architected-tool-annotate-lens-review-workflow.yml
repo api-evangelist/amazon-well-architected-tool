@@ -10,8 +10,8 @@ info:
     without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: wellArchitectedApi
-  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+- name: workloadsApi
+  url: ../openapi/amazon-well-architected-tool-workloads-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: annotate-lens-review

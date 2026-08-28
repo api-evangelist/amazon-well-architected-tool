@@ -10,8 +10,11 @@ info:
     and executed without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: wellArchitectedApi
-  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+- name: consolidatedreportFormatApi
+  url: ../openapi/amazon-well-architected-tool-consolidatedreport-format-api-openapi.yml
+  type: openapi
+- name: workloadssummariesApi
+  url: ../openapi/amazon-well-architected-tool-workloadssummaries-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: consolidated-report

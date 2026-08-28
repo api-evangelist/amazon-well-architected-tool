@@ -10,8 +10,8 @@ info:
     description.
   version: 1.0.0
 sourceDescriptions:
-- name: wellArchitectedApi
-  url: ../openapi/amazon-well-architected-tool-openapi-original.yaml
+- name: lensesApi
+  url: ../openapi/amazon-well-architected-tool-lenses-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: share-lens
