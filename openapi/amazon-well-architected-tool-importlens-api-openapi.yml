@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: AWS Well-Architected Tool ConsolidatedReport#Format ImportLens API
+  title: AWS Well-Architected Tool ConsolidatedReport#Format Import Lens API
   description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -212,55 +212,7 @@ paths:
       tags:
       - ImportLens
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ServiceQuotaExceededException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
     ImportLensOutput:
       type: object
       properties:
@@ -272,10 +224,11 @@ components:
           allOf:
           - $ref: '#/components/schemas/ImportLensStatus'
           - description: The status of the imported lens.
-    AccessDeniedException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     ThrottlingException: {}
-    ConflictException: {}
-    InternalServerException: {}
     ImportLensStatus:
       type: string
       enum:
@@ -285,7 +238,54 @@ components:
     ResourceNotFoundException: {}
     LensArn:
       type: string
+    ConflictException: {}
     ValidationException: {}
+    InternalServerException: {}
+    AccessDeniedException: {}
+    ServiceQuotaExceededException: {}
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

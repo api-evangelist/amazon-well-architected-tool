@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Well-Architected Tool ConsolidatedReport#Format Lenses API
   description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
@@ -872,39 +872,46 @@ paths:
       - Lenses
 components:
   schemas:
-    PillarId:
-      type: string
-      description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-      minLength: 1
-      maxLength: 64
-    TagMap:
+    QuestionDifference:
       type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    PillarDifferences:
-      type: array
-      items:
-        $ref: '#/components/schemas/PillarDifference'
-    ShareStatus:
-      type: string
-      enum:
-      - ACCEPTED
-      - REJECTED
-      - PENDING
-      - REVOKED
-      - EXPIRED
-      - ASSOCIATING
-      - ASSOCIATED
-      - FAILED
-      description: The status of the share request.
-    ServiceQuotaExceededException: {}
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        QuestionTitle:
+          $ref: '#/components/schemas/QuestionTitle'
+        DifferenceStatus:
+          allOf:
+          - $ref: '#/components/schemas/DifferenceStatus'
+          - description: Indicates the type of change to the question.
+      description: A question difference return object.
     QuestionId:
       type: string
       description: The ID of the question.
       minLength: 1
       maxLength: 128
+    LensType:
+      type: string
+      enum:
+      - AWS_OFFICIAL
+      - CUSTOM_SHARED
+      - CUSTOM_SELF
+    ThrottlingException: {}
+    PillarName:
+      type: string
+      description: The name of the pillar.
+      minLength: 1
+      maxLength: 128
+    LensArn:
+      type: string
+    ListLensSharesOutput:
+      type: object
+      properties:
+        LensShareSummaries:
+          allOf:
+          - $ref: '#/components/schemas/LensShareSummaries'
+          - description: A list of lens share summaries.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
     LensShareSummary:
       type: object
       properties:
@@ -919,18 +926,26 @@ components:
           - $ref: '#/components/schemas/StatusMessage'
           - description: Optional message to compliment the Status field.
       description: A lens share summary return object.
-    ListLensesOutput:
-      type: object
-      properties:
-        LensSummaries:
-          $ref: '#/components/schemas/LensSummaries'
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-      description: Output of a list lenses call.
-    LensVersion:
+    ShareStatus:
       type: string
-      minLength: 1
-      maxLength: 32
+      enum:
+      - ACCEPTED
+      - REJECTED
+      - PENDING
+      - REVOKED
+      - EXPIRED
+      - ASSOCIATING
+      - ASSOCIATED
+      - FAILED
+      description: The status of the share request.
+    LensStatus:
+      type: string
+      enum:
+      - CURRENT
+      - NOT_CURRENT
+      - DEPRECATED
+      - DELETED
+      - UNSHARED
     SharedWith:
       type: string
       description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
@@ -941,26 +956,37 @@ components:
       description: The title of the question.
       minLength: 1
       maxLength: 512
-    CreateLensShareOutput:
-      type: object
-      properties:
-        ShareId:
-          $ref: '#/components/schemas/ShareId'
-    LensSummaries:
-      type: array
-      description: List of lens summaries of available lenses.
-      items:
-        $ref: '#/components/schemas/LensSummary'
-    LensOwner:
-      type: string
+    InternalServerException: {}
+    AccessDeniedException: {}
     ShareId:
       type: string
       pattern: '[0-9a-f]{32}'
       description: The ID associated with the share.
-    Timestamp:
+    ServiceQuotaExceededException: {}
+    CreateLensVersionOutput:
+      type: object
+      properties:
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN for the lens.
+        LensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The version of the lens.
+    ShareInvitationId:
       type: string
-      description: The date and time recorded.
-      format: date-time
+      pattern: '[0-9a-f]{32}'
+    LensJSON:
+      type: string
+      minLength: 2
+      maxLength: 500000
+    DifferenceStatus:
+      type: string
+      enum:
+      - UPDATED
+      - NEW
+      - DELETED
     LensSummary:
       type: object
       properties:
@@ -993,52 +1019,19 @@ components:
           - $ref: '#/components/schemas/LensStatus'
           - description: The status of the lens.
       description: A lens summary of a lens.
-    LensAlias:
-      type: string
-      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-      minLength: 1
-      maxLength: 128
-    LensDescription:
-      type: string
-      description: The description of the lens.
-      minLength: 1
-      maxLength: 1024
-    ListLensSharesOutput:
+    GetLensOutput:
       type: object
       properties:
-        LensShareSummaries:
+        Lens:
           allOf:
-          - $ref: '#/components/schemas/LensShareSummaries'
-          - description: A list of lens share summaries.
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    GetLensVersionDifferenceOutput:
-      type: object
-      properties:
-        LensAlias:
-          $ref: '#/components/schemas/LensAlias'
-        LensArn:
-          allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: The ARN for the lens.
-        BaseLensVersion:
-          allOf:
-          - $ref: '#/components/schemas/LensVersion'
-          - description: The base version of the lens.
-        TargetLensVersion:
-          allOf:
-          - $ref: '#/components/schemas/LensVersion'
-          - description: The target lens version for the lens.
-        LatestLensVersion:
-          allOf:
-          - $ref: '#/components/schemas/LensVersion'
-          - description: The latest version of the lens.
-        VersionDifferences:
-          $ref: '#/components/schemas/VersionDifferences'
+          - $ref: '#/components/schemas/Lens'
+          - description: A lens return object.
+    PillarDifferences:
+      type: array
+      items:
+        $ref: '#/components/schemas/PillarDifference'
+    ConflictException: {}
+    ValidationException: {}
     LensShareSummaries:
       type: array
       items:
@@ -1049,47 +1042,6 @@ components:
       description: An Amazon Web Services account ID.
       minLength: 12
       maxLength: 12
-    LensName:
-      type: string
-      description: The full name of the lens.
-      minLength: 1
-      maxLength: 128
-    PillarName:
-      type: string
-      description: The name of the pillar.
-      minLength: 1
-      maxLength: 128
-    QuestionDifferences:
-      type: array
-      items:
-        $ref: '#/components/schemas/QuestionDifference'
-    AccessDeniedException: {}
-    GetLensOutput:
-      type: object
-      properties:
-        Lens:
-          allOf:
-          - $ref: '#/components/schemas/Lens'
-          - description: A lens return object.
-    PillarDifference:
-      type: object
-      properties:
-        PillarId:
-          $ref: '#/components/schemas/PillarId'
-        PillarName:
-          $ref: '#/components/schemas/PillarName'
-        DifferenceStatus:
-          allOf:
-          - $ref: '#/components/schemas/DifferenceStatus'
-          - description: Indicates the type of change to the pillar.
-        QuestionDifferences:
-          allOf:
-          - $ref: '#/components/schemas/QuestionDifferences'
-          - description: List of question differences.
-      description: A pillar difference return object.
-    ShareInvitationId:
-      type: string
-      pattern: '[0-9a-f]{32}'
     VersionDifferences:
       type: object
       properties:
@@ -1098,12 +1050,11 @@ components:
           - $ref: '#/components/schemas/PillarDifferences'
           - description: The differences between the base and latest versions of the lens.
       description: The differences between the base and latest versions of the lens.
-    LensType:
+    LensDescription:
       type: string
-      enum:
-      - AWS_OFFICIAL
-      - CUSTOM_SHARED
-      - CUSTOM_SELF
+      description: The description of the lens.
+      minLength: 1
+      maxLength: 1024
     Lens:
       type: object
       properties:
@@ -1132,38 +1083,26 @@ components:
           - $ref: '#/components/schemas/TagMap'
           - description: The tags assigned to the lens.
       description: A lens return object.
-    ConflictException: {}
-    InternalServerException: {}
-    LensJSON:
+    TagValue:
       type: string
-      minLength: 2
-      maxLength: 500000
-    LensArn:
-      type: string
-    LensStatus:
-      type: string
-      enum:
-      - CURRENT
-      - NOT_CURRENT
-      - DEPRECATED
-      - DELETED
-      - UNSHARED
-    StatusMessage:
-      type: string
-      minLength: 1
-      maxLength: 512
-    QuestionDifference:
+      minLength: 0
+      maxLength: 256
+    ListLensesOutput:
       type: object
       properties:
-        QuestionId:
-          $ref: '#/components/schemas/QuestionId'
-        QuestionTitle:
-          $ref: '#/components/schemas/QuestionTitle'
-        DifferenceStatus:
-          allOf:
-          - $ref: '#/components/schemas/DifferenceStatus'
-          - description: Indicates the type of change to the question.
-      description: A question difference return object.
+        LensSummaries:
+          $ref: '#/components/schemas/LensSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Output of a list lenses call.
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    LensSummaries:
+      type: array
+      description: List of lens summaries of available lenses.
+      items:
+        $ref: '#/components/schemas/LensSummary'
     ExportLensOutput:
       type: object
       properties:
@@ -1171,32 +1110,93 @@ components:
           allOf:
           - $ref: '#/components/schemas/LensJSON'
           - description: The JSON representation of a lens.
-    CreateLensVersionOutput:
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    QuestionDifferences:
+      type: array
+      items:
+        $ref: '#/components/schemas/QuestionDifference'
+    LensVersion:
+      type: string
+      minLength: 1
+      maxLength: 32
+    PillarId:
+      type: string
+      description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+      minLength: 1
+      maxLength: 64
+    LensOwner:
+      type: string
+    CreateLensShareOutput:
       type: object
       properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+    StatusMessage:
+      type: string
+      minLength: 1
+      maxLength: 512
+    GetLensVersionDifferenceOutput:
+      type: object
+      properties:
+        LensAlias:
+          $ref: '#/components/schemas/LensAlias'
         LensArn:
           allOf:
           - $ref: '#/components/schemas/LensArn'
           - description: The ARN for the lens.
-        LensVersion:
+        BaseLensVersion:
           allOf:
           - $ref: '#/components/schemas/LensVersion'
-          - description: The version of the lens.
-    DifferenceStatus:
-      type: string
-      enum:
-      - UPDATED
-      - NEW
-      - DELETED
-    ThrottlingException: {}
+          - description: The base version of the lens.
+        TargetLensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The target lens version for the lens.
+        LatestLensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The latest version of the lens.
+        VersionDifferences:
+          $ref: '#/components/schemas/VersionDifferences'
     ResourceNotFoundException: {}
-    NextToken:
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    LensName:
       type: string
-      description: The token to use to retrieve the next set of results.
-    ValidationException: {}
+      description: The full name of the lens.
+      minLength: 1
+      maxLength: 128
+    LensAlias:
+      type: string
+      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+      minLength: 1
+      maxLength: 128
+    PillarDifference:
+      type: object
+      properties:
+        PillarId:
+          $ref: '#/components/schemas/PillarId'
+        PillarName:
+          $ref: '#/components/schemas/PillarName'
+        DifferenceStatus:
+          allOf:
+          - $ref: '#/components/schemas/DifferenceStatus'
+          - description: Indicates the type of change to the pillar.
+        QuestionDifferences:
+          allOf:
+          - $ref: '#/components/schemas/QuestionDifferences'
+          - description: List of question differences.
+      description: A pillar difference return object.
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -1207,20 +1207,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -1233,6 +1227,12 @@ components:
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

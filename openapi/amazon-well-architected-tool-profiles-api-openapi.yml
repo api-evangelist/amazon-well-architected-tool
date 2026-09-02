@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Well-Architected Tool ConsolidatedReport#Format Profiles API
   description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
@@ -697,18 +697,12 @@ paths:
       - Profiles
 components:
   schemas:
-    ProfileDescription:
+    QuestionId:
       type: string
-      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-      minLength: 3
-      maxLength: 100
-    ServiceQuotaExceededException: {}
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    ThrottlingException: {}
     ShareStatus:
       type: string
       enum:
@@ -728,26 +722,101 @@ components:
           allOf:
           - $ref: '#/components/schemas/Profile'
           - description: The profile.
-    ChoiceId:
-      type: string
-      description: The ID of a choice.
-      minLength: 1
-      maxLength: 64
-    QuestionId:
-      type: string
-      description: The ID of the question.
-      minLength: 1
-      maxLength: 128
-    SharedWith:
-      type: string
-      description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-      minLength: 12
-      maxLength: 2048
     ChoiceTitle:
       type: string
       description: The title of a choice.
       minLength: 1
       maxLength: 512
+    CreateProfileShareOutput:
+      type: object
+      properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+    SharedWith:
+      type: string
+      description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
+      minLength: 12
+      maxLength: 2048
+    QuestionTitle:
+      type: string
+      description: The title of the question.
+      minLength: 1
+      maxLength: 512
+    InternalServerException: {}
+    ProfileShareSummary:
+      type: object
+      properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+        SharedWith:
+          $ref: '#/components/schemas/SharedWith'
+        Status:
+          $ref: '#/components/schemas/ShareStatus'
+        StatusMessage:
+          allOf:
+          - $ref: '#/components/schemas/StatusMessage'
+          - description: Profile share invitation status message.
+      description: Summary of a profile share.
+    AccessDeniedException: {}
+    ShareId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID associated with the share.
+    ServiceQuotaExceededException: {}
+    ShareInvitationId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+    MaxSelectedProfileChoices:
+      type: integer
+      minimum: 0
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    SelectedProfileChoiceIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChoiceId'
+    ProfileDescription:
+      type: string
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
+    ProfileQuestionUpdate:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        SelectedChoiceIds:
+          allOf:
+          - $ref: '#/components/schemas/SelectedProfileChoiceIds'
+          - description: The selected choices.
+      description: An update to a profile question.
+    ConflictException: {}
+    MinSelectedProfileChoices:
+      type: integer
+      minimum: 0
+    ValidationException: {}
+    ListProfileSharesOutput:
+      type: object
+      properties:
+        ProfileShareSummaries:
+          allOf:
+          - $ref: '#/components/schemas/ProfileShareSummaries'
+          - description: Profile share summaries.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+    AwsAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+      description: An Amazon Web Services account ID.
+      minLength: 12
+      maxLength: 12
     Profile:
       type: object
       properties:
@@ -786,123 +855,14 @@ components:
           - $ref: '#/components/schemas/TagMap'
           - description: The tags assigned to the profile.
       description: A profile.
-    QuestionTitle:
-      type: string
-      description: The title of the question.
-      minLength: 1
-      maxLength: 512
-    ShareId:
-      type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID associated with the share.
-    Timestamp:
-      type: string
-      description: The date and time recorded.
-      format: date-time
-    ProfileShareSummary:
-      type: object
-      properties:
-        ShareId:
-          $ref: '#/components/schemas/ShareId'
-        SharedWith:
-          $ref: '#/components/schemas/SharedWith'
-        Status:
-          $ref: '#/components/schemas/ShareStatus'
-        StatusMessage:
-          allOf:
-          - $ref: '#/components/schemas/StatusMessage'
-          - description: Profile share invitation status message.
-      description: Summary of a profile share.
-    ProfileQuestionUpdate:
-      type: object
-      properties:
-        QuestionId:
-          $ref: '#/components/schemas/QuestionId'
-        SelectedChoiceIds:
-          allOf:
-          - $ref: '#/components/schemas/SelectedProfileChoiceIds'
-          - description: The selected choices.
-      description: An update to a profile question.
-    CreateProfileOutput:
-      type: object
-      properties:
-        ProfileArn:
-          allOf:
-          - $ref: '#/components/schemas/ProfileArn'
-          - description: The profile ARN.
-        ProfileVersion:
-          allOf:
-          - $ref: '#/components/schemas/ProfileVersion'
-          - description: Version of the profile.
-    UpdateProfileOutput:
-      type: object
-      properties:
-        Profile:
-          allOf:
-          - $ref: '#/components/schemas/Profile'
-          - description: The profile.
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    SelectedChoiceIds:
-      type: array
-      items:
-        $ref: '#/components/schemas/ChoiceId'
-    AwsAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-      description: An Amazon Web Services account ID.
-      minLength: 12
-      maxLength: 12
-    ProfileShareSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileShareSummary'
-    AccessDeniedException: {}
-    ShareInvitationId:
-      type: string
-      pattern: '[0-9a-f]{32}'
     ProfileQuestions:
       type: array
       items:
         $ref: '#/components/schemas/ProfileQuestion'
-    MaxSelectedProfileChoices:
-      type: integer
-      minimum: 0
-    ConflictException: {}
-    InternalServerException: {}
-    ProfileName:
+    TagValue:
       type: string
-      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-      minLength: 3
-      maxLength: 100
-    QuestionDescription:
-      type: string
-      description: The description of the question.
-      minLength: 1
-      maxLength: 1024
-    ProfileQuestionChoices:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileChoice'
-    SelectedProfileChoiceIds:
-      type: array
-      items:
-        $ref: '#/components/schemas/ChoiceId'
-    ProfileArn:
-      type: string
-      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
-      maxLength: 2084
-    StatusMessage:
-      type: string
-      minLength: 1
-      maxLength: 512
-    ChoiceDescription:
-      type: string
-      description: The description of a choice.
-      minLength: 1
-      maxLength: 1024
+      minLength: 0
+      maxLength: 256
     ProfileQuestion:
       type: object
       properties:
@@ -929,6 +889,24 @@ components:
           - $ref: '#/components/schemas/MaxSelectedProfileChoices'
           - description: The maximum number of selected choices.
       description: A profile question.
+    SelectedChoiceIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChoiceId'
+    ChoiceId:
+      type: string
+      description: The ID of a choice.
+      minLength: 1
+      maxLength: 64
+    ProfileQuestionChoices:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileChoice'
+    QuestionDescription:
+      type: string
+      description: The description of the question.
+      minLength: 1
+      maxLength: 1024
     ProfileChoice:
       type: object
       properties:
@@ -939,41 +917,63 @@ components:
         ChoiceDescription:
           $ref: '#/components/schemas/ChoiceDescription'
       description: The profile choice.
-    MinSelectedProfileChoices:
-      type: integer
-      minimum: 0
-    ProfileVersion:
+    NextToken:
       type: string
-      pattern: ^[A-Za-z0-9-]+$
+      description: The token to use to retrieve the next set of results.
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    StatusMessage:
+      type: string
       minLength: 1
-      maxLength: 32
-    CreateProfileShareOutput:
+      maxLength: 512
+    ResourceNotFoundException: {}
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    ProfileShareSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileShareSummary'
+    ChoiceDescription:
+      type: string
+      description: The description of a choice.
+      minLength: 1
+      maxLength: 1024
+    ProfileArn:
+      type: string
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
+    UpdateProfileOutput:
       type: object
       properties:
-        ShareId:
-          $ref: '#/components/schemas/ShareId'
+        Profile:
+          allOf:
+          - $ref: '#/components/schemas/Profile'
+          - description: The profile.
+    ProfileName:
+      type: string
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
+    CreateProfileOutput:
+      type: object
+      properties:
         ProfileArn:
           allOf:
           - $ref: '#/components/schemas/ProfileArn'
           - description: The profile ARN.
-    ThrottlingException: {}
-    ListProfileSharesOutput:
-      type: object
-      properties:
-        ProfileShareSummaries:
+        ProfileVersion:
           allOf:
-          - $ref: '#/components/schemas/ProfileShareSummaries'
-          - description: Profile share summaries.
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-    ResourceNotFoundException: {}
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
-    ValidationException: {}
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: Version of the profile.
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -984,20 +984,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -1010,6 +1004,12 @@ components:
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

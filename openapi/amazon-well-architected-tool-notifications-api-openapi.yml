@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: AWS Well-Architected Tool ConsolidatedReport#Format Notifications API
   description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
@@ -196,35 +196,11 @@ paths:
       - Notifications
 components:
   schemas:
-    WorkloadName:
+    ThrottlingException: {}
+    LensArn:
       type: string
-      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-      minLength: 3
-      maxLength: 100
-    LensVersion:
-      type: string
-      minLength: 1
-      maxLength: 32
-    NotificationSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/NotificationSummary'
-    WorkloadId:
-      type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-      minLength: 32
-      maxLength: 32
-    LensAlias:
-      type: string
-      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-      minLength: 1
-      maxLength: 128
-    NotificationType:
-      type: string
-      enum:
-      - LENS_VERSION_UPGRADED
-      - LENS_VERSION_DEPRECATED
+    InternalServerException: {}
+    AccessDeniedException: {}
     LensUpgradeSummary:
       type: object
       properties:
@@ -247,10 +223,22 @@ components:
           - $ref: '#/components/schemas/LensVersion'
           - description: The latest version of the lens.
       description: Lens upgrade summary return object.
-    AccessDeniedException: {}
-    InternalServerException: {}
-    LensArn:
+    ValidationException: {}
+    NotificationSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/NotificationSummary'
+    WorkloadId:
       type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
+    WorkloadName:
+      type: string
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
     NotificationSummary:
       type: object
       properties:
@@ -263,7 +251,6 @@ components:
           - $ref: '#/components/schemas/LensUpgradeSummary'
           - description: Summary of lens upgrade.
       description: A notification summary return object.
-    ThrottlingException: {}
     ListNotificationsOutput:
       type: object
       properties:
@@ -276,10 +263,23 @@ components:
     NextToken:
       type: string
       description: The token to use to retrieve the next set of results.
-    ValidationException: {}
+    LensVersion:
+      type: string
+      minLength: 1
+      maxLength: 32
+    LensAlias:
+      type: string
+      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+      minLength: 1
+      maxLength: 128
+    NotificationType:
+      type: string
+      enum:
+      - LENS_VERSION_UPGRADED
+      - LENS_VERSION_DEPRECATED
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -290,20 +290,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -316,6 +310,12 @@ components:
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

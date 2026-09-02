@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: AWS Well-Architected Tool ConsolidatedReport#Format ProfileSummaries API
+  title: AWS Well-Architected Tool ConsolidatedReport#Format Profile Summaries API
   description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -196,6 +196,7 @@ paths:
       - ProfileSummaries
 components:
   schemas:
+    ThrottlingException: {}
     ListProfilesOutput:
       type: object
       properties:
@@ -205,19 +206,19 @@ components:
           - description: Profile summaries.
         NextToken:
           $ref: '#/components/schemas/NextToken'
+    InternalServerException: {}
+    AccessDeniedException: {}
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
     ProfileDescription:
       type: string
       pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
       minLength: 3
       maxLength: 100
-    ProfileSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileSummary'
-    Timestamp:
-      type: string
-      description: The date and time recorded.
-      format: date-time
+    ValidationException: {}
     AwsAccountId:
       type: string
       pattern: '[0-9]{12}'
@@ -250,30 +251,29 @@ components:
         UpdatedAt:
           $ref: '#/components/schemas/Timestamp'
       description: Summary of a profile.
-    AccessDeniedException: {}
-    InternalServerException: {}
+    ProfileSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileSummary'
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    ProfileArn:
+      type: string
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
     ProfileName:
       type: string
       pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
       minLength: 3
       maxLength: 100
-    ProfileArn:
-      type: string
-      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
-      maxLength: 2084
-    ProfileVersion:
-      type: string
-      pattern: ^[A-Za-z0-9-]+$
-      minLength: 1
-      maxLength: 32
-    ThrottlingException: {}
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
-    ValidationException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -284,20 +284,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -310,6 +304,12 @@ components:
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

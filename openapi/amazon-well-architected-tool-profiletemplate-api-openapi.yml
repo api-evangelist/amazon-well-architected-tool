@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: AWS Well-Architected Tool ConsolidatedReport#Format ProfileTemplate API
+  title: AWS Well-Architected Tool ConsolidatedReport#Format Profile Template API
   description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -168,74 +168,7 @@ paths:
       tags:
       - ProfileTemplate
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ChoiceId:
-      type: string
-      description: The ID of a choice.
-      minLength: 1
-      maxLength: 64
-    QuestionId:
-      type: string
-      description: The ID of the question.
-      minLength: 1
-      maxLength: 128
-    ChoiceTitle:
-      type: string
-      description: The title of a choice.
-      minLength: 1
-      maxLength: 512
-    QuestionTitle:
-      type: string
-      description: The title of the question.
-      minLength: 1
-      maxLength: 512
-    Timestamp:
-      type: string
-      description: The date and time recorded.
-      format: date-time
     GetProfileTemplateOutput:
       type: object
       properties:
@@ -243,6 +176,90 @@ components:
           allOf:
           - $ref: '#/components/schemas/ProfileTemplate'
           - description: The profile template.
+    QuestionId:
+      type: string
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    ThrottlingException: {}
+    ProfileTemplateChoice:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        ChoiceTitle:
+          $ref: '#/components/schemas/ChoiceTitle'
+        ChoiceDescription:
+          $ref: '#/components/schemas/ChoiceDescription'
+      description: A profile template choice.
+    ChoiceTitle:
+      type: string
+      description: The title of a choice.
+      minLength: 1
+      maxLength: 512
+    ProfileTemplate:
+      type: object
+      properties:
+        TemplateName:
+          allOf:
+          - $ref: '#/components/schemas/ProfileName'
+          - description: The name of the profile template.
+        TemplateQuestions:
+          allOf:
+          - $ref: '#/components/schemas/TemplateQuestions'
+          - description: Profile template questions.
+        CreatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+      description: The profile template.
+    QuestionTitle:
+      type: string
+      description: The title of the question.
+      minLength: 1
+      maxLength: 512
+    InternalServerException: {}
+    AccessDeniedException: {}
+    TemplateQuestions:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileTemplateQuestion'
+    MaxSelectedProfileChoices:
+      type: integer
+      minimum: 0
+    ValidationException: {}
+    MinSelectedProfileChoices:
+      type: integer
+      minimum: 0
+    ChoiceId:
+      type: string
+      description: The ID of a choice.
+      minLength: 1
+      maxLength: 64
+    QuestionDescription:
+      type: string
+      description: The description of the question.
+      minLength: 1
+      maxLength: 1024
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    ResourceNotFoundException: {}
+    ProfileTemplateQuestionChoices:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileTemplateChoice'
+    ChoiceDescription:
+      type: string
+      description: The description of a choice.
+      minLength: 1
+      maxLength: 1024
+    ProfileName:
+      type: string
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
     ProfileTemplateQuestion:
       type: object
       properties:
@@ -265,66 +282,49 @@ components:
           - $ref: '#/components/schemas/MaxSelectedProfileChoices'
           - description: The maximum number of choices selected.
       description: A profile template question.
-    ProfileTemplateChoice:
-      type: object
-      properties:
-        ChoiceId:
-          $ref: '#/components/schemas/ChoiceId'
-        ChoiceTitle:
-          $ref: '#/components/schemas/ChoiceTitle'
-        ChoiceDescription:
-          $ref: '#/components/schemas/ChoiceDescription'
-      description: A profile template choice.
-    AccessDeniedException: {}
-    MaxSelectedProfileChoices:
-      type: integer
-      minimum: 0
-    TemplateQuestions:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileTemplateQuestion'
-    InternalServerException: {}
-    ProfileName:
-      type: string
-      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-      minLength: 3
-      maxLength: 100
-    QuestionDescription:
-      type: string
-      description: The description of the question.
-      minLength: 1
-      maxLength: 1024
-    ProfileTemplate:
-      type: object
-      properties:
-        TemplateName:
-          allOf:
-          - $ref: '#/components/schemas/ProfileName'
-          - description: The name of the profile template.
-        TemplateQuestions:
-          allOf:
-          - $ref: '#/components/schemas/TemplateQuestions'
-          - description: Profile template questions.
-        CreatedAt:
-          $ref: '#/components/schemas/Timestamp'
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-      description: The profile template.
-    ChoiceDescription:
-      type: string
-      description: The description of a choice.
-      minLength: 1
-      maxLength: 1024
-    MinSelectedProfileChoices:
-      type: integer
-      minimum: 0
-    ProfileTemplateQuestionChoices:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileTemplateChoice'
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    ValidationException: {}
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
