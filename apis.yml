@@ -95,30 +95,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-- aid: amazon-well-architected-tool:amazon-well-architected-tool-importlens-api
-  name: Amazon Well-Architected Tool ImportLens API
-  description: The ImportLens API from Amazon Well-Architected Tool — 1 operation(s) for importlens.
-  humanURL: https://aws.amazon.com/well-architected-tool/
-  baseURL: https://wellarchitected.amazonaws.com
-  tags:
-  - ImportLens
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-well-architected-tool-importlens-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/well-architected-tool/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/well-architected-tool/faqs/
-  - type: JSONSchema
-    url: json-schema/well-architected-tool-workload-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-well-architected-tool-context.jsonld
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-lenses-api
   name: Amazon Well-Architected Tool Lenses API
   description: The Lenses API from Amazon Well-Architected Tool — 8 operation(s) for lenses.
@@ -170,31 +146,6 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-- aid: amazon-well-architected-tool:amazon-well-architected-tool-profilenotifications-api
-  name: Amazon Well-Architected Tool ProfileNotifications API
-  description: >-
-    The ProfileNotifications API from Amazon Well-Architected Tool — 1 operation(s) for profilenotifications.
-  humanURL: https://aws.amazon.com/well-architected-tool/
-  baseURL: https://wellarchitected.amazonaws.com
-  tags:
-  - ProfileNotifications
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-well-architected-tool-profilenotifications-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/well-architected-tool/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/well-architected-tool/faqs/
-  - type: JSONSchema
-    url: json-schema/well-architected-tool-workload-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-well-architected-tool-context.jsonld
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-profiles-api
   name: Amazon Well-Architected Tool Profiles API
   description: The Profiles API from Amazon Well-Architected Tool — 5 operation(s) for profiles.
@@ -205,81 +156,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-well-architected-tool-profiles-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/well-architected-tool/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/well-architected-tool/faqs/
-  - type: JSONSchema
-    url: json-schema/well-architected-tool-workload-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-well-architected-tool-context.jsonld
-- aid: amazon-well-architected-tool:amazon-well-architected-tool-profilesummaries-api
-  name: Amazon Well-Architected Tool ProfileSummaries API
-  description: >-
-    The ProfileSummaries API from Amazon Well-Architected Tool — 1 operation(s) for profilesummaries.
-  humanURL: https://aws.amazon.com/well-architected-tool/
-  baseURL: https://wellarchitected.amazonaws.com
-  tags:
-  - ProfileSummaries
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-well-architected-tool-profilesummaries-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/well-architected-tool/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/well-architected-tool/faqs/
-  - type: JSONSchema
-    url: json-schema/well-architected-tool-workload-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-well-architected-tool-context.jsonld
-- aid: amazon-well-architected-tool:amazon-well-architected-tool-profiletemplate-api
-  name: Amazon Well-Architected Tool ProfileTemplate API
-  description: >-
-    The ProfileTemplate API from Amazon Well-Architected Tool — 1 operation(s) for profiletemplate.
-  humanURL: https://aws.amazon.com/well-architected-tool/
-  baseURL: https://wellarchitected.amazonaws.com
-  tags:
-  - ProfileTemplate
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-well-architected-tool-profiletemplate-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/well-architected-tool/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/well-architected-tool/faqs/
-  - type: JSONSchema
-    url: json-schema/well-architected-tool-workload-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-well-architected-tool-context.jsonld
-- aid: amazon-well-architected-tool:amazon-well-architected-tool-shareinvitations-api
-  name: Amazon Well-Architected Tool ShareInvitations API
-  description: >-
-    The ShareInvitations API from Amazon Well-Architected Tool — 2 operation(s) for shareinvitations.
-  humanURL: https://aws.amazon.com/well-architected-tool/
-  baseURL: https://wellarchitected.amazonaws.com
-  tags:
-  - ShareInvitations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-well-architected-tool-shareinvitations-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
   - type: APIReference
@@ -342,17 +218,141 @@ apis:
     url: json-schema/well-architected-tool-workload-schema.json
   - type: JSONLD
     url: json-ld/amazon-well-architected-tool-context.jsonld
-- aid: amazon-well-architected-tool:amazon-well-architected-tool-workloadssummaries-api
-  name: Amazon Well-Architected Tool WorkloadsSummaries API
-  description: >-
-    The WorkloadsSummaries API from Amazon Well-Architected Tool — 1 operation(s) for workloadssummaries.
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-import-lens-api
+  name: Amazon Well-Architected Tool Import Lens API
+  description: The Import Lens API from Amazon Well-Architected Tool — 1 operation(s) for import lens.
   humanURL: https://aws.amazon.com/well-architected-tool/
   baseURL: https://wellarchitected.amazonaws.com
   tags:
-  - WorkloadsSummaries
+  - Import Lens
   properties:
   - type: OpenAPI
-    url: openapi/amazon-well-architected-tool-workloadssummaries-api-openapi.yml
+    url: openapi/amazon-well-architected-tool-import-lens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-profile-notifications-api
+  name: Amazon Well-Architected Tool Profile Notifications API
+  description: >-
+    The Profile Notifications API from Amazon Well-Architected Tool — 1 operation(s) for profile notifications.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Profile Notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-profile-notifications-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-profile-summaries-api
+  name: Amazon Well-Architected Tool Profile Summaries API
+  description: >-
+    The Profile Summaries API from Amazon Well-Architected Tool — 1 operation(s) for profile summaries.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Profile Summaries
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-profile-summaries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-profile-template-api
+  name: Amazon Well-Architected Tool Profile Template API
+  description: >-
+    The Profile Template API from Amazon Well-Architected Tool — 1 operation(s) for profile template.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Profile Template
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-profile-template-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-share-invitations-api
+  name: Amazon Well-Architected Tool Share Invitations API
+  description: >-
+    The Share Invitations API from Amazon Well-Architected Tool — 2 operation(s) for share invitations.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Share Invitations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-share-invitations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-workloads-summaries-api
+  name: Amazon Well-Architected Tool Workloads Summaries API
+  description: >-
+    The Workloads Summaries API from Amazon Well-Architected Tool — 1 operation(s) for workloads summaries.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Workloads Summaries
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-workloads-summaries-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
   - type: APIReference
