@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-03-31'
   x-release: v4
-  title: AWS Well-Architected Tool ConsolidatedReport#Format Share Invitations API
-  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  title: AWS Well-Architected Tool Share Invitations API
+  description: 'Well-Architected Tool
+
+    This is the Well-Architected Tool API Reference. The WA Tool API provides programmatic access to the Well-Architected Tool in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the Well-Architected Tool User Guide.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +26,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,7 +115,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: ShareInvitations
+- name: Share Invitations
 paths:
   /shareInvitations:
     parameters:
@@ -208,7 +211,7 @@ paths:
           maxLength: 100
       summary: Amazon Well-Architected Tool List Share Invitations
       tags:
-      - ShareInvitations
+      - Share Invitations
   /shareInvitations/{ShareInvitationId}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -220,7 +223,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     patch:
       operationId: UpdateShareInvitation
-      description: <p>Update a workload or custom lens share invitation.</p> <note> <p>This API operation can be called independently of any resource. Previous documentation implied that a workload ARN must be specified.</p> </note>
+      description: 'Update a workload or custom lens share invitation.
+
+
+        This API operation can be called independently of any resource. Previous documentation implied that a workload ARN must be specified.'
       responses:
         '200':
           description: Success
@@ -289,22 +295,20 @@ paths:
                   - REJECT
       summary: Amazon Well-Architected Tool Update Share Invitation
       tags:
-      - ShareInvitations
+      - Share Invitations
 components:
   schemas:
-    ThrottlingException: {}
     LensArn:
       type: string
-    SharedWith:
+    ShareInvitationSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ShareInvitationSummary'
+    ProfileArn:
       type: string
-      description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-      minLength: 12
-      maxLength: 2048
-    InternalServerException: {}
-    AccessDeniedException: {}
-    ShareInvitationId:
-      type: string
-      pattern: '[0-9a-f]{32}'
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
+    ConflictException: {}
     ListShareInvitationsOutput:
       type: object
       properties:
@@ -315,10 +319,44 @@ components:
         NextToken:
           $ref: '#/components/schemas/NextToken'
       description: Input for List Share Invitations
-    ShareInvitationSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ShareInvitationSummary'
+    InternalServerException: {}
+    ValidationException: {}
+    PermissionType:
+      type: string
+      enum:
+      - READONLY
+      - CONTRIBUTOR
+      description: Permission granted on a share request.
+    LensName:
+      type: string
+      description: The full name of the lens.
+      minLength: 1
+      maxLength: 128
+    ProfileName:
+      type: string
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
+    WorkloadName:
+      type: string
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
+    AwsAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+      description: An Amazon Web Services account ID.
+      minLength: 12
+      maxLength: 12
+    ShareInvitationId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+    WorkloadId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
     ShareInvitation:
       type: object
       properties:
@@ -343,25 +381,35 @@ components:
           - $ref: '#/components/schemas/ProfileArn'
           - description: The profile ARN.
       description: The share invitation.
-    ConflictException: {}
-    ValidationException: {}
-    AwsAccountId:
+    UpdateShareInvitationOutput:
+      type: object
+      properties:
+        ShareInvitation:
+          allOf:
+          - $ref: '#/components/schemas/ShareInvitation'
+          - description: The updated workload or custom lens share invitation.
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    ShareResourceType:
       type: string
-      pattern: '[0-9]{12}'
-      description: An Amazon Web Services account ID.
+      enum:
+      - WORKLOAD
+      - LENS
+      - PROFILE
+    AccessDeniedException: {}
+    LensAlias:
+      type: string
+      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
+      minLength: 1
+      maxLength: 128
+    SharedWith:
+      type: string
+      description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
       minLength: 12
-      maxLength: 12
-    WorkloadId:
+      maxLength: 2048
+    NextToken:
       type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-      minLength: 32
-      maxLength: 32
-    WorkloadName:
-      type: string
-      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-      minLength: 3
-      maxLength: 100
+      description: The token to use to retrieve the next set of results.
     ShareInvitationSummary:
       type: object
       properties:
@@ -398,51 +446,9 @@ components:
           - $ref: '#/components/schemas/ProfileArn'
           - description: The profile ARN.
       description: A share invitation summary return object.
-    ShareResourceType:
-      type: string
-      enum:
-      - WORKLOAD
-      - LENS
-      - PROFILE
-    PermissionType:
-      type: string
-      enum:
-      - READONLY
-      - CONTRIBUTOR
-      description: Permission granted on a share request.
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
-    UpdateShareInvitationOutput:
-      type: object
-      properties:
-        ShareInvitation:
-          allOf:
-          - $ref: '#/components/schemas/ShareInvitation'
-          - description: The updated workload or custom lens share invitation.
-    ResourceNotFoundException: {}
-    LensName:
-      type: string
-      description: The full name of the lens.
-      minLength: 1
-      maxLength: 128
-    ProfileArn:
-      type: string
-      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
-      maxLength: 2084
-    LensAlias:
-      type: string
-      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-      minLength: 1
-      maxLength: 128
-    ProfileName:
-      type: string
-      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-      minLength: 3
-      maxLength: 100
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -459,8 +465,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -471,14 +483,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

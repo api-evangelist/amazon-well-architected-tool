@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: '2020-03-31'
   x-release: v4
-  title: AWS Well-Architected Tool Notifications API
+  title: AWS Well-Architected Tool Workloads Summaries API
   description: 'Well-Architected Tool
 
     This is the Well-Architected Tool API Reference. The WA Tool API provides programmatic access to the Well-Architected Tool in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the Well-Architected Tool User Guide.'
@@ -115,9 +115,9 @@ servers:
 security:
 - hmac: []
 tags:
-- name: Notifications
+- name: Workloads Summaries
 paths:
-  /notifications:
+  /workloadsSummaries:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
     - $ref: '#/components/parameters/X-Amz-Date'
@@ -127,15 +127,15 @@ paths:
     - $ref: '#/components/parameters/X-Amz-Signature'
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
-      operationId: ListNotifications
-      description: List lens notifications.
+      operationId: ListWorkloads
+      description: Paginated list of workloads.
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListNotificationsOutput'
+                $ref: '#/components/schemas/ListWorkloadsOutput'
         '480':
           description: ValidationException
           content:
@@ -180,12 +180,10 @@ paths:
             schema:
               type: object
               properties:
-                WorkloadId:
-                  description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+                WorkloadNamePrefix:
+                  description: An optional string added to the beginning of each workload name returned in the results.
                   type: string
-                  pattern: '[0-9a-f]{32}'
-                  minLength: 32
-                  maxLength: 32
+                  maxLength: 100
                 NextToken:
                   description: The token to use to retrieve the next set of results.
                   type: string
@@ -194,84 +192,110 @@ paths:
                   type: integer
                   minimum: 1
                   maximum: 50
-      summary: Amazon Well-Architected Tool List Notifications
+      summary: Amazon Well-Architected Tool List Workloads
       tags:
-      - Notifications
+      - Workloads Summaries
 components:
   schemas:
-    LensArn:
+    WorkloadImprovementStatus:
       type: string
-    LensVersion:
+      enum:
+      - NOT_APPLICABLE
+      - NOT_STARTED
+      - IN_PROGRESS
+      - COMPLETE
+      - RISK_ACKNOWLEDGED
+      description: The improvement status for a workload.
+    ProfileArn:
       type: string
-      minLength: 1
-      maxLength: 32
-    LensUpgradeSummary:
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
+    WorkloadArn:
+      type: string
+      description: The ARN for the workload.
+    InternalServerException: {}
+    WorkloadSummary:
       type: object
       properties:
         WorkloadId:
           $ref: '#/components/schemas/WorkloadId'
+        WorkloadArn:
+          $ref: '#/components/schemas/WorkloadArn'
         WorkloadName:
           $ref: '#/components/schemas/WorkloadName'
-        LensAlias:
-          $ref: '#/components/schemas/LensAlias'
-        LensArn:
+        Owner:
+          $ref: '#/components/schemas/AwsAccountId'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        Lenses:
+          $ref: '#/components/schemas/WorkloadLenses'
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+        ImprovementStatus:
+          $ref: '#/components/schemas/WorkloadImprovementStatus'
+        Profiles:
           allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: The ARN for the lens.
-        CurrentLensVersion:
-          allOf:
-          - $ref: '#/components/schemas/LensVersion'
-          - description: The current version of the lens.
-        LatestLensVersion:
-          allOf:
-          - $ref: '#/components/schemas/LensVersion'
-          - description: The latest version of the lens.
-      description: Lens upgrade summary return object.
-    InternalServerException: {}
+          - $ref: '#/components/schemas/WorkloadProfiles'
+          - description: Profile associated with a workload.
+        PrioritizedRiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+      description: A workload summary return object.
     ValidationException: {}
     WorkloadName:
       type: string
       description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
       minLength: 3
       maxLength: 100
-    NotificationSummaries:
+    WorkloadSummaries:
       type: array
+      description: A list of workload summaries.
       items:
-        $ref: '#/components/schemas/NotificationSummary'
-    NotificationType:
+        $ref: '#/components/schemas/WorkloadSummary'
+    AwsAccountId:
       type: string
-      enum:
-      - LENS_VERSION_UPGRADED
-      - LENS_VERSION_DEPRECATED
+      pattern: '[0-9]{12}'
+      description: An Amazon Web Services account ID.
+      minLength: 12
+      maxLength: 12
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
     WorkloadId:
       type: string
       pattern: '[0-9a-f]{32}'
       description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
       minLength: 32
       maxLength: 32
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    WorkloadProfiles:
+      type: array
+      items:
+        $ref: '#/components/schemas/WorkloadProfile'
+      maxItems: 1
+    WorkloadProfile:
+      type: object
+      properties:
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+        ProfileVersion:
+          allOf:
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: The profile version.
+      description: The profile associated with a workload.
+    WorkloadLenses:
+      type: array
+      description: The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.
+      items:
+        $ref: '#/components/schemas/LensAlias'
     ThrottlingException: {}
-    NotificationSummary:
-      type: object
-      properties:
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/NotificationType'
-          - description: The type of notification.
-        LensUpgradeSummary:
-          allOf:
-          - $ref: '#/components/schemas/LensUpgradeSummary'
-          - description: Summary of lens upgrade.
-      description: A notification summary return object.
     AccessDeniedException: {}
-    ListNotificationsOutput:
-      type: object
-      properties:
-        NotificationSummaries:
-          allOf:
-          - $ref: '#/components/schemas/NotificationSummaries'
-          - description: List of lens notification summaries in a workload.
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
     LensAlias:
       type: string
       description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
@@ -280,13 +304,24 @@ components:
     NextToken:
       type: string
       description: The token to use to retrieve the next set of results.
+    Count:
+      type: integer
+      description: A non-negative integer that denotes how many.
+      minimum: 0
+    ListWorkloadsOutput:
+      type: object
+      properties:
+        WorkloadSummaries:
+          $ref: '#/components/schemas/WorkloadSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Output of a list workloads call.
+    RiskCounts:
+      type: object
+      description: A map from risk names to the count of how many questions have that rating.
+      additionalProperties:
+        $ref: '#/components/schemas/Count'
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
@@ -295,6 +330,12 @@ components:
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string

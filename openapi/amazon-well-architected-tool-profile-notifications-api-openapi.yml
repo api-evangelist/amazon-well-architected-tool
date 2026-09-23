@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-03-31'
   x-release: v4
-  title: AWS Well-Architected Tool ConsolidatedReport#Format Profile Summaries API
-  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  title: AWS Well-Architected Tool Profile Notifications API
+  description: 'Well-Architected Tool
+
+    This is the Well-Architected Tool API Reference. The WA Tool API provides programmatic access to the Well-Architected Tool in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the Well-Architected Tool User Guide.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +26,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,9 +115,9 @@ servers:
 security:
 - hmac: []
 tags:
-- name: ProfileSummaries
+- name: Profile Notifications
 paths:
-  /profileSummaries:
+  /profileNotifications/:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
     - $ref: '#/components/parameters/X-Amz-Date'
@@ -124,15 +127,15 @@ paths:
     - $ref: '#/components/parameters/X-Amz-Signature'
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
-      operationId: ListProfiles
-      description: List profiles.
+      operationId: ListProfileNotifications
+      description: List profile notifications.
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListProfilesOutput'
+                $ref: '#/components/schemas/ListProfileNotificationsOutput'
         '480':
           description: ValidationException
           content:
@@ -158,23 +161,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ThrottlingException'
       parameters:
-      - name: ProfileNamePrefix
+      - name: WorkloadId
         in: query
         required: false
-        description: Prefix for profile name.
+        description: ''
         schema:
           type: string
-          pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-          maxLength: 100
-      - name: ProfileOwnerType
-        in: query
-        required: false
-        description: Profile owner type.
-        schema:
-          type: string
-          enum:
-          - SELF
-          - SHARED
+          pattern: '[0-9a-f]{32}'
+          description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+          minLength: 32
+          maxLength: 32
       - name: NextToken
         in: query
         required: false
@@ -191,89 +187,92 @@ paths:
           description: The maximum number of results to return for this request.
           minimum: 1
           maximum: 50
-      summary: Amazon Well-Architected Tool List Profiles
+      summary: Amazon Well-Architected Tool List Profile Notifications
       tags:
-      - ProfileSummaries
+      - Profile Notifications
 components:
   schemas:
-    ThrottlingException: {}
-    ListProfilesOutput:
-      type: object
-      properties:
-        ProfileSummaries:
-          allOf:
-          - $ref: '#/components/schemas/ProfileSummaries'
-          - description: Profile summaries.
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-    InternalServerException: {}
-    AccessDeniedException: {}
-    ProfileVersion:
-      type: string
-      pattern: ^[A-Za-z0-9-]+$
-      minLength: 1
-      maxLength: 32
-    ProfileDescription:
-      type: string
-      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-      minLength: 3
-      maxLength: 100
-    ValidationException: {}
-    AwsAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-      description: An Amazon Web Services account ID.
-      minLength: 12
-      maxLength: 12
-    ProfileSummary:
-      type: object
-      properties:
-        ProfileArn:
-          allOf:
-          - $ref: '#/components/schemas/ProfileArn'
-          - description: The profile ARN.
-        ProfileVersion:
-          allOf:
-          - $ref: '#/components/schemas/ProfileVersion'
-          - description: The profile version.
-        ProfileName:
-          allOf:
-          - $ref: '#/components/schemas/ProfileName'
-          - description: The profile name.
-        ProfileDescription:
-          allOf:
-          - $ref: '#/components/schemas/ProfileDescription'
-          - description: The profile description.
-        Owner:
-          $ref: '#/components/schemas/AwsAccountId'
-        CreatedAt:
-          $ref: '#/components/schemas/Timestamp'
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-      description: Summary of a profile.
-    ProfileSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileSummary'
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
-    Timestamp:
-      type: string
-      description: The date and time recorded.
-      format: date-time
     ProfileArn:
       type: string
       pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
       maxLength: 2084
+    InternalServerException: {}
+    ValidationException: {}
     ProfileName:
       type: string
       pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
       minLength: 3
       maxLength: 100
+    WorkloadName:
+      type: string
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
+    ProfileNotificationSummary:
+      type: object
+      properties:
+        CurrentProfileVersion:
+          allOf:
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: The current profile version.
+        LatestProfileVersion:
+          allOf:
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: The latest profile version.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/ProfileNotificationType'
+          - description: Type of notification.
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+        ProfileName:
+          allOf:
+          - $ref: '#/components/schemas/ProfileName'
+          - description: The profile name.
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        WorkloadName:
+          $ref: '#/components/schemas/WorkloadName'
+      description: The profile notification summary.
+    WorkloadId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    ThrottlingException: {}
+    ListProfileNotificationsOutput:
+      type: object
+      properties:
+        NotificationSummaries:
+          allOf:
+          - $ref: '#/components/schemas/ProfileNotificationSummaries'
+          - description: Notification summaries.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+    ProfileNotificationSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileNotificationSummary'
+    ProfileNotificationType:
+      type: string
+      enum:
+      - PROFILE_ANSWERS_UPDATED
+      - PROFILE_DELETED
+    AccessDeniedException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -290,8 +289,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -302,14 +307,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

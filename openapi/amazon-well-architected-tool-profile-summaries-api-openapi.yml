@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-03-31'
   x-release: v4
-  title: AWS Well-Architected Tool ConsolidatedReport#Format Workloads Summaries API
-  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  title: AWS Well-Architected Tool Profile Summaries API
+  description: 'Well-Architected Tool
+
+    This is the Well-Architected Tool API Reference. The WA Tool API provides programmatic access to the Well-Architected Tool in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the Well-Architected Tool User Guide.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +26,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,9 +115,9 @@ servers:
 security:
 - hmac: []
 tags:
-- name: WorkloadsSummaries
+- name: Profile Summaries
 paths:
-  /workloadsSummaries:
+  /profileSummaries:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
     - $ref: '#/components/parameters/X-Amz-Date'
@@ -123,16 +126,16 @@ paths:
     - $ref: '#/components/parameters/X-Amz-Security-Token'
     - $ref: '#/components/parameters/X-Amz-Signature'
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
-    post:
-      operationId: ListWorkloads
-      description: Paginated list of workloads.
+    get:
+      operationId: ListProfiles
+      description: List profiles.
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListWorkloadsOutput'
+                $ref: '#/components/schemas/ListProfilesOutput'
         '480':
           description: ValidationException
           content:
@@ -158,126 +161,91 @@ paths:
               schema:
                 $ref: '#/components/schemas/ThrottlingException'
       parameters:
-      - name: MaxResults
+      - name: ProfileNamePrefix
         in: query
+        required: false
+        description: Prefix for profile name.
         schema:
           type: string
-        description: Pagination limit
+          pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+          maxLength: 100
+      - name: ProfileOwnerType
+        in: query
         required: false
+        description: Profile owner type.
+        schema:
+          type: string
+          enum:
+          - SELF
+          - SHARED
       - name: NextToken
         in: query
+        required: false
+        description: ''
         schema:
           type: string
-        description: Pagination token
+          description: The token to use to retrieve the next set of results.
+      - name: MaxResults
+        in: query
         required: false
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                WorkloadNamePrefix:
-                  description: An optional string added to the beginning of each workload name returned in the results.
-                  type: string
-                  maxLength: 100
-                NextToken:
-                  description: The token to use to retrieve the next set of results.
-                  type: string
-                MaxResults:
-                  description: The maximum number of results to return for this request.
-                  type: integer
-                  minimum: 1
-                  maximum: 50
-      summary: Amazon Well-Architected Tool List Workloads
+        description: ''
+        schema:
+          type: integer
+          description: The maximum number of results to return for this request.
+          minimum: 1
+          maximum: 50
+      summary: Amazon Well-Architected Tool List Profiles
       tags:
-      - WorkloadsSummaries
+      - Profile Summaries
 components:
   schemas:
-    ThrottlingException: {}
-    WorkloadImprovementStatus:
+    ProfileArn:
       type: string
-      enum:
-      - NOT_APPLICABLE
-      - NOT_STARTED
-      - IN_PROGRESS
-      - COMPLETE
-      - RISK_ACKNOWLEDGED
-      description: The improvement status for a workload.
-    RiskCounts:
-      type: object
-      description: A map from risk names to the count of how many questions have that rating.
-      additionalProperties:
-        $ref: '#/components/schemas/Count'
-    WorkloadLenses:
-      type: array
-      description: The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.
-      items:
-        $ref: '#/components/schemas/LensAlias'
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
     InternalServerException: {}
-    WorkloadSummaries:
+    ProfileSummaries:
       type: array
-      description: A list of workload summaries.
       items:
-        $ref: '#/components/schemas/WorkloadSummary'
-    AccessDeniedException: {}
-    ProfileVersion:
-      type: string
-      pattern: ^[A-Za-z0-9-]+$
-      minLength: 1
-      maxLength: 32
-    WorkloadSummary:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        WorkloadArn:
-          $ref: '#/components/schemas/WorkloadArn'
-        WorkloadName:
-          $ref: '#/components/schemas/WorkloadName'
-        Owner:
-          $ref: '#/components/schemas/AwsAccountId'
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-        Lenses:
-          $ref: '#/components/schemas/WorkloadLenses'
-        RiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-        ImprovementStatus:
-          $ref: '#/components/schemas/WorkloadImprovementStatus'
-        Profiles:
-          allOf:
-          - $ref: '#/components/schemas/WorkloadProfiles'
-          - description: Profile associated with a workload.
-        PrioritizedRiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-      description: A workload summary return object.
+        $ref: '#/components/schemas/ProfileSummary'
     ValidationException: {}
+    ProfileName:
+      type: string
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
     AwsAccountId:
       type: string
       pattern: '[0-9]{12}'
       description: An Amazon Web Services account ID.
       minLength: 12
       maxLength: 12
-    WorkloadId:
+    ListProfilesOutput:
+      type: object
+      properties:
+        ProfileSummaries:
+          allOf:
+          - $ref: '#/components/schemas/ProfileSummaries'
+          - description: Profile summaries.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+    ProfileDescription:
       type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-      minLength: 32
-      maxLength: 32
-    WorkloadName:
-      type: string
-      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
       minLength: 3
       maxLength: 100
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
     Timestamp:
       type: string
       description: The date and time recorded.
       format: date-time
-    WorkloadProfile:
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    ThrottlingException: {}
+    AccessDeniedException: {}
+    ProfileSummary:
       type: object
       properties:
         ProfileArn:
@@ -288,39 +256,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/ProfileVersion'
           - description: The profile version.
-      description: The profile associated with a workload.
-    WorkloadProfiles:
-      type: array
-      items:
-        $ref: '#/components/schemas/WorkloadProfile'
-      maxItems: 1
-    ProfileArn:
+        ProfileName:
+          allOf:
+          - $ref: '#/components/schemas/ProfileName'
+          - description: The profile name.
+        ProfileDescription:
+          allOf:
+          - $ref: '#/components/schemas/ProfileDescription'
+          - description: The profile description.
+        Owner:
+          $ref: '#/components/schemas/AwsAccountId'
+        CreatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+      description: Summary of a profile.
+    NextToken:
       type: string
-      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
-      maxLength: 2084
-    ListWorkloadsOutput:
-      type: object
-      properties:
-        WorkloadSummaries:
-          $ref: '#/components/schemas/WorkloadSummaries'
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-      description: Output of a list workloads call.
-    LensAlias:
-      type: string
-      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-      minLength: 1
-      maxLength: 128
-    Count:
-      type: integer
-      description: A non-negative integer that denotes how many.
-      minimum: 0
-    WorkloadArn:
-      type: string
-      description: The ARN for the workload.
+      description: The token to use to retrieve the next set of results.
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -337,8 +293,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -349,14 +311,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

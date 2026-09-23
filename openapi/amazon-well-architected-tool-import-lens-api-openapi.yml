@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-03-31'
   x-release: v4
-  title: AWS Well-Architected Tool ConsolidatedReport#Format Import Lens API
-  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  title: AWS Well-Architected Tool Import Lens API
+  description: 'Well-Architected Tool
+
+    This is the Well-Architected Tool API Reference. The WA Tool API provides programmatic access to the Well-Architected Tool in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the Well-Architected Tool User Guide.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +26,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,7 +115,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: ImportLens
+- name: Import Lens
 paths:
   /importLens:
     parameters:
@@ -125,7 +128,25 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     put:
       operationId: ImportLens
-      description: '<p>Import a new custom lens or update an existing custom lens.</p> <p>To update an existing custom lens, specify its ARN as the <code>LensAlias</code>. If no ARN is specified, a new custom lens is created.</p> <p>The new or updated lens will have a status of <code>DRAFT</code>. The lens cannot be applied to workloads or shared with other Amazon Web Services accounts until it''s published with <a>CreateLensVersion</a>.</p> <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p> <p>A custom lens cannot exceed 500 KB in size.</p> <note> <p> <b>Disclaimer</b> </p> <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p> </note>'
+      description: 'Import a new custom lens or update an existing custom lens.
+
+
+        To update an existing custom lens, specify its ARN as the LensAlias. If no ARN is specified, a new custom lens is created.
+
+
+        The new or updated lens will have a status of DRAFT. The lens cannot be applied to workloads or shared with other Amazon Web Services accounts until it''s published with CreateLensVersion.
+
+
+        Lenses are defined in JSON. For more information, see JSON format specification in the Well-Architected Tool User Guide.
+
+
+        A custom lens cannot exceed 500 KB in size.
+
+
+        Disclaimer
+
+
+        Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.'
       responses:
         '200':
           description: Success
@@ -210,9 +231,28 @@ paths:
                     $ref: '#/components/schemas/TagValue'
       summary: Amazon Well-Architected Tool Import Lens
       tags:
-      - ImportLens
+      - Import Lens
 components:
   schemas:
+    LensArn:
+      type: string
+    ImportLensStatus:
+      type: string
+      enum:
+      - IN_PROGRESS
+      - COMPLETE
+      - ERROR
+    ServiceQuotaExceededException: {}
+    AccessDeniedException: {}
+    ConflictException: {}
+    ThrottlingException: {}
+    InternalServerException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     ImportLensOutput:
       type: object
       properties:
@@ -224,28 +264,21 @@ components:
           allOf:
           - $ref: '#/components/schemas/ImportLensStatus'
           - description: The status of the imported lens.
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ThrottlingException: {}
-    ImportLensStatus:
-      type: string
-      enum:
-      - IN_PROGRESS
-      - COMPLETE
-      - ERROR
-    ResourceNotFoundException: {}
-    LensArn:
-      type: string
-    ConflictException: {}
-    ValidationException: {}
-    InternalServerException: {}
-    AccessDeniedException: {}
-    ServiceQuotaExceededException: {}
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -262,26 +295,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

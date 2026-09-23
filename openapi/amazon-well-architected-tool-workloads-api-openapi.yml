@@ -1,9 +1,11 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-03-31'
   x-release: v4
-  title: AWS Well-Architected Tool ConsolidatedReport#Format Workloads API
-  description: <fullname>Well-Architected Tool</fullname> <p>This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web Services Management Console</a>. For information about the Well-Architected Tool, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected Tool User Guide</a>.</p>
+  title: AWS Well-Architected Tool Workloads API
+  description: 'Well-Architected Tool
+
+    This is the Well-Architected Tool API Reference. The WA Tool API provides programmatic access to the Well-Architected Tool in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the Well-Architected Tool User Guide.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +26,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/wellarchitected-2020-03-31.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +128,16 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     patch:
       operationId: AssociateLenses
-      description: <p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note> <p> <b>Disclaimer</b> </p> <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p> </note>
+      description: 'Associate a lens to a workload.
+
+
+        Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.
+
+
+        Disclaimer
+
+
+        By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement.'
       responses:
         '200':
           description: Success
@@ -380,7 +392,19 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateWorkload
-      description: <p>Create a new workload.</p> <p>The owner of a workload can share the workload with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload can delete it.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p> <important> <p>Either <code>AwsRegions</code>, <code>NonAwsRegions</code>, or both must be specified when creating a workload.</p> <p>You also must specify <code>ReviewOwner</code>, even though the parameter is listed as not being required in the following section. </p> </important>
+      description: 'Create a new workload.
+
+
+        The owner of a workload can share the workload with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload can delete it.
+
+
+        For more information, see Defining a Workload in the Well-Architected Tool User Guide.
+
+
+        Either AwsRegions, NonAwsRegions, or both must be specified when creating a workload.
+
+
+        You also must specify ReviewOwner, even though the parameter is listed as not being required in the following section.'
       responses:
         '200':
           description: Success
@@ -560,7 +584,16 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateWorkloadShare
-      description: <p>Create a workload share.</p> <p>The owner of a workload can share it with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.</p> <p>If you share a workload with an organization or OU, all accounts in the organization or OU are granted access to the workload.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+      description: 'Create a workload share.
+
+
+        The owner of a workload can share it with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.
+
+
+        If you share a workload with an organization or OU, all accounts in the organization or OU are granted access to the workload.
+
+
+        For more information, see Sharing a workload in the Well-Architected Tool User Guide.'
       responses:
         '200':
           description: Success
@@ -910,7 +943,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     patch:
       operationId: DisassociateLenses
-      description: <p>Disassociate a lens from a workload.</p> <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p> <note> <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p> </note>
+      description: 'Disassociate a lens from a workload.
+
+
+        Up to 10 lenses can be disassociated from a workload in a single API operation.
+
+
+        The Amazon Web Services Well-Architected Framework lens (wellarchitected) cannot be removed from a workload.'
       responses:
         '200':
           description: Success
@@ -2708,149 +2747,105 @@ paths:
       tags:
       - Workloads
 components:
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    TrustedAdvisorIntegrationStatus:
-      type: string
-      enum:
-      - ENABLED
-      - DISABLED
-    HelpfulResourceUrl:
-      type: string
-      description: <p>The helpful resource URL.</p> <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p> <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-      minLength: 1
-      maxLength: 2048
-    PillarReviewSummaries:
+    AdditionalResourcesList:
       type: array
-      description: List of pillar review summaries of lens review in a workload.
       items:
-        $ref: '#/components/schemas/PillarReviewSummary'
-    AnswerSummary:
-      type: object
-      properties:
-        QuestionId:
-          $ref: '#/components/schemas/QuestionId'
-        PillarId:
-          $ref: '#/components/schemas/PillarId'
-        QuestionTitle:
-          $ref: '#/components/schemas/QuestionTitle'
-        Choices:
-          $ref: '#/components/schemas/Choices'
-        SelectedChoices:
-          $ref: '#/components/schemas/SelectedChoices'
-        ChoiceAnswerSummaries:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceAnswerSummaries'
-          - description: A list of selected choices to a question in your workload.
-        IsApplicable:
-          $ref: '#/components/schemas/IsApplicable'
-        Risk:
-          $ref: '#/components/schemas/Risk'
-        Reason:
-          allOf:
-          - $ref: '#/components/schemas/AnswerReason'
-          - description: The reason why a choice is non-applicable to a question in your workload.
-        QuestionType:
-          allOf:
-          - $ref: '#/components/schemas/QuestionType'
-          - description: The type of the question.
-      description: An answer summary of a lens review in a workload.
-    PillarName:
+        $ref: '#/components/schemas/AdditionalResources'
+    QuestionTitle:
       type: string
-      description: The name of the pillar.
+      description: The title of the question.
       minLength: 1
-      maxLength: 128
-    RiskCounts:
-      type: object
-      description: A map from risk names to the count of how many questions have that rating.
-      additionalProperties:
-        $ref: '#/components/schemas/Count'
-    MilestoneNumber:
-      type: integer
-      description: <p>The milestone number.</p> <p>A workload can have a maximum of 100 milestones.</p>
-      minimum: 1
-      maximum: 100
-    CreateWorkloadOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        WorkloadArn:
-          $ref: '#/components/schemas/WorkloadArn'
-      description: Output of a create workload call.
-    WorkloadEnvironment:
-      type: string
-      enum:
-      - PRODUCTION
-      - PREPRODUCTION
-      description: The environment for the workload.
+      maxLength: 512
+    ServiceQuotaExceededException: {}
     ShareId:
       type: string
       pattern: '[0-9a-f]{32}'
       description: The ID associated with the share.
-    WorkloadResourceDefinition:
+    ConflictException: {}
+    MilestoneSummaries:
       type: array
+      description: A list of milestone summaries.
       items:
-        $ref: '#/components/schemas/DefinitionType'
-    ListWorkloadSharesOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        WorkloadShareSummaries:
-          $ref: '#/components/schemas/WorkloadShareSummaries'
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-      description: Input for List Workload Share
-    LensReviewSummary:
-      type: object
-      properties:
-        LensAlias:
-          $ref: '#/components/schemas/LensAlias'
-        LensArn:
-          allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: The ARN for the lens.
-        LensVersion:
-          allOf:
-          - $ref: '#/components/schemas/LensVersion'
-          - description: The version of the lens.
-        LensName:
-          $ref: '#/components/schemas/LensName'
-        LensStatus:
-          allOf:
-          - $ref: '#/components/schemas/LensStatus'
-          - description: The status of the lens.
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-        RiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-        Profiles:
-          allOf:
-          - $ref: '#/components/schemas/WorkloadProfiles'
-          - description: The profiles associated with the workload.
-        PrioritizedRiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-      description: A lens review summary of a workload.
-    SelectedChoices:
-      type: array
-      description: <p>List of selected choice IDs in a question answer.</p> <p>The values entered replace the previously selected choices.</p>
-      items:
-        $ref: '#/components/schemas/ChoiceId'
-    CheckSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/CheckSummary'
-    CheckName:
+        $ref: '#/components/schemas/MilestoneSummary'
+    IsApplicable:
+      type: boolean
+      description: Defines whether this question is applicable to a lens review.
+    DisplayText:
       type: string
-    CreateMilestoneOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        MilestoneNumber:
-          $ref: '#/components/schemas/MilestoneNumber'
-      description: Output of a create milestone call.
-    Answer:
+      minLength: 1
+      maxLength: 64
+    DefinitionType:
+      type: string
+      enum:
+      - WORKLOAD_METADATA
+      - APP_REGISTRY
+    QuestionId:
+      type: string
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    AnswerReason:
+      type: string
+      enum:
+      - OUT_OF_SCOPE
+      - BUSINESS_PRIORITIES
+      - ARCHITECTURE_CONSTRAINTS
+      - OTHER
+      - NONE
+    LensName:
+      type: string
+      description: The full name of the lens.
+      minLength: 1
+      maxLength: 128
+    ChoiceAnswers:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChoiceAnswer'
+    ImprovementSummary:
       type: object
       properties:
         QuestionId:
@@ -2859,48 +2854,153 @@ components:
           $ref: '#/components/schemas/PillarId'
         QuestionTitle:
           $ref: '#/components/schemas/QuestionTitle'
-        QuestionDescription:
-          $ref: '#/components/schemas/QuestionDescription'
-        ImprovementPlanUrl:
-          $ref: '#/components/schemas/ImprovementPlanUrl'
-        HelpfulResourceUrl:
-          $ref: '#/components/schemas/HelpfulResourceUrl'
-        HelpfulResourceDisplayText:
-          allOf:
-          - $ref: '#/components/schemas/DisplayText'
-          - description: <p>The helpful resource text to be displayed for a custom lens.</p> <p>This field does not apply to Amazon Web Services official lenses.</p>
-        Choices:
-          $ref: '#/components/schemas/Choices'
-        SelectedChoices:
-          $ref: '#/components/schemas/SelectedChoices'
-        ChoiceAnswers:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceAnswers'
-          - description: A list of selected choices to a question in your workload.
-        IsApplicable:
-          $ref: '#/components/schemas/IsApplicable'
         Risk:
           $ref: '#/components/schemas/Risk'
+        ImprovementPlanUrl:
+          $ref: '#/components/schemas/ImprovementPlanUrl'
+        ImprovementPlans:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceImprovementPlans'
+          - description: The improvement plan details.
+      description: An improvement summary of a lens review in a workload.
+    Risk:
+      type: string
+      enum:
+      - UNANSWERED
+      - HIGH
+      - MEDIUM
+      - NONE
+      - NOT_APPLICABLE
+      description: The risk for a given workload, lens review, pillar, or question.
+    ChoiceContentUrl:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    ChoiceReason:
+      type: string
+      enum:
+      - OUT_OF_SCOPE
+      - BUSINESS_PRIORITIES
+      - ARCHITECTURE_CONSTRAINTS
+      - OTHER
+      - NONE
+    CheckName:
+      type: string
+    ListMilestonesOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        MilestoneSummaries:
+          $ref: '#/components/schemas/MilestoneSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Output of a list milestones call.
+    PillarReviewSummary:
+      type: object
+      properties:
+        PillarId:
+          $ref: '#/components/schemas/PillarId'
+        PillarName:
+          $ref: '#/components/schemas/PillarName'
         Notes:
           $ref: '#/components/schemas/Notes'
-        Reason:
-          allOf:
-          - $ref: '#/components/schemas/AnswerReason'
-          - description: The reason why the question is not applicable to your workload.
-      description: An answer of the question.
-    AwsAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-      description: An Amazon Web Services account ID.
-      minLength: 12
-      maxLength: 12
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+        PrioritizedRiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+      description: A pillar review summary of a lens review.
     CheckId:
       type: string
-    WorkloadName:
+    Notes:
       type: string
-      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-      minLength: 3
-      maxLength: 100
+      description: The notes associated with the workload.
+      maxLength: 2084
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    ChoiceId:
+      type: string
+      description: The ID of a choice.
+      minLength: 1
+      maxLength: 64
+    CheckDetail:
+      type: object
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/CheckId'
+          - description: Trusted Advisor check ID.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/CheckName'
+          - description: Trusted Advisor check name.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/CheckDescription'
+          - description: Trusted Advisor check description.
+        Provider:
+          allOf:
+          - $ref: '#/components/schemas/CheckProvider'
+          - description: Provider of the check related to the best practice.
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: Well-Architected Lens ARN associated to the check.
+        PillarId:
+          $ref: '#/components/schemas/PillarId'
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/CheckStatus'
+          - description: Status associated to the check.
+        AccountId:
+          $ref: '#/components/schemas/AwsAccountId'
+        FlaggedResources:
+          allOf:
+          - $ref: '#/components/schemas/FlaggedResources'
+          - description: Count of flagged resources associated to the check.
+        Reason:
+          allOf:
+          - $ref: '#/components/schemas/CheckFailureReason'
+          - description: Reason associated to the check.
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+      description: Account details for a Well-Architected best practice in relation to Trusted Advisor checks.
+    ChoiceNotes:
+      type: string
+      maxLength: 250
+    WorkloadProfile:
+      type: object
+      properties:
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+        ProfileVersion:
+          allOf:
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: The profile version.
+      description: The profile associated with a workload.
+    QuestionDescription:
+      type: string
+      description: The description of the question.
+      minLength: 1
+      maxLength: 1024
+    WorkloadLenses:
+      type: array
+      description: The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.
+      items:
+        $ref: '#/components/schemas/LensAlias'
+    PillarId:
+      type: string
+      description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+      minLength: 1
+      maxLength: 64
     Workload:
       type: object
       properties:
@@ -2971,134 +3071,19 @@ components:
         PrioritizedRiskCounts:
           $ref: '#/components/schemas/RiskCounts'
       description: A workload return object.
-    GetMilestoneOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        Milestone:
-          $ref: '#/components/schemas/Milestone'
-      description: Output of a get milestone call.
-    WorkloadNonAwsRegion:
-      type: string
-      minLength: 3
-      maxLength: 25
-    ChoiceId:
-      type: string
-      description: The ID of a choice.
-      minLength: 1
-      maxLength: 64
-    WorkloadDiscoveryConfig:
-      type: object
-      properties:
-        TrustedAdvisorIntegrationStatus:
-          allOf:
-          - $ref: '#/components/schemas/TrustedAdvisorIntegrationStatus'
-          - description: Discovery integration status in respect to Trusted Advisor for the workload.
-        WorkloadResourceDefinition:
-          allOf:
-          - $ref: '#/components/schemas/WorkloadResourceDefinition'
-          - description: <p>The mode to use for identifying resources associated with the workload.</p> <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
-      description: Discovery configuration associated to the workload.
-    CheckDetails:
-      type: array
-      items:
-        $ref: '#/components/schemas/CheckDetail'
-    QuestionType:
+    ChoiceStatus:
       type: string
       enum:
-      - PRIORITIZED
-      - NON_PRIORITIZED
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
-    ChoiceNotes:
-      type: string
-      maxLength: 250
-    ImprovementSummary:
-      type: object
-      properties:
-        QuestionId:
-          $ref: '#/components/schemas/QuestionId'
-        PillarId:
-          $ref: '#/components/schemas/PillarId'
-        QuestionTitle:
-          $ref: '#/components/schemas/QuestionTitle'
-        Risk:
-          $ref: '#/components/schemas/Risk'
-        ImprovementPlanUrl:
-          $ref: '#/components/schemas/ImprovementPlanUrl'
-        ImprovementPlans:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceImprovementPlans'
-          - description: The improvement plan details.
-      description: An improvement summary of a lens review in a workload.
-    UpdateWorkloadShareOutput:
+      - SELECTED
+      - NOT_APPLICABLE
+      - UNSELECTED
+    GetAnswerOutput:
       type: object
       properties:
         WorkloadId:
           $ref: '#/components/schemas/WorkloadId'
-        WorkloadShare:
-          $ref: '#/components/schemas/WorkloadShare'
-      description: Input for Update Workload Share
-    AdditionalResources:
-      type: object
-      properties:
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/AdditionalResourceType'
-          - description: Type of additional resource for a custom lens.
-        Content:
-          allOf:
-          - $ref: '#/components/schemas/Urls'
-          - description: The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.
-      description: <p>The choice level additional resources for a custom lens.</p> <p>This field does not apply to Amazon Web Services official lenses.</p>
-    WorkloadShareSummaries:
-      type: array
-      description: A list of workload share summaries.
-      items:
-        $ref: '#/components/schemas/WorkloadShareSummary'
-    AnswerSummaries:
-      type: array
-      description: List of answer summaries of lens review in a workload.
-      items:
-        $ref: '#/components/schemas/AnswerSummary'
-    LensVersion:
-      type: string
-      minLength: 1
-      maxLength: 32
-    WorkloadReviewOwner:
-      type: string
-      description: The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-      minLength: 3
-      maxLength: 255
-    WorkloadShare:
-      type: object
-      properties:
-        ShareId:
-          $ref: '#/components/schemas/ShareId'
-        SharedBy:
-          $ref: '#/components/schemas/AwsAccountId'
-        SharedWith:
-          $ref: '#/components/schemas/SharedWith'
-        PermissionType:
-          $ref: '#/components/schemas/PermissionType'
-        Status:
-          $ref: '#/components/schemas/ShareStatus'
-        WorkloadName:
-          $ref: '#/components/schemas/WorkloadName'
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-      description: A workload share return object.
-    StatusMessage:
-      type: string
-      minLength: 1
-      maxLength: 512
-    UpdateAnswerOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
+        MilestoneNumber:
+          $ref: '#/components/schemas/MilestoneNumber'
         LensAlias:
           $ref: '#/components/schemas/LensAlias'
         LensArn:
@@ -3107,16 +3092,582 @@ components:
           - description: The ARN for the lens.
         Answer:
           $ref: '#/components/schemas/Answer'
-      description: Output of a update answer call.
-    ListCheckDetailsOutput:
+      description: Output of a get answer call.
+    LensReview:
       type: object
       properties:
-        CheckDetails:
+        LensAlias:
+          $ref: '#/components/schemas/LensAlias'
+        LensArn:
           allOf:
-          - $ref: '#/components/schemas/CheckDetails'
-          - description: The details about the Trusted Advisor checks related to the Well-Architected best practice.
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN for the lens.
+        LensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The version of the lens.
+        LensName:
+          $ref: '#/components/schemas/LensName'
+        LensStatus:
+          allOf:
+          - $ref: '#/components/schemas/LensStatus'
+          - description: The status of the lens.
+        PillarReviewSummaries:
+          $ref: '#/components/schemas/PillarReviewSummaries'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        Notes:
+          $ref: '#/components/schemas/Notes'
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
         NextToken:
           $ref: '#/components/schemas/NextToken'
+        Profiles:
+          allOf:
+          - $ref: '#/components/schemas/WorkloadProfiles'
+          - description: The profiles associated with the workload.
+        PrioritizedRiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+      description: A lens review of a question.
+    LensReviewSummary:
+      type: object
+      properties:
+        LensAlias:
+          $ref: '#/components/schemas/LensAlias'
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN for the lens.
+        LensVersion:
+          allOf:
+          - $ref: '#/components/schemas/LensVersion'
+          - description: The version of the lens.
+        LensName:
+          $ref: '#/components/schemas/LensName'
+        LensStatus:
+          allOf:
+          - $ref: '#/components/schemas/LensStatus'
+          - description: The status of the lens.
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+        Profiles:
+          allOf:
+          - $ref: '#/components/schemas/WorkloadProfiles'
+          - description: The profiles associated with the workload.
+        PrioritizedRiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+      description: A lens review summary of a workload.
+    AccessDeniedException: {}
+    AwsRegion:
+      type: string
+      description: An Amazon Web Services Region, for example, <code>us-west-2</code> or <code>ap-northeast-1</code>.
+      maxLength: 100
+    ChoiceAnswerSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChoiceAnswerSummary'
+    CheckStatusCount:
+      type: integer
+      minimum: 1
+      maximum: 101
+    WorkloadAwsRegions:
+      type: array
+      description: The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.
+      items:
+        $ref: '#/components/schemas/AwsRegion'
+      maxItems: 50
+    PillarName:
+      type: string
+      description: The name of the pillar.
+      minLength: 1
+      maxLength: 128
+    LensReviewSummaries:
+      type: array
+      description: List of lens summaries of lens reviews of a workload.
+      items:
+        $ref: '#/components/schemas/LensReviewSummary'
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    WorkloadIndustry:
+      type: string
+      description: The industry for the workload.
+      maxLength: 100
+    LensArn:
+      type: string
+    ProfileArn:
+      type: string
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
+    Answer:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        PillarId:
+          $ref: '#/components/schemas/PillarId'
+        QuestionTitle:
+          $ref: '#/components/schemas/QuestionTitle'
+        QuestionDescription:
+          $ref: '#/components/schemas/QuestionDescription'
+        ImprovementPlanUrl:
+          $ref: '#/components/schemas/ImprovementPlanUrl'
+        HelpfulResourceUrl:
+          $ref: '#/components/schemas/HelpfulResourceUrl'
+        HelpfulResourceDisplayText:
+          allOf:
+          - $ref: '#/components/schemas/DisplayText'
+          - description: <p>The helpful resource text to be displayed for a custom lens.</p> <p>This field does not apply to Amazon Web Services official lenses.</p>
+        Choices:
+          $ref: '#/components/schemas/Choices'
+        SelectedChoices:
+          $ref: '#/components/schemas/SelectedChoices'
+        ChoiceAnswers:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceAnswers'
+          - description: A list of selected choices to a question in your workload.
+        IsApplicable:
+          $ref: '#/components/schemas/IsApplicable'
+        Risk:
+          $ref: '#/components/schemas/Risk'
+        Notes:
+          $ref: '#/components/schemas/Notes'
+        Reason:
+          allOf:
+          - $ref: '#/components/schemas/AnswerReason'
+          - description: The reason why the question is not applicable to your workload.
+      description: An answer of the question.
+    Choices:
+      type: array
+      description: List of choices available for a question.
+      items:
+        $ref: '#/components/schemas/Choice'
+    SelectedChoices:
+      type: array
+      description: <p>List of selected choice IDs in a question answer.</p> <p>The values entered replace the previously selected choices.</p>
+      items:
+        $ref: '#/components/schemas/ChoiceId'
+    CheckDescription:
+      type: string
+    UpdateLensReviewOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        LensReview:
+          $ref: '#/components/schemas/LensReview'
+      description: Output of a update lens review call.
+    ChoiceContentDisplayText:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    ListLensReviewsOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        MilestoneNumber:
+          $ref: '#/components/schemas/MilestoneNumber'
+        LensReviewSummaries:
+          $ref: '#/components/schemas/LensReviewSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Output of a list lens reviews call.
+    WorkloadName:
+      type: string
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
+    AwsAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+      description: An Amazon Web Services account ID.
+      minLength: 12
+      maxLength: 12
+    CheckSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/CheckSummary'
+    AnswerSummary:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        PillarId:
+          $ref: '#/components/schemas/PillarId'
+        QuestionTitle:
+          $ref: '#/components/schemas/QuestionTitle'
+        Choices:
+          $ref: '#/components/schemas/Choices'
+        SelectedChoices:
+          $ref: '#/components/schemas/SelectedChoices'
+        ChoiceAnswerSummaries:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceAnswerSummaries'
+          - description: A list of selected choices to a question in your workload.
+        IsApplicable:
+          $ref: '#/components/schemas/IsApplicable'
+        Risk:
+          $ref: '#/components/schemas/Risk'
+        Reason:
+          allOf:
+          - $ref: '#/components/schemas/AnswerReason'
+          - description: The reason why a choice is non-applicable to a question in your workload.
+        QuestionType:
+          allOf:
+          - $ref: '#/components/schemas/QuestionType'
+          - description: The type of the question.
+      description: An answer summary of a lens review in a workload.
+    GetLensReviewOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        MilestoneNumber:
+          $ref: '#/components/schemas/MilestoneNumber'
+        LensReview:
+          $ref: '#/components/schemas/LensReview'
+      description: Output of a get lens review call.
+    ShareInvitationId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+    ListAnswersOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        MilestoneNumber:
+          $ref: '#/components/schemas/MilestoneNumber'
+        LensAlias:
+          $ref: '#/components/schemas/LensAlias'
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN for the lens.
+        AnswerSummaries:
+          $ref: '#/components/schemas/AnswerSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Output of a list answers call.
+    ChoiceAnswer:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceStatus'
+          - description: The status of a choice.
+        Reason:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceReason'
+          - description: The reason why a choice is non-applicable to a question in your workload.
+        Notes:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceNotes'
+          - description: The notes associated with a choice.
+      description: A choice that has been answered on a question in your workload.
+    MilestoneNumber:
+      type: integer
+      description: <p>The milestone number.</p> <p>A workload can have a maximum of 100 milestones.</p>
+      minimum: 1
+      maximum: 100
+    WorkloadResourceDefinition:
+      type: array
+      items:
+        $ref: '#/components/schemas/DefinitionType'
+    ApplicationArn:
+      type: string
+      pattern: arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:/applications/[a-z0-9]+
+      maxLength: 2084
+    ThrottlingException: {}
+    ChoiceTitle:
+      type: string
+      description: The title of a choice.
+      minLength: 1
+      maxLength: 512
+    AccountSummary:
+      type: object
+      description: Account summary for a Well-Architected best practice in relation to Trusted Advisor checks.
+      additionalProperties:
+        $ref: '#/components/schemas/CheckStatusCount'
+    Urls:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChoiceContent'
+    UpdateWorkloadOutput:
+      type: object
+      properties:
+        Workload:
+          $ref: '#/components/schemas/Workload'
+      description: Output of an update workload call.
+    ChoiceImprovementPlan:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        DisplayText:
+          allOf:
+          - $ref: '#/components/schemas/DisplayText'
+          - description: The display text for the improvement plan.
+        ImprovementPlanUrl:
+          $ref: '#/components/schemas/ImprovementPlanUrl'
+      description: The choice level improvement plan.
+    ImprovementSummaries:
+      type: array
+      description: List of improvement summaries of lens review in a workload.
+      items:
+        $ref: '#/components/schemas/ImprovementSummary'
+    CheckDetails:
+      type: array
+      items:
+        $ref: '#/components/schemas/CheckDetail'
+    AdditionalResourceType:
+      type: string
+      enum:
+      - HELPFUL_RESOURCE
+      - IMPROVEMENT_PLAN
+    ChoiceAnswerSummary:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceStatus'
+          - description: The status of a choice.
+        Reason:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceReason'
+          - description: The reason why a choice is non-applicable to a question in your workload.
+      description: A choice summary that has been answered on a question in your workload.
+    WorkloadImprovementStatus:
+      type: string
+      enum:
+      - NOT_APPLICABLE
+      - NOT_STARTED
+      - IN_PROGRESS
+      - COMPLETE
+      - RISK_ACKNOWLEDGED
+      description: The improvement status for a workload.
+    ChoiceDescription:
+      type: string
+      description: The description of a choice.
+      minLength: 1
+      maxLength: 1024
+    LensReviewReport:
+      type: object
+      properties:
+        LensAlias:
+          $ref: '#/components/schemas/LensAlias'
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN for the lens.
+        Base64String:
+          $ref: '#/components/schemas/Base64String'
+      description: A report of a lens review.
+    GetLensReviewReportOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        MilestoneNumber:
+          $ref: '#/components/schemas/MilestoneNumber'
+        LensReviewReport:
+          $ref: '#/components/schemas/LensReviewReport'
+      description: Output of a get lens review report call.
+    ChoiceContent:
+      type: object
+      properties:
+        DisplayText:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceContentDisplayText'
+          - description: The display text for the choice content.
+        Url:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceContentUrl'
+          - description: The URL for the choice content.
+      description: The choice content.
+    WorkloadEnvironment:
+      type: string
+      enum:
+      - PRODUCTION
+      - PREPRODUCTION
+      description: The environment for the workload.
+    WorkloadNonAwsRegions:
+      type: array
+      description: ' The list of non-Amazon Web Services Regions associated with the workload.'
+      items:
+        $ref: '#/components/schemas/WorkloadNonAwsRegion'
+      maxItems: 5
+    WorkloadSummary:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        WorkloadArn:
+          $ref: '#/components/schemas/WorkloadArn'
+        WorkloadName:
+          $ref: '#/components/schemas/WorkloadName'
+        Owner:
+          $ref: '#/components/schemas/AwsAccountId'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        Lenses:
+          $ref: '#/components/schemas/WorkloadLenses'
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+        ImprovementStatus:
+          $ref: '#/components/schemas/WorkloadImprovementStatus'
+        Profiles:
+          allOf:
+          - $ref: '#/components/schemas/WorkloadProfiles'
+          - description: Profile associated with a workload.
+        PrioritizedRiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+      description: A workload summary return object.
+    UpdateWorkloadShareOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        WorkloadShare:
+          $ref: '#/components/schemas/WorkloadShare'
+      description: Input for Update Workload Share
+    TrustedAdvisorIntegrationStatus:
+      type: string
+      enum:
+      - ENABLED
+      - DISABLED
+    ListWorkloadSharesOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        WorkloadShareSummaries:
+          $ref: '#/components/schemas/WorkloadShareSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Input for List Workload Share
+    WorkloadReviewOwner:
+      type: string
+      description: The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
+      minLength: 3
+      maxLength: 255
+    WorkloadApplications:
+      type: array
+      items:
+        $ref: '#/components/schemas/ApplicationArn'
+      maxItems: 1
+    QuestionType:
+      type: string
+      enum:
+      - PRIORITIZED
+      - NON_PRIORITIZED
+    CreateWorkloadOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        WorkloadArn:
+          $ref: '#/components/schemas/WorkloadArn'
+      description: Output of a create workload call.
+    StatusMessage:
+      type: string
+      minLength: 1
+      maxLength: 512
+    WorkloadId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
+    CheckStatus:
+      type: string
+      enum:
+      - OKAY
+      - WARNING
+      - ERROR
+      - NOT_AVAILABLE
+      - FETCH_FAILED
+    WorkloadNonAwsRegion:
+      type: string
+      minLength: 3
+      maxLength: 25
+    WorkloadShareSummary:
+      type: object
+      properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+        SharedWith:
+          $ref: '#/components/schemas/SharedWith'
+        PermissionType:
+          $ref: '#/components/schemas/PermissionType'
+        Status:
+          $ref: '#/components/schemas/ShareStatus'
+        StatusMessage:
+          allOf:
+          - $ref: '#/components/schemas/StatusMessage'
+          - description: Optional message to compliment the Status field.
+      description: A workload share summary return object.
+    ResourceNotFoundException: {}
+    CheckProvider:
+      type: string
+      enum:
+      - TRUSTED_ADVISOR
+    WorkloadPillarPriorities:
+      type: array
+      description: The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.
+      items:
+        $ref: '#/components/schemas/PillarId'
+    WorkloadArchitecturalDesign:
+      type: string
+      pattern: ^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$
+      description: The URL of the architectural design for the workload.
+      maxLength: 2048
+    WorkloadAccountIds:
+      type: array
+      description: The list of Amazon Web Services account IDs associated with the workload.
+      items:
+        $ref: '#/components/schemas/AwsAccountId'
+      maxItems: 100
+    Milestone:
+      type: object
+      properties:
+        MilestoneNumber:
+          $ref: '#/components/schemas/MilestoneNumber'
+        MilestoneName:
+          $ref: '#/components/schemas/MilestoneName'
+        RecordedAt:
+          $ref: '#/components/schemas/Timestamp'
+        Workload:
+          $ref: '#/components/schemas/Workload'
+      description: A milestone return object.
+    ListCheckSummariesOutput:
+      type: object
+      properties:
+        CheckSummaries:
+          allOf:
+          - $ref: '#/components/schemas/CheckSummaries'
+          - description: List of Trusted Advisor summaries related to the Well-Architected best practice.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+    RiskCounts:
+      type: object
+      description: A map from risk names to the count of how many questions have that rating.
+      additionalProperties:
+        $ref: '#/components/schemas/Count'
+    AnswerSummaries:
+      type: array
+      description: List of answer summaries of lens review in a workload.
+      items:
+        $ref: '#/components/schemas/AnswerSummary'
     CheckSummary:
       type: object
       properties:
@@ -3157,672 +3708,25 @@ components:
           - $ref: '#/components/schemas/AccountSummary'
           - description: Account summary associated to the check.
       description: Trusted Advisor check summary.
-    CheckStatus:
+    WorkloadDiscoveryConfig:
+      type: object
+      properties:
+        TrustedAdvisorIntegrationStatus:
+          allOf:
+          - $ref: '#/components/schemas/TrustedAdvisorIntegrationStatus'
+          - description: Discovery integration status in respect to Trusted Advisor for the workload.
+        WorkloadResourceDefinition:
+          allOf:
+          - $ref: '#/components/schemas/WorkloadResourceDefinition'
+          - description: <p>The mode to use for identifying resources associated with the workload.</p> <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
+      description: Discovery configuration associated to the workload.
+    LensVersion:
       type: string
-      enum:
-      - OKAY
-      - WARNING
-      - ERROR
-      - NOT_AVAILABLE
-      - FETCH_FAILED
-    Count:
-      type: integer
-      description: A non-negative integer that denotes how many.
-      minimum: 0
+      minLength: 1
+      maxLength: 32
     WorkloadArn:
       type: string
       description: The ARN for the workload.
-    ChoiceAnswer:
-      type: object
-      properties:
-        ChoiceId:
-          $ref: '#/components/schemas/ChoiceId'
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceStatus'
-          - description: The status of a choice.
-        Reason:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceReason'
-          - description: The reason why a choice is non-applicable to a question in your workload.
-        Notes:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceNotes'
-          - description: The notes associated with a choice.
-      description: A choice that has been answered on a question in your workload.
-    WorkloadShareSummary:
-      type: object
-      properties:
-        ShareId:
-          $ref: '#/components/schemas/ShareId'
-        SharedWith:
-          $ref: '#/components/schemas/SharedWith'
-        PermissionType:
-          $ref: '#/components/schemas/PermissionType'
-        Status:
-          $ref: '#/components/schemas/ShareStatus'
-        StatusMessage:
-          allOf:
-          - $ref: '#/components/schemas/StatusMessage'
-          - description: Optional message to compliment the Status field.
-      description: A workload share summary return object.
-    ChoiceContentDisplayText:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    AwsRegion:
-      type: string
-      description: An Amazon Web Services Region, for example, <code>us-west-2</code> or <code>ap-northeast-1</code>.
-      maxLength: 100
-    ShareStatus:
-      type: string
-      enum:
-      - ACCEPTED
-      - REJECTED
-      - PENDING
-      - REVOKED
-      - EXPIRED
-      - ASSOCIATING
-      - ASSOCIATED
-      - FAILED
-      description: The status of the share request.
-    ChoiceTitle:
-      type: string
-      description: The title of a choice.
-      minLength: 1
-      maxLength: 512
-    LensStatus:
-      type: string
-      enum:
-      - CURRENT
-      - NOT_CURRENT
-      - DEPRECATED
-      - DELETED
-      - UNSHARED
-    SharedWith:
-      type: string
-      description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-      minLength: 12
-      maxLength: 2048
-    AccessDeniedException: {}
-    WorkloadAccountIds:
-      type: array
-      description: The list of Amazon Web Services account IDs associated with the workload.
-      items:
-        $ref: '#/components/schemas/AwsAccountId'
-      maxItems: 100
-    ServiceQuotaExceededException: {}
-    ProfileVersion:
-      type: string
-      pattern: ^[A-Za-z0-9-]+$
-      minLength: 1
-      maxLength: 32
-    FlaggedResources:
-      type: integer
-      minimum: 1
-      maximum: 9999
-    Notes:
-      type: string
-      description: The notes associated with the workload.
-      maxLength: 2084
-    ChoiceAnswerSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ChoiceAnswerSummary'
-    CheckFailureReason:
-      type: string
-      enum:
-      - ASSUME_ROLE_ERROR
-      - ACCESS_DENIED
-      - UNKNOWN_ERROR
-      - PREMIUM_SUPPORT_REQUIRED
-    CheckDetail:
-      type: object
-      properties:
-        Id:
-          allOf:
-          - $ref: '#/components/schemas/CheckId'
-          - description: Trusted Advisor check ID.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/CheckName'
-          - description: Trusted Advisor check name.
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/CheckDescription'
-          - description: Trusted Advisor check description.
-        Provider:
-          allOf:
-          - $ref: '#/components/schemas/CheckProvider'
-          - description: Provider of the check related to the best practice.
-        LensArn:
-          allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: Well-Architected Lens ARN associated to the check.
-        PillarId:
-          $ref: '#/components/schemas/PillarId'
-        QuestionId:
-          $ref: '#/components/schemas/QuestionId'
-        ChoiceId:
-          $ref: '#/components/schemas/ChoiceId'
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/CheckStatus'
-          - description: Status associated to the check.
-        AccountId:
-          $ref: '#/components/schemas/AwsAccountId'
-        FlaggedResources:
-          allOf:
-          - $ref: '#/components/schemas/FlaggedResources'
-          - description: Count of flagged resources associated to the check.
-        Reason:
-          allOf:
-          - $ref: '#/components/schemas/CheckFailureReason'
-          - description: Reason associated to the check.
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-      description: Account details for a Well-Architected best practice in relation to Trusted Advisor checks.
-    GetLensReviewOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        MilestoneNumber:
-          $ref: '#/components/schemas/MilestoneNumber'
-        LensReview:
-          $ref: '#/components/schemas/LensReview'
-      description: Output of a get lens review call.
-    PillarId:
-      type: string
-      description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-      minLength: 1
-      maxLength: 64
-    ChoiceContentUrl:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    ResourceNotFoundException: {}
-    IsApplicable:
-      type: boolean
-      description: Defines whether this question is applicable to a lens review.
-    WorkloadDescription:
-      type: string
-      description: The description for the workload.
-      minLength: 3
-      maxLength: 250
-    WorkloadProfile:
-      type: object
-      properties:
-        ProfileArn:
-          allOf:
-          - $ref: '#/components/schemas/ProfileArn'
-          - description: The profile ARN.
-        ProfileVersion:
-          allOf:
-          - $ref: '#/components/schemas/ProfileVersion'
-          - description: The profile version.
-      description: The profile associated with a workload.
-    WorkloadApplications:
-      type: array
-      items:
-        $ref: '#/components/schemas/ApplicationArn'
-      maxItems: 1
-    DefinitionType:
-      type: string
-      enum:
-      - WORKLOAD_METADATA
-      - APP_REGISTRY
-    UpdateWorkloadOutput:
-      type: object
-      properties:
-        Workload:
-          $ref: '#/components/schemas/Workload'
-      description: Output of an update workload call.
-    MilestoneSummaries:
-      type: array
-      description: A list of milestone summaries.
-      items:
-        $ref: '#/components/schemas/MilestoneSummary'
-    QuestionId:
-      type: string
-      description: The ID of the question.
-      minLength: 1
-      maxLength: 128
-    WorkloadArchitecturalDesign:
-      type: string
-      pattern: ^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$
-      description: The URL of the architectural design for the workload.
-      maxLength: 2048
-    CheckDescription:
-      type: string
-    WorkloadImprovementStatus:
-      type: string
-      enum:
-      - NOT_APPLICABLE
-      - NOT_STARTED
-      - IN_PROGRESS
-      - COMPLETE
-      - RISK_ACKNOWLEDGED
-      description: The improvement status for a workload.
-    LensReviewReport:
-      type: object
-      properties:
-        LensAlias:
-          $ref: '#/components/schemas/LensAlias'
-        LensArn:
-          allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: The ARN for the lens.
-        Base64String:
-          $ref: '#/components/schemas/Base64String'
-      description: A report of a lens review.
-    LensArn:
-      type: string
-    Choices:
-      type: array
-      description: List of choices available for a question.
-      items:
-        $ref: '#/components/schemas/Choice'
-    WorkloadLenses:
-      type: array
-      description: The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.
-      items:
-        $ref: '#/components/schemas/LensAlias'
-    ListCheckSummariesOutput:
-      type: object
-      properties:
-        CheckSummaries:
-          allOf:
-          - $ref: '#/components/schemas/CheckSummaries'
-          - description: List of Trusted Advisor summaries related to the Well-Architected best practice.
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-    WorkloadPillarPriorities:
-      type: array
-      description: The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <a>PillarReviewSummary$PillarId</a>.
-      items:
-        $ref: '#/components/schemas/PillarId'
-    QuestionTitle:
-      type: string
-      description: The title of the question.
-      minLength: 1
-      maxLength: 512
-    Urls:
-      type: array
-      items:
-        $ref: '#/components/schemas/ChoiceContent'
-    InternalServerException: {}
-    CheckProvider:
-      type: string
-      enum:
-      - TRUSTED_ADVISOR
-    WorkloadSummary:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        WorkloadArn:
-          $ref: '#/components/schemas/WorkloadArn'
-        WorkloadName:
-          $ref: '#/components/schemas/WorkloadName'
-        Owner:
-          $ref: '#/components/schemas/AwsAccountId'
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-        Lenses:
-          $ref: '#/components/schemas/WorkloadLenses'
-        RiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-        ImprovementStatus:
-          $ref: '#/components/schemas/WorkloadImprovementStatus'
-        Profiles:
-          allOf:
-          - $ref: '#/components/schemas/WorkloadProfiles'
-          - description: Profile associated with a workload.
-        PrioritizedRiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-      description: A workload summary return object.
-    AdditionalResourceType:
-      type: string
-      enum:
-      - HELPFUL_RESOURCE
-      - IMPROVEMENT_PLAN
-    ImprovementPlanUrl:
-      type: string
-      description: <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-      minLength: 1
-      maxLength: 2048
-    GetLensReviewReportOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        MilestoneNumber:
-          $ref: '#/components/schemas/MilestoneNumber'
-        LensReviewReport:
-          $ref: '#/components/schemas/LensReviewReport'
-      description: Output of a get lens review report call.
-    ConflictException: {}
-    ValidationException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    CreateWorkloadShareOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        ShareId:
-          $ref: '#/components/schemas/ShareId'
-      description: Input for Create Workload Share
-    ChoiceStatus:
-      type: string
-      enum:
-      - SELECTED
-      - NOT_APPLICABLE
-      - UNSELECTED
-    PermissionType:
-      type: string
-      enum:
-      - READONLY
-      - CONTRIBUTOR
-      description: Permission granted on a share request.
-    DisplayText:
-      type: string
-      minLength: 1
-      maxLength: 64
-    QuestionDescription:
-      type: string
-      description: The description of the question.
-      minLength: 1
-      maxLength: 1024
-    ChoiceImprovementPlans:
-      type: array
-      items:
-        $ref: '#/components/schemas/ChoiceImprovementPlan'
-    UpdateLensReviewOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        LensReview:
-          $ref: '#/components/schemas/LensReview'
-      description: Output of a update lens review call.
-    ChoiceAnswerSummary:
-      type: object
-      properties:
-        ChoiceId:
-          $ref: '#/components/schemas/ChoiceId'
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceStatus'
-          - description: The status of a choice.
-        Reason:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceReason'
-          - description: The reason why a choice is non-applicable to a question in your workload.
-      description: A choice summary that has been answered on a question in your workload.
-    LensReviewSummaries:
-      type: array
-      description: List of lens summaries of lens reviews of a workload.
-      items:
-        $ref: '#/components/schemas/LensReviewSummary'
-    Base64String:
-      type: string
-      description: <p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    LensName:
-      type: string
-      description: The full name of the lens.
-      minLength: 1
-      maxLength: 128
-    ProfileArn:
-      type: string
-      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
-      maxLength: 2084
-    MilestoneSummary:
-      type: object
-      properties:
-        MilestoneNumber:
-          $ref: '#/components/schemas/MilestoneNumber'
-        MilestoneName:
-          $ref: '#/components/schemas/MilestoneName'
-        RecordedAt:
-          $ref: '#/components/schemas/Timestamp'
-        WorkloadSummary:
-          $ref: '#/components/schemas/WorkloadSummary'
-      description: A milestone summary return object.
-    LensReview:
-      type: object
-      properties:
-        LensAlias:
-          $ref: '#/components/schemas/LensAlias'
-        LensArn:
-          allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: The ARN for the lens.
-        LensVersion:
-          allOf:
-          - $ref: '#/components/schemas/LensVersion'
-          - description: The version of the lens.
-        LensName:
-          $ref: '#/components/schemas/LensName'
-        LensStatus:
-          allOf:
-          - $ref: '#/components/schemas/LensStatus'
-          - description: The status of the lens.
-        PillarReviewSummaries:
-          $ref: '#/components/schemas/PillarReviewSummaries'
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-        Notes:
-          $ref: '#/components/schemas/Notes'
-        RiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-        Profiles:
-          allOf:
-          - $ref: '#/components/schemas/WorkloadProfiles'
-          - description: The profiles associated with the workload.
-        PrioritizedRiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-      description: A lens review of a question.
-    ChoiceContent:
-      type: object
-      properties:
-        DisplayText:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceContentDisplayText'
-          - description: The display text for the choice content.
-        Url:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceContentUrl'
-          - description: The URL for the choice content.
-      description: The choice content.
-    ThrottlingException: {}
-    GetWorkloadOutput:
-      type: object
-      properties:
-        Workload:
-          $ref: '#/components/schemas/Workload'
-      description: Output of a get workload call.
-    ListMilestonesOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        MilestoneSummaries:
-          $ref: '#/components/schemas/MilestoneSummaries'
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-      description: Output of a list milestones call.
-    ApplicationArn:
-      type: string
-      pattern: arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:/applications/[a-z0-9]+
-      maxLength: 2084
-    WorkloadIndustry:
-      type: string
-      description: The industry for the workload.
-      maxLength: 100
-    IsReviewOwnerUpdateAcknowledged:
-      type: boolean
-    AccountSummary:
-      type: object
-      description: Account summary for a Well-Architected best practice in relation to Trusted Advisor checks.
-      additionalProperties:
-        $ref: '#/components/schemas/CheckStatusCount'
-    ChoiceImprovementPlan:
-      type: object
-      properties:
-        ChoiceId:
-          $ref: '#/components/schemas/ChoiceId'
-        DisplayText:
-          allOf:
-          - $ref: '#/components/schemas/DisplayText'
-          - description: The display text for the improvement plan.
-        ImprovementPlanUrl:
-          $ref: '#/components/schemas/ImprovementPlanUrl'
-      description: The choice level improvement plan.
-    PillarReviewSummary:
-      type: object
-      properties:
-        PillarId:
-          $ref: '#/components/schemas/PillarId'
-        PillarName:
-          $ref: '#/components/schemas/PillarName'
-        Notes:
-          $ref: '#/components/schemas/Notes'
-        RiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-        PrioritizedRiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-      description: A pillar review summary of a lens review.
-    ListAnswersOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        MilestoneNumber:
-          $ref: '#/components/schemas/MilestoneNumber'
-        LensAlias:
-          $ref: '#/components/schemas/LensAlias'
-        LensArn:
-          allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: The ARN for the lens.
-        AnswerSummaries:
-          $ref: '#/components/schemas/AnswerSummaries'
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-      description: Output of a list answers call.
-    ShareInvitationId:
-      type: string
-      pattern: '[0-9a-f]{32}'
-    MilestoneName:
-      type: string
-      description: <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-      minLength: 3
-      maxLength: 100
-    WorkloadAwsRegions:
-      type: array
-      description: The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.
-      items:
-        $ref: '#/components/schemas/AwsRegion'
-      maxItems: 50
-    Milestone:
-      type: object
-      properties:
-        MilestoneNumber:
-          $ref: '#/components/schemas/MilestoneNumber'
-        MilestoneName:
-          $ref: '#/components/schemas/MilestoneName'
-        RecordedAt:
-          $ref: '#/components/schemas/Timestamp'
-        Workload:
-          $ref: '#/components/schemas/Workload'
-      description: A milestone return object.
-    ChoiceUpdate:
-      type: object
-      required:
-      - Status
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceStatus'
-          - description: The status of a choice.
-        Reason:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceReason'
-          - description: The reason why a choice is non-applicable to a question in your workload.
-        Notes:
-          allOf:
-          - $ref: '#/components/schemas/ChoiceNotes'
-          - description: The notes associated with a choice.
-      description: A list of choices to be updated.
-    AnswerReason:
-      type: string
-      enum:
-      - OUT_OF_SCOPE
-      - BUSINESS_PRIORITIES
-      - ARCHITECTURE_CONSTRAINTS
-      - OTHER
-      - NONE
-    WorkloadId:
-      type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-      minLength: 32
-      maxLength: 32
-    WorkloadNonAwsRegions:
-      type: array
-      description: ' The list of non-Amazon Web Services Regions associated with the workload.'
-      items:
-        $ref: '#/components/schemas/WorkloadNonAwsRegion'
-      maxItems: 5
-    Risk:
-      type: string
-      enum:
-      - UNANSWERED
-      - HIGH
-      - MEDIUM
-      - NONE
-      - NOT_APPLICABLE
-      description: The risk for a given workload, lens review, pillar, or question.
-    ChoiceReason:
-      type: string
-      enum:
-      - OUT_OF_SCOPE
-      - BUSINESS_PRIORITIES
-      - ARCHITECTURE_CONSTRAINTS
-      - OTHER
-      - NONE
-    GetAnswerOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        MilestoneNumber:
-          $ref: '#/components/schemas/MilestoneNumber'
-        LensAlias:
-          $ref: '#/components/schemas/LensAlias'
-        LensArn:
-          allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: The ARN for the lens.
-        Answer:
-          $ref: '#/components/schemas/Answer'
-      description: Output of a get answer call.
-    WorkloadIndustryType:
-      type: string
-      description: <p>The industry type for the workload.</p> <p>If specified, must be one of the following:</p> <ul> <li> <p> <code>Agriculture</code> </p> </li> <li> <p> <code>Automobile</code> </p> </li> <li> <p> <code>Defense</code> </p> </li> <li> <p> <code>Design and Engineering</code> </p> </li> <li> <p> <code>Digital Advertising</code> </p> </li> <li> <p> <code>Education</code> </p> </li> <li> <p> <code>Environmental Protection</code> </p> </li> <li> <p> <code>Financial Services</code> </p> </li> <li> <p> <code>Gaming</code> </p> </li> <li> <p> <code>General Public Services</code> </p> </li> <li> <p> <code>Healthcare</code> </p> </li> <li> <p> <code>Hospitality</code> </p> </li> <li> <p> <code>InfoTech</code> </p> </li> <li> <p> <code>Justice and Public Safety</code> </p> </li> <li> <p> <code>Life Sciences</code> </p> </li> <li> <p> <code>Manufacturing</code> </p> </li> <li> <p> <code>Media &amp; Entertainment</code> </p> </li> <li> <p> <code>Mining &amp; Resources</code> </p> </li> <li> <p> <code>Oil &amp; Gas</code> </p> </li> <li> <p> <code>Power &amp; Utilities</code> </p> </li> <li> <p> <code>Professional Services</code> </p> </li> <li> <p> <code>Real Estate &amp; Construction</code> </p> </li> <li> <p> <code>Retail &amp; Wholesale</code> </p> </li> <li> <p> <code>Social Protection</code> </p> </li> <li> <p> <code>Telecommunications</code> </p> </li> <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li> <li> <p> <code>Other</code> </p> </li> </ul>
-      maxLength: 100
     ListLensReviewImprovementsOutput:
       type: object
       properties:
@@ -3841,10 +3745,160 @@ components:
         NextToken:
           $ref: '#/components/schemas/NextToken'
       description: Output of a list lens review improvements call.
-    Timestamp:
+    HelpfulResourceUrl:
       type: string
-      description: The date and time recorded.
-      format: date-time
+      description: <p>The helpful resource URL.</p> <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p> <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
+      minLength: 1
+      maxLength: 2048
+    InternalServerException: {}
+    ChoiceImprovementPlans:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChoiceImprovementPlan'
+    CreateMilestoneOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        MilestoneNumber:
+          $ref: '#/components/schemas/MilestoneNumber'
+      description: Output of a create milestone call.
+    PillarReviewSummaries:
+      type: array
+      description: List of pillar review summaries of lens review in a workload.
+      items:
+        $ref: '#/components/schemas/PillarReviewSummary'
+    Base64String:
+      type: string
+      description: <p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>
+    ValidationException: {}
+    ShareStatus:
+      type: string
+      enum:
+      - ACCEPTED
+      - REJECTED
+      - PENDING
+      - REVOKED
+      - EXPIRED
+      - ASSOCIATING
+      - ASSOCIATED
+      - FAILED
+      description: The status of the share request.
+    PermissionType:
+      type: string
+      enum:
+      - READONLY
+      - CONTRIBUTOR
+      description: Permission granted on a share request.
+    ChoiceUpdate:
+      type: object
+      required:
+      - Status
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceStatus'
+          - description: The status of a choice.
+        Reason:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceReason'
+          - description: The reason why a choice is non-applicable to a question in your workload.
+        Notes:
+          allOf:
+          - $ref: '#/components/schemas/ChoiceNotes'
+          - description: The notes associated with a choice.
+      description: A list of choices to be updated.
+    LensStatus:
+      type: string
+      enum:
+      - CURRENT
+      - NOT_CURRENT
+      - DEPRECATED
+      - DELETED
+      - UNSHARED
+    MilestoneSummary:
+      type: object
+      properties:
+        MilestoneNumber:
+          $ref: '#/components/schemas/MilestoneNumber'
+        MilestoneName:
+          $ref: '#/components/schemas/MilestoneName'
+        RecordedAt:
+          $ref: '#/components/schemas/Timestamp'
+        WorkloadSummary:
+          $ref: '#/components/schemas/WorkloadSummary'
+      description: A milestone summary return object.
+    GetWorkloadOutput:
+      type: object
+      properties:
+        Workload:
+          $ref: '#/components/schemas/Workload'
+      description: Output of a get workload call.
+    AdditionalResources:
+      type: object
+      properties:
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/AdditionalResourceType'
+          - description: Type of additional resource for a custom lens.
+        Content:
+          allOf:
+          - $ref: '#/components/schemas/Urls'
+          - description: The URLs for additional resources, either helpful resources or improvement plans, for a custom lens. Up to five additional URLs can be specified.
+      description: <p>The choice level additional resources for a custom lens.</p> <p>This field does not apply to Amazon Web Services official lenses.</p>
+    CreateWorkloadShareOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+      description: Input for Create Workload Share
+    WorkloadShare:
+      type: object
+      properties:
+        ShareId:
+          $ref: '#/components/schemas/ShareId'
+        SharedBy:
+          $ref: '#/components/schemas/AwsAccountId'
+        SharedWith:
+          $ref: '#/components/schemas/SharedWith'
+        PermissionType:
+          $ref: '#/components/schemas/PermissionType'
+        Status:
+          $ref: '#/components/schemas/ShareStatus'
+        WorkloadName:
+          $ref: '#/components/schemas/WorkloadName'
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+      description: A workload share return object.
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    WorkloadIndustryType:
+      type: string
+      description: <p>The industry type for the workload.</p> <p>If specified, must be one of the following:</p> <ul> <li> <p> <code>Agriculture</code> </p> </li> <li> <p> <code>Automobile</code> </p> </li> <li> <p> <code>Defense</code> </p> </li> <li> <p> <code>Design and Engineering</code> </p> </li> <li> <p> <code>Digital Advertising</code> </p> </li> <li> <p> <code>Education</code> </p> </li> <li> <p> <code>Environmental Protection</code> </p> </li> <li> <p> <code>Financial Services</code> </p> </li> <li> <p> <code>Gaming</code> </p> </li> <li> <p> <code>General Public Services</code> </p> </li> <li> <p> <code>Healthcare</code> </p> </li> <li> <p> <code>Hospitality</code> </p> </li> <li> <p> <code>InfoTech</code> </p> </li> <li> <p> <code>Justice and Public Safety</code> </p> </li> <li> <p> <code>Life Sciences</code> </p> </li> <li> <p> <code>Manufacturing</code> </p> </li> <li> <p> <code>Media &amp; Entertainment</code> </p> </li> <li> <p> <code>Mining &amp; Resources</code> </p> </li> <li> <p> <code>Oil &amp; Gas</code> </p> </li> <li> <p> <code>Power &amp; Utilities</code> </p> </li> <li> <p> <code>Professional Services</code> </p> </li> <li> <p> <code>Real Estate &amp; Construction</code> </p> </li> <li> <p> <code>Retail &amp; Wholesale</code> </p> </li> <li> <p> <code>Social Protection</code> </p> </li> <li> <p> <code>Telecommunications</code> </p> </li> <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li> <li> <p> <code>Other</code> </p> </li> </ul>
+      maxLength: 100
+    WorkloadDescription:
+      type: string
+      description: The description for the workload.
+      minLength: 3
+      maxLength: 250
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    WorkloadProfiles:
+      type: array
+      items:
+        $ref: '#/components/schemas/WorkloadProfile'
+      maxItems: 1
+    FlaggedResources:
+      type: integer
+      minimum: 1
+      maximum: 9999
     Choice:
       type: object
       properties:
@@ -3867,93 +3921,78 @@ components:
           - $ref: '#/components/schemas/AdditionalResourcesList'
           - description: '<p>The additional resources for a choice in a custom lens.</p> <p>A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>'
       description: A choice available to answer question.
-    ChoiceAnswers:
-      type: array
-      items:
-        $ref: '#/components/schemas/ChoiceAnswer'
-    ChoiceDescription:
+    IsReviewOwnerUpdateAcknowledged:
+      type: boolean
+    UpdateAnswerOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        LensAlias:
+          $ref: '#/components/schemas/LensAlias'
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The ARN for the lens.
+        Answer:
+          $ref: '#/components/schemas/Answer'
+      description: Output of a update answer call.
+    ImprovementPlanUrl:
       type: string
-      description: The description of a choice.
+      description: <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
       minLength: 1
-      maxLength: 1024
-    WorkloadProfiles:
-      type: array
-      items:
-        $ref: '#/components/schemas/WorkloadProfile'
-      maxItems: 1
+      maxLength: 2048
+    MilestoneName:
+      type: string
+      description: <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
+      minLength: 3
+      maxLength: 100
+    GetMilestoneOutput:
+      type: object
+      properties:
+        WorkloadId:
+          $ref: '#/components/schemas/WorkloadId'
+        Milestone:
+          $ref: '#/components/schemas/Milestone'
+      description: Output of a get milestone call.
+    ListCheckDetailsOutput:
+      type: object
+      properties:
+        CheckDetails:
+          allOf:
+          - $ref: '#/components/schemas/CheckDetails'
+          - description: The details about the Trusted Advisor checks related to the Well-Architected best practice.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
     LensAlias:
       type: string
       description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
       minLength: 1
       maxLength: 128
-    ListLensReviewsOutput:
-      type: object
-      properties:
-        WorkloadId:
-          $ref: '#/components/schemas/WorkloadId'
-        MilestoneNumber:
-          $ref: '#/components/schemas/MilestoneNumber'
-        LensReviewSummaries:
-          $ref: '#/components/schemas/LensReviewSummaries'
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-      description: Output of a list lens reviews call.
-    AdditionalResourcesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AdditionalResources'
-    CheckStatusCount:
+    SharedWith:
+      type: string
+      description: The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
+      minLength: 12
+      maxLength: 2048
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    Count:
       type: integer
-      minimum: 1
-      maximum: 101
-    ImprovementSummaries:
+      description: A non-negative integer that denotes how many.
+      minimum: 0
+    CheckFailureReason:
+      type: string
+      enum:
+      - ASSUME_ROLE_ERROR
+      - ACCESS_DENIED
+      - UNKNOWN_ERROR
+      - PREMIUM_SUPPORT_REQUIRED
+    WorkloadShareSummaries:
       type: array
-      description: List of improvement summaries of lens review in a workload.
+      description: A list of workload share summaries.
       items:
-        $ref: '#/components/schemas/ImprovementSummary'
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
+        $ref: '#/components/schemas/WorkloadShareSummary'
   securitySchemes:
     hmac:
       type: apiKey
