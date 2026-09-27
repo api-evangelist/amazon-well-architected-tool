@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: '2020-03-31'
   x-release: v4
-  title: AWS Well-Architected Tool Consolidated Report#Format API
+  title: AWS Well-Architected Tool Consolidated Report API
   description: 'Well-Architected Tool
 
     This is the Well-Architected Tool API Reference. The WA Tool API provides programmatic access to the Well-Architected Tool in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the Well-Architected Tool User Guide.'
@@ -115,7 +115,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: ConsolidatedReport#Format
+- name: ConsolidatedReport
 paths:
   /consolidatedReport#Format:
     parameters:
@@ -202,23 +202,54 @@ paths:
           maximum: 15
       summary: Amazon Well-Architected Tool Get Consolidated Report
       tags:
-      - ConsolidatedReport#Format
+      - ConsolidatedReport
 components:
   schemas:
-    LensArn:
+    Timestamp:
       type: string
-    WorkloadArn:
-      type: string
-      description: The ARN for the workload.
-    ConflictException: {}
-    QuestionMetrics:
+      description: The date and time recorded.
+      format: date-time
+    BestPractices:
       type: array
       items:
-        $ref: '#/components/schemas/QuestionMetric'
-    MetricType:
+        $ref: '#/components/schemas/BestPractice'
+    Base64String:
+      type: string
+      description: <p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>
+    Risk:
       type: string
       enum:
-      - WORKLOAD
+      - UNANSWERED
+      - HIGH
+      - MEDIUM
+      - NONE
+      - NOT_APPLICABLE
+      description: The risk for a given workload, lens review, pillar, or question.
+    PillarId:
+      type: string
+      description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
+      minLength: 1
+      maxLength: 64
+    ChoiceId:
+      type: string
+      description: The ID of a choice.
+      minLength: 1
+      maxLength: 64
+    ConflictException: {}
+    ChoiceTitle:
+      type: string
+      description: The title of a choice.
+      minLength: 1
+      maxLength: 512
+    PillarMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/PillarMetric'
+    AccessDeniedException: {}
+    LensMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/LensMetric'
     GetConsolidatedReportOutput:
       type: object
       properties:
@@ -230,67 +261,26 @@ components:
           $ref: '#/components/schemas/NextToken'
         Base64String:
           $ref: '#/components/schemas/Base64String'
-    InternalServerException: {}
-    QuestionId:
+    LensArn:
       type: string
-      description: The ID of the question.
-      minLength: 1
-      maxLength: 128
-    Base64String:
+    WorkloadId:
       type: string
-      description: <p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>
-    ConsolidatedReportMetrics:
-      type: array
-      items:
-        $ref: '#/components/schemas/ConsolidatedReportMetric'
-    ValidationException: {}
-    QuestionMetric:
-      type: object
-      properties:
-        QuestionId:
-          $ref: '#/components/schemas/QuestionId'
-        Risk:
-          $ref: '#/components/schemas/Risk'
-        BestPractices:
-          allOf:
-          - $ref: '#/components/schemas/BestPractices'
-          - description: The best practices, or choices, that have been identified as contributing to risk in a question.
-      description: 'A metric for a particular question in the pillar. '
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
     WorkloadName:
       type: string
       description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
       minLength: 3
       maxLength: 100
-    LensesAppliedCount:
-      type: integer
-      minimum: 0
-    LensMetric:
-      type: object
-      properties:
-        LensArn:
-          allOf:
-          - $ref: '#/components/schemas/LensArn'
-          - description: The lens ARN.
-        Pillars:
-          allOf:
-          - $ref: '#/components/schemas/PillarMetrics'
-          - description: The metrics for the pillars in a lens.
-        RiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-      description: A metric for a particular lens in a workload.
-    BestPractices:
+    WorkloadArn:
+      type: string
+      description: The ARN for the workload.
+    QuestionMetrics:
       type: array
       items:
-        $ref: '#/components/schemas/BestPractice'
-    Risk:
-      type: string
-      enum:
-      - UNANSWERED
-      - HIGH
-      - MEDIUM
-      - NONE
-      - NOT_APPLICABLE
-      description: The risk for a given workload, lens review, pillar, or question.
+        $ref: '#/components/schemas/QuestionMetric'
     ConsolidatedReportMetric:
       type: object
       properties:
@@ -317,61 +307,50 @@ components:
           - $ref: '#/components/schemas/LensesAppliedCount'
           - description: The total number of lenses applied to the workload.
       description: A metric that contributes to the consolidated report.
-    BestPractice:
+    LensMetric:
       type: object
       properties:
-        ChoiceId:
-          $ref: '#/components/schemas/ChoiceId'
-        ChoiceTitle:
-          $ref: '#/components/schemas/ChoiceTitle'
-      description: A best practice, or question choice, that has been identified as a risk in this question.
-    ChoiceId:
-      type: string
-      description: The ID of a choice.
-      minLength: 1
-      maxLength: 64
-    WorkloadId:
-      type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-      minLength: 32
-      maxLength: 32
-    Timestamp:
-      type: string
-      description: The date and time recorded.
-      format: date-time
-    PillarId:
-      type: string
-      description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-      minLength: 1
-      maxLength: 64
+        LensArn:
+          allOf:
+          - $ref: '#/components/schemas/LensArn'
+          - description: The lens ARN.
+        Pillars:
+          allOf:
+          - $ref: '#/components/schemas/PillarMetrics'
+          - description: The metrics for the pillars in a lens.
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+      description: A metric for a particular lens in a workload.
     ThrottlingException: {}
-    ChoiceTitle:
-      type: string
-      description: The title of a choice.
-      minLength: 1
-      maxLength: 512
-    LensMetrics:
-      type: array
-      items:
-        $ref: '#/components/schemas/LensMetric'
-    AccessDeniedException: {}
-    PillarMetrics:
-      type: array
-      items:
-        $ref: '#/components/schemas/PillarMetric'
     NextToken:
       type: string
       description: The token to use to retrieve the next set of results.
+    QuestionId:
+      type: string
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    InternalServerException: {}
+    QuestionMetric:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        Risk:
+          $ref: '#/components/schemas/Risk'
+        BestPractices:
+          allOf:
+          - $ref: '#/components/schemas/BestPractices'
+          - description: The best practices, or choices, that have been identified as contributing to risk in a question.
+      description: 'A metric for a particular question in the pillar. '
+    ConsolidatedReportMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/ConsolidatedReportMetric'
     Count:
       type: integer
       description: A non-negative integer that denotes how many.
       minimum: 0
-    RiskCounts:
-      type: object
-      description: A map from risk names to the count of how many questions have that rating.
-      additionalProperties:
-        $ref: '#/components/schemas/Count'
     PillarMetric:
       type: object
       properties:
@@ -384,15 +363,36 @@ components:
           - $ref: '#/components/schemas/QuestionMetrics'
           - description: The questions that have been identified as risks in the pillar.
       description: A metric for a particular pillar in a lens.
+    MetricType:
+      type: string
+      enum:
+      - WORKLOAD
+    RiskCounts:
+      type: object
+      description: A map from risk names to the count of how many questions have that rating.
+      additionalProperties:
+        $ref: '#/components/schemas/Count'
+    ValidationException: {}
+    LensesAppliedCount:
+      type: integer
+      minimum: 0
+    BestPractice:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        ChoiceTitle:
+          $ref: '#/components/schemas/ChoiceTitle'
+      description: A best practice, or question choice, that has been identified as a risk in this question.
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -409,20 +409,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

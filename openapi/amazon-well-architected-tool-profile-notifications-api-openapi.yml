@@ -191,23 +191,84 @@ paths:
       tags:
       - Profile Notifications
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ProfileArn:
+    ProfileNotificationSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileNotificationSummary'
+    AccessDeniedException: {}
+    WorkloadId:
       type: string
-      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
-      maxLength: 2084
-    InternalServerException: {}
-    ValidationException: {}
-    ProfileName:
-      type: string
-      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-      minLength: 3
-      maxLength: 100
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
     WorkloadName:
       type: string
       description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
       minLength: 3
       maxLength: 100
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    ThrottlingException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    ListProfileNotificationsOutput:
+      type: object
+      properties:
+        NotificationSummaries:
+          allOf:
+          - $ref: '#/components/schemas/ProfileNotificationSummaries'
+          - description: Notification summaries.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
     ProfileNotificationSummary:
       type: object
       properties:
@@ -236,83 +297,22 @@ components:
         WorkloadName:
           $ref: '#/components/schemas/WorkloadName'
       description: The profile notification summary.
-    WorkloadId:
-      type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-      minLength: 32
-      maxLength: 32
-    ProfileVersion:
-      type: string
-      pattern: ^[A-Za-z0-9-]+$
-      minLength: 1
-      maxLength: 32
-    ThrottlingException: {}
-    ListProfileNotificationsOutput:
-      type: object
-      properties:
-        NotificationSummaries:
-          allOf:
-          - $ref: '#/components/schemas/ProfileNotificationSummaries'
-          - description: Notification summaries.
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-    ProfileNotificationSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileNotificationSummary'
     ProfileNotificationType:
       type: string
       enum:
       - PROFILE_ANSWERS_UPDATED
       - PROFILE_DELETED
-    AccessDeniedException: {}
-    NextToken:
+    ProfileName:
       type: string
-      description: The token to use to retrieve the next set of results.
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
+    InternalServerException: {}
+    ProfileArn:
+      type: string
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
+    ValidationException: {}
   securitySchemes:
     hmac:
       type: apiKey

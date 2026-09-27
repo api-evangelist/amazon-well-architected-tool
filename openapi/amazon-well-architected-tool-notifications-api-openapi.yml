@@ -199,12 +199,26 @@ paths:
       - Notifications
 components:
   schemas:
+    NotificationType:
+      type: string
+      enum:
+      - LENS_VERSION_UPGRADED
+      - LENS_VERSION_DEPRECATED
+    NotificationSummary:
+      type: object
+      properties:
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/NotificationType'
+          - description: The type of notification.
+        LensUpgradeSummary:
+          allOf:
+          - $ref: '#/components/schemas/LensUpgradeSummary'
+          - description: Summary of lens upgrade.
+      description: A notification summary return object.
+    AccessDeniedException: {}
     LensArn:
       type: string
-    LensVersion:
-      type: string
-      minLength: 1
-      maxLength: 32
     LensUpgradeSummary:
       type: object
       properties:
@@ -227,42 +241,18 @@ components:
           - $ref: '#/components/schemas/LensVersion'
           - description: The latest version of the lens.
       description: Lens upgrade summary return object.
-    InternalServerException: {}
-    ValidationException: {}
-    WorkloadName:
-      type: string
-      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-      minLength: 3
-      maxLength: 100
-    NotificationSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/NotificationSummary'
-    NotificationType:
-      type: string
-      enum:
-      - LENS_VERSION_UPGRADED
-      - LENS_VERSION_DEPRECATED
     WorkloadId:
       type: string
       pattern: '[0-9a-f]{32}'
       description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
       minLength: 32
       maxLength: 32
+    WorkloadName:
+      type: string
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
     ThrottlingException: {}
-    NotificationSummary:
-      type: object
-      properties:
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/NotificationType'
-          - description: The type of notification.
-        LensUpgradeSummary:
-          allOf:
-          - $ref: '#/components/schemas/LensUpgradeSummary'
-          - description: Summary of lens upgrade.
-      description: A notification summary return object.
-    AccessDeniedException: {}
     ListNotificationsOutput:
       type: object
       properties:
@@ -272,23 +262,33 @@ components:
           - description: List of lens notification summaries in a workload.
         NextToken:
           $ref: '#/components/schemas/NextToken'
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    NotificationSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/NotificationSummary'
+    InternalServerException: {}
     LensAlias:
       type: string
       description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
       minLength: 1
       maxLength: 128
-    NextToken:
+    LensVersion:
       type: string
-      description: The token to use to retrieve the next set of results.
+      minLength: 1
+      maxLength: 32
+    ValidationException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -305,20 +305,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

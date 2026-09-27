@@ -234,25 +234,25 @@ paths:
       - Import Lens
 components:
   schemas:
-    LensArn:
-      type: string
     ImportLensStatus:
       type: string
       enum:
       - IN_PROGRESS
       - COMPLETE
       - ERROR
-    ServiceQuotaExceededException: {}
     AccessDeniedException: {}
-    ConflictException: {}
-    ThrottlingException: {}
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    ValidationException: {}
+    LensArn:
+      type: string
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
+    ThrottlingException: {}
+    ValidationException: {}
+    InternalServerException: {}
+    ServiceQuotaExceededException: {}
+    ConflictException: {}
+    ResourceNotFoundException: {}
     ImportLensOutput:
       type: object
       properties:
@@ -265,20 +265,14 @@ components:
           - $ref: '#/components/schemas/ImportLensStatus'
           - description: The status of the imported lens.
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -289,8 +283,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -301,8 +301,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

@@ -8,15 +8,19 @@ description: 'The AWS Well-Architected Tool helps you review your workloads and 
 type: Index
 deliveryModel:
   model: saas
-  open_source: false
+  license_evidence:
+    not_product:
+    - aws-samples/custom-lens-wa-hub
+  open_source: unknown
   commercial: true
   callable_host: true
   label: Hosted service · you call their endpoint
-  confidence: high
+  confidence: low
   source:
   - openapi
   - pricing
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -45,31 +49,6 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: amazon-well-architected-tool:amazon-well-architected-tool-consolidatedreport-format-api
-  name: Amazon Well-Architected Tool ConsolidatedReport#Format API
-  description: >-
-    The ConsolidatedReport#Format API from Amazon Well-Architected Tool — 1 operation(s) for consolidatedreport#format.
-  humanURL: https://aws.amazon.com/well-architected-tool/
-  baseURL: https://wellarchitected.amazonaws.com
-  tags:
-  - ConsolidatedReport#Format
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-well-architected-tool-consolidatedreport-format-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
-  - type: Pricing
-    url: https://aws.amazon.com/well-architected-tool/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/well-architected-tool/faqs/
-  - type: JSONSchema
-    url: json-schema/well-architected-tool-workload-schema.json
-  - type: JSONLD
-    url: json-ld/amazon-well-architected-tool-context.jsonld
 - aid: amazon-well-architected-tool:amazon-well-architected-tool-global-settings-api
   name: Amazon Well-Architected Tool Global Settings API
   description: >-
@@ -204,6 +183,31 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-well-architected-tool-workloads-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-consolidatedreport-api
+  name: Amazon Well-Architected Tool Consolidated Report API
+  description: >-
+    The ConsolidatedReport API from Amazon Well-Architected Tool — 1 operation(s) for consolidatedreport.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - ConsolidatedReport
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-consolidatedreport-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
   - type: APIReference
@@ -535,5 +539,5 @@ integrations:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product

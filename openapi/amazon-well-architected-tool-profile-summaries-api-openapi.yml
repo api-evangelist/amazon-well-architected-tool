@@ -199,27 +199,21 @@ paths:
       - Profile Summaries
 components:
   schemas:
-    ProfileArn:
+    Timestamp:
       type: string
-      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
-      maxLength: 2084
-    InternalServerException: {}
-    ProfileSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileSummary'
-    ValidationException: {}
-    ProfileName:
+      description: The date and time recorded.
+      format: date-time
+    ProfileDescription:
       type: string
       pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
       minLength: 3
       maxLength: 100
-    AwsAccountId:
+    AccessDeniedException: {}
+    ProfileVersion:
       type: string
-      pattern: '[0-9]{12}'
-      description: An Amazon Web Services account ID.
-      minLength: 12
-      maxLength: 12
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
     ListProfilesOutput:
       type: object
       properties:
@@ -229,22 +223,30 @@ components:
           - description: Profile summaries.
         NextToken:
           $ref: '#/components/schemas/NextToken'
-    ProfileDescription:
+    ThrottlingException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    AwsAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+      description: An Amazon Web Services account ID.
+      minLength: 12
+      maxLength: 12
+    ProfileSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileSummary'
+    ProfileName:
       type: string
       pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
       minLength: 3
       maxLength: 100
-    Timestamp:
+    InternalServerException: {}
+    ProfileArn:
       type: string
-      description: The date and time recorded.
-      format: date-time
-    ProfileVersion:
-      type: string
-      pattern: ^[A-Za-z0-9-]+$
-      minLength: 1
-      maxLength: 32
-    ThrottlingException: {}
-    AccessDeniedException: {}
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
     ProfileSummary:
       type: object
       properties:
@@ -271,12 +273,16 @@ components:
         UpdatedAt:
           $ref: '#/components/schemas/Timestamp'
       description: Summary of a profile.
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
+    ValidationException: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -287,32 +293,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

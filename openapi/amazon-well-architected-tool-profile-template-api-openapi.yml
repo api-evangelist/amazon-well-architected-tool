@@ -172,31 +172,62 @@ paths:
       - Profile Template
 components:
   schemas:
-    MinSelectedProfileChoices:
-      type: integer
-      minimum: 0
+    ProfileTemplate:
+      type: object
+      properties:
+        TemplateName:
+          allOf:
+          - $ref: '#/components/schemas/ProfileName'
+          - description: The name of the profile template.
+        TemplateQuestions:
+          allOf:
+          - $ref: '#/components/schemas/TemplateQuestions'
+          - description: Profile template questions.
+        CreatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+      description: The profile template.
     QuestionTitle:
       type: string
       description: The title of the question.
       minLength: 1
       maxLength: 512
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    ChoiceId:
+      type: string
+      description: The ID of a choice.
+      minLength: 1
+      maxLength: 64
     ChoiceDescription:
       type: string
       description: The description of a choice.
       minLength: 1
       maxLength: 1024
-    InternalServerException: {}
-    QuestionId:
+    ProfileTemplateQuestionChoices:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileTemplateChoice'
+    QuestionDescription:
       type: string
-      description: The ID of the question.
+      description: The description of the question.
       minLength: 1
-      maxLength: 128
-    ValidationException: {}
-    ProfileName:
+      maxLength: 1024
+    ChoiceTitle:
       type: string
-      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-      minLength: 3
-      maxLength: 100
+      description: The title of a choice.
+      minLength: 1
+      maxLength: 512
+    GetProfileTemplateOutput:
+      type: object
+      properties:
+        ProfileTemplate:
+          allOf:
+          - $ref: '#/components/schemas/ProfileTemplate'
+          - description: The profile template.
     ProfileTemplateChoice:
       type: object
       properties:
@@ -207,10 +238,7 @@ components:
         ChoiceDescription:
           $ref: '#/components/schemas/ChoiceDescription'
       description: A profile template choice.
-    TemplateQuestions:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileTemplateQuestion'
+    AccessDeniedException: {}
     ProfileTemplateQuestion:
       type: object
       properties:
@@ -233,67 +261,39 @@ components:
           - $ref: '#/components/schemas/MaxSelectedProfileChoices'
           - description: The maximum number of choices selected.
       description: A profile template question.
+    ThrottlingException: {}
+    QuestionId:
+      type: string
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    TemplateQuestions:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileTemplateQuestion'
+    ProfileName:
+      type: string
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
+    InternalServerException: {}
+    ResourceNotFoundException: {}
     MaxSelectedProfileChoices:
       type: integer
       minimum: 0
-    ChoiceId:
-      type: string
-      description: The ID of a choice.
-      minLength: 1
-      maxLength: 64
-    Timestamp:
-      type: string
-      description: The date and time recorded.
-      format: date-time
-    QuestionDescription:
-      type: string
-      description: The description of the question.
-      minLength: 1
-      maxLength: 1024
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    ChoiceTitle:
-      type: string
-      description: The title of a choice.
-      minLength: 1
-      maxLength: 512
-    GetProfileTemplateOutput:
-      type: object
-      properties:
-        ProfileTemplate:
-          allOf:
-          - $ref: '#/components/schemas/ProfileTemplate'
-          - description: The profile template.
-    ProfileTemplateQuestionChoices:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileTemplateChoice'
-    AccessDeniedException: {}
-    ProfileTemplate:
-      type: object
-      properties:
-        TemplateName:
-          allOf:
-          - $ref: '#/components/schemas/ProfileName'
-          - description: The name of the profile template.
-        TemplateQuestions:
-          allOf:
-          - $ref: '#/components/schemas/TemplateQuestions'
-          - description: Profile template questions.
-        CreatedAt:
-          $ref: '#/components/schemas/Timestamp'
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-      description: The profile template.
+    ValidationException: {}
+    MinSelectedProfileChoices:
+      type: integer
+      minimum: 0
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -310,20 +310,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
