@@ -205,82 +205,67 @@ paths:
       - ConsolidatedReport
 components:
   schemas:
-    Timestamp:
-      type: string
-      description: The date and time recorded.
-      format: date-time
-    BestPractices:
+    PillarMetric:
+      type: object
+      properties:
+        PillarId:
+          $ref: '#/components/schemas/PillarId'
+        RiskCounts:
+          $ref: '#/components/schemas/RiskCounts'
+        Questions:
+          allOf:
+          - $ref: '#/components/schemas/QuestionMetrics'
+          - description: The questions that have been identified as risks in the pillar.
+      description: A metric for a particular pillar in a lens.
+    Count:
+      type: integer
+      description: A non-negative integer that denotes how many.
+      minimum: 0
+    ConsolidatedReportMetrics:
       type: array
       items:
-        $ref: '#/components/schemas/BestPractice'
-    Base64String:
-      type: string
-      description: <p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>
-    Risk:
-      type: string
-      enum:
-      - UNANSWERED
-      - HIGH
-      - MEDIUM
-      - NONE
-      - NOT_APPLICABLE
-      description: The risk for a given workload, lens review, pillar, or question.
+        $ref: '#/components/schemas/ConsolidatedReportMetric'
+    PillarMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/PillarMetric'
     PillarId:
       type: string
       description: <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
       minLength: 1
       maxLength: 64
+    LensesAppliedCount:
+      type: integer
+      minimum: 0
+    WorkloadArn:
+      type: string
+      description: The ARN for the workload.
+    ValidationException: {}
+    RiskCounts:
+      type: object
+      description: A map from risk names to the count of how many questions have that rating.
+      additionalProperties:
+        $ref: '#/components/schemas/Count'
+    LensArn:
+      type: string
+    AccessDeniedException: {}
+    InternalServerException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    BestPractices:
+      type: array
+      items:
+        $ref: '#/components/schemas/BestPractice'
     ChoiceId:
       type: string
       description: The ID of a choice.
       minLength: 1
       maxLength: 64
-    ConflictException: {}
-    ChoiceTitle:
+    Timestamp:
       type: string
-      description: The title of a choice.
-      minLength: 1
-      maxLength: 512
-    PillarMetrics:
-      type: array
-      items:
-        $ref: '#/components/schemas/PillarMetric'
-    AccessDeniedException: {}
-    LensMetrics:
-      type: array
-      items:
-        $ref: '#/components/schemas/LensMetric'
-    GetConsolidatedReportOutput:
-      type: object
-      properties:
-        Metrics:
-          allOf:
-          - $ref: '#/components/schemas/ConsolidatedReportMetrics'
-          - description: <p>The metrics that make up the consolidated report.</p> <p>Only returned when <code>JSON</code> format is requested.</p>
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-        Base64String:
-          $ref: '#/components/schemas/Base64String'
-    LensArn:
-      type: string
-    WorkloadId:
-      type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-      minLength: 32
-      maxLength: 32
-    WorkloadName:
-      type: string
-      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-      minLength: 3
-      maxLength: 100
-    WorkloadArn:
-      type: string
-      description: The ARN for the workload.
-    QuestionMetrics:
-      type: array
-      items:
-        $ref: '#/components/schemas/QuestionMetric'
+      description: The date and time recorded.
+      format: date-time
     ConsolidatedReportMetric:
       type: object
       properties:
@@ -307,6 +292,74 @@ components:
           - $ref: '#/components/schemas/LensesAppliedCount'
           - description: The total number of lenses applied to the workload.
       description: A metric that contributes to the consolidated report.
+    QuestionMetric:
+      type: object
+      properties:
+        QuestionId:
+          $ref: '#/components/schemas/QuestionId'
+        Risk:
+          $ref: '#/components/schemas/Risk'
+        BestPractices:
+          allOf:
+          - $ref: '#/components/schemas/BestPractices'
+          - description: The best practices, or choices, that have been identified as contributing to risk in a question.
+      description: 'A metric for a particular question in the pillar. '
+    GetConsolidatedReportOutput:
+      type: object
+      properties:
+        Metrics:
+          allOf:
+          - $ref: '#/components/schemas/ConsolidatedReportMetrics'
+          - description: <p>The metrics that make up the consolidated report.</p> <p>Only returned when <code>JSON</code> format is requested.</p>
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+        Base64String:
+          $ref: '#/components/schemas/Base64String'
+    BestPractice:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        ChoiceTitle:
+          $ref: '#/components/schemas/ChoiceTitle'
+      description: A best practice, or question choice, that has been identified as a risk in this question.
+    QuestionId:
+      type: string
+      description: The ID of the question.
+      minLength: 1
+      maxLength: 128
+    WorkloadId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
+    ChoiceTitle:
+      type: string
+      description: The title of a choice.
+      minLength: 1
+      maxLength: 512
+    ThrottlingException: {}
+    MetricType:
+      type: string
+      enum:
+      - WORKLOAD
+    LensMetrics:
+      type: array
+      items:
+        $ref: '#/components/schemas/LensMetric'
+    Risk:
+      type: string
+      enum:
+      - UNANSWERED
+      - HIGH
+      - MEDIUM
+      - NONE
+      - NOT_APPLICABLE
+      description: The risk for a given workload, lens review, pillar, or question.
+    Base64String:
+      type: string
+      description: <p>The Base64-encoded string representation of a lens review report.</p> <p>This data can be used to create a PDF file.</p> <p>Only returned by <a>GetConsolidatedReport</a> when <code>PDF</code> format is requested.</p>
     LensMetric:
       type: object
       properties:
@@ -321,90 +374,19 @@ components:
         RiskCounts:
           $ref: '#/components/schemas/RiskCounts'
       description: A metric for a particular lens in a workload.
-    ThrottlingException: {}
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
-    QuestionId:
-      type: string
-      description: The ID of the question.
-      minLength: 1
-      maxLength: 128
-    InternalServerException: {}
-    QuestionMetric:
-      type: object
-      properties:
-        QuestionId:
-          $ref: '#/components/schemas/QuestionId'
-        Risk:
-          $ref: '#/components/schemas/Risk'
-        BestPractices:
-          allOf:
-          - $ref: '#/components/schemas/BestPractices'
-          - description: The best practices, or choices, that have been identified as contributing to risk in a question.
-      description: 'A metric for a particular question in the pillar. '
-    ConsolidatedReportMetrics:
+    QuestionMetrics:
       type: array
       items:
-        $ref: '#/components/schemas/ConsolidatedReportMetric'
-    Count:
-      type: integer
-      description: A non-negative integer that denotes how many.
-      minimum: 0
-    PillarMetric:
-      type: object
-      properties:
-        PillarId:
-          $ref: '#/components/schemas/PillarId'
-        RiskCounts:
-          $ref: '#/components/schemas/RiskCounts'
-        Questions:
-          allOf:
-          - $ref: '#/components/schemas/QuestionMetrics'
-          - description: The questions that have been identified as risks in the pillar.
-      description: A metric for a particular pillar in a lens.
-    MetricType:
+        $ref: '#/components/schemas/QuestionMetric'
+    WorkloadName:
       type: string
-      enum:
-      - WORKLOAD
-    RiskCounts:
-      type: object
-      description: A map from risk names to the count of how many questions have that rating.
-      additionalProperties:
-        $ref: '#/components/schemas/Count'
-    ValidationException: {}
-    LensesAppliedCount:
-      type: integer
-      minimum: 0
-    BestPractice:
-      type: object
-      properties:
-        ChoiceId:
-          $ref: '#/components/schemas/ChoiceId'
-        ChoiceTitle:
-          $ref: '#/components/schemas/ChoiceTitle'
-      description: A best practice, or question choice, that has been identified as a risk in this question.
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
+    ConflictException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -421,8 +403,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

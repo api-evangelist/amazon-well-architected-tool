@@ -19,7 +19,7 @@
     "amazon-well-architected-tool-workloadssummaries-api-openapi.yml"
   ],
   "archived": [
-    "deleted 7 superseded output(s) from the previous generation"
+    "deleted 6 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
@@ -95,11 +95,11 @@
     "amazon-well-architected-tool-openapi-original.yaml: declared missing tag: Tags",
     "amazon-well-architected-tool-openapi-original.yaml: declared missing tag: Workloads",
     "amazon-well-architected-tool-openapi-original.yaml: declared missing tag: WorkloadsSummaries",
-    "superseded outputs removed: amazon-well-architected-tool-consolidatedreport-format-api-openapi.yml, amazon-well-architected-tool-import-lens-api-openapi.yml, amazon-well-architected-tool-profile-notifications-api-openapi.yml, amazon-well-architected-tool-profile-summaries-api-openapi.yml, amazon-well-architected-tool-profile-template-api-openapi.yml \u2026",
-    "apis.yml register: written (+7 apis, 13 total)"
+    "superseded outputs removed: amazon-well-architected-tool-import-lens-api-openapi.yml, amazon-well-architected-tool-profile-notifications-api-openapi.yml, amazon-well-architected-tool-profile-summaries-api-openapi.yml, amazon-well-architected-tool-profile-template-api-openapi.yml, amazon-well-architected-tool-share-invitations-api-openapi.yml \u2026",
+    "apis.yml register: written (+6 apis, 13 total)"
   ],
   "skipped": [
-    "amazon-well-architected-tool-consolidatedreport-format-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-well-architected-tool-consolidatedreport-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-well-architected-tool-global-settings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-well-architected-tool-import-lens-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-well-architected-tool-lenses-api-openapi.yml: previously refined output, superseded by openapi/_original/",

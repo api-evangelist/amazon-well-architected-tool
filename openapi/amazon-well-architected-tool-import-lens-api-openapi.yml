@@ -233,26 +233,54 @@ paths:
       tags:
       - Import Lens
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ImportLensStatus:
-      type: string
-      enum:
-      - IN_PROGRESS
-      - COMPLETE
-      - ERROR
-    AccessDeniedException: {}
-    LensArn:
-      type: string
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ThrottlingException: {}
-    ValidationException: {}
-    InternalServerException: {}
-    ServiceQuotaExceededException: {}
     ConflictException: {}
-    ResourceNotFoundException: {}
+    AccessDeniedException: {}
+    InternalServerException: {}
+    ThrottlingException: {}
     ImportLensOutput:
       type: object
       properties:
@@ -264,49 +292,21 @@ components:
           allOf:
           - $ref: '#/components/schemas/ImportLensStatus'
           - description: The status of the imported lens.
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+    ResourceNotFoundException: {}
+    ImportLensStatus:
+      type: string
+      enum:
+      - IN_PROGRESS
+      - COMPLETE
+      - ERROR
+    ValidationException: {}
+    LensArn:
+      type: string
+    ServiceQuotaExceededException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
   securitySchemes:
     hmac:
       type: apiKey

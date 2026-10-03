@@ -192,26 +192,8 @@ paths:
       - Profile Notifications
 components:
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -228,47 +210,36 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
   schemas:
-    ProfileNotificationSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileNotificationSummary'
-    AccessDeniedException: {}
-    WorkloadId:
-      type: string
-      pattern: '[0-9a-f]{32}'
-      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-      minLength: 32
-      maxLength: 32
-    WorkloadName:
-      type: string
-      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-      minLength: 3
-      maxLength: 100
     ProfileVersion:
       type: string
       pattern: ^[A-Za-z0-9-]+$
       minLength: 1
       maxLength: 32
-    ThrottlingException: {}
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
-    ListProfileNotificationsOutput:
-      type: object
-      properties:
-        NotificationSummaries:
-          allOf:
-          - $ref: '#/components/schemas/ProfileNotificationSummaries'
-          - description: Notification summaries.
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
     ProfileNotificationSummary:
       type: object
       properties:
@@ -297,22 +268,51 @@ components:
         WorkloadName:
           $ref: '#/components/schemas/WorkloadName'
       description: The profile notification summary.
-    ProfileNotificationType:
-      type: string
-      enum:
-      - PROFILE_ANSWERS_UPDATED
-      - PROFILE_DELETED
     ProfileName:
       type: string
       pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
       minLength: 3
       maxLength: 100
-    InternalServerException: {}
+    ListProfileNotificationsOutput:
+      type: object
+      properties:
+        NotificationSummaries:
+          allOf:
+          - $ref: '#/components/schemas/ProfileNotificationSummaries'
+          - description: Notification summaries.
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
     ProfileArn:
       type: string
       pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
       maxLength: 2084
     ValidationException: {}
+    AccessDeniedException: {}
+    InternalServerException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    ProfileNotificationSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileNotificationSummary'
+    WorkloadId:
+      type: string
+      pattern: '[0-9a-f]{32}'
+      description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+      minLength: 32
+      maxLength: 32
+    ThrottlingException: {}
+    ProfileNotificationType:
+      type: string
+      enum:
+      - PROFILE_ANSWERS_UPDATED
+      - PROFILE_DELETED
+    WorkloadName:
+      type: string
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
   securitySchemes:
     hmac:
       type: apiKey

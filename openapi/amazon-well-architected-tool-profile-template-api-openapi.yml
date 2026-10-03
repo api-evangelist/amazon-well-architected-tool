@@ -171,74 +171,60 @@ paths:
       tags:
       - Profile Template
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ProfileTemplate:
-      type: object
-      properties:
-        TemplateName:
-          allOf:
-          - $ref: '#/components/schemas/ProfileName'
-          - description: The name of the profile template.
-        TemplateQuestions:
-          allOf:
-          - $ref: '#/components/schemas/TemplateQuestions'
-          - description: Profile template questions.
-        CreatedAt:
-          $ref: '#/components/schemas/Timestamp'
-        UpdatedAt:
-          $ref: '#/components/schemas/Timestamp'
-      description: The profile template.
-    QuestionTitle:
-      type: string
-      description: The title of the question.
-      minLength: 1
-      maxLength: 512
-    Timestamp:
-      type: string
-      description: The date and time recorded.
-      format: date-time
-    ChoiceId:
-      type: string
-      description: The ID of a choice.
-      minLength: 1
-      maxLength: 64
     ChoiceDescription:
       type: string
       description: The description of a choice.
       minLength: 1
       maxLength: 1024
-    ProfileTemplateQuestionChoices:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileTemplateChoice'
-    QuestionDescription:
+    ProfileName:
       type: string
-      description: The description of the question.
-      minLength: 1
-      maxLength: 1024
-    ChoiceTitle:
-      type: string
-      description: The title of a choice.
-      minLength: 1
-      maxLength: 512
-    GetProfileTemplateOutput:
-      type: object
-      properties:
-        ProfileTemplate:
-          allOf:
-          - $ref: '#/components/schemas/ProfileTemplate'
-          - description: The profile template.
-    ProfileTemplateChoice:
-      type: object
-      properties:
-        ChoiceId:
-          $ref: '#/components/schemas/ChoiceId'
-        ChoiceTitle:
-          $ref: '#/components/schemas/ChoiceTitle'
-        ChoiceDescription:
-          $ref: '#/components/schemas/ChoiceDescription'
-      description: A profile template choice.
-    AccessDeniedException: {}
+      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
+      minLength: 3
+      maxLength: 100
     ProfileTemplateQuestion:
       type: object
       properties:
@@ -261,73 +247,87 @@ components:
           - $ref: '#/components/schemas/MaxSelectedProfileChoices'
           - description: The maximum number of choices selected.
       description: A profile template question.
-    ThrottlingException: {}
+    GetProfileTemplateOutput:
+      type: object
+      properties:
+        ProfileTemplate:
+          allOf:
+          - $ref: '#/components/schemas/ProfileTemplate'
+          - description: The profile template.
+    ValidationException: {}
+    QuestionTitle:
+      type: string
+      description: The title of the question.
+      minLength: 1
+      maxLength: 512
+    ProfileTemplate:
+      type: object
+      properties:
+        TemplateName:
+          allOf:
+          - $ref: '#/components/schemas/ProfileName'
+          - description: The name of the profile template.
+        TemplateQuestions:
+          allOf:
+          - $ref: '#/components/schemas/TemplateQuestions'
+          - description: Profile template questions.
+        CreatedAt:
+          $ref: '#/components/schemas/Timestamp'
+        UpdatedAt:
+          $ref: '#/components/schemas/Timestamp'
+      description: The profile template.
+    ProfileTemplateChoice:
+      type: object
+      properties:
+        ChoiceId:
+          $ref: '#/components/schemas/ChoiceId'
+        ChoiceTitle:
+          $ref: '#/components/schemas/ChoiceTitle'
+        ChoiceDescription:
+          $ref: '#/components/schemas/ChoiceDescription'
+      description: A profile template choice.
+    MaxSelectedProfileChoices:
+      type: integer
+      minimum: 0
+    AccessDeniedException: {}
+    InternalServerException: {}
+    TemplateQuestions:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileTemplateQuestion'
+    ProfileTemplateQuestionChoices:
+      type: array
+      items:
+        $ref: '#/components/schemas/ProfileTemplateChoice'
+    ChoiceId:
+      type: string
+      description: The ID of a choice.
+      minLength: 1
+      maxLength: 64
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
+    ResourceNotFoundException: {}
     QuestionId:
       type: string
       description: The ID of the question.
       minLength: 1
       maxLength: 128
-    TemplateQuestions:
-      type: array
-      items:
-        $ref: '#/components/schemas/ProfileTemplateQuestion'
-    ProfileName:
+    ChoiceTitle:
       type: string
-      pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
-      minLength: 3
-      maxLength: 100
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    MaxSelectedProfileChoices:
-      type: integer
-      minimum: 0
-    ValidationException: {}
+      description: The title of a choice.
+      minLength: 1
+      maxLength: 512
+    ThrottlingException: {}
     MinSelectedProfileChoices:
       type: integer
       minimum: 0
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+    QuestionDescription:
+      type: string
+      description: The description of the question.
+      minLength: 1
+      maxLength: 1024
   securitySchemes:
     hmac:
       type: apiKey

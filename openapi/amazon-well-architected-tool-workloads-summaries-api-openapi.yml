@@ -197,6 +197,39 @@ paths:
       - Workloads Summaries
 components:
   schemas:
+    ListWorkloadsOutput:
+      type: object
+      properties:
+        WorkloadSummaries:
+          $ref: '#/components/schemas/WorkloadSummaries'
+        NextToken:
+          $ref: '#/components/schemas/NextToken'
+      description: Output of a list workloads call.
+    Count:
+      type: integer
+      description: A non-negative integer that denotes how many.
+      minimum: 0
+    WorkloadProfile:
+      type: object
+      properties:
+        ProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/ProfileArn'
+          - description: The profile ARN.
+        ProfileVersion:
+          allOf:
+          - $ref: '#/components/schemas/ProfileVersion'
+          - description: The profile version.
+      description: The profile associated with a workload.
+    ProfileVersion:
+      type: string
+      pattern: ^[A-Za-z0-9-]+$
+      minLength: 1
+      maxLength: 32
+    ProfileArn:
+      type: string
+      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
+      maxLength: 2084
     WorkloadImprovementStatus:
       type: string
       enum:
@@ -206,10 +239,30 @@ components:
       - COMPLETE
       - RISK_ACKNOWLEDGED
       description: The improvement status for a workload.
-    Timestamp:
+    WorkloadSummaries:
+      type: array
+      description: A list of workload summaries.
+      items:
+        $ref: '#/components/schemas/WorkloadSummary'
+    WorkloadArn:
       type: string
-      description: The date and time recorded.
-      format: date-time
+      description: The ARN for the workload.
+    ValidationException: {}
+    RiskCounts:
+      type: object
+      description: A map from risk names to the count of how many questions have that rating.
+      additionalProperties:
+        $ref: '#/components/schemas/Count'
+    AccessDeniedException: {}
+    InternalServerException: {}
+    NextToken:
+      type: string
+      description: The token to use to retrieve the next set of results.
+    WorkloadLenses:
+      type: array
+      description: The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.
+      items:
+        $ref: '#/components/schemas/LensAlias'
     WorkloadSummary:
       type: object
       properties:
@@ -236,112 +289,41 @@ components:
         PrioritizedRiskCounts:
           $ref: '#/components/schemas/RiskCounts'
       description: A workload summary return object.
-    WorkloadSummaries:
-      type: array
-      description: A list of workload summaries.
-      items:
-        $ref: '#/components/schemas/WorkloadSummary'
+    Timestamp:
+      type: string
+      description: The date and time recorded.
+      format: date-time
     WorkloadProfiles:
       type: array
       items:
         $ref: '#/components/schemas/WorkloadProfile'
       maxItems: 1
-    AccessDeniedException: {}
     WorkloadId:
       type: string
       pattern: '[0-9a-f]{32}'
       description: The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
       minLength: 32
       maxLength: 32
-    WorkloadName:
+    LensAlias:
       type: string
-      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-      minLength: 3
-      maxLength: 100
-    WorkloadArn:
-      type: string
-      description: The ARN for the workload.
-    ProfileVersion:
-      type: string
-      pattern: ^[A-Za-z0-9-]+$
+      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
       minLength: 1
-      maxLength: 32
-    WorkloadLenses:
-      type: array
-      description: The list of lenses associated with the workload. Each lens is identified by its <a>LensSummary$LensAlias</a>.
-      items:
-        $ref: '#/components/schemas/LensAlias'
-    ListWorkloadsOutput:
-      type: object
-      properties:
-        WorkloadSummaries:
-          $ref: '#/components/schemas/WorkloadSummaries'
-        NextToken:
-          $ref: '#/components/schemas/NextToken'
-      description: Output of a list workloads call.
+      maxLength: 128
     ThrottlingException: {}
-    NextToken:
-      type: string
-      description: The token to use to retrieve the next set of results.
     AwsAccountId:
       type: string
       pattern: '[0-9]{12}'
       description: An Amazon Web Services account ID.
       minLength: 12
       maxLength: 12
-    WorkloadProfile:
-      type: object
-      properties:
-        ProfileArn:
-          allOf:
-          - $ref: '#/components/schemas/ProfileArn'
-          - description: The profile ARN.
-        ProfileVersion:
-          allOf:
-          - $ref: '#/components/schemas/ProfileVersion'
-          - description: The profile version.
-      description: The profile associated with a workload.
-    InternalServerException: {}
-    LensAlias:
+    WorkloadName:
       type: string
-      description: <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-      minLength: 1
-      maxLength: 128
-    Count:
-      type: integer
-      description: A non-negative integer that denotes how many.
-      minimum: 0
-    ProfileArn:
-      type: string
-      pattern: arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+
-      maxLength: 2084
-    RiskCounts:
-      type: object
-      description: A map from risk names to the count of how many questions have that rating.
-      additionalProperties:
-        $ref: '#/components/schemas/Count'
-    ValidationException: {}
+      description: <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+      minLength: 3
+      maxLength: 100
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -358,8 +340,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
