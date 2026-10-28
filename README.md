@@ -1,4 +1,4 @@
-# Amazon Well-Architected Tool (amazon-well-architected-tool)
+# Amazon Well-Architected Tool
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,142 +66,298 @@
 
 The AWS Well-Architected Tool helps you review your workloads and compare them to the latest AWS architectural best practices. It provides a consistent process for evaluating architectures and implementing designs that scale over time across five pillars: operational excellence, security, reliability, performance efficiency, and cost optimization. The tool offers lens catalogs, custom lenses, profiles, review templates, and API-driven extensibility for integration into governance workflows.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/apis.yml)
+**Areas:** Architecture · AWS · Best Practices · Cloud Governance · Well-Architected · Workloads
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon Well-Architected Tool on APIs.io
 
-## Tags:
+Everything profiled for Amazon Well-Architected Tool is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-well-architected-tool/](https://apis.io/providers/amazon-well-architected-tool/)** — or go straight to one of the APIs or properties below.
 
- - Architecture, AWS, Best Practices, Cloud Governance, Well-Architected, Workloads
+### APIs (21)
 
-## Timestamps
+- [Amazon Well-Architected Tool Global Settings API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-global-settings-api/) — The Global Settings API from Amazon Well-Architected Tool — 1 operation(s) for global settings.
+- [Amazon Well-Architected Tool Lenses API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-lenses-api/) — The Lenses API from Amazon Well-Architected Tool — 8 operation(s) for lenses.
+- [Amazon Well-Architected Tool Notifications API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-notifications-api/) — The Notifications API from Amazon Well-Architected Tool — 1 operation(s) for notifications.
+- [Amazon Well-Architected Tool Profiles API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-profiles-api/) — The Profiles API from Amazon Well-Architected Tool — 5 operation(s) for profiles.
+- [Amazon Well-Architected Tool Tags API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-tags-api/) — The Tags API from Amazon Well-Architected Tool — 2 operation(s) for tags.
+- [Amazon Well-Architected Tool Workloads API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-workloads-api/) — The Workloads API from Amazon Well-Architected Tool — 23 operation(s) for workloads.
+- [Amazon Well-Architected Tool Consolidated Report API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-consolidatedreport-api/) — The ConsolidatedReport API from Amazon Well-Architected Tool — 1 operation(s) for consolidatedreport.
+- [Amazon Well-Architected Tool Import Lens API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-import-lens-api/) — The Import Lens API from Amazon Well-Architected Tool — 1 operation(s) for import lens.
+- [Amazon Well-Architected Tool Profile Notifications API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-profile-notifications-api/) — The Profile Notifications API from Amazon Well-Architected Tool — 1 operation(s) for profile notifications.
+- [Amazon Well-Architected Tool Profile Summaries API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-profile-summaries-api/) — The Profile Summaries API from Amazon Well-Architected Tool — 1 operation(s) for profile summaries.
+- [Amazon Well-Architected Tool Profile Template API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-profile-template-api/) — The Profile Template API from Amazon Well-Architected Tool — 1 operation(s) for profile template.
+- [Amazon Well-Architected Tool Share Invitations API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-share-invitations-api/) — The Share Invitations API from Amazon Well-Architected Tool — 2 operation(s) for share invitations.
+- [Amazon Well-Architected Tool Workloads Summaries API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-workloads-summaries-api/) — The Workloads Summaries API from Amazon Well-Architected Tool — 1 operation(s) for workloads summaries.
+- [Amazon Well-Architected Tool Well Architected Tool Answers API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-answers-api/) — The Well Architected Tool Answers API from Amazon Well-Architected Tool — 2 operation(s) for well architected tool answers.
+- [Amazon Well-Architected Tool Well Architected Tool API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-api-api/) — The Well Architected Tool Api API from Amazon Well-Architected Tool — 3 operation(s) for well architected tool api.
+- [Amazon Well-Architected Tool Well Architected Tool Contexts API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-contexts-api/) — The Well Architected Tool Contexts API from Amazon Well-Architected Tool — 2 operation(s) for well architected tool contexts.
+- [Amazon Well-Architected Tool Well Architected Tool Generations API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-generations-api/) — The Well Architected Tool Generations API from Amazon Well-Architected Tool — 2 operation(s) for well architected tool generations.
+- [Amazon Well-Architected Tool Well Architected Tool Goals API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-goals-api/) — The Well Architected Tool Goals API from Amazon Well-Architected Tool — 2 operation(s) for well architected tool goals.
+- [Amazon Well-Architected Tool Well Architected Tool Operations API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-operations-api/) — The Well Architected Tool Operations API from Amazon Well-Architected Tool — 7 operation(s) for well architected tool operations.
+- [Amazon Well-Architected Tool Well Architected Tool Reviewtemplates API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-reviewtemplates-api/) — The Well Architected Tool Reviewtemplates API from Amazon Well-Architected Tool — 2 operation(s) for well architected tool reviewtemplates.
+- [Amazon Well-Architected Tool Well Architected Tool Templates API](https://apis.io/apis/amazon-well-architected-tool/amazon-well-architected-tool-templates-api/) — The Well Architected Tool Templates API from Amazon Well-Architected Tool — 2 operation(s) for well architected tool templates.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### AWS Well-Architected Tool API
-The AWS Well-Architected Tool API provides programmatic access to create and manage workloads, lenses, milestones, profiles, review templates, and review reports. It enables integration of the Well-Architected review process into DevOps workflows and automation pipelines for continuous architecture assessment. The API supports 56 operations covering workload management, lens operations, lens reviews, answers, milestones, profiles, review templates, notifications, checks, and administration.
+#### Arazzo workflows (13)
 
-**Human URL:** [https://aws.amazon.com/well-architected-tool/](https://aws.amazon.com/well-architected-tool/)
+Multi-step workflows that chain operations into a business task.
 
-#### Tags:
+- [Amazon Well-Architected Tool Annotate Lens Review](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-annotate-lens-review-workflow/)
+- [Amazon Well-Architected Tool Answer then Milestone](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-answer-then-milestone-workflow/)
+- [Amazon Well-Architected Tool Associate Lens to Workload](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-associate-lens-workflow/)
+- [Amazon Well-Architected Tool Capture Milestone](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-capture-milestone-workflow/)
+- [Amazon Well-Architected Tool Consolidated Report](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-consolidated-report-workflow/)
+- [Amazon Well-Architected Tool Create Workload](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-create-workload-workflow/)
+- [Amazon Well-Architected Tool Improvement Plan](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-improvement-plan-workflow/)
+- [Amazon Well-Architected Tool Lens Review Report](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-lens-review-report-workflow/)
+- [Amazon Well-Architected Tool List Milestone Snapshots](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-list-milestone-snapshots-workflow/)
+- [Amazon Well-Architected Tool Review and Update a Lens Answer](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-review-lens-answer-workflow/)
+- [Amazon Well-Architected Tool Share Custom Lens](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-share-lens-workflow/)
+- [Amazon Well-Architected Tool Share Workload](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-share-workload-workflow/)
+- [Amazon Well-Architected Tool Update Workload Metadata](https://apis.io/arazzos/amazon-well-architected-tool/amazon-well-architected-tool-update-workload-metadata-workflow/)
 
- - Architecture, AWS, Best Practices, Cloud Governance, Workloads, Lenses
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.aws.amazon.com/wellarchitected/latest/userguide/)
-- [APIReference](https://docs.aws.amazon.com/wellarchitected/latest/APIReference/)
-- [GettingStarted](https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html)
-- [Pricing](https://aws.amazon.com/well-architected-tool/pricing/)
-- [FAQ](https://aws.amazon.com/well-architected-tool/faqs/)
-- [OpenAPI](openapi/amazon-well-architected-tool-openapi-original.yaml)
-- [JSONSchema](json-schema/well-architected-tool-workload-schema.json)
-- [JSONLD](json-ld/amazon-well-architected-tool-context.jsonld)
+- [Amazon Well Architected Tool Agentic Access](https://apis.io/agentic-access/amazon-well-architected-tool/amazon-well-architected-tool-agentic-access/)
 
-## Common Properties
+#### JSON Schema (314)
 
-- [Portal](https://aws.amazon.com/)
+The data models the API reads and writes.
+
+- [AccessDeniedException](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-access-denied-exception/)
+- [AccountSummary](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-account-summary/)
+- [AdditionalResourceType](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-additional-resource-type/)
+- [AdditionalResources](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-additional-resources/)
+- [AdditionalResourcesList](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-additional-resources-list/)
+- [Answer](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-answer/)
+- [AnswerReason](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-answer-reason/)
+- [AnswerSummaries](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-answer-summaries/)
+- [AnswerSummary](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-answer-summary/)
+- [ApplicationArn](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-application-arn/)
+- [AssociateLensesInput](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-associate-lenses-input/)
+- [AssociateProfilesInput](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-associate-profiles-input/)
+- [AwsAccountId](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-aws-account-id/)
+- [AwsRegion](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-aws-region/)
+- [Base64String](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-base64-string/)
+- [BestPractice](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-best-practice/)
+- [BestPractices](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-best-practices/)
+- [CheckDescription](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-check-description/)
+- [CheckDetail](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-check-detail/)
+- [CheckDetails](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-check-details/)
+- [CheckFailureReason](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-check-failure-reason/)
+- [CheckId](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-check-id/)
+- [CheckName](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-check-name/)
+- [CheckProvider](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-check-provider/)
+- [CheckStatus](https://apis.io/schemas/amazon-well-architected-tool/well-architected-tool-check-status/)
+- …and 289 more published on APIs.io
+
+#### JSON Structure (314)
+
+Data models expressed in JSON Structure.
+
+- [Well Architected Tool Access Denied Exception Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-access-denied-exception-structure/)
+- [Well Architected Tool Account Summary Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-account-summary-structure/)
+- [Well Architected Tool Additional Resource Type Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-additional-resource-type-structure/)
+- [Well Architected Tool Additional Resources List Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-additional-resources-list-structure/)
+- [Well Architected Tool Additional Resources Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-additional-resources-structure/)
+- [Well Architected Tool Answer Reason Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-answer-reason-structure/)
+- [Well Architected Tool Answer Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-answer-structure/)
+- [Well Architected Tool Answer Summaries Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-answer-summaries-structure/)
+- [Well Architected Tool Answer Summary Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-answer-summary-structure/)
+- [Well Architected Tool Application Arn Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-application-arn-structure/)
+- [Well Architected Tool Associate Lenses Input Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-associate-lenses-input-structure/)
+- [Well Architected Tool Associate Profiles Input Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-associate-profiles-input-structure/)
+- [Well Architected Tool Aws Account Id Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-aws-account-id-structure/)
+- [Well Architected Tool Aws Region Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-aws-region-structure/)
+- [Well Architected Tool Base64 String Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-base64-string-structure/)
+- [Well Architected Tool Best Practice Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-best-practice-structure/)
+- [Well Architected Tool Best Practices Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-best-practices-structure/)
+- [Well Architected Tool Check Description Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-check-description-structure/)
+- [Well Architected Tool Check Detail Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-check-detail-structure/)
+- [Well Architected Tool Check Details Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-check-details-structure/)
+- [Well Architected Tool Check Failure Reason Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-check-failure-reason-structure/)
+- [Well Architected Tool Check Id Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-check-id-structure/)
+- [Well Architected Tool Check Name Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-check-name-structure/)
+- [Well Architected Tool Check Provider Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-check-provider-structure/)
+- [Well Architected Tool Check Status Count Structure](https://apis.io/json-structure/amazon-well-architected-tool/well-architected-tool-check-status-count-structure/)
+- …and 289 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Well Architected Tool Context](https://apis.io/jsonld/amazon-well-architected-tool/amazon-well-architected-tool-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Well Architected Tool Vocabulary](https://apis.io/vocabularies/amazon-well-architected-tool/amazon-well-architected-tool-vocabulary/)
+
+#### Examples (117)
+
+Example requests and responses.
+
+- [Well Architected Tool Additional Resources Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-additional-resources-example/)
+- [Well Architected Tool Answer Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-answer-example/)
+- [Well Architected Tool Answer Summary Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-answer-summary-example/)
+- [Well Architected Tool Associate Lenses Input Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-associate-lenses-input-example/)
+- [Well Architected Tool Associate Profiles Input Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-associate-profiles-input-example/)
+- [Well Architected Tool Best Practice Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-best-practice-example/)
+- [Well Architected Tool Check Detail Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-check-detail-example/)
+- [Well Architected Tool Check Summary Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-check-summary-example/)
+- [Well Architected Tool Choice Answer Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-choice-answer-example/)
+- [Well Architected Tool Choice Answer Summary Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-choice-answer-summary-example/)
+- [Well Architected Tool Choice Content Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-choice-content-example/)
+- [Well Architected Tool Choice Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-choice-example/)
+- [Well Architected Tool Choice Improvement Plan Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-choice-improvement-plan-example/)
+- [Well Architected Tool Choice Update Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-choice-update-example/)
+- [Well Architected Tool Consolidated Report Metric Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-consolidated-report-metric-example/)
+- [Well Architected Tool Create Lens Share Input Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-lens-share-input-example/)
+- [Well Architected Tool Create Lens Share Output Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-lens-share-output-example/)
+- [Well Architected Tool Create Lens Version Input Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-lens-version-input-example/)
+- [Well Architected Tool Create Lens Version Output Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-lens-version-output-example/)
+- [Well Architected Tool Create Milestone Input Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-milestone-input-example/)
+- [Well Architected Tool Create Milestone Output Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-milestone-output-example/)
+- [Well Architected Tool Create Profile Input Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-profile-input-example/)
+- [Well Architected Tool Create Profile Output Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-profile-output-example/)
+- [Well Architected Tool Create Profile Share Input Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-profile-share-input-example/)
+- [Well Architected Tool Create Profile Share Output Example](https://apis.io/examples/amazon-well-architected-tool/well-architected-tool-create-profile-share-output-example/)
+- …and 92 more published on APIs.io
+
+#### Collections (27)
+
+Postman and Open Collection request collections.
+
+- [AWS Well-Architected Tool ConsolidatedReport#Format API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-consolidatedreport-format-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Global Settings API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-global-settings-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ImportLens API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-importlens-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Lenses API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-lenses-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Notifications API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-notifications-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ProfileNotifications API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-profilenotifications-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Profiles API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-profiles-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ProfileSummaries API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-profilesummaries-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ProfileTemplate API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-profiletemplate-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ShareInvitations API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-shareinvitations-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Tags API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-tags-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Workloads API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-workloads-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format WorkloadsSummaries API](https://apis.io/collections/amazon-well-architected-tool/open-amazon-well-architected-tool-workloadssummaries-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-consolidatedreport-format-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Global Settings API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-global-settings-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ImportLens API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-importlens-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Lenses API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-lenses-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Notifications API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-notifications-api/)
+- [AWS Well-Architected Tool](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-openapi-original/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ProfileNotifications API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-profilenotifications-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Profiles API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-profiles-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ProfileSummaries API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-profilesummaries-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ProfileTemplate API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-profiletemplate-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format ShareInvitations API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-shareinvitations-api/)
+- [AWS Well-Architected Tool ConsolidatedReport#Format Tags API](https://apis.io/collections/amazon-well-architected-tool/postman-amazon-well-architected-tool-tags-api/)
+- …and 2 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Well-Architected Tool — jsonschema rules](https://apis.io/rules/amazon-well-architected-tool/amazon-well-architected-tool-jsonschema-spectral-rules/)
+- [Amazon Well-Architected Tool API Rules](https://apis.io/rules/amazon-well-architected-tool/amazon-well-architected-tool-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Well Architected Tool Authentication](https://apis.io/security/amazon-well-architected-tool/amazon-well-architected-tool-authentication/)
+- [Amazon Well Architected Tool Domain Security](https://apis.io/security/amazon-well-architected-tool/amazon-well-architected-tool-domain-security/)
+- [Amazon Well Architected Tool Trust Center](https://apis.io/security/amazon-well-architected-tool/amazon-well-architected-tool-trust-center/)
+- [Amazon Well Architected Tool Vulnerability Disclosure](https://apis.io/security/amazon-well-architected-tool/amazon-well-architected-tool-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Well Architected Tool Plans Pricing](https://apis.io/plans/amazon-well-architected-tool/amazon-well-architected-tool-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Well Architected Tool Rate Limits](https://apis.io/rate-limits/amazon-well-architected-tool/amazon-well-architected-tool-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Well Architected Tool Finops](https://apis.io/finops/amazon-well-architected-tool/amazon-well-architected-tool-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://aws.amazon.com/well-architected-tool/)
 - [Documentation](https://docs.aws.amazon.com/wellarchitected/latest/userguide/)
-- [Console](https://console.aws.amazon.com/wellarchitected/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
-- [SignUp](https://signin.aws.amazon.com/signup?request_type=register)
-- [Login](https://aws.amazon.com/console/)
-- [StatusPage](https://health.aws.amazon.com/health/status)
-- [GitHubOrganization](https://github.com/aws)
-- [GitHubRepository](https://github.com/aws-samples/custom-lens-wa-hub)
 - [Compliance](https://aws.amazon.com/compliance/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Lens Catalog | Expert-authored review lenses from AWS covering diverse technology and industry-specific pillars, continuously refreshed with latest best practices. |
-| Custom Lenses | Create organization-specific lenses that combine internal best practices with AWS guidance, shareable with up to 300 IAM users or across AWS Organizations. |
-| Profiles | Pre-define business goals to auto-generate prioritized review questions tailored to your workload context. |
-| Review Templates | Standardize answers across multiple workloads to ensure consistent architectural reviews at scale. |
-| Enhanced Collaboration | Share workloads and custom lenses with IAM users or integrate with AWS Organizations for organization-wide access and visibility. |
-| Service Integration | Native integration with AWS Trusted Advisor and AWS Service Catalog AppRegistry to reduce manual review effort. |
-| API-Driven Extensibility | Robust APIs allow extending Well-Architected functionality into existing architecture governance processes, applications, and workflows. |
-| Milestone Tracking | Save milestones, implement improvements, and measure progress over time with point-in-time snapshots of workload review state. |
-| Compliance and Regulatory Support | Available in GovCloud (US) with FedRAMP compliance for organizations with stringent regulatory requirements. |
-| Consolidated Reporting | Generate consolidated reports across workloads for governance and executive visibility into architectural risk posture. |
+**Kin Score 57.8** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 63.2 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 63.1 |
+| Access clarity | 61.8 |
 
-| Name | Description |
-|------|-------------|
-| Architecture Reviews and Governance | Evaluate cloud workload architecture quality against AWS best practices across the five Well-Architected pillars. |
-| Multi-Workload Standardization | Use review templates to standardize architectural answers and enforce consistent governance across multiple workloads and teams. |
-| Industry-Specific Best Practice Implementation | Apply industry-specific and technology-specific lenses from the lens catalog to assess specialized workloads. |
-| Regulatory Compliance Assessment | Evaluate workloads for FedRAMP, GovCloud, and other regulatory compliance requirements through targeted lenses. |
-| DevOps Pipeline Integration | Integrate Well-Architected reviews into CI/CD workflows and automation pipelines for continuous architecture assessment. |
-| Cross-Team Architectural Alignment | Share workloads with reviewers and stakeholders to facilitate collaborative architectural decision-making across teams. |
-| Sustainability Goal Realization | Use the sustainability pillar to minimize environmental impact and meet organizational sustainability commitments. |
+**Agent readiness 34.1** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | verified |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| AWS Trusted Advisor | Integration with AWS Trusted Advisor provides automated checks that complement manual Well-Architected review processes. |
-| AWS Service Catalog AppRegistry | AppRegistry integration enables linking Well-Architected workloads to application metadata for richer governance context. |
-| AWS Organizations | Organization-level sharing of workloads and custom lenses for enterprise-wide architectural governance programs. |
-| AWS IAM | Fine-grained access control via AWS IAM for workload sharing and reviewer management within the tool. |
-| AWS CloudFormation | Workloads can be associated with CloudFormation stacks for automated resource discovery and architecture documentation. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-well-architected-tool/](https://apis.io/providers/amazon-well-architected-tool/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Amazon Well-Architected Tool OpenAPI](openapi/amazon-well-architected-tool-openapi-original.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Well-Architected Tool: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-314 JSON Schema files extracted from the OpenAPI specification covering all API resource types.
-
-### JSON Structure
-
-314 JSON Structure files converted from JSON Schema definitions.
-
-### JSON-LD
-
-- [Amazon Well-Architected Tool Context](json-ld/amazon-well-architected-tool-context.jsonld)
-
-### Examples
-
-117 example JSON files generated from JSON Schema definitions.
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [AWS Well-Architected Tool API](capabilities/shared/well-architected-tool.yaml) — 9 operations for workload management, lens reviews, milestones, profiles, and reporting
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Architecture Governance](capabilities/architecture-governance.yaml) | AWS Well-Architected Tool | 9 | Cloud Architect, Governance Team |
-
-## Vocabulary
-
-- [Amazon Well-Architected Tool Vocabulary](vocabulary/amazon-well-architected-tool-vocabulary.yaml) — Unified taxonomy mapping 10 resources, 10 actions, 1 workflow, and 2 personas across operational (OpenAPI) and capability (Naftiko) dimensions
-
-## Rules
-
-- [Amazon Well-Architected Tool Spectral Rules](rules/amazon-well-architected-tool-spectral-rules.yml) — 22 rules across 9 categories enforcing Amazon Well-Architected Tool API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-well-architected-tool/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
