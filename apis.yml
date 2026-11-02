@@ -1,0 +1,693 @@
+aid: amazon-well-architected-tool
+name: Amazon Well-Architected Tool
+description: 'The AWS Well-Architected Tool helps you review your workloads and compare them to the latest AWS architectural
+  best practices. It provides a consistent process for evaluating architectures and implementing designs that scale over time
+  across five pillars: operational excellence, security, reliability, performance efficiency, and cost optimization. The tool
+  offers lens catalogs, custom lenses, profiles, review templates, and API-driven extensibility for integration into governance
+  workflows.'
+type: Index
+deliveryModel:
+  model: saas
+  license_evidence:
+    not_product:
+    - aws-samples/custom-lens-wa-hub
+  open_source: unknown
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: low
+  source:
+  - openapi
+  - pricing
+  - repository-not-product
+  generated: '2026-09-25'
+  method: derived
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: medium
+  source:
+  - plans
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-well-architected-tool.png
+tags:
+- Architecture
+- Amazon Web Services
+- Best Practices
+- Cloud Governance
+- Well-Architected
+- Workloads
+tags_raw:
+- Architecture
+- AWS
+- Best Practices
+- Cloud Governance
+- Well-Architected
+- Workloads
+url: https://raw.githubusercontent.com/api-evangelist/amazon-well-architected-tool/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-05-19'
+specificationVersion: '0.23'
+apis:
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-global-settings-api
+  name: Amazon Well-Architected Tool Global Settings API
+  description: >-
+    The Global Settings API from Amazon Well-Architected Tool — 1 operation(s) for global settings.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Global Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-global-settings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-lenses-api
+  name: Amazon Well-Architected Tool Lenses API
+  description: The Lenses API from Amazon Well-Architected Tool — 8 operation(s) for lenses.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Lenses
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-lenses-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-notifications-api
+  name: Amazon Well-Architected Tool Notifications API
+  description: >-
+    The Notifications API from Amazon Well-Architected Tool — 1 operation(s) for notifications.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Notification
+  tags_raw:
+  - Notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-notifications-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-profiles-api
+  name: Amazon Well-Architected Tool Profiles API
+  description: The Profiles API from Amazon Well-Architected Tool — 5 operation(s) for profiles.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-profiles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-tags-api
+  name: Amazon Well-Architected Tool Tags API
+  description: The Tags API from Amazon Well-Architected Tool — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-workloads-api
+  name: Amazon Well-Architected Tool Workloads API
+  description: The Workloads API from Amazon Well-Architected Tool — 23 operation(s) for workloads.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Workloads
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-workloads-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-consolidatedreport-api
+  name: Amazon Well-Architected Tool Consolidated Report API
+  description: >-
+    The ConsolidatedReport API from Amazon Well-Architected Tool — 1 operation(s) for consolidatedreport.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - ConsolidatedReport
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-consolidatedreport-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-profile-notifications-api
+  name: Amazon Well-Architected Tool Profile Notifications API
+  description: >-
+    The Profile Notifications API from Amazon Well-Architected Tool — 1 operation(s) for profile notifications.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Profile Notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-profile-notifications-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-answers-api
+  name: Amazon Well-Architected Tool Well Architected Tool Answers API
+  description: >-
+    The Well Architected Tool Answers API from Amazon Well-Architected Tool — 2 operation(s) for well
+    architected tool answers.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Well Architected Tool Answers
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-answers-api-openapi.yml
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-contexts-api
+  name: Amazon Well-Architected Tool Well Architected Tool Contexts API
+  description: >-
+    The Well Architected Tool Contexts API from Amazon Well-Architected Tool — 2 operation(s) for well
+    architected tool contexts.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Well Architected Tool Contexts
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-contexts-api-openapi.yml
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-generations-api
+  name: Amazon Well-Architected Tool Well Architected Tool Generations API
+  description: >-
+    The Well Architected Tool Generations API from Amazon Well-Architected Tool — 2 operation(s) for well
+    architected tool generations.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Well Architected Tool Generations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-generations-api-openapi.yml
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-goals-api
+  name: Amazon Well-Architected Tool Well Architected Tool Goals API
+  description: >-
+    The Well Architected Tool Goals API from Amazon Well-Architected Tool — 2 operation(s) for well architected
+    tool goals.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Well Architected Tool Goals
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-goals-api-openapi.yml
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-operations-api
+  name: Amazon Well-Architected Tool Well Architected Tool Operations API
+  description: >-
+    The Well Architected Tool Operations API from Amazon Well-Architected Tool — 7 operation(s) for well
+    architected tool operations.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Well Architected Tool Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-operations-api-openapi.yml
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-reviewtemplates-api
+  name: Amazon Well-Architected Tool Well Architected Tool Reviewtemplates API
+  description: >-
+    The Well Architected Tool Reviewtemplates API from Amazon Well-Architected Tool — 2 operation(s) for
+    well architected tool reviewtemplates.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Well Architected Tool Reviewtemplates
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-reviewtemplates-api-openapi.yml
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-templates-api
+  name: Amazon Well-Architected Tool Well Architected Tool Templates API
+  description: >-
+    The Well Architected Tool Templates API from Amazon Well-Architected Tool — 2 operation(s) for well
+    architected tool templates.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Well Architected Tool Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-templates-api-openapi.yml
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-agent-profiles-api
+  name: Amazon Well-Architected Tool Agent Profiles API
+  description: >-
+    The Agent Profiles API from Amazon Well-Architected Tool — 2 operation(s) for agent profiles.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Agent Profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-agent-profiles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-agent-recommendations-api
+  name: Amazon Well-Architected Tool Agent Recommendations API
+  description: >-
+    The Agent Recommendations API from Amazon Well-Architected Tool — 1 operation(s) for agent recommendations.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Agent Recommendations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-agent-recommendations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-import-lens-api
+  name: Amazon Well-Architected Tool Import Lens API
+  description: The Import Lens API from Amazon Well-Architected Tool — 1 operation(s) for import lens.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Import Lens
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-import-lens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-profile-summaries-api
+  name: Amazon Well-Architected Tool Profile Summaries API
+  description: >-
+    The Profile Summaries API from Amazon Well-Architected Tool — 1 operation(s) for profile summaries.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Profile Summaries
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-profile-summaries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-profile-template-api
+  name: Amazon Well-Architected Tool Profile Template API
+  description: >-
+    The Profile Template API from Amazon Well-Architected Tool — 1 operation(s) for profile template.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Profile Template
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-profile-template-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-share-invitations-api
+  name: Amazon Well-Architected Tool Share Invitations API
+  description: >-
+    The Share Invitations API from Amazon Well-Architected Tool — 2 operation(s) for share invitations.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Share Invitations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-share-invitations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+- aid: amazon-well-architected-tool:amazon-well-architected-tool-workloads-summaries-api
+  name: Amazon Well-Architected Tool Workloads Summaries API
+  description: >-
+    The Workloads Summaries API from Amazon Well-Architected Tool — 1 operation(s) for workloads summaries.
+  humanURL: https://aws.amazon.com/well-architected-tool/
+  baseURL: https://wellarchitected.amazonaws.com
+  tags:
+  - Workloads Summaries
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-well-architected-tool-workloads-summaries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/wellarchitected/latest/APIReference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/getting-started.html
+  - type: Pricing
+    url: https://aws.amazon.com/well-architected-tool/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/well-architected-tool/faqs/
+  - type: JSONSchema
+    url: json-schema/well-architected-tool-workload-schema.json
+  - type: JSONLD
+    url: json-ld/amazon-well-architected-tool-context.jsonld
+common:
+  - type: Plans
+    url: plans/amazon-well-architected-tool-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/amazon-well-architected-tool-rate-limits.yml
+  - type: FinOps
+    url: finops/amazon-well-architected-tool-finops.yml
+  - type: CapabilityMap
+    url: capabilities/amazon-well-architected-tool-capability-edges.yml
+    name: Amazon Well-Architected Tool Business Capability Map
+  - type: IssueTracker
+    url: https://github.com/aws-samples/custom-lens-wa-hub/issues
+  - type: CodeOfConduct
+    url: https://github.com/aws-samples/custom-lens-wa-hub/blob/main/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/aws-samples/custom-lens-wa-hub/blob/main/CONTRIBUTING.md
+  - type: License
+    name: MIT-0
+    url: https://github.com/aws-samples/custom-lens-wa-hub/blob/main/LICENSE
+  - type: AgenticAccess
+    url: agentic-access/amazon-well-architected-tool-agentic-access.yml
+  - type: TrustCenter
+    url: security/amazon-well-architected-tool-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-well-architected-tool-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-well-architected-tool-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-well-architected-tool-authentication.yml
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-well-architected-tool/overview
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-annotate-lens-review-workflow.yml
+    name: Amazon Well-Architected Tool Annotate Lens Review
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-answer-then-milestone-workflow.yml
+    name: Amazon Well-Architected Tool Answer then Milestone
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-associate-lens-workflow.yml
+    name: Amazon Well-Architected Tool Associate Lens to Workload
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-capture-milestone-workflow.yml
+    name: Amazon Well-Architected Tool Capture Milestone
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-consolidated-report-workflow.yml
+    name: Amazon Well-Architected Tool Consolidated Report
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-create-workload-workflow.yml
+    name: Amazon Well-Architected Tool Create Workload
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-improvement-plan-workflow.yml
+    name: Amazon Well-Architected Tool Improvement Plan
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-lens-review-report-workflow.yml
+    name: Amazon Well-Architected Tool Lens Review Report
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-list-milestone-snapshots-workflow.yml
+    name: Amazon Well-Architected Tool List Milestone Snapshots
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-review-lens-answer-workflow.yml
+    name: Amazon Well-Architected Tool Review and Update a Lens Answer
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-share-lens-workflow.yml
+    name: Amazon Well-Architected Tool Share Custom Lens
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-share-workload-workflow.yml
+    name: Amazon Well-Architected Tool Share Workload
+  - type: Arazzo
+    url: arazzo/amazon-well-architected-tool-update-workload-metadata-workflow.yml
+    name: Amazon Well-Architected Tool Update Workload Metadata
+  - type: Portal
+    url: https://aws.amazon.com/
+  - type: Website
+    url: https://aws.amazon.com/well-architected-tool/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/wellarchitected/latest/userguide/
+  - type: Console
+    url: https://console.aws.amazon.com/wellarchitected/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: Signup
+    url: https://signin.aws.amazon.com/signup?request_type=register
+  - type: Login
+    url: https://aws.amazon.com/console/
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: GitHubRepository
+    url: https://github.com/aws-samples/custom-lens-wa-hub
+  - type: Compliance
+    url: https://aws.amazon.com/compliance/
+  - type: SpectralRules
+    url: rules/amazon-well-architected-tool-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/amazon-well-architected-tool-vocabulary.yaml
+  - type: Features
+    data:
+    - name: Lens Catalog
+      description: Expert-authored review lenses from AWS covering diverse technology and industry-specific pillars, continuously
+        refreshed with latest best practices.
+    - name: Custom Lenses
+      description: Create organization-specific lenses that combine internal best practices with AWS guidance, shareable with
+        up to 300 IAM users or across AWS Organizations.
+    - name: Profiles
+      description: Pre-define business goals to auto-generate prioritized review questions tailored to your workload context.
+    - name: Review Templates
+      description: Standardize answers across multiple workloads to ensure consistent architectural reviews at scale.
+    - name: Enhanced Collaboration
+      description: Share workloads and custom lenses with IAM users or integrate with AWS Organizations for organization-wide
+        access and visibility.
+    - name: Service Integration
+      description: Native integration with AWS Trusted Advisor and AWS Service Catalog AppRegistry to reduce manual review effort.
+    - name: API-Driven Extensibility
+      description: Robust APIs allow extending Well-Architected functionality into existing architecture governance processes,
+        applications, and workflows.
+    - name: Milestone Tracking
+      description: Save milestones, implement improvements, and measure progress over time with point-in-time snapshots of workload
+        review state.
+    - name: Compliance and Regulatory Support
+      description: Available in GovCloud (US) with FedRAMP compliance for organizations with stringent regulatory requirements.
+    - name: Consolidated Reporting
+      description: Generate consolidated reports across workloads for governance and executive visibility into architectural
+        risk posture.
+  - type: UseCases
+    data:
+    - name: Architecture Reviews and Governance
+      description: Evaluate cloud workload architecture quality against AWS best practices across the five Well-Architected
+        pillars.
+    - name: Multi-Workload Standardization
+      description: Use review templates to standardize architectural answers and enforce consistent governance across multiple
+        workloads and teams.
+    - name: Industry-Specific Best Practice Implementation
+      description: Apply industry-specific and technology-specific lenses from the lens catalog to assess specialized workloads.
+    - name: Regulatory Compliance Assessment
+      description: Evaluate workloads for FedRAMP, GovCloud, and other regulatory compliance requirements through targeted lenses.
+    - name: DevOps Pipeline Integration
+      description: Integrate Well-Architected reviews into CI/CD workflows and automation pipelines for continuous architecture
+        assessment.
+    - name: Cross-Team Architectural Alignment
+      description: Share workloads with reviewers and stakeholders to facilitate collaborative architectural decision-making
+        across teams.
+    - name: Sustainability Goal Realization
+      description: Use the sustainability pillar to minimize environmental impact and meet organizational sustainability commitments.
+  - type: Integrations
+    data:
+    - name: AWS Trusted Advisor
+      description: Integration with AWS Trusted Advisor provides automated checks that complement manual Well-Architected review
+        processes.
+    - name: AWS Service Catalog AppRegistry
+      description: AppRegistry integration enables linking Well-Architected workloads to application metadata for richer governance
+        context.
+    - name: AWS Organizations
+      description: Organization-level sharing of workloads and custom lenses for enterprise-wide architectural governance programs.
+    - name: AWS IAM
+      description: Fine-grained access control via AWS IAM for workload sharing and reviewer management within the tool.
+    - name: AWS CloudFormation
+      description: Workloads can be associated with CloudFormation stacks for automated resource discovery and architecture
+        documentation.
+  - type: Integrations
+    url: https://aws.amazon.com/partners/
+integrations:
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-parent: amazon-web-services
+x-relationship: product
