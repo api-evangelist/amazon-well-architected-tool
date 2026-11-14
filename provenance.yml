@@ -5,6 +5,9 @@ artifacts:
   agentic-access/amazon-well-architected-tool-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-well-architected-tool-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
   arazzo/amazon-well-architected-tool-annotate-lens-review-workflow.yml:
     method: derived
     evidence: Arazzo whose sourceDescriptions are our split specs (../openapi/)
@@ -48,6 +51,12 @@ artifacts:
     method: derived
     evidence: declared in the artifact
   capabilities/amazon-well-architected-tool-capability-edges.yml:
+    method: unknown
+    evidence: no authorship recorded
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
     method: unknown
     evidence: no authorship recorded
   collections/amazon-well-architected-tool-consolidatedreport-format-api.opencollection.json:
@@ -128,6 +137,24 @@ artifacts:
   collections/amazon-well-architected-tool-workloadssummaries-api.postman_collection.json:
     method: unknown
     evidence: no authorship recorded
+  conformance/amazon-well-architected-tool-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-well-architected-tool-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-license/amazon-well-architected-tool-data-license.yml:
+    method: harvested
+    evidence: declared in the artifact
+  data-model/amazon-well-architected-tool-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  eligibility/amazon-well-architected-tool-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
+  errors/amazon-well-architected-tool-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/well-architected-tool-additional-resources-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -485,6 +512,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-well-architected-tool-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -492,6 +522,255 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   json-ld/amazon-well-architected-tool-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-agent-context-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-agent-goal-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-agent-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-agent-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-lens-version-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-profile-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-profile-share-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-review-template-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-review-template-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-template-share-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-create-template-share-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-delete-agent-context-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-delete-agent-goal-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-delete-lens-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-delete-profile-share-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-delete-review-template-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-delete-template-share-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-agent-context-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-agent-goal-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-agent-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-agent-recommendation-generation-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-agent-recommendation-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-consolidated-report-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-consolidated-report-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-global-settings-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-lens-version-difference-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-lens-version-difference-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-profile-template-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-profile-template-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-review-template-answer-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-review-template-answer-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-get-review-template-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-import-lens-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-import-lens-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-contexts-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-contexts-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-goals-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-goals-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-recommendation-generations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-recommendation-items-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-recommendation-items-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-recommendations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-agent-recommendations-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-lens-shares-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-lenses-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-notifications-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-notifications-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-profile-notifications-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-profile-notifications-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-profile-shares-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-profile-shares-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-profiles-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-profiles-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-review-template-answers-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-review-template-answers-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-review-templates-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-share-invitations-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-share-invitations-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-tags-for-resource-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-tags-for-resource-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-template-shares-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-template-shares-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-workloads-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-list-workloads-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-put-agent-recommendation-feedback-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-start-agent-recommendation-generation-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-start-agent-recommendation-generation-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-tag-resource-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-tag-resource-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-untag-resource-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-untag-resource-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-agent-context-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-agent-goal-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-agent-profile-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-agent-profile-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-agent-recommendation-status-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-global-settings-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-profile-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-review-template-answer-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-review-template-answer-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-review-template-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-share-invitation-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-well-architected-tool-update-share-invitation-output-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-schema/well-architected-tool-access-denied-exception-schema.json:
@@ -2381,7 +2660,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -2450,10 +2729,18 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-well-architected-tool-openapi-original.yaml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  llms/amazon-well-architected-tool-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-well-architected-tool-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-well-architected-tool-mcp.yml:
+    method: searched
+    evidence: declared in the artifact
   openapi/amazon-well-architected-tool-agent-profiles-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -2473,20 +2760,20 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-well-architected-tool-global-settings-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-well-architected-tool-goals-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-well-architected-tool-import-lens-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-well-architected-tool-lenses-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-well-architected-tool-notifications-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-well-architected-tool-operations-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -2494,11 +2781,11 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-well-architected-tool-profile-summaries-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-well-architected-tool-profile-template-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-well-architected-tool-profiles-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
@@ -2506,20 +2793,26 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-well-architected-tool-share-invitations-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-well-architected-tool-tags-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-well-architected-tool-templates-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-well-architected-tool-workloads-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: unknown
+    evidence: no authorship recorded
   openapi/amazon-well-architected-tool-workloads-summaries-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  packages/amazon-well-architected-tool-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-well-architected-tool-patterns.yml:
     method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    evidence: declared in the artifact
   plans/amazon-well-architected-tool-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -2571,6 +2864,9 @@ artifacts:
   rules/amazon-well-architected-tool-jsonschema-spectral-rules.yml:
     method: generated
     evidence: declared in the artifact
+  rules/amazon-well-architected-tool-rules.yml:
+    method: generated
+    evidence: declared in the artifact
   rules/amazon-well-architected-tool-spectral-rules.yml:
     method: generated
     evidence: declared in the artifact
@@ -2587,8 +2883,27 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   smithy/wellarchitected-2020-03-31.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/wellarchitected/service/2020-03-31/wellarchitected-2020-03-31.json
+      (sha256 fab58a6fbf78, fetched 2026-11-11T21:16:17+00:00)
+  terms/amazon-well-architected-tool-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-well-architected-tool-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-well-architected-tool-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-well-architected-tool-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-well-architected-tool-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-well-architected-tool-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-well-architected-tool-well-known.yml:
     method: unknown
     evidence: no authorship recorded
